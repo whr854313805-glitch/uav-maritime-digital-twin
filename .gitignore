@@ -1,0 +1,90 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv
+venv/
+ENV/
+
+# IDE and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Data files (too large to commit)
+data/hko/*.json
+data/hko/*.csv
+data/geospatial/*.tif
+data/geospatial/*.shp
+data/geospatial/*.dbf
+data/geospatial/*.shx
+data/open3dhk/*.zip
+data/open3dhk/*.geojson
+output/*.csv
+output/*.json
+
+# MATLAB
+*.asv
+slprj/
+*.slxc
+
+# Node.js (Cesium)
+node_modules/
+visualization/cesium-app/dist/
+
+# Environment variables
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# OS specific
+.AppleDouble
+.LSOverride
