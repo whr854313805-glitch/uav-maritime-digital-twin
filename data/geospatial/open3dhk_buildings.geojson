@@ -1,0 +1,805 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_0",
+        "height": 342.797576724562,
+        "floors": 61,
+        "use": "mixed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19802857225639,
+          22.291236203565422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_1",
+        "height": 233.69955678634688,
+        "floors": 36,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16399899663271,
+          22.293374982585608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_2",
+        "height": 437.96394086479773,
+        "floors": 84,
+        "use": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16082337977183,
+          22.301242177333883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_3",
+        "height": 296.99260385108664,
+        "floors": 63,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19968846237164,
+          22.280023362975232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_4",
+        "height": 294.74115788895176,
+        "floors": 18,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17164916560792,
+          22.292958350559264
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_5",
+        "height": 86.24257381312832,
+        "floors": 63,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1693108536172,
+          22.309212665565244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_6",
+        "height": 68.58016508799909,
+        "floors": 62,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18369658275448,
+          22.29542703315241
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_7",
+        "height": 426.8807022739411,
+        "floors": 58,
+        "use": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16053059844639,
+          22.293514977559088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_8",
+        "height": 323.69321060486277,
+        "floors": 46,
+        "use": "mixed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16390688456025,
+          22.289138413075204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_9",
+        "height": 119.34586140310883,
+        "floors": 42,
+        "use": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19332779646945,
+          22.29829989973348
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_10",
+        "height": 258.0272084711243,
+        "floors": 56,
+        "use": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17246844304357,
+          22.29987566853062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_11",
+        "height": 229.90165334790626,
+        "floors": 42,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1936913909838,
+          22.28093939877367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_12",
+        "height": 85.3970008207678,
+        "floors": 23,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19687496940092,
+          22.297936999364335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_13",
+        "height": 348.92804405495235,
+        "floors": 56,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19378135394712,
+          22.30883516073048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_14",
+        "height": 267.0784332632994,
+        "floors": 18,
+        "use": "mixed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1712373803875,
+          22.29070259980081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_15",
+        "height": 219.36059228254786,
+        "floors": 42,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16062545626964,
+          22.28495800817189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_16",
+        "height": 332.74293753904686,
+        "floors": 74,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1926184571382,
+          22.28016566351371
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_17",
+        "height": 310.4308102007778,
+        "floors": 91,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19705203514053,
+          22.29817879924343
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_18",
+        "height": 75.42334011440946,
+        "floors": 34,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1732359209941,
+          22.298698943804826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_19",
+        "height": 159.88871719602565,
+        "floors": 58,
+        "use": "mixed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1836519115083,
+          22.299977670698524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_20",
+        "height": 354.31401944675895,
+        "floors": 58,
+        "use": "mixed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18852979148892,
+          22.28358782737815
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_21",
+        "height": 334.2651558743149,
+        "floors": 15,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16161734358154,
+          22.28768204968284
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_22",
+        "height": 304.56416450551217,
+        "floors": 34,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16125716742746,
+          22.2832367428098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_23",
+        "height": 291.7669517111269,
+        "floors": 56,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16557325817624,
+          22.300865482592783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_24",
+        "height": 165.90058116550722,
+        "floors": 20,
+        "use": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16307919639314,
+          22.28686394496475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_25",
+        "height": 92.19770393210824,
+        "floors": 48,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17182534743351,
+          22.298730621444015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_26",
+        "height": 265.7368967662603,
+        "floors": 81,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1957023599396,
+          22.285597101766584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_27",
+        "height": 158.85289975385413,
+        "floors": 66,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19627313766183,
+          22.29068893514231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_28",
+        "height": 52.78085221247628,
+        "floors": 53,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19442922333025,
+          22.304540442977675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_29",
+        "height": 157.7649335194086,
+        "floors": 28,
+        "use": "mixed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1876974413156,
+          22.29454489914077
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_30",
+        "height": 331.2075835580711,
+        "floors": 39,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18075162486973,
+          22.289696087960625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_31",
+        "height": 328.52170913591533,
+        "floors": 72,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16987504251354,
+          22.28761746241803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_32",
+        "height": 293.82573359195874,
+        "floors": 52,
+        "use": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16147547789417,
+          22.288545214831323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_33",
+        "height": 303.7405378805455,
+        "floors": 69,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17380284992106,
+          22.28099152198702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_34",
+        "height": 146.82210860460015,
+        "floors": 68,
+        "use": "mixed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19942601816442,
+          22.29468358280833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_35",
+        "height": 371.25590255195834,
+        "floors": 49,
+        "use": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1696863975311,
+          22.291089633681842
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_36",
+        "height": 86.11590802176332,
+        "floors": 84,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18143098736299,
+          22.299005891322828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_37",
+        "height": 393.34352192548795,
+        "floors": 35,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18783251227163,
+          22.29524596330222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_38",
+        "height": 140.59831007917518,
+        "floors": 66,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18048372233197,
+          22.280497634867835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_39",
+        "height": 257.10054021099205,
+        "floors": 84,
+        "use": "mixed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1759028808435,
+          22.30821569793469
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_40",
+        "height": 419.8774473114251,
+        "floors": 88,
+        "use": "mixed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16453894084962,
+          22.29023199053151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_41",
+        "height": 442.86733733177425,
+        "floors": 54,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16699819708383,
+          22.28685650065392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_42",
+        "height": 408.8863031813307,
+        "floors": 90,
+        "use": "mixed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16372411071224,
+          22.287255568727016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_43",
+        "height": 330.1431319891085,
+        "floors": 85,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17115485410369,
+          22.285661213250243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_44",
+        "height": 306.8126584617151,
+        "floors": 12,
+        "use": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1911950218343,
+          22.306612592727955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_45",
+        "height": 282.2746485745819,
+        "floors": 40,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18675953018857,
+          22.30356021953342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_46",
+        "height": 114.32322056699947,
+        "floors": 57,
+        "use": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16020246335384,
+          22.299905053073243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_47",
+        "height": 120.37010107093815,
+        "floors": 6,
+        "use": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19977829850443,
+          22.293452724289587
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_48",
+        "height": 309.85315961888585,
+        "floors": 85,
+        "use": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18985965620472,
+          22.28976199094478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_49",
+        "height": 253.525630735504,
+        "floors": 65,
+        "use": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.18170160922219,
+          22.289241823755575
+        ]
+      }
+    }
+  ]
+}

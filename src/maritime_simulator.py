@@ -15,7 +15,13 @@ from typing import List, Dict, Tuple
 import logging
 import csv
 
-from maritime_agents import VesselAgent, FerryAgent, CargoAgent, YachtAgent, Position
+try:
+    from .maritime_agents import VesselAgent, FerryAgent, CargoAgent, YachtAgent, Position
+except ImportError:
+    import sys
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from maritime_agents import VesselAgent, FerryAgent, CargoAgent, YachtAgent, Position
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -47,7 +53,7 @@ class MaritimeSimulator:
         """
         self.start_time = start_time or datetime.now()
         self.end_time = end_time or (self.start_time + timedelta(hours=24))
-        self.wind_data = wind_data or pd.DataFrame()
+        self.wind_data = wind_data if wind_data is not None else pd.DataFrame()
         self.current_time = self.start_time
 
         self.vessels: List[VesselAgent] = []
@@ -259,7 +265,10 @@ if __name__ == "__main__":
 
     # Save results
     print(f"\n[3] Saving results...")
-    output_path = "../output/maritime_baseline_24h.csv"
+    import os
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    output_path = os.path.join(_root, "output", "maritime_baseline_24h.csv")
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     sim.save_results(output_path)
 
     # Print statistics

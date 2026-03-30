@@ -1,0 +1,11 @@
+{
+  "bounds": {
+    "lat_min": 22.28,
+    "lat_max": 22.31,
+    "lon_min": 114.16,
+    "lon_max": 114.2
+  },
+  "resolution": "approximately 20m",
+  "source": "LandsD 3D-BIT00",
+  "region": "Victoria Harbour, Hong Kong"
+}

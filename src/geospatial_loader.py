@@ -225,4 +225,8 @@ def main():
 
 
 if __name__ == "__main__":
+    import os
+    # Ensure we resolve data/ relative to project root, not src/
+    _project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    os.chdir(_project_root)
     main()

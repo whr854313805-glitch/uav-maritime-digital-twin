@@ -1,0 +1,90 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Central",
+        "width_m": 500,
+        "depth_m": 15,
+        "vessel_type": "all",
+        "traffic_direction": "two-way"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.175,
+          22.29
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Eastern",
+        "width_m": 400,
+        "depth_m": 13,
+        "vessel_type": "all",
+        "traffic_direction": "two-way"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.19,
+          22.287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hung_Hom",
+        "width_m": 350,
+        "depth_m": 12,
+        "vessel_type": "all",
+        "traffic_direction": "two-way"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.178,
+          22.297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Yau_Ma_Tei",
+        "width_m": 450,
+        "depth_m": 14,
+        "vessel_type": "all",
+        "traffic_direction": "two-way"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.172,
+          22.302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tsim_Sha_Tsui",
+        "width_m": 380,
+        "depth_m": 11,
+        "vessel_type": "all",
+        "traffic_direction": "two-way"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.17,
+          22.298
+        ]
+      }
+    }
+  ]
+}
