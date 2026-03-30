@@ -354,7 +354,7 @@ uav-maritime-twin/
 - Python 3.10+
 - MATLAB R2023a+ with UAV Toolbox (academic license)
 - Node.js 16+ (for Cesium visualization)
-- Git
+- Git 
 
 ### Setup
 
