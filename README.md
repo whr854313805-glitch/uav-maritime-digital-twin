@@ -31,27 +31,23 @@ A comprehensive thesis research project combining maritime traffic integration, 
 ## Project Structure
 
 ```
-project/
+uav-maritime-twin/
 ├── src/                          # Python source code
 │   ├── hko_api_client.py        # HKO Open Data API wrapper
 │   ├── geospatial_loader.py     # Load LandsD & Open3DHK
 │   ├── maritime_agents.py       # Vessel agent model
 │   ├── maritime_simulator.py    # Traffic simulator
 │   ├── collision_detection.py   # Collision detection logic
-│   └── utils.py                 # Utility functions
+│   └── download_geospatial.py  # Data download & preparation script
 ├── tests/                        # Unit tests
 │   ├── test_hko_api.py
-│   ├── test_geospatial.py
-│   ├── test_maritime_simulator.py
 │   └── conftest.py
 ├── data/                         # Data storage
 │   ├── hko/                     # HKO API responses
 │   ├── geospatial/              # LandsD, Open3DHK
-│   ├── maritime/                # Fairways, vertiports
-│   └── maritime_traffic_baseline_24h.csv
+│   └── maritime/                # Fairways, vertiports
 ├── models/                       # MATLAB/Simulink models
-├── visualization/
-│   └── cesium-app/              # Cesium.js 3D viewer
+├── visualization/                # Cesium.js 3D viewer
 ├── output/                       # Simulation results
 ├── docs/                         # Documentation
 ├── requirements.txt              # Python dependencies
