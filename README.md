@@ -413,31 +413,6 @@ uav-maritime-twin/
 | Marine Dept | ✓ Agreement | VTMS data | Principal Fairways, vessel tracking |
 
 ---
-
-## Technology Stack
-
-**Simulation & Development**
-- Python 3.10+ (NumPy, SciPy, Pandas, Matplotlib)
-- MATLAB/Simulink UAV Toolbox
-- Jupyter Notebook for analysis
-
-**Visualization**
-- Cesium.js for 3D
-- Folium for 2D mapping
-- Matplotlib for plots
-
-**Data & APIs**
-- HKO Open Data API
-- Geospatial: GeoPandas, Rasterio, Shapely
-- Database: SQLite (lightweight, local)
-
-**DevOps**
-- Git/GitHub for version control
-- pytest for unit testing
-- Docker (optional, for reproducibility)
-
----
-
 ## Team Coordination & Project Structure
 
 ### Why This is One Project, Not Two
