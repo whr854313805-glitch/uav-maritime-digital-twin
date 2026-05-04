@@ -1,0 +1,6 @@
+corridor_id,corridor_name,hours_sampled,astar_found_hours,astar_availability_pct,avg_reroute_ratio
+C1,中环 → 启德邮轮码头,24,24,100.0,1.11
+C2,尖沙咀 → 红磡医院,24,24,100.0,1.08
+C3,北角 → 鲤鱼门,24,24,100.0,1.02
+C4,西九龙 → 中环,24,24,100.0,1.06
+C5,尖沙咀 → 北角,24,24,100.0,1.02

@@ -1,0 +1,6 @@
+corridor_id,name,distance_m,speed_mps,flight_time_s,avg_wind_mps,wind_factor,one_way_energy_wh,one_way_battery_pct,round_trip_battery_pct,feasible_one_way,feasible_round_trip,remaining_after_one_way_pct,remaining_after_round_trip_pct
+C1,中环 → 启德邮轮码头,6059.0,15,403.9,4.46,1.045,96.3,30.8,61.6,True,True,69.2,38.4
+C2,尖沙咀 → 红磡医院,1693.0,18,94.0,4.47,1.045,42.4,13.5,27.1,True,True,86.5,72.9
+C3,北角 → 鲤鱼门,4756.0,12,396.3,4.6,1.046,95.1,30.4,60.8,True,True,69.6,39.2
+C4,西九龙 → 中环,2193.0,14,156.7,4.45,1.045,53.3,17.0,34.0,True,True,83.0,66.0
+C5,尖沙咀 → 北角,2943.0,16,184.0,4.48,1.045,58.0,18.5,37.1,True,True,81.5,62.9
