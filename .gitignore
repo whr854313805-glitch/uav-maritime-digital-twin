@@ -37,6 +37,7 @@ ENV/
 .DS_Store
 *.sublime-project
 *.sublime-workspace
+.claude/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -48,24 +49,38 @@ ENV/
 htmlcov/
 .tox/
 
-# Data files (too large to commit)
+# === 大型外部数据 (不提交) ===
 data/hko/*.json
 data/hko/*.csv
 data/geospatial/*.tif
-data/geospatial/*.shp
-data/geospatial/*.dbf
-data/geospatial/*.shx
 data/open3dhk/*.zip
 data/open3dhk/*.geojson
-output/*.csv
-output/*.json
+
+# === 临时数据 (不提交) ===
+output/maritime_baseline_24h.csv
+output/maritime_baseline_24h.xlsx
+output/maritime_baseline_24h_with_step.xlsx
+output/vessel_positions.bad_landlocked.csv
+output/step_log.txt
+output/maritime_traffic_map.png
+output/positions_inline.json
+output/reroute_demo_minute720.json
+output/reroute_paths_hourly.json
+
+# 注意: V&V 核心数据必须提交
+#   output/vessel_positions.csv, all_real_vessels.json, buildings_hk.json,
+#   vv_*.csv, vv_*.json, multi_uav_coordination.json, uav_*.csv 等
+
+# AnyLogic 缓存 (6+ MB, 不需要)
+uav-maritime-twin1/cache/giscache-tiles-1*
+uav-maritime-twin1/al_internal/
 
 # MATLAB
 *.asv
 slprj/
 *.slxc
 
-# Node.js (Cesium)
+# Node.js
 node_modules/
 visualization/cesium-app/dist/
 
@@ -76,6 +91,8 @@ visualization/cesium-app/dist/
 # OS
 .DS_Store
 Thumbs.db
+.AppleDouble
+.LSOverride
 
 # Logs
 *.log
@@ -84,7 +101,3 @@ Thumbs.db
 *.tmp
 *.temp
 *~
-
-# OS specific
-.AppleDouble
-.LSOverride
