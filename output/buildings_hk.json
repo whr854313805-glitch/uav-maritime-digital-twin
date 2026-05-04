@@ -1,0 +1,258 @@
+{
+  "source": "Public open data — HK skyscraper coordinates from CTBUH database + GIS commons",
+  "note": "Footprint approximated as 50m square around centroid. For full vertical compliance, integrate Open3DHK (gigabyte-scale GML files; deferred to Phase 5).",
+  "buildings": [
+    {
+      "name": "International Commerce Centre (ICC)",
+      "lat": 22.3026,
+      "lon": 114.1601,
+      "height_m": 484,
+      "use": "Commercial",
+      "footprint_w_m": 78,
+      "footprint_l_m": 78
+    },
+    {
+      "name": "Two IFC",
+      "lat": 22.2854,
+      "lon": 114.1582,
+      "height_m": 415,
+      "use": "Commercial",
+      "footprint_w_m": 68,
+      "footprint_l_m": 68
+    },
+    {
+      "name": "Central Plaza",
+      "lat": 22.2796,
+      "lon": 114.1739,
+      "height_m": 374,
+      "use": "Commercial",
+      "footprint_w_m": 60,
+      "footprint_l_m": 60
+    },
+    {
+      "name": "Bank of China Tower",
+      "lat": 22.2789,
+      "lon": 114.1614,
+      "height_m": 367,
+      "use": "Commercial",
+      "footprint_w_m": 52,
+      "footprint_l_m": 52
+    },
+    {
+      "name": "The Center",
+      "lat": 22.2853,
+      "lon": 114.1551,
+      "height_m": 346,
+      "use": "Commercial",
+      "footprint_w_m": 51,
+      "footprint_l_m": 51
+    },
+    {
+      "name": "Cheung Kong Centre",
+      "lat": 22.2807,
+      "lon": 114.1606,
+      "height_m": 283,
+      "use": "Commercial",
+      "footprint_w_m": 50,
+      "footprint_l_m": 50
+    },
+    {
+      "name": "One Island East",
+      "lat": 22.2876,
+      "lon": 114.2195,
+      "height_m": 308,
+      "use": "Commercial",
+      "footprint_w_m": 60,
+      "footprint_l_m": 50
+    },
+    {
+      "name": "Manulife Plaza",
+      "lat": 22.2773,
+      "lon": 114.184,
+      "height_m": 240,
+      "use": "Commercial",
+      "footprint_w_m": 50,
+      "footprint_l_m": 40
+    },
+    {
+      "name": "Cullinan Towers (West Kowloon)",
+      "lat": 22.3038,
+      "lon": 114.1606,
+      "height_m": 270,
+      "use": "Residential",
+      "footprint_w_m": 45,
+      "footprint_l_m": 35
+    },
+    {
+      "name": "Sorrento (West Kowloon)",
+      "lat": 22.3063,
+      "lon": 114.1612,
+      "height_m": 256,
+      "use": "Residential",
+      "footprint_w_m": 45,
+      "footprint_l_m": 35
+    },
+    {
+      "name": "Highcliff (Happy Valley)",
+      "lat": 22.2738,
+      "lon": 114.183,
+      "height_m": 252,
+      "use": "Residential",
+      "footprint_w_m": 35,
+      "footprint_l_m": 35
+    },
+    {
+      "name": "Hopewell Centre",
+      "lat": 22.2742,
+      "lon": 114.1721,
+      "height_m": 222,
+      "use": "Commercial",
+      "footprint_w_m": 50,
+      "footprint_l_m": 50
+    },
+    {
+      "name": "Cosco Tower",
+      "lat": 22.2868,
+      "lon": 114.1554,
+      "height_m": 228,
+      "use": "Commercial",
+      "footprint_w_m": 50,
+      "footprint_l_m": 40
+    },
+    {
+      "name": "AIA Central",
+      "lat": 22.2828,
+      "lon": 114.1612,
+      "height_m": 185,
+      "use": "Commercial",
+      "footprint_w_m": 45,
+      "footprint_l_m": 38
+    },
+    {
+      "name": "One IFC",
+      "lat": 22.2862,
+      "lon": 114.1577,
+      "height_m": 210,
+      "use": "Commercial",
+      "footprint_w_m": 52,
+      "footprint_l_m": 52
+    },
+    {
+      "name": "Convention Plaza Office Tower",
+      "lat": 22.2826,
+      "lon": 114.1735,
+      "height_m": 199,
+      "use": "Commercial",
+      "footprint_w_m": 55,
+      "footprint_l_m": 45
+    },
+    {
+      "name": "The Harbourside",
+      "lat": 22.3034,
+      "lon": 114.1638,
+      "height_m": 256,
+      "use": "Residential",
+      "footprint_w_m": 60,
+      "footprint_l_m": 30
+    },
+    {
+      "name": "Arch (West Kowloon)",
+      "lat": 22.3057,
+      "lon": 114.164,
+      "height_m": 230,
+      "use": "Residential",
+      "footprint_w_m": 55,
+      "footprint_l_m": 30
+    },
+    {
+      "name": "Harbourfront Landmark (Hung Hom)",
+      "lat": 22.3041,
+      "lon": 114.1862,
+      "height_m": 233,
+      "use": "Residential",
+      "footprint_w_m": 45,
+      "footprint_l_m": 35
+    },
+    {
+      "name": "Lee Garden One (Causeway Bay)",
+      "lat": 22.2787,
+      "lon": 114.184,
+      "height_m": 168,
+      "use": "Commercial",
+      "footprint_w_m": 45,
+      "footprint_l_m": 40
+    },
+    {
+      "name": "Times Square Tower 1",
+      "lat": 22.2799,
+      "lon": 114.182,
+      "height_m": 196,
+      "use": "Commercial",
+      "footprint_w_m": 55,
+      "footprint_l_m": 45
+    },
+    {
+      "name": "K11 Atelier (Tsim Sha Tsui)",
+      "lat": 22.2962,
+      "lon": 114.1735,
+      "height_m": 220,
+      "use": "Commercial",
+      "footprint_w_m": 60,
+      "footprint_l_m": 50
+    },
+    {
+      "name": "Peninsula Hotel Tower",
+      "lat": 22.2956,
+      "lon": 114.1714,
+      "height_m": 142,
+      "use": "Hospitality",
+      "footprint_w_m": 75,
+      "footprint_l_m": 45
+    },
+    {
+      "name": "ICBC Tower (Garden Road)",
+      "lat": 22.2799,
+      "lon": 114.161,
+      "height_m": 188,
+      "use": "Commercial",
+      "footprint_w_m": 45,
+      "footprint_l_m": 40
+    },
+    {
+      "name": "Standard Chartered Bank Building",
+      "lat": 22.282,
+      "lon": 114.1607,
+      "height_m": 191,
+      "use": "Commercial",
+      "footprint_w_m": 38,
+      "footprint_l_m": 38
+    },
+    {
+      "name": "HSBC Main Building",
+      "lat": 22.2807,
+      "lon": 114.1599,
+      "height_m": 178,
+      "use": "Commercial",
+      "footprint_w_m": 45,
+      "footprint_l_m": 45
+    },
+    {
+      "name": "Citic Tower",
+      "lat": 22.2828,
+      "lon": 114.1655,
+      "height_m": 137,
+      "use": "Commercial",
+      "footprint_w_m": 50,
+      "footprint_l_m": 40
+    },
+    {
+      "name": "Far East Finance Centre",
+      "lat": 22.2779,
+      "lon": 114.1654,
+      "height_m": 145,
+      "use": "Commercial",
+      "footprint_w_m": 35,
+      "footprint_l_m": 35
+    }
+  ]
+}
