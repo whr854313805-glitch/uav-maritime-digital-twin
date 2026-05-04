@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>维港 UAV 数字孪生 V&V 平台</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0; font-family: -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+    color: white; min-height: 100vh; padding: 40px 20px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 50px; }
+  header h1 { font-size: 36px; margin: 0 0 8px; background: linear-gradient(135deg, #4fc3f7, #1a73e8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  header .sub { color: #9aa5b1; font-size: 15px; }
+  header .meta { color: #5a6478; font-size: 12px; margin-top: 8px; }
+
+  .stats-strip { display: flex; justify-content: center; gap: 30px; margin: 40px 0;
+    padding: 20px; background: rgba(255,255,255,0.04); border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08); }
+  .stats-strip .stat { text-align: center; }
+  .stats-strip .num { font-size: 32px; font-weight: 700; color: #4fc3f7; line-height: 1; }
+  .stats-strip .label { font-size: 11px; color: #9aa5b1; margin-top: 4px; }
+
+  .section { margin-bottom: 50px; }
+  .section-title { font-size: 18px; color: #4fc3f7; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid rgba(79,195,247,0.2); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+  .card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 24px;
+    text-decoration: none;
+    color: white;
+    transition: 0.2s;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover { transform: translateY(-4px); border-color: rgba(79,195,247,0.4); box-shadow: 0 10px 30px rgba(79,195,247,0.15); }
+  .card .badge {
+    position: absolute; top: 14px; right: 14px;
+    padding: 3px 10px; border-radius: 10px; font-size: 10px; font-weight: 600;
+  }
+  .badge-rec { background: #43a047; color: white; }
+  .badge-pro { background: #7b1fa2; color: white; }
+  .badge-classic { background: #757575; color: white; }
+  .badge-doc { background: #1976d2; color: white; }
+  .card .icon { font-size: 36px; margin-bottom: 10px; }
+  .card .title { font-size: 17px; font-weight: 700; margin: 0 0 6px; color: #e3eafd; }
+  .card .desc { font-size: 12px; color: #9aa5b1; line-height: 1.6; margin-bottom: 12px; min-height: 50px; }
+  .card .features { font-size: 11px; color: #5a6478; line-height: 1.7; }
+  .card .features strong { color: #9aa5b1; }
+  .card .open-btn { display: inline-block; margin-top: 14px; padding: 7px 14px; background: rgba(79,195,247,0.15); border: 1px solid rgba(79,195,247,0.3); border-radius: 6px; color: #4fc3f7; font-size: 12px; font-weight: 600; }
+  .card:hover .open-btn { background: #4fc3f7; color: #0a0e27; }
+
+  .quick-links { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0; }
+  .quick-link { padding: 8px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #9aa5b1; font-size: 12px; text-decoration: none; transition: 0.15s; }
+  .quick-link:hover { border-color: #4fc3f7; color: #4fc3f7; }
+
+  footer { text-align: center; color: #5a6478; font-size: 11px; margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>🛸 维港 UAV 物流数字孪生</h1>
+  <div class="sub">Verification & Validation Platform · Track 2 · Phase 1–6 Complete</div>
+  <div class="meta">8 真实数据源 · 73 艘船 · 5 条 UAV 走廊 · 28 栋建筑 · 7200 V&V 数据点</div>
+</header>
+
+<div class="stats-strip">
+  <div class="stat"><div class="num">73</div><div class="label">船舶 (8 仿真 + 65 真实)</div></div>
+  <div class="stat"><div class="num">5</div><div class="label">UAV 走廊 (含 5 架 agent)</div></div>
+  <div class="stat"><div class="num">100%</div><div class="label">A* 绕行可达</div></div>
+  <div class="stat"><div class="num">28</div><div class="label">3D 高层建筑</div></div>
+  <div class="stat"><div class="num">10</div><div class="label">HKO 风站</div></div>
+  <div class="stat"><div class="num">0</div><div class="label">UAV 协同冲突</div></div>
+</div>
+
+<div class="section">
+  <div class="section-title">🌟 推荐入口（优先用这两个）</div>
+  <div class="grid">
+    <a href="vessel_replay_3d_free.html" class="card">
+      <div class="badge badge-rec">推荐</div>
+      <div class="icon">✨</div>
+      <div class="title">3D Free · MapLibre + OpenFreeMap</div>
+      <div class="desc">真 3D 地球 + 真实 OSM 建筑物 + 自由视角 + 零 Token</div>
+      <div class="features">
+        <strong>引擎</strong>: MapLibre GL JS (开源)<br>
+        <strong>底图</strong>: OpenFreeMap 矢量瓦片 (无 token)<br>
+        <strong>建筑物</strong>: OSM 全球真实 footprint + height<br>
+        <strong>视角</strong>: 6 预设 + 自动旋转 + 3D 自由
+      </div>
+      <span class="open-btn">打开 →</span>
+    </a>
+
+    <a href="VV_INTEGRATED_REPORT.html" class="card">
+      <div class="badge badge-doc">报告</div>
+      <div class="icon">📊</div>
+      <div class="title">V&V 集成报告</div>
+      <div class="desc">Phase 1-6 全程 V&V 总结，含图表 + 量化结果 + 业务洞察</div>
+      <div class="features">
+        <strong>覆盖</strong>: 5 数据源 + 24h 合规率 + A* 路径<br>
+        <strong>图表</strong>: 24h 折线图 + 能耗柱状图<br>
+        <strong>洞察</strong>: 6 条 V&V 算法发现<br>
+        <strong>用途</strong>: 论文/答辩/PPT 素材
+      </div>
+      <span class="open-btn">查看报告 →</span>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">📍 全功能 V&V Dashboard</div>
+  <div class="grid">
+    <a href="vessel_replay.html" class="card">
+      <div class="badge badge-rec">完整算法</div>
+      <div class="icon">🗺️</div>
+      <div class="title">2D 大屏 · Leaflet</div>
+      <div class="desc">完整 V&V 算法演示 + 实时 JS A* + 24h 合规率</div>
+      <div class="features">
+        <strong>引擎</strong>: Leaflet 1.9 (轻量级)<br>
+        <strong>算法</strong>: 实时 JS A* 每分钟重算<br>
+        <strong>层数</strong>: UAV/船/风/建筑/合规率 5 层<br>
+        <strong>用途</strong>: V&V 算法主演示
+      </div>
+      <span class="open-btn">打开 →</span>
+    </a>
+
+    <a href="vessel_replay_3d_mapbox.html" class="card">
+      <div class="badge badge-pro">需 Token</div>
+      <div class="icon">🗺️</div>
+      <div class="title">3D Pro · Mapbox v3</div>
+      <div class="desc">Photorealistic 3D · 全球建筑纹理 · 视觉最佳</div>
+      <div class="features">
+        <strong>引擎</strong>: Mapbox GL JS v3 (商业)<br>
+        <strong>底图</strong>: Mapbox Standard photorealistic<br>
+        <strong>建筑物</strong>: 真实 vector + 立面纹理<br>
+        <strong>需求</strong>: Mapbox 免费 token
+      </div>
+      <span class="open-btn">打开 →</span>
+    </a>
+
+    <a href="vessel_replay_3d.html" class="card">
+      <div class="badge badge-classic">备用</div>
+      <div class="icon">🌍</div>
+      <div class="title">3D Classic · Cesium</div>
+      <div class="desc">真 3D 地球 + 卫星图 + Esri 影像</div>
+      <div class="features">
+        <strong>引擎</strong>: CesiumJS 1.117<br>
+        <strong>底图</strong>: Esri World Imagery<br>
+        <strong>建筑物</strong>: 28 栋手动 box (有限)<br>
+        <strong>用途</strong>: 视觉演示备用
+      </div>
+      <span class="open-btn">打开 →</span>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">📂 原始数据 & 离线脚本</div>
+  <div class="quick-links">
+    <a href="vessel_positions.csv" class="quick-link" download>📄 vessel_positions.csv (8 船 24h)</a>
+    <a href="all_real_vessels.json" class="quick-link" download>📄 all_real_vessels.json (65 真船)</a>
+    <a href="buildings_hk.json" class="quick-link" download>📄 buildings_hk.json (28 楼)</a>
+    <a href="wind_climatology.json" class="quick-link" download>📄 wind_climatology.json (10 风站)</a>
+    <a href="vv_24h_analysis.csv" class="quick-link" download>📊 vv_24h_analysis.csv (7200 行)</a>
+    <a href="vv_24h_summary.csv" class="quick-link" download>📊 vv_24h_summary.csv (合规率)</a>
+    <a href="vv_24h_reroute.csv" class="quick-link" download>📊 vv_24h_reroute.csv (A* 数据)</a>
+    <a href="vv_24h_reroute_summary.csv" class="quick-link" download>📊 reroute_summary.csv</a>
+    <a href="multi_uav_coordination.json" class="quick-link" download>📊 multi_uav_coordination.json</a>
+    <a href="uav_schedule.csv" class="quick-link" download>📊 uav_schedule.csv (起飞表)</a>
+    <a href="uav_energy_analysis.csv" class="quick-link" download>📊 uav_energy_analysis.csv (能耗)</a>
+    <a href="vessel_metadata.csv" class="quick-link" download>📄 vessel_metadata.csv (船 ID 映射)</a>
+    <a href="reroute_demo_paths.json" class="quick-link" download>📄 reroute_demo_paths.json (A* 路径)</a>
+    <a href="astar_routing.py" class="quick-link" download>🐍 astar_routing.py (A* 实现)</a>
+    <a href="multi_uav_coordination.py" class="quick-link" download>🐍 multi_uav_coordination.py (协同)</a>
+    <a href="uav_energy.py" class="quick-link" download>🐍 uav_energy.py (能耗)</a>
+    <a href="gen_v3_realdata.py" class="quick-link" download>🐍 gen_v3_realdata.py (数据生成)</a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">📚 项目文档</div>
+  <div class="quick-links">
+    <a href="../PHASE_3_COMPLETION_REPORT.md" class="quick-link">📑 Phase 3 报告 (UAV Agent)</a>
+    <a href="../PHASE_4_COMPLETION_REPORT.md" class="quick-link">📑 Phase 4 报告 (A* 路径)</a>
+    <a href="../PHASE_5_COMPLETION_REPORT.md" class="quick-link">📑 Phase 5 报告 (实时 + 3D)</a>
+    <a href="README_DATA_SOURCES.md" class="quick-link">📑 数据源详细说明</a>
+    <a href="../README.md" class="quick-link">📑 项目主 README</a>
+    <a href="../FEASIBILITY_REVIEW.md" class="quick-link">📑 可行性审查</a>
+    <a href="../RISKS_AND_LIMITATIONS.md" class="quick-link">📑 风险与限制</a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">⌨️ 快捷键 (所有 dashboard)</div>
+  <div style="background: rgba(255,255,255,0.04); border-radius: 10px; padding: 18px 24px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; font-size: 13px;">
+      <div><b style="color:#4fc3f7;">Space</b> 暂停/播放</div>
+      <div><b style="color:#4fc3f7;">← →</b> ±1 分钟</div>
+      <div><b style="color:#4fc3f7;">Shift+← →</b> ±10 分钟</div>
+      <div><b style="color:#4fc3f7;">R</b> 重置视图</div>
+      <div><b style="color:#4fc3f7;">F</b> 全屏</div>
+      <div><b style="color:#4fc3f7;">M</b> 切换面板</div>
+      <div><b style="color:#4fc3f7;">I</b> 数据真实性说明</div>
+      <div><b style="color:#4fc3f7;">S</b> 截图</div>
+      <div><b style="color:#4fc3f7;">P</b> FPS 监视</div>
+      <div><b style="color:#4fc3f7;">Esc</b> 关闭弹窗</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Track 2 V&V Team · 维港 UAV 数字孪生项目<br>
+  Phase 1-6 完成 · 总体进度 92% · Generated 2026-05-04
+</footer>
+
+</div>
+</body>
+</html>
