@@ -1,0 +1,507 @@
+{
+  "version": "F24-Windows-20261106",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 200,
+      "sha256": "f2e191e45633549f3b63e45a439f66b5606e2e497940ec679342b23fad9e0e21"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 511,
+      "sha256": "793e6c064673e04a3c4b21cc5e9ae5d1dc9458037cefd9c8a995489a47787551"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1459,
+      "sha256": "1c7ee06aa9acdcd716aa946546b355fc0a49c256df238a8e9f36409b8230099d"
+    },
+    {
+      "path": "ais_anylogic_bridge.py",
+      "bytes": 5106,
+      "sha256": "ec7c44de473394d3b38d5a327e2d0e2042d1a2a599275b5689a39d7a49097c78"
+    },
+    {
+      "path": "anylogic/AIS_Visual_Demo.alp",
+      "bytes": 11552,
+      "sha256": "c9a587f4fc25ca7b0225eb97ae8c17518dce7c73b67bec290bfd1eda7ab57b2e"
+    },
+    {
+      "path": "anylogic/ctrl_wheel.js",
+      "bytes": 5229,
+      "sha256": "c862f80ebbcc6eaa1979093aaf9bbe41f86e1ead31b034655d01bf9d0bde34e1"
+    },
+    {
+      "path": "anylogic/harbour_background.png",
+      "bytes": 577580,
+      "sha256": "8823b5193e56193b3ff2fb2198c79252a9b9470ec0e9e288373f51dcf2464273"
+    },
+    {
+      "path": "anylogic/native-visual-demo.jar",
+      "bytes": 64365,
+      "sha256": "a948f77b69ed52a6260df395db9bcd061b89913c1a827e48cb0020e0b9fe3f2e"
+    },
+    {
+      "path": "anylogic/NativeDemoView.java",
+      "bytes": 37689,
+      "sha256": "cbc5b8146a0589499c9d9381ee62bec9f0a134199ce0c592791f9f2a117cd1b0"
+    },
+    {
+      "path": "anylogic/NativeScenery.java",
+      "bytes": 7963,
+      "sha256": "688f7d3e4ed823c2ac28c4999aee257a00cb956db93412e50a359bbd79cd25ad"
+    },
+    {
+      "path": "anylogic/NativeWorkbench.java",
+      "bytes": 30386,
+      "sha256": "b4a0b614f17773080f3d79b794f8b337e1ee21106d54f6d31bfb5d1e1d23c812"
+    },
+    {
+      "path": "anylogic/visual_demo/scenery.json",
+      "bytes": 19706296,
+      "sha256": "0f48211ce6739b2a77e3ca16411771882a5268c21e4c5810f81238f9b8c64c2e"
+    },
+    {
+      "path": "anylogic/visual_demo/support.json",
+      "bytes": 4744955,
+      "sha256": "b040b1bdf3ecbf45c5b00e90d84578e2da8a2971d1ed80378bde6dbff09066a4"
+    },
+    {
+      "path": "anylogic/visual_sources/NativeWorkbench.java",
+      "bytes": 30492,
+      "sha256": "4346ee1d865fa9add9d59eb76a74c31897e486b72c596fdcfe135cf12a638302"
+    },
+    {
+      "path": "anylogic/workbench/provenance.json",
+      "bytes": 1093,
+      "sha256": "59c585b6888d12c625253e98fa0cabe950e973c0c77cb4bb944449a95bb103e3"
+    },
+    {
+      "path": "anylogic/workbench/workspace.json",
+      "bytes": 1196821,
+      "sha256": "39af3069ad27f045a52869affb48bc906088ac17e48822cf84c329aebc210997"
+    },
+    {
+      "path": "build_anylogic_visual.py",
+      "bytes": 2344,
+      "sha256": "a3d22473d7fafa8594acc92df8ad15da20d673fab2e17a2bc58c5ddfa18ecf40"
+    },
+    {
+      "path": "config/ais-single-task.json",
+      "bytes": 2425,
+      "sha256": "4b367cd1d6f14adb4a219093139f39e222ac2642158669452fbc5d80ebf125a6"
+    },
+    {
+      "path": "config/parameter-sources.json",
+      "bytes": 13217,
+      "sha256": "4686ef11387b7f444b4a527a776d7f32cee8f16a977ffb7101f15766267df72b"
+    },
+    {
+      "path": "config.yaml",
+      "bytes": 4256,
+      "sha256": "1a61570296343e819097edb92f3b33ee0d28237f4708ae97608df5c0f843d167"
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "bytes": 1815,
+      "sha256": "59a6077e5bc563c504b828263a71ff468091052fabb764680a2f965ed53d4147"
+    },
+    {
+      "path": "docs/provenance/portable-code-map.json",
+      "bytes": 3774,
+      "sha256": "d1d4feecc55aef93d465b1dc47c59414f2e3ebd6cfa7d5c32b61ddc9112e09e8"
+    },
+    {
+      "path": "docs/provenance/scenery/coast_raw.geojson",
+      "bytes": 128712,
+      "sha256": "29b7474937e11f9043ad82b8146e47e72e54f980e2b0332f023087a51ab27bb0"
+    },
+    {
+      "path": "docs/provenance/scenery/coast_request.json",
+      "bytes": 694,
+      "sha256": "ffb58a19dea41ca5129897e86bb398d057a63abc54f2ea057095412969e6e52a"
+    },
+    {
+      "path": "docs/provenance/scenery/land_raw.geojson",
+      "bytes": 774357,
+      "sha256": "c811c7625be688cb39118c560fab4c3fafb17858ebfec023698a3f7157158dc7"
+    },
+    {
+      "path": "docs/provenance/scenery/land_request.json",
+      "bytes": 423,
+      "sha256": "f702f692f26f7914aa4e5a444747a35eb7876668e31643c6fc3b73f11f7fbe16"
+    },
+    {
+      "path": "docs/provenance/scenery/preparation.json",
+      "bytes": 3156,
+      "sha256": "78cbea8ba36f983038cb39d6c5a384d2f47023f42cfb79636f91d90fcb94a2e2"
+    },
+    {
+      "path": "docs/provenance/scenery/prepare_scenery.py",
+      "bytes": 9065,
+      "sha256": "19ae627a1165078cc7f35e0869c2121e5fcb009492eabdd10371cd01789d207c"
+    },
+    {
+      "path": "docs/provenance/scenery/reclamation_raw.geojson",
+      "bytes": 3653,
+      "sha256": "483abd510649a6771df857580397a09f73f3ad91277df519ab852a9edab8fe07"
+    },
+    {
+      "path": "docs/provenance/scenery/reclamation_request.json",
+      "bytes": 386,
+      "sha256": "c35d43e4105533e102d785f8d188abb035873668b56943a2c63cd2cf651832b9"
+    },
+    {
+      "path": "docs/REFERENCES.md",
+      "bytes": 917,
+      "sha256": "b9d938b2ab9e8ad78fb8aa0d6349a50427b1dedc37510f306390183574db1f88"
+    },
+    {
+      "path": "docs/verification/F20/production_verification.json",
+      "bytes": 4393,
+      "sha256": "f74e87bac509aa541f4caa12a5942a8a9830fce226f8beb0ec1fab58514c6688"
+    },
+    {
+      "path": "docs/verification/F20/staged_api_verification.json",
+      "bytes": 19383,
+      "sha256": "85cc310991a7940bc1dff5fa09799ba4502b406c2921b8cbb0df2ad1f3ce955f"
+    },
+    {
+      "path": "docs/verification/F23/six_cases_verification.json",
+      "bytes": 3640,
+      "sha256": "6a4e1225e9d6e7aa28c6b22dba9cad1df8369f6d909b7bbf87867190f33241a5"
+    },
+    {
+      "path": "docs/verification/F23/verification.json",
+      "bytes": 16373,
+      "sha256": "d870a0c59be1adade2fd29568d957747aa82f7501a091b295d0d2ab9efa4a7e6"
+    },
+    {
+      "path": "docs/verification/F23/visible_smoke.json",
+      "bytes": 635,
+      "sha256": "41d69d28bc41bb5299e6106350c8c5974e3e30e385184900401e5855a7ecc845"
+    },
+    {
+      "path": "docs/verification/F24/cold-restart-verification.json",
+      "bytes": 2497,
+      "sha256": "cd28c5742920e93d59a3f0df5b12003d6f6bb63a9fe9ac00f51314ce2400aaf3"
+    },
+    {
+      "path": "docs/verification/F24/data-and-recompute-verification.json",
+      "bytes": 8002,
+      "sha256": "400025887a070c02f96635520a1516e8e53f3fb361ba4e22f43ec8e08083b7cc"
+    },
+    {
+      "path": "docs/verification/F24/delivery-verification.json",
+      "bytes": 3544,
+      "sha256": "2c5b77b3f6457b2cc5e79de9d841a29944f3601d4a0cdc74e7faf451a90ccc3f"
+    },
+    {
+      "path": "docs/verification/F24/git-snapshot-verification.json",
+      "bytes": 4115,
+      "sha256": "b2225974a076dc0db5ebf013b246dc6840028df04f7edbc3d3b72c8d45d4fa17"
+    },
+    {
+      "path": "docs/verification/F24/native-input-verification.json",
+      "bytes": 3795,
+      "sha256": "62ab0b350a02dd6ca9c26e255d30b328d35628a9f00e03320b8e7842b493234d"
+    },
+    {
+      "path": "docs/verification/F24/README.md",
+      "bytes": 1640,
+      "sha256": "8ebb984a74a7acc8a00000dcbd3f368474104d07eb3f6f09ba9664ee32715848"
+    },
+    {
+      "path": "docs/verification/F24/relocated-demo.png",
+      "bytes": 586041,
+      "sha256": "b2071183cd6292c3d8d46a18fb5c274a808860212b05726dc572eccb43cf61ec"
+    },
+    {
+      "path": "docs/verification/F24/runtime-bootstrap-verification.json",
+      "bytes": 3300,
+      "sha256": "b0ade1f259e3d0f679488a2e83d0976f40629e4268894f781d188e3204ed5a24"
+    },
+    {
+      "path": "docs/verification/F24/runtime-build-verification.json",
+      "bytes": 24034,
+      "sha256": "337894f0a29f412ebe7d091bfda0773025c8b2244d5a36080cefafc71aef33c3"
+    },
+    {
+      "path": "docs/verification/F24/six-cases-verification.json",
+      "bytes": 3640,
+      "sha256": "5f2783d84ca62f4a6dad1c11495bb1bf0acc12102ec240c72706aab1085d6e1f"
+    },
+    {
+      "path": "portable_runtime.py",
+      "bytes": 4473,
+      "sha256": "1db14c14ac271dff7977fc94820b8547fc178be89ac05b766650b73e8780e342"
+    },
+    {
+      "path": "prepare_anylogic_visual.py",
+      "bytes": 6722,
+      "sha256": "fee89d8f737612dbae7212eb11877b198bac801d08800879214978644059a6ff"
+    },
+    {
+      "path": "prepare_portable_model.py",
+      "bytes": 2691,
+      "sha256": "055cd48a24a8175f5365cd1f5a7a92bc9786fbbee4309641efe71ab53721763c"
+    },
+    {
+      "path": "presentation_controls.py",
+      "bytes": 9946,
+      "sha256": "7715a3ed7eab4f2334cad2226554786f92047c191d11165afe12b3da61402c01"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5877,
+      "sha256": "05ed57bb2ef0c7620f5ba3d60f014c4282d76a971992049888707d7150da72d7"
+    },
+    {
+      "path": "requirements-runtime.lock.txt",
+      "bytes": 308,
+      "sha256": "b1033116211f37e96e9bfc4a179739b86f019c0d12ef9799733b498b9814534a"
+    },
+    {
+      "path": "run_ais_single_task.py",
+      "bytes": 1790,
+      "sha256": "25384041daba736316ca11c07cee164a7e268675af86b5bfab263e2fdad1b761"
+    },
+    {
+      "path": "runtime/data/current-data.manifest.json",
+      "bytes": 29407,
+      "sha256": "fc9dcbd29aa4a38f83066e739f9dbafd4cab18d07d53469be496339dcbb10b9d"
+    },
+    {
+      "path": "runtime/data/current-data.zip",
+      "bytes": 41757498,
+      "sha256": "0c0b560977e18dd1becc979b15d9759073847b5077b6b778f2cde5a6411bd2b1"
+    },
+    {
+      "path": "runtime/ompl/libgcc_s_seh-1.dll",
+      "bytes": 150537,
+      "sha256": "791ebf66e99c7c1b4ed3666468cec45a0172b4c8942ac6c84c3e9cab3e1b5270"
+    },
+    {
+      "path": "runtime/ompl/libstdc++-6.dll",
+      "bytes": 2659194,
+      "sha256": "4e4822dc4aaa99383f581dae7ab9464ae89346c5ca742f7efbcdebe20b0fe7b5"
+    },
+    {
+      "path": "runtime/ompl/libwinpthread-1.dll",
+      "bytes": 73820,
+      "sha256": "ee4f503512b09d7e2668518c41d6c176755a354523ae15aa4d36220c9cb31791"
+    },
+    {
+      "path": "runtime/ompl/manifest.json",
+      "bytes": 642,
+      "sha256": "63a14e5182d48230fde8891df50a3094457f5e02d3f0452bdfddefd43e3db729"
+    },
+    {
+      "path": "runtime/ompl/OMPL-LICENSE",
+      "bytes": 1607,
+      "sha256": "f1b0b41dbea7d46f34a723e827b5ef50070d006b34d5463f77a0a06d3dccdf2d"
+    },
+    {
+      "path": "runtime/ompl/runtime-licenses/gcc/COPYING.RUNTIME",
+      "bytes": 3324,
+      "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74"
+    },
+    {
+      "path": "runtime/ompl/runtime-licenses/gcc/COPYING3",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "runtime/ompl/runtime-licenses/libgcc/COPYING.RUNTIME",
+      "bytes": 3324,
+      "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74"
+    },
+    {
+      "path": "runtime/ompl/runtime-licenses/libgcc/COPYING3",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "runtime/ompl/runtime-licenses/libwinpthread/COPYING",
+      "bytes": 2883,
+      "sha256": "63263614cdd29f2f93cba85e992f041b31f9fc7b4033692f31269489a8a1b177"
+    },
+    {
+      "path": "runtime/ompl/settings.json",
+      "bytes": 33923,
+      "sha256": "996f4e86f49c2969f8b0e88030ac15279908c338be7a55858e4d6eb24acf9235"
+    },
+    {
+      "path": "runtime/ompl/sst_probe.cpp",
+      "bytes": 9044,
+      "sha256": "5260e4e32321b5fbe66094208ed9da3df1f3264490b6be7899f98b815caa0742"
+    },
+    {
+      "path": "runtime/ompl/sst_worker.exe",
+      "bytes": 3031814,
+      "sha256": "b54b787e8e767ecdd63f5cd882336902a095ec178e64b97f71d15d2dc49cfccc"
+    },
+    {
+      "path": "runtime/packages/windows-python.manifest.json",
+      "bytes": 18907,
+      "sha256": "81e6550ab1278823b97227ace4831acb0ea0fec15a389cd9fc6b8f761af75ff1"
+    },
+    {
+      "path": "runtime/packages/windows-python.zip.part01",
+      "bytes": 41943040,
+      "sha256": "8ea8f7f9eb4c7c8a870d05d20c960c1bc7de0bfea970bad9561eb817b9353bb0"
+    },
+    {
+      "path": "runtime/packages/windows-python.zip.part02",
+      "bytes": 39130128,
+      "sha256": "07b77d01b5da2384693f3eabf1127e9f3b3d6686c48874ba1bcd77605124bda2"
+    },
+    {
+      "path": "scripts/bootstrap_project.py",
+      "bytes": 3186,
+      "sha256": "fe3439155ac30bdb07f02664898ed67a85246458b79fb17de2794fe654519b01"
+    },
+    {
+      "path": "scripts/release/build_python_runtime.py",
+      "bytes": 8916,
+      "sha256": "cc73b201d6ffe04642905cfeb9152ab93ef2086b9411a26c5da13c09f2833f73"
+    },
+    {
+      "path": "scripts/setup_runtime.ps1",
+      "bytes": 9233,
+      "sha256": "cf1db66ae8bcf62b35743ea5e5c2300c450738564ef9035dcbff79e4cfb7647a"
+    },
+    {
+      "path": "scripts/start_project.ps1",
+      "bytes": 1130,
+      "sha256": "42d00eda77d7fd998c47c5a30c45bc3169be77ae4bcfde846dddbed6035e2f14"
+    },
+    {
+      "path": "scripts/verify_project.py",
+      "bytes": 20784,
+      "sha256": "8ef18e316702d7a33788a008abdeade94181ff55a375b6e787ed65f304947163"
+    },
+    {
+      "path": "select_research_points.py",
+      "bytes": 6545,
+      "sha256": "eae5a975be2704bef59e3fdfa9e15d2f6d3d924ce44dc12f76b84733cceb7cae"
+    },
+    {
+      "path": "settings.example.json",
+      "bytes": 81,
+      "sha256": "8863b8c81d2201fec1b373a78fda91f282d85d35b9d6e88b25de4d06f2ca5db8"
+    },
+    {
+      "path": "src/__init__.py",
+      "bytes": 420,
+      "sha256": "7c020d12fecbd360773dab66be040d7afedcced85f8916402bade41ef7f917a8"
+    },
+    {
+      "path": "src/ais_data.py",
+      "bytes": 17540,
+      "sha256": "d484861627b9006ab6f33cc5cb41098c26f41b2e061608b12946e1c923fb470a"
+    },
+    {
+      "path": "src/ais_replay.py",
+      "bytes": 6466,
+      "sha256": "ec4f69fa6ad598268a6ef83202af96439f44f8cee3926a4ca31737694ca26d57"
+    },
+    {
+      "path": "src/ais_segments.py",
+      "bytes": 4698,
+      "sha256": "64ca45b06cf41e162f63ea1bc8f3037d91ce3031a851ff00e4b3cd2ff1c46300"
+    },
+    {
+      "path": "src/ais_single_task.py",
+      "bytes": 17972,
+      "sha256": "e80c88262a4442c108867ad1ac284ae42f01ec404abf96b933d22046298aa71f"
+    },
+    {
+      "path": "src/anylogic_workspace.py",
+      "bytes": 11921,
+      "sha256": "3669b2f5d24083a773793ef75ba2eb0ce42afe6abc7bed16bde8c2a6d425f747"
+    },
+    {
+      "path": "src/departure_search.py",
+      "bytes": 5410,
+      "sha256": "1f6c42d3182ef40f215a1a3453180566c940e6703fb18a7c4b58d722228c51be"
+    },
+    {
+      "path": "src/flight_simulation.py",
+      "bytes": 11321,
+      "sha256": "89300a42d344a5c045aac1a9f9afa72fff1f4a7a49b8c87bfb930e9ac48a7951"
+    },
+    {
+      "path": "src/hko_weather.py",
+      "bytes": 8665,
+      "sha256": "79439f90bbb4357517a66a41190e057e9a7ea60a10253ae49404e2802755c025"
+    },
+    {
+      "path": "src/metric_projection.py",
+      "bytes": 1003,
+      "sha256": "3dbe625d32cfc2d9fb8541950f008b3728731a63db89f2f3b16855f04cbdf397"
+    },
+    {
+      "path": "src/official_data.py",
+      "bytes": 8172,
+      "sha256": "0a117d42c7dd4d072d2b712bd10ee382823c65cc6aae620bf323930554102d3d"
+    },
+    {
+      "path": "src/ompl_sst.py",
+      "bytes": 7542,
+      "sha256": "7455294f1430c47cb1df44c2eea95a1cb4e59355d4b81e0075c9041f92dd5818"
+    },
+    {
+      "path": "src/project_config.py",
+      "bytes": 5348,
+      "sha256": "bc24270a05f715296f697b9638c54cd4f3a3c8967980541ccbdc42264abd7ff0"
+    },
+    {
+      "path": "src/safe_planning.py",
+      "bytes": 11828,
+      "sha256": "f4f2340873535fb5e1550bd868e3067291220e82f0fea09612780e6055a11357"
+    },
+    {
+      "path": "src/temporal_planning.py",
+      "bytes": 13602,
+      "sha256": "b077904e75c432c851031dc52bd7a4ad0760a57282567f52789497803ca28fbd"
+    },
+    {
+      "path": "start.cmd",
+      "bytes": 231,
+      "sha256": "d0217b995b4adf97e296567d98d3ce14f46190430e8165bc6effa8b561a222ad"
+    },
+    {
+      "path": "start_full_demo.py",
+      "bytes": 7123,
+      "sha256": "fb4a35ff947775168ff57d8d0f4107d9a13ed914a5d24ed8e811e30b0cea03a1"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1325,
+      "sha256": "c856a80833b6d77bdb15e80829ea6dd56ba1978f510986c6b5ac7e0f6b4565a7"
+    },
+    {
+      "path": "verify_ais_encounters.py",
+      "bytes": 12917,
+      "sha256": "30dc3883d08a602b7c717f02c25952ec0db3ec70693865837cf7cac94d036199"
+    },
+    {
+      "path": "启动完整演示.cmd",
+      "bytes": 231,
+      "sha256": "d0217b995b4adf97e296567d98d3ce14f46190430e8165bc6effa8b561a222ad"
+    },
+    {
+      "path": "检查运行环境.cmd",
+      "bytes": 233,
+      "sha256": "31b51a76e7afb0966ba07b2bf01067a882ce92896970beb97555b3687916f4ba"
+    },
+    {
+      "path": "验证项目数据.cmd",
+      "bytes": 234,
+      "sha256": "a72c38bbe27f5b66177619e9763e9856ed1e535263c7c152a76bdf330b5bb698"
+    }
+  ],
+  "bytes": 157211193,
+  "note": "Original file bytes; Git line-ending conversion disabled. This manifest excludes itself."
+}

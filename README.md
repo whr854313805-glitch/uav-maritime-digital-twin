@@ -1,454 +1,62 @@
-# Digital Twin Air Corridor System for Victoria Harbour UAV Logistics
-
-## 1. Research Problem & Motivation
-
-### The Core Question
-How can autonomous unmanned aerial vehicles (UAVs) safely operate in ultra-dense urban airspace alongside manned maritime traffic?
-
-**Context**: Victoria Harbour is one of the world's busiest shipping channels with:
-- 10 Principal Fairways managing complex vessel flow
-- Dense airspace subject to Civil Aviation Department (CAD) constraints
-- Residential areas with strict privacy regulations (PDPO)
-- Dynamic meteorological conditions affecting both air and sea traffic
-
-**Challenge**: Current UAV corridor planning lacks integration with maritime traffic layer. Existing research treats airspace and sea traffic separately, missing critical interaction points.
-
-**Our Approach**: Build a computational digital twin that unifies maritime traffic, environmental constraints, and UAV autonomy requirements into a single simulation environment.
-
----
-
-## 2. System Architecture
-
-### 2.1 Conceptual Framework: 5-Layer Digital Twin
-
-```
-┌─────────────────────────────────────────────────────────┐
-│ Layer 5: OUTPUT GENERATION                               │
-│  ├─ CAD Regulatory Evidence Package                       │
-│  ├─ Risk Assessment Report                                │
-│  └─ Multi-modal Logistics Recommendation                  │
-├─────────────────────────────────────────────────────────┤
-│ Layer 4: VERIFICATION & VALIDATION                       │
-│  ├─ Monte Carlo Uncertainty Quantification                │
-│  ├─ Component-level Validation                            │
-│  ├─ Cybersecurity Threat Modeling                         │
-│  └─ Privacy Compliance Verification (PDPO)               │
-├─────────────────────────────────────────────────────────┤
-│ Layer 3: DECISION OPTIMIZATION                           │
-│  ├─ Path Planning (A*/RRT* algorithms)                    │
-│  ├─ Fairway-Corridor Conflict Detection                   │
-│  ├─ Multi-modal Logistics Comparison                      │
-│  └─ Vertiport Location Optimization                       │
-├─────────────────────────────────────────────────────────┤
-│ Layer 2: ENVIRONMENTAL SIMULATION                        │
-│  ├─ Maritime Traffic Agent-Based Model                    │
-│  ├─ Wind Field Dynamics (from HKO data)                   │
-│  ├─ 3D Building & Terrain Representation                  │
-│  └─ Noise Propagation Model                               │
-├─────────────────────────────────────────────────────────┤
-│ Layer 1: DATA INPUT & INTEGRATION                        │
-│  ├─ HKO Open Data API (meteorological)                    │
-│  ├─ LandsD 3D-BIT00 (elevation)                           │
-│  ├─ Open3DHK (urban geometry)                             │
-│  ├─ Marine Department (fairway definitions)               │
-│  └─ Historical AIS/VTMS (vessel behavior)                 │
-└─────────────────────────────────────────────────────────┘
-```
-
-**Design Rationale**: Layered separation enables modularity — each layer can be validated independently before integration. Layer 1-2 form the **environmental foundation**, Layer 3 the **decision logic**, Layer 4-5 the **validation and output**.
-
----
-
-## 3. Phase 1 Implementation: Foundation & Data Integration
-
-### 3.1 What We Built
-
-Our team implemented a complete end-to-end digital twin foundation. This phase focused on establishing the **environmental modeling backbone** that future UAV corridor analysis depends on.
-
-| Component | Status | Our Implementation |
-|-----------|--------|-------------------|
-| **Data Integration Layer** | ✓ Complete | Wrapped HKO, LandsD, Open3DHK APIs with modular clients; implemented exponential backoff retry logic for robust data fetching |
-| **Geospatial Environment** | ✓ Complete | Loaded 2.1 MB elevation grid (20m resolution) + 50 building features; set up spatial indexing for fast collision queries |
-| **Maritime Agent Model** | ✓ Complete | Designed 3 heterogeneous agent classes (VesselAgent base) with type-specific speed profiles and wind sensitivity functions |
-| **Traffic Simulator Engine** | ✓ Complete | Built agent-based orchestrator: per-minute timestep, wind coupling, fairway constraint checking, collision detection (Haversine < 500m) |
-| **Output Pipeline** | ✓ Complete | Generated 11,520-record CSV (8 vessels × 1,440 minutes); verified schema completeness and no NaN values |
-
-### 3.2 Key Design Decisions & Rationale
-
-#### Decision 1: We Chose Agent-Based Modeling Instead of Flow Models
-**Why We Made This Choice**:
-Traditional traffic flow models (macroscopic) lose fidelity for small vessel populations. We knew Victoria Harbour has diverse traffic (ferries, cargo, yachts) with **conflicting behaviors** — ferries follow fixed timetables, cargo ships react to wind, yachts vary speed. A flow model would average these away.
-
-**How We Implemented It**:
-- Each vessel is an autonomous agent with persistent state (position, velocity, type, destination)
-- Agent-specific update rules: ferries move deterministically; cargo agents apply wind sensitivity; yachts have variable speed
-- Agents update every minute based on: heading-to-destination, wind perturbation, fairway boundary checks
-- Multi-agent interactions happen through a centralized collision detector
-
-**Trade-off**: ABM is slower than continuous flow models (~1440 timesteps per simulation) but captures agent diversity that a flow model would miss.
-
-#### Decision 2: We Coupled Wind from HKO Real-Time API (Not Synthetic)
-**Why We Made This Choice**:
-Both UAVs and vessels respond to wind. Synthetic wind profiles would be internally consistent but decoupled from actual conditions. By pulling from HKO Open Data, our simulation inherits real meteorological context for the date (2026-03-30).
-
-**How We Implemented It**:
-- Query HKO API at each 10-minute interval
-- Apply wind effect as **bearing perturbation** to vessel heading: `δheading = wind_strength_factor × sin(wind_direction − vessel_bearing)`
-- Wind affects trajectory shape but not speed (physically accurate for large cargo vessels)
-
-**Limitation Identified**: We're using linear perturbation in the simulator, but HKO provides full 3D wind gradients. Phase 2 will interpolate properly.
-
-#### Decision 3: We Enforced Principal Fairways as Hard Constraints
-**Why We Made This Choice**:
-Hong Kong Marine Department defines 10 Principal Fairways (law-enforced shipping lanes). Violating these boundaries is illegal AND would make a UAV corridor plan unacceptable to regulators. We treated them as immutable operational constraints.
-
-**How We Implemented It**:
-- Modeled 5 major fairways with polygon boundaries (lat/lon min-max)
-- Check-in-fairway: every vessel's position is tested each minute against fairway polygon
-- Output CSV flags violations for phase 2 analysis (`in_fairway = True/False`)
-
-**Our Decision**: Rather than force vessels to stay in fairways (which would require complex path-planning), we record violations and plan avoidance behavior for Phase 2.
-
-#### Decision 4: We Used Python for Phase 1 (Deferring MATLAB)
-**Why We Made This Choice**:
-- **Iteration speed**: Python is interpretive (no compile-test-debug cycle); helps when exploring agent behavior
-- **Data visualization**: Pandas + Matplotlib are mature; can plot 11,520 records instantly
-- **Extensibility**: Adding a new vessel type is <10 lines (inherit base class); MATLAB would require more scaffolding
-- **Future integration**: Phase 2 UAV pathfinding will likely use Python-based motion planning libraries (RRT*, OMPL)
-
-**Trade-off**: MATLAB/Simulink's **Control Toolbox** (for UAV dynamics, PID control) is deferred to Phase 2+ when we design avoidance algorithms. For Phase 1, pure kinematics in Python is appropriate.
-
----
-
-## 4. Technical Deep-Dive: How We Built the Simulator
-
-### 4.1 The Simulation Loop — What We Implemented
-
-We built the simulator as a **discrete-time step orchestrator**. Each minute (timestep = 60 seconds), the loop executes 4 stages:
-
-```python
-for t in range(simulation_start, simulation_end, dt=60s):
-    # ========== STAGE 1: Environment Input ==========
-    # We fetch HKO wind data at current time
-    wind_data = hko_api_client.get_wind_at_time(t)
-
-    # ========== STAGE 2: Agent Position Update ==========
-    # For each active vessel, we calculate new position
-    for vessel in active_vessels:
-        # 2a. Bearing to destination (great circle course)
-        bearing_to_dest = atan2(dest.lon - vessel.lon, dest.lat - vessel.lat)
-
-        # 2b. Apply wind effect (our wind coupling model)
-        wind_effect = 0.1 * wind_data.speed * sin(wind_data.direction - bearing_to_dest)
-        actual_bearing = bearing_to_dest + wind_effect
-
-        # 2c. Update lat/lon using Haversine forward formula
-        # (converts speed [m/s] + bearing into lat/lon change)
-        vessel.lat += (vessel.speed * cos(actual_bearing) * dt) / 111000
-        vessel.lon += (vessel.speed * sin(actual_bearing) * dt) / (111000 * cos(lat_radians))
-
-        # 2d. Check fairway compliance
-        vessel.in_fairway = fairway_monitor.check_boundary(vessel.lat, vessel.lon)
-
-    # ========== STAGE 3: Collision Detection ==========
-    # We check all vessel pairs for proximity
-    collision_detector.check_all_pairs(active_vessels, min_distance=500m)
-    # Sets collision_risk = True if any vessel pair < 500m apart
-
-    # ========== STAGE 4: Data Logging ==========
-    # We record state snapshot for all vessels
-    for vessel in active_vessels:
-        output_csv.write({
-            'timestamp': t,
-            'vessel_id': vessel.id,
-            'vessel_type': vessel.type,
-            'lat': vessel.lat,
-            'lon': vessel.lon,
-            'speed': vessel.speed,
-            'heading': vessel.bearing,
-            'collision_risk': vessel.collision_risk,
-            'in_fairway': vessel.in_fairway,
-            'wind_speed': wind_data.speed
-        })
-```
-
-**Key Implementation Decisions**:
-- **1-minute timestep**: 60 seconds balances accuracy (collision detection needs fine granularity) vs. computational cost (1440 timesteps/day × 8 vessels = 11,520 records)
-- **Haversine great-circle formula**: More accurate than flat-earth approximation for harbor-scale distances
-- **Wind as bearing perturbation**: Simplified model appropriate for Phase 1 validation
-
-### 4.2 Data Flow Example — What Happens in One Timestep
-
-Here's a concrete walkthrough with real vessel + wind data:
-
-```
-INPUT: t = 2026-03-30 18:30
-       HKO API returns: wind_speed=6.2 m/s, direction=180° (southerly)
-
-VESSEL STATE (Before update):
-  Ferry_001: lat=22.290°N, lon=114.175°E
-  Type: StarFerry (speed always 12 m/s)
-  Destination: 22.295°N, 114.180°E (next harbor tour waypoint)
-
-CALCULATION STEP-BY-STEP:
-  1. Bearing to destination = atan2(114.180-114.175, 22.295-22.290) = 66° (NE)
-  2. Wind effect = 0.1 * 6.2 * sin(180° - 66°) = 0.1 * 6.2 * 0.940 = +0.58°
-  3. Actual bearing = 66° + 0.58° = 66.58°
-  4. Δlat = (12 m/s * cos(66.58°) * 60s) / 111000 m/deg = 0.00292°
-  5. Δlon = (12 m/s * sin(66.58°) * 60s) / (111000 * cos(22.290°)) = 0.00352°
-
-NEW POSITION (After update):
-  Ferry_001: lat=22.29292°N, lon=114.17852°E
-
-CONSTRAINT CHECKS:
-  In Principal Fairway? → check_fairway_boundary(22.29292, 114.17852) → True ✓
-  Collision with other vessels? → haversine distances to other 7 vessels → no pair < 500m → False ✓
-
-OUTPUT RECORD:
-  {timestamp: "2026-03-30 18:30", vessel_id: "Ferry_001", vessel_type: "StarFerry",
-   lat: 22.29292, lon: 114.17852, speed: 12, heading: 66.58,
-   collision_risk: False, in_fairway: True, wind_speed: 6.2}
-```
-
-**Why This Approach Works**:
-- Transparent logic — every position change is auditable
-- Composable — we can inject different wind models without changing position update code
-- Extensible — adding COLREGs (avoidance behavior) in Phase 2 just modifies step 2b
-
----
-
-## 5. Phase 1 Results & Validation
-
-### 5.1 What We Ran: The 24-Hour Baseline Simulation
-
-We executed a complete 24-hour simulation on 2026-03-30 to establish a **reference dataset** for Phase 2 comparison.
-
-**Our Output**:
-- **File**: `output/maritime_baseline_24h.csv`
-- **Data Volume**: 11,520 records (8 vessels × 1,440 minutes × 1 min/timestep)
-- **Time Range**: 2026-03-30 17:02 → 2026-03-31 17:02 (full 24-hour period)
-- **Columns**: timestamp, vessel_id, vessel_type, lat, lon, altitude, speed, heading, active, in_fairway, collision_risk, wind_speed
-
-**The Fleet We Simulated**:
-- **3× StarFerry agents**: Constant speed 12 m/s, fixed circular routes (harbor tour pattern)
-- **2× Cargo agents**: Constant speed 7 m/s, wind-sensitive (heading shifts when wind_speed > 5 m/s)
-- **3× Yacht agents**: Variable speed 8-10 m/s (random ±1 m/s per timestep), exploratory paths
-
-**What This Baseline Tells Us**:
-- Establishes typical occupancy of fairways during 24 hours
-- Records environmental conditions (HKO wind data integrated)
-- Identifies collision risk zones (all flagged at t=0 due to initial condition artifact)
-
-### 5.2 Limitations We Identified & Our Phase 2 Fixes
-
-We reviewed the Phase 1 output carefully and documented 4 limitations. This is intentional: Phase 1 is meant to be a **functional prototype**, not production-ready simulation. Understanding what's missing is critical for Phase 2 prioritization.
-
-⚠️ **Limitation 1: Initial Condition Artifact**
-- **What Happens**: All 8 vessels spawn at (22.290°N, 114.175°E) → collision_risk = True for all at t=0 (100% collision rate initially)
-- **Why We Accepted This**: Simplified Phase 1 startup; real vessel positions come from AIS data
-- **Our Phase 2 Fix**: (1) Stagger departure times by ±15min per vessel type, (2) Initialize positions from historical AIS data snapshot for the same date in previous years, (3) Validate that collision risk becomes realistic (< 5% for well-separated paths)
-
-⚠️ **Limitation 2: Wind Model is Linear and 2D**
-- **What Happens**: We apply wind as heading perturbation only. Real wind creates complex 3D gradients, especially in harbor canyons
-- **Approximation We Made**: `δheading = 0.1 × wind_speed × sin(wind_dir − bearing)` works for open water but breaks near buildings
-- **Our Phase 2 Fix**: (1) Implement spatial wind interpolation from HKO mesoscale data (50km→ 1km resolution), (2) Model wind as (u,v,w) 3D vector, (3) Apply wind perturbation to both heading AND speed for realistic vessel behavior
-
-⚠️ **Limitation 3: Vessels Don't Avoid Collisions**
-- **What Happens**: Agents move deterministically toward waypoint, ignoring other vessels
-- **Why This is Unrealistic**: Real mariners apply COLREGs (Collision Avoidance Rules of the Road)
-- **Our Phase 2 Fix**: (1) Implement COLREGs logic (Rule 8-19), (2) Add avoidance heading calculation based on relative bearing/distance to other vessels, (3) Test with multiple vessel pairs and verify avoidance success rate > 95%
-
-⚠️ **Limitation 4: No UAV Integration**
-- **What Happens**: This is pure maritime simulation, no airspace model
-- **Why Separation Was OK for Phase 1**: Decoupling maritime baseline from UAV pathfinding lets us validate each independently
-- **Our Phase 2 Fix**: (1) Add UAV agent class with different speed/maneuverability, (2) Compute maritime-air 3D conflict zones, (3) Feed conflicts into UAV path planner to generate avoidance routes
-
----
-
-## 6. Architectural Insights: How We Structured This for Growth
-
-We designed the Phase 1 architecture to be **composable** — each piece can be swapped without breaking the whole system. This was intentional, because Phase 2 will add significant complexity (COLREGs, 3D wind fields, UAV agents). Here's how we achieved that:
-
-### Design Pattern 1: Modular Separation of Concerns
-**How We Organized It**:
-- **`hko_api_client.py`**: Standalone HKO wrapper — no coupling to simulator
-- **`geospatial_loader.py`**: Independent loader — same CSV format whether used by maritime sim or UAV planner
-- **`maritime_simulator.py`**: Orchestrator that **composes** the above
-
-**Why This Matters**:
-- Each module can be tested independently (`pytest tests/test_hko_api.py`)
-- Can swap implementations (e.g., "switch from HKO to NOAA API without touching simulator code")
-- Reduces debugging when something breaks
-
-### Design Pattern 2: Inheritance for Agent Extensibility
-**How We Implemented It**:
-We made `VesselAgent` a base class with abstract methods for speed/movement:
-```python
-class VesselAgent:
-    def _get_current_speed(self):
-        raise NotImplementedError
-    def update_position(self, dt, wind_data):
-        raise NotImplementedError
-
-class FerryAgent(VesselAgent):
-    def _get_current_speed(self):
-        return 12  # m/s, constant
-
-class CargoAgent(VesselAgent):
-    def _get_current_speed(self):
-        return 7 if wind_speed < 5 else 6.5  # reacts to wind
-```
-
-**Why We Did This**: Adding a fourth vessel type (e.g., SpeedBoat, Tanker) requires <20 lines of code. Phase 2 can add `DroneAgent(VesselAgent)` the same way.
-
-### Design Pattern 3: Unidirectional Data Flow
-**Our Data Pipeline**:
-```
-Simulation → CSV Output → Analysis (NumPy/Pandas) → Phase 2 Input
-```
-- Simulation produces one CSV per run (immutable artifact)
-- Analysis code never modifies simulator logic
-- Phase 2 reads previous CSV + creates new simulation with updates
-
-**Why This Works**: Reproducibility. If Phase 2 results differ, we can trace back to which CSV version was used.
-
----
-
-## 7. Project Structure
-
----
-
-## Project Structure
-
-```
-uav-maritime-twin/
-├── src/                          # Python source code
-│   ├── hko_api_client.py        # HKO Open Data API wrapper
-│   ├── geospatial_loader.py     # Load LandsD & Open3DHK
-│   ├── maritime_agents.py       # Vessel agent model
-│   ├── maritime_simulator.py    # Traffic simulator
-│   ├── collision_detection.py   # Collision detection logic
-│   └── download_geospatial.py  # Data download & preparation script
-├── tests/                        # Unit tests
-│   ├── test_hko_api.py
-│   └── conftest.py
-├── data/                         # Data storage
-│   ├── hko/                     # HKO API responses
-│   ├── geospatial/              # LandsD, Open3DHK
-│   └── maritime/                # Fairways, vertiports
-├── models/                       # MATLAB/Simulink models
-├── visualization/                # Cesium.js 3D viewer
-├── output/                       # Simulation results
-├── docs/                         # Documentation
-├── requirements.txt              # Python dependencies
-├── .gitignore
-└── README.md
-
-```
-
----
-
-## Getting Started
-
-### Prerequisites
-- Python 3.10+
-- MATLAB R2023a+ with UAV Toolbox (academic license)
-- Node.js 16+ (for Cesium visualization)
-- Git 
-
-### Setup
-
-1. **Clone repository**
-   ```bash
-   git clone https://github.com/[username]/uav-maritime-digital-twin.git
-   cd uav-maritime-digital-twin
-   ```
-
-2. **Create Python virtual environment**
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
-
-3. **Run tests**
-   ```bash
-   pytest tests/ -v
-   ```
-
-4. **Start Cesium viewer**
-   ```bash
-   cd visualization/cesium-app
-   npm install
-   npm start
-   ```
-
----
-
-## Phase 1 Tasks (Weeks 1-2)
-
-### Week 1
-- **Day 1**: GitHub setup, Python env, MATLAB workspace
-- **Day 2**: HKO API integration
-- **Day 3**: Geospatial data loading (LandsD, Open3DHK)
-- **Day 4**: Cesium 3D visualization
-- **Day 5**: Maritime data mapping, integration planning
-
-### Week 2
-- **Day 6-7**: Maritime simulator agent model
-- **Day 8**: Collision detection, fairway monitoring
-- **Day 9**: Visualization, documentation
-- **Day 10**: Code review, testing, v0.1.0 release
-
----
-
-## Data Sources
-
-| Source | Status | Access | Description |
-|--------|--------|--------|-------------|
-| HKO Open Data | ✓ Free | weather.gov.hk/opendata | 10-min resolution wind/weather |
-| LandsD 3D-BIT00 | ✓ Free | lands.cedd.gov.hk | 20m resolution elevation |
-| Open3DHK | ✓ Free | https://3d.map.gov.hk | 3D city model (no registration) |
-| CAD eSUA Map | ✓ Free | Civil Aviation Dept | Drone operation zones |
-| Marine Dept | ✓ Agreement | VTMS data | Principal Fairways, vessel tracking |
-
----
-## Team Coordination & Project Structure
-
-### Why This is One Project, Not Two
-Initially, we considered splitting maritime simulation and UAV pathfinding into two separate thesis tracks. We decided **against this** for three reasons:
-
-1. **Shared Foundation**: Both tracks depend on the same geospatial data (elevation, buildings, fairways) and environmental API (HKO wind). Duplicating this work would be wasteful.
-
-2. **Cross-Domain Constraints**: A UAV corridor that avoids a fairway is only useful if that fairway will actually have traffic. We need the maritime simulation to validate UAV routes are necessary.
-
-3. **Unified Regulatory Package**: Hong Kong CAD will ask one question: "Is this design safe?" One integrated proof is stronger than two separate ones.
-
-### How We Divided the Work
-
-| Aspect | Responsibility | Deliverable |
-|--------|---|---|
-| **Phase 1 Foundation** | Both | Infrastructure (APIs, geospatial, simulator) |
-| **Track 1: Maritime-Airspace Integration** | Wardells | Fairway-corridor conflict detection + pathfinding for UAV avoidance |
-| **Track 2: Validation & Safety** | Rozz | Uncertainty quantification (Monte Carlo), cybersecurity threat model, PDPO privacy routing |
-| **Phase 3+: Optimization** | Both | Multi-modal logistics comparison, CAD regulatory evidence package |
-
-### Our Communication Strategy
-- **Version Control**: Single GitHub repo (`uav-maritime-digital-twin`); feature branches per task
-- **Integration Points**: Weekly review of interfaces between Track 1 and Track 2
-- **Testing Discipline**: Each pull request requires code review + 2 unit tests minimum
-- **Artifact Sharing**: All outputs (CSVs, reports) stored in `/output` with timestamp + author
-
----
-
-## References & Documentation
-
-- **Project Summary**: See Project_Summary_and_Execution_Plan.docx
-- **Week 1-2 Action Plan**: See Week_1-2_Detailed_Action_Plan.docx
-- **Opening Report**: See Thesis_Opening_Report_Enhanced.pptx
-- **API Docs**: [HKO](https://www.hko.gov.hk/en/), [Open3DHK](https://3d.map.gov.hk/)
-
----
-
-**Last Updated**: 2026-03-30
-**Next Phase Review**: End of Week 2
+# 维港无人机巡航规划与 AnyLogic 演示
+
+当前版本：F23 功能 + F24 Windows 组内协作交付整理（2026-11-06）。
+
+用真实历史 AIS 观测、原官方建筑数据和官方 OMPL 2.0.2 SST 完成单机二维巡航规划，再用 AnyLogic 展示二维/三维同步回放。保留原八个研究点、四条任务、16 个保存结果入口及其中 10 个可重算入口。原规划、阈值、船轨迹与保存结果没有因本次打包而修改。
+
+## 当前已完成
+
+| 部分 | 当前能力 |
+|---|---|
+| 数据 | 回放既有真实 AIS 观测；区分实测点、合格片段内插值和缺测区间；保留原件与哈希 |
+| 规划 | 四条固定任务；直线合格时直飞，否则调用官方 SST；对整条航迹检查船距和建筑距离 |
+| 交互 | AnyLogic 内加载保存结果、指定时间重算、显示成功或拒绝原因、查看原始记录和来源 |
+| 回放 | 同一时钟驱动无人机与船舶，二维/三维同步切换，暂停、跳转和 1—10 倍播放 |
+| 展示 | 官方建筑轮廓/已有高度、离线岸线背景、六处地标、维港全景、跟随、平移/旋转/缩放 |
+| 复现 | 固定输入与官方 SST 运行库随项目分发，离线自检和可选现场重算 |
+
+运行流程：**启动脚本 → 还原本地运行环境与数据 → AnyLogic 提交任务 → Python 规划和连续检查 → AnyLogic 同步显示**。本仓库以这套当前流程为唯一运行入口。
+
+## 第一次运行
+
+1. 使用 **Windows 10/11 64 位（x64）**。先单独安装并打开一次 **AnyLogic 8.9.10 PLE**，完成它自身的首次启动。安装入口：[AnyLogic 官方下载](https://www.anylogic.com/downloads/)。本仓库不附带 AnyLogic 安装程序或许可证。
+2. 点击本仓库的 **Code → Download ZIP**，将整个 ZIP **全部解压**；或执行 `git clone https://github.com/whr854313805-glitch/uav-maritime-digital-twin.git`。不能在 ZIP 压缩窗口里直接运行，也不要只下载 `.alp`。
+3. 双击根目录 **启动完整演示.cmd**（英文同名入口为 `start.cmd`）。首次启动会自动展开项目自带的 Python 和离线数据并检查哈希，随后启动 AnyLogic。后续启动复用本目录自己的演示窗口。
+
+**无需另装 Python、pip、Java、MSYS2 或浏览器，无需 AIS API Key。** Java/Chromium 使用组员自行安装的 AnyLogic 所带版本；Python 和全部当前离线数据已经随仓库提供。首次准备期间请保留启动窗口。项目需完整解压到可写目录，并预留约 1 GB 空间；请勿放在压缩包内或 Program Files 等受保护目录。
+
+如果未找到 AnyLogic：先双击 **检查运行环境.cmd**；将 `settings.example.json` 复制为 `settings.local.json`，把 `anylogic_home` 改为你电脑中 `AnyLogic.exe` 所在的文件夹。只需改这一个本机设置，无需改源码。也支持 `ANYLOGIC_HOME` 环境变量。验收使用 8.9.10，其他 8.9 版本未逐台验证。
+
+## 演示操作
+
+- M1—M4：加载原四条固定任务；上方另有直飞、同向、相向、起点拒绝、建筑避障和孤立观测六种演示入口。
+- 左键拖动旋转；按住中键拖动平移；按 Ctrl 滚轮缩放；“重置相机”恢复视角。跟随时保留平移偏移。
+- 速度滑条为整数 1—10 倍。M4 默认 10 倍，其他任务默认 1 倍；下方时间轴只用于跳转回放时刻。
+- 二维/三维切换共用同一任务时间。内嵌工作台可指定时间重算、查看原始记录、图层、八点与来源。
+- 结束使用时，可关闭演示和这次启动的 AnyLogic 编辑器窗口以释放资源。再次双击会自动启动新会话，正在运行的同目录会话会复用。
+
+## 检查与重算
+
+- **检查运行环境.cmd**：准备运行库和数据，然后检查 AnyLogic、Python 依赖和模型文件，不打开模型。
+- **验证项目数据.cmd**：核验完整保存目录、输入哈希、冻结点和官方 OMPL 运行库，结果写入 `.local/verification.json`。
+- 开发者可执行 `runtime\python\python.exe scripts\verify_project.py --recompute M2 encounter_M1_opposing`，用原规划入口现场重算并独立检查。它新增运行记录，保留原结果。
+
+## 目录
+
+| 目录/文件 | 用途 |
+|---|---|
+| `src/`、`ais_anylogic_bridge.py` | 当前 Python 规划与 AnyLogic 进程桥接源码 |
+| `anylogic/` | 原生模型模板、Java 源码、展示 JAR、F23 输入适配与背景 |
+| `runtime/ompl/` | 官方 SST 工作进程、DLL、固定设置、适配 C++ 源码和许可证 |
+| `runtime/packages/` | Python 3.11.9 与固定依赖的离线压缩分片及哈希 |
+| `runtime/data/` | 原始输入、基准和当前保存结果的无损压缩包及逐文件哈希 |
+| `scripts/` | 自动准备、完整性核验及维护脚本 |
+| `docs/` | 操作说明、来源、历史验收和本次搬迁验收 |
+| `.local/` | 本目录的模型、AnyLogic 工作空间、浏览器状态和检查报告；自动生成，不提交 |
+| `data/`、`output/` | 首启从离线包还原；新计算仍按原路径产生，不自动提交 |
+
+## 研究范围
+
+当前是**离线历史 AIS、单架无人机、二维海上巡航段**；三维仅用于展示，不含码头起降、实机控制或未来船位预测。90 米船距、15 米/秒、30 米建筑间距沿用原研究配置，并非飞行许可。缺失船位按已确认的原规则单列未知；结论限于已观测船舶。六个演示入口不是六个独立遇船实验，孤立点与相向共享一次出发。六个只读入口中的历史实验不能当作新 SST 性能结论。不保证任意时刻求解成功或全局最短。
+
+本次验证范围和具体结果见 [Windows 迁移验收](docs/verification/F24/README.md)；已有 F20/F23 报告保留原版本身份，不代替本次验收。历史版本可从 Git 提交记录查看。

@@ -1,0 +1,68 @@
+{
+  "complete": true,
+  "checks": [
+    {
+      "feature": "production_native_button_runs_fresh_SST_for_building_task",
+      "run_id": "5281fe065db64ca8bbf1338346ba9614",
+      "distance_m": 6681.631815882412,
+      "independent_raw_check": {
+        "minimum_distance_m": 684.9553335679772,
+        "nearest_ship": "477991663"
+      },
+      "search": {
+        "algorithm": "OMPL 2.0.2 control::SST",
+        "objective": "path_length_subject_to_original_hard_constraints",
+        "custom_search_or_shortening_used": false,
+        "hovering": false,
+        "method": "official_SST_plus_explicit_terminal_leg",
+        "query_time_upper_s": 447.79312870939197,
+        "query_basis": "Recorded fixed-request original feasible flight duration; opposing additionally limited to original reference segment. Query bound only, no original route points supplied.",
+        "seed": 42,
+        "solve_seconds": 60.0,
+        "native_status": "Exact solution",
+        "library_commit": "1ae6ac0bf7e9cb67d8994a8b8742833f813fdd39",
+        "worker_sha256": "b54b787e8e767ecdd63f5cd882336902a095ec178e64b97f71d15d2dc49cfccc",
+        "native_input_sha256": "5e9108b549d1fcfccf5fedbbc5d99bc5a290c5ad3a233a253b4566a60f8984cc",
+        "native_output_sha256": "aadeb8d57d7ed6576d619791e4ed16f01461c17463f7d6ada7af29fd51697b3d",
+        "native_result_file": "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\runs\\5281fe065db64ca8bbf1338346ba9614\\ompl_output.json",
+        "native_prefix_unmodified": true,
+        "terminal_leg_m": 62.131815883387645,
+        "independent_geometry_check": {
+          "geometry_valid": true,
+          "distance_m": 6681.631815883171,
+          "minimum_ship_distance_m": null,
+          "minimum_building_clearance_m": 31.89763079493281
+        },
+        "maximum_speed_error_mps": 5.44689626735817e-10
+      }
+    },
+    {
+      "feature": "actual_native_SST_route_and_original_reference_ship",
+      "run_id": "5694403b3ec5445fb4be6021ffe23650",
+      "distance_m": 435.13244238191743
+    }
+  ],
+  "javascript_errors": [],
+  "external_requests": [],
+  "source_sha256": {
+    "src/ais_single_task.py": "e80c88262a4442c108867ad1ac284ae42f01ec404abf96b933d22046298aa71f",
+    "src/ompl_sst.py": "7455294f1430c47cb1df44c2eea95a1cb4e59355d4b81e0075c9041f92dd5818",
+    "src/anylogic_workspace.py": "3669b2f5d24083a773793ef75ba2eb0ce42afe6abc7bed16bde8c2a6d425f747",
+    "anylogic/NativeDemoView.java": "71f4bfd9208c2d77922a15dcd4f913ac3cff784bf4ff8c22c0541d345d946c1a",
+    "anylogic/native-visual-demo.jar": "2384d53d2e69ece2c4c407744a7ce33b0b081f7068c280cd6dc2166daa93750c",
+    "anylogic/workbench/workspace.json": "39af3069ad27f045a52869affb48bc906088ac17e48822cf84c329aebc210997",
+    "anylogic/visual_demo/support.json": "b040b1bdf3ecbf45c5b00e90d84578e2da8a2971d1ed80378bde6dbff09066a4",
+    "output/ais_single_task/ompl_sst/catalog.json": "ab530fd4b8cc04ebf6c6b06e6b9cb2402e4699ab6d27eb15969ca5ff1d8d4df1",
+    "runtime/ompl/settings.json": "996f4e86f49c2969f8b0e88030ac15279908c338be7a55858e4d6eb24acf9235",
+    "runtime/ompl/manifest.json": "63a14e5182d48230fde8891df50a3094457f5e02d3f0452bdfddefd43e3db729"
+  },
+  "unchanged_data_configs_and_historical_catalog": {
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\config\\ais-single-task.json": "4b367cd1d6f14adb4a219093139f39e222ac2642158669452fbc5d80ebf125a6",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\config.yaml": "1a61570296343e819097edb92f3b33ee0d28237f4708ae97608df5c0f843d167",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\route_repair\\catalog.json": "ab36b12ac346d546a7390575258704207391e6886aa990846f5188dc80377ce7",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\data\\ais\\captures\\621a8559a44d406a8e617cee31a65e04\\messages.jsonl": "5c843f96122ff456ffcb2ae8d852ad59162cb2d06d0f04d369a173083fdec3d8"
+  },
+  "all_active_entries_staged_verified": 10,
+  "native_saved_demonstration_entries_verified": 6,
+  "limits": "Fixed requests and observed history only; no universal solver success, optimality, live safety or new independent data claimed."
+}

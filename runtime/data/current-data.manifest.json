@@ -1,0 +1,713 @@
+{
+  "schema_version": 1,
+  "scope": "F23 AnyLogic full workstation + all 16 catalog entries + recalculation inputs",
+  "archive_sha256": "0c0b560977e18dd1becc979b15d9759073847b5077b6b778f2cde5a6411bd2b1",
+  "archive_bytes": 41757498,
+  "expanded_bytes": 203379351,
+  "files": [
+    {
+      "path": "data/ais/captures/621a8559a44d406a8e617cee31a65e04/capture.json",
+      "bytes": 1032,
+      "sha256": "9303b92cf7c4a30bda601d55999db0ebd1b1131f4563ac1ef9ce390f39a86f99"
+    },
+    {
+      "path": "data/ais/captures/621a8559a44d406a8e617cee31a65e04/fragments_quality.json",
+      "bytes": 110248,
+      "sha256": "e70729daff9b09257e0acc614a464ce952291afa9b2ee97d3fd9c2f4b95a19c1"
+    },
+    {
+      "path": "data/ais/captures/621a8559a44d406a8e617cee31a65e04/messages.jsonl",
+      "bytes": 658582,
+      "sha256": "5c843f96122ff456ffcb2ae8d852ad59162cb2d06d0f04d369a173083fdec3d8"
+    },
+    {
+      "path": "data/ais/captures/621a8559a44d406a8e617cee31a65e04/quality.json",
+      "bytes": 7111,
+      "sha256": "8b49411f12f37ce38b24c5ec4decdee8bf2f6ba0eb251ce9cf9e94245ee9cfbd"
+    },
+    {
+      "path": "data/ais/captures/621a8559a44d406a8e617cee31a65e04/replay_manifest.json",
+      "bytes": 1506,
+      "sha256": "5fb7389165f5815911966a888ae858db2e3cd44198b1b9807a5cf706a93f9fd6"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/buildings.json",
+      "bytes": 109666821,
+      "sha256": "4cbca41e26d1fd00c11c80274f744ed27fbda29b89e519594619d151bcded97a"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/fairways.geojson",
+      "bytes": 28510,
+      "sha256": "6301a8c27040aed108278d65bb844fa43d041100bf83420c3623bd3fa6481619"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/ferry_piers.json",
+      "bytes": 712,
+      "sha256": "f2624c65bb9ee9dc40f9e23abaea0e9f5f5cebe15a356d7b81cf3366d886e105"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/ferry_reference.json",
+      "bytes": 1778,
+      "sha256": "b1986ef75f501ae4f9f1e47683c35e41fb9fb0f4ab8b0b6b74804af5b6a53a39"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/ROUTE_FERRY.xml",
+      "bytes": 70323,
+      "sha256": "97fb2e9eb096b85d39134083dd3168a4206f0f3fb79882e23019e949a73269cc"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/RSTOP_FERRY.xml",
+      "bytes": 109482,
+      "sha256": "876c89ec21fd4f93056254d5413442d6def4facef5516f70667b1e3f72d3cade"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/STOP_FERRY.xml",
+      "bytes": 11869,
+      "sha256": "ea8a739f09566df256d61d0f8a7ea82f27511a230529deae5f0aad47c013339f"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/building_ids.json",
+      "bytes": 236615,
+      "sha256": "0b3f215e75c3e54a6d102a1105746ad55bf9401f7aeda07b5894e3359aef0c89"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/building_layer.json",
+      "bytes": 7404,
+      "sha256": "c3031f3a6b6009e89bf3bcb3d4fb11e3cc0ea93c8ea67500598e9e157447240b"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/building_metadata.html",
+      "bytes": 49129,
+      "sha256": "1b8ee6e9199b94693bd4aecd2c5185e178ecd4d0dfae260b7847da0100882df0"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/building_spec.html",
+      "bytes": 57419,
+      "sha256": "d7082206382917babdfe2e878ad84e4f4b63e95a05e7e3b9f8c4a4e3fb3405a8"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_00000.geojson",
+      "bytes": 1842566,
+      "sha256": "cafa2eab831dff1344e0b946675378d25aac65d71f86c8c322e3236bffb6b98f"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_01500.geojson",
+      "bytes": 1834248,
+      "sha256": "dc32cf8aa282a6867b97d99a1611bb2b5262aeee4a5824e8b81ab641411627c7"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_03000.geojson",
+      "bytes": 1644556,
+      "sha256": "66c5e5148ed6a5da35d44c7a159543d615aa81ac1df3a61a9ec06d0b9ea82862"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_04500.geojson",
+      "bytes": 1954345,
+      "sha256": "4a50b64ac8a9982f113175a7d48adab8d88cfe9396633b5ec14c984277daa692"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_06000.geojson",
+      "bytes": 1634086,
+      "sha256": "2318d5ca20afc973d691b28060159e1ff5baed9b4a22a240e16f81397c3f1287"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_07500.geojson",
+      "bytes": 1641251,
+      "sha256": "1c213ed41d08f63930b7f09dbdbb8d39a6672fe894e40a1a1d3425e0a385467f"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_09000.geojson",
+      "bytes": 1633950,
+      "sha256": "5e3b2bcb25ded9117b55501d3a91bacc8b1ffdf8e97661766be16e2be8f6e3b3"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_10500.geojson",
+      "bytes": 1694151,
+      "sha256": "804fac7f230511bf4f3397263dcd0384a94ccece949b4d06a1a7c5211d43431c"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_12000.geojson",
+      "bytes": 1806556,
+      "sha256": "a0c2f30d9b957b0ec65e3285294376d54e52242ac066417c3a40fe8c304072ca"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_13500.geojson",
+      "bytes": 1672498,
+      "sha256": "9e2d2305ae10edf86d81de1cbc4d5cf07169f6f621635cf5657e03e008dc526e"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_15000.geojson",
+      "bytes": 1667856,
+      "sha256": "77e2b701b9d973a7b696e0573e98cb49f0a634cec2bc9b9871585d5d3f1cd26d"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_16500.geojson",
+      "bytes": 1730410,
+      "sha256": "5dcb3de0ca6da3efada5fc6bb6e06631de1d4e8ba6e6f275c28537f8cd2231a6"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_18000.geojson",
+      "bytes": 1773070,
+      "sha256": "beef9553faeea1e15b50d2242d7181b1fbfed78ff11c6ebc962868b2d2c611bc"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_19500.geojson",
+      "bytes": 1667309,
+      "sha256": "87a13ba3f8dabe0eaeb1ffc99aa2cee5f3f289949f60c6b581893966482e3a80"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_21000.geojson",
+      "bytes": 1993531,
+      "sha256": "b7dc93fdae6afe28983de6885a6f856128d0cb0a5f0ecab815ba031ea887ad4d"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_22500.geojson",
+      "bytes": 2497156,
+      "sha256": "34d8143965673461de0477690bb04c4304f7db7329a47c68836eb7284b09da75"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_24000.geojson",
+      "bytes": 2465326,
+      "sha256": "a014ab53ea63df18cf31c63d21f423b622f53f89e24e2be4dcc7689069dc7074"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_25500.geojson",
+      "bytes": 1975827,
+      "sha256": "c3ffc3f4d2439939de13a5596c68d3e14ddd615487ad952d24c7ede3cfc0ef0c"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_27000.geojson",
+      "bytes": 2557464,
+      "sha256": "4dd516de19dac52ae2be5099602bf62f38a427e8368b0bd9dcd3aef7c89fb47e"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_28500.geojson",
+      "bytes": 2924822,
+      "sha256": "8121a877de0f2c6dc6be2f06ec2b6c63f88e2db9aee2d789384ff8299f08cbad"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_30000.geojson",
+      "bytes": 2114486,
+      "sha256": "2835f8bce524ba2cec128a3643573a6357ca545aee118c363a4a9c9d47fe2c75"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_31500.geojson",
+      "bytes": 1924124,
+      "sha256": "45389d952161b39731febe5173a8a3378fd4693d04ff7bc15526acf56eaa61ee"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_33000.geojson",
+      "bytes": 1643956,
+      "sha256": "8c5b16530693be29e12b929b6069bd1fe61dc7f90f79f66b047b54ef6eec6fd2"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_34500.geojson",
+      "bytes": 1259563,
+      "sha256": "c2017bf22ade0ec04dd51a950e0d6a1d14550d8ece3a3341f18701185880a3ca"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_missing.geojson",
+      "bytes": 37818,
+      "sha256": "441aaa3f86de78e7e6ddbe68bc69201db350c65e8f616a115f9fcf8be53e4e12"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/fairway_layer.json",
+      "bytes": 5145,
+      "sha256": "c619cf5081441f7e502176c68b63f5184ff9784822e97c292a35608b3f37b5c0"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/fairway_metadata.html",
+      "bytes": 18715,
+      "sha256": "cdeb3f5b754d860918e81f1aa9a5add21e7c34616b36a117ae6542945a77f9a5"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/fairways.geojson",
+      "bytes": 13302,
+      "sha256": "48321d409c6ba40dac18012ec651b53d817c228328a0f3f2bb3ca9420aaabacf"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/td_ferries.html",
+      "bytes": 385926,
+      "sha256": "aac10be1ddd63dc11e4c79d9b50168c762e609036f868372280b9c47a26ab9da"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/raw/td_routes_spec.pdf",
+      "bytes": 377330,
+      "sha256": "f062d2bdb6cdc27705ea81028a300f8126554dad147e12e11eb9cb2ba3f8aa17"
+    },
+    {
+      "path": "data/official/snapshots/28991d3a0c66d1fa/source_manifest.json",
+      "bytes": 31903,
+      "sha256": "f474a8df8f26c5d776f6c14949703aa057f01c5332a7aa0a5b772175aab4ee94"
+    },
+    {
+      "path": "output/ais_hour_job.json",
+      "bytes": 720,
+      "sha256": "cc7477d1f7a069d310bdca9d785b2f4df8f81b06a6aa01326e7d8871ecc855be"
+    },
+    {
+      "path": "output/ais_replay/buildings_display.geojson",
+      "bytes": 24326191,
+      "sha256": "bc26f39854143fc969b6b97bede4aa17874a5b86645b297567cb27ce8c7cb35c"
+    },
+    {
+      "path": "output/ais_replay/buildings_display_source.json",
+      "bytes": 399,
+      "sha256": "068869704723ef591baf2021b557eed328893bd0ff146b97678b4b1e601501c6"
+    },
+    {
+      "path": "output/ais_single_task/detour_verification/M1_result.json",
+      "bytes": 367309,
+      "sha256": "8067331cce43dcc9041137f53dab43f55a6018073474343ba5d474f0601a3896"
+    },
+    {
+      "path": "output/ais_single_task/detour_verification/M2_result.json",
+      "bytes": 3252,
+      "sha256": "25b579a52f9b9d3abccc48b828c6276bade265e092bb61326464f61fa95f366f"
+    },
+    {
+      "path": "output/ais_single_task/detour_verification/M3_result.json",
+      "bytes": 3207,
+      "sha256": "18fa121fc308ed38d34a840d2ff35ffbffc3d5985aa6a57fb4262d0cda513ff1"
+    },
+    {
+      "path": "output/ais_single_task/detour_verification/M4_result.json",
+      "bytes": 3176,
+      "sha256": "56debb4b46c25f84737dd7f74c61e234f508f5f43e87e2a7f67cdf05d91bbe90"
+    },
+    {
+      "path": "output/ais_single_task/encounter_verification/M1_opposing/request.json",
+      "bytes": 2542,
+      "sha256": "2fc2c893716d81b287c09a462c6f9f43971974ab9995fe9a45f369b7dd12149b"
+    },
+    {
+      "path": "output/ais_single_task/encounter_verification/M1_opposing/result.json",
+      "bytes": 367288,
+      "sha256": "a8f34c1a7272d4eba801ce7324bbd42048d103b262cb6cb8c999fce3c360512b"
+    },
+    {
+      "path": "output/ais_single_task/encounter_verification/M1_same_direction/request.json",
+      "bytes": 2548,
+      "sha256": "f50b4164e59a044aa244c2ef848b93c16959f75058865f96df8e8e08dbcbe83c"
+    },
+    {
+      "path": "output/ais_single_task/encounter_verification/M1_same_direction/result.json",
+      "bytes": 366151,
+      "sha256": "f4297bbb00f821d96b86cce824290ef9d37b76f4ec1aafd2c933193b107ba792"
+    },
+    {
+      "path": "output/ais_single_task/encounter_verification/M1_singleton/request.json",
+      "bytes": 2543,
+      "sha256": "d67a394c418bc6417bc80e5dc47e9ecc49ddf5155ff439eda56b2dc7773b1dcc"
+    },
+    {
+      "path": "output/ais_single_task/encounter_verification/M1_singleton/result.json",
+      "bytes": 367289,
+      "sha256": "bcab06cf88541b082f3f28406b979eba89b6a37b547dba632553dbca7899199f"
+    },
+    {
+      "path": "output/ais_single_task/encounter_verification/M1_start_conflict/request.json",
+      "bytes": 2548,
+      "sha256": "7c7a68856e73f98b7fe7ce9bba3973e253e7819b87e58e6bbf48f8c1967f84fe"
+    },
+    {
+      "path": "output/ais_single_task/encounter_verification/M1_start_conflict/result.json",
+      "bytes": 316278,
+      "sha256": "dab15b8316fda9fc65730af264a7b2cc3ba3d4d8309cb6375be2275be7b72a5a"
+    },
+    {
+      "path": "output/ais_single_task/encounter_verification/verification.json",
+      "bytes": 14845,
+      "sha256": "18b3574cf605fe0573b558df5e6b5ce2955754eef343721411a8b67bfb6892ca"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/100/observed_tracks.json",
+      "bytes": 198132,
+      "sha256": "02894d8d84ee0b6aa4ae9cc03ae1d461c560b8cc73f6ed14771c5da651f6a1c4"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/100/planning_config.json",
+      "bytes": 5667,
+      "sha256": "bd209a9ebce238f087795ef2aa4f33082217241f16f40a635918e969c2afd3d0"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/100/quality.json",
+      "bytes": 501,
+      "sha256": "f9f4760011068db54bf63afc98e32a2702f479c0944cf213da36e53dc63c7fa4"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/100/request.json",
+      "bytes": 2548,
+      "sha256": "f50b4164e59a044aa244c2ef848b93c16959f75058865f96df8e8e08dbcbe83c"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/100/result.json",
+      "bytes": 366925,
+      "sha256": "df807b3eea016f00d6fe6306b55f87782225df65de601966bad421bf7aec08e4"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/200/observed_tracks.json",
+      "bytes": 198132,
+      "sha256": "02894d8d84ee0b6aa4ae9cc03ae1d461c560b8cc73f6ed14771c5da651f6a1c4"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/200/planning_config.json",
+      "bytes": 5667,
+      "sha256": "4e0fb4b5812086fc5a162a7d81b85373f6a6a5394133aa22b0770851e1a4d158"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/200/quality.json",
+      "bytes": 501,
+      "sha256": "f9f4760011068db54bf63afc98e32a2702f479c0944cf213da36e53dc63c7fa4"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/200/request.json",
+      "bytes": 2548,
+      "sha256": "f50b4164e59a044aa244c2ef848b93c16959f75058865f96df8e8e08dbcbe83c"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/200/result.json",
+      "bytes": 365702,
+      "sha256": "f80465c3a96c7442ddc1119bcd419afdd25cafbdafffe578afa226405e992169"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/400/observed_tracks.json",
+      "bytes": 198132,
+      "sha256": "02894d8d84ee0b6aa4ae9cc03ae1d461c560b8cc73f6ed14771c5da651f6a1c4"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/400/planning_config.json",
+      "bytes": 5667,
+      "sha256": "ba161cb5fbea6f89c13b9038a3e59a3552f7c2960ffcb86ab93daf50ae854720"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/400/quality.json",
+      "bytes": 501,
+      "sha256": "f9f4760011068db54bf63afc98e32a2702f479c0944cf213da36e53dc63c7fa4"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/400/request.json",
+      "bytes": 2548,
+      "sha256": "f50b4164e59a044aa244c2ef848b93c16959f75058865f96df8e8e08dbcbe83c"
+    },
+    {
+      "path": "output/ais_single_task/grid_sensitivity/400/result.json",
+      "bytes": 365074,
+      "sha256": "507299da1c0deaa4c3a2ce3f83d741475aa1f14bbd803db48172432dcfcda00d"
+    },
+    {
+      "path": "output/ais_single_task/latest.json",
+      "bytes": 365928,
+      "sha256": "3b1a54bf38d684e7c8e5865c293fc4652b15c295c14f3e8e96b9d9779021dee8"
+    },
+    {
+      "path": "output/ais_single_task/ompl_sst/catalog.json",
+      "bytes": 4006,
+      "sha256": "ab530fd4b8cc04ebf6c6b06e6b9cb2402e4699ab6d27eb15969ca5ff1d8d4df1"
+    },
+    {
+      "path": "output/ais_single_task/runs/217f1a589e83416cb15db50d352d6064/observed_tracks.json",
+      "bytes": 102226,
+      "sha256": "031643bd6b8836f7710c09011e254b910b5c774d836b9b780eda246dcbf3f6d9"
+    },
+    {
+      "path": "output/ais_single_task/runs/217f1a589e83416cb15db50d352d6064/planning_config.json",
+      "bytes": 5669,
+      "sha256": "eb937e0c86bf4fc08dddd84d2cf360c03977fa6f2df1cec4fc91040ba170b7e2"
+    },
+    {
+      "path": "output/ais_single_task/runs/217f1a589e83416cb15db50d352d6064/quality.json",
+      "bytes": 503,
+      "sha256": "47d20cc61bbe6445e63cb3a1cf7f643b69fd1b9ec7239cd793d04d7ba4a9976c"
+    },
+    {
+      "path": "output/ais_single_task/runs/217f1a589e83416cb15db50d352d6064/result.json",
+      "bytes": 367390,
+      "sha256": "f466bfca620157e16b599eb2b084190b8d5fe0d257be52ee52a32aba1b76f9fc"
+    },
+    {
+      "path": "output/ais_single_task/runs/2fa48b9b62d04a32bcfdad800ee139ce/observed_tracks.json",
+      "bytes": 312651,
+      "sha256": "e0b47e9d737697b6e22792fc32297ee68c7b81dfb2cd12a45697e661704f2db5"
+    },
+    {
+      "path": "output/ais_single_task/runs/2fa48b9b62d04a32bcfdad800ee139ce/ompl_input.json",
+      "bytes": 2122725,
+      "sha256": "cb9fc91237f3c615ef2ce5a41961c6806b8494714180b439ba7386cb4718cd5b"
+    },
+    {
+      "path": "output/ais_single_task/runs/2fa48b9b62d04a32bcfdad800ee139ce/ompl_output.json",
+      "bytes": 2798,
+      "sha256": "f22f5800b19ee4f68fca80e28e2dafff9b85b0d13a327ae68e16258e831b56db"
+    },
+    {
+      "path": "output/ais_single_task/runs/2fa48b9b62d04a32bcfdad800ee139ce/planning_config.json",
+      "bytes": 5669,
+      "sha256": "eb937e0c86bf4fc08dddd84d2cf360c03977fa6f2df1cec4fc91040ba170b7e2"
+    },
+    {
+      "path": "output/ais_single_task/runs/2fa48b9b62d04a32bcfdad800ee139ce/quality.json",
+      "bytes": 501,
+      "sha256": "af99e6d335a2ec28be6a12e4af7a06989136ee0b0c1d3d23a6d81476ceae9de5"
+    },
+    {
+      "path": "output/ais_single_task/runs/2fa48b9b62d04a32bcfdad800ee139ce/result.json",
+      "bytes": 371157,
+      "sha256": "ae9620e3b41a5b56bb217115f45b4715334baa5b76736727b96d6bcd02c89c08"
+    },
+    {
+      "path": "output/ais_single_task/runs/5694403b3ec5445fb4be6021ffe23650/observed_tracks.json",
+      "bytes": 312651,
+      "sha256": "e0b47e9d737697b6e22792fc32297ee68c7b81dfb2cd12a45697e661704f2db5"
+    },
+    {
+      "path": "output/ais_single_task/runs/5694403b3ec5445fb4be6021ffe23650/ompl_input.json",
+      "bytes": 2122725,
+      "sha256": "cb9fc91237f3c615ef2ce5a41961c6806b8494714180b439ba7386cb4718cd5b"
+    },
+    {
+      "path": "output/ais_single_task/runs/5694403b3ec5445fb4be6021ffe23650/ompl_output.json",
+      "bytes": 2798,
+      "sha256": "5adb3c5cefc8f5a251e6dfd2d1712d3d9df211bc39e0bcb7df5d63cd9f0b5f47"
+    },
+    {
+      "path": "output/ais_single_task/runs/5694403b3ec5445fb4be6021ffe23650/planning_config.json",
+      "bytes": 5669,
+      "sha256": "eb937e0c86bf4fc08dddd84d2cf360c03977fa6f2df1cec4fc91040ba170b7e2"
+    },
+    {
+      "path": "output/ais_single_task/runs/5694403b3ec5445fb4be6021ffe23650/quality.json",
+      "bytes": 501,
+      "sha256": "af99e6d335a2ec28be6a12e4af7a06989136ee0b0c1d3d23a6d81476ceae9de5"
+    },
+    {
+      "path": "output/ais_single_task/runs/5694403b3ec5445fb4be6021ffe23650/result.json",
+      "bytes": 371156,
+      "sha256": "42921e1b9e8108ed56e60edad93bf3aa00734c2afbe3ba718b0045e39b663ab0"
+    },
+    {
+      "path": "output/ais_single_task/runs/7a344c14fa3a42b5ac378dd7952b5dd6/observed_tracks.json",
+      "bytes": 102225,
+      "sha256": "936a344106c003b16f67120e8c0a76740aa2accb3980cb367766dfdc8450ece0"
+    },
+    {
+      "path": "output/ais_single_task/runs/7a344c14fa3a42b5ac378dd7952b5dd6/planning_config.json",
+      "bytes": 5669,
+      "sha256": "eb937e0c86bf4fc08dddd84d2cf360c03977fa6f2df1cec4fc91040ba170b7e2"
+    },
+    {
+      "path": "output/ais_single_task/runs/7a344c14fa3a42b5ac378dd7952b5dd6/quality.json",
+      "bytes": 502,
+      "sha256": "6069d1a09f3f963fa2a14ebcd19c8c3a39267548e01bca4b9658ccc8d3f16636"
+    },
+    {
+      "path": "output/ais_single_task/runs/7a344c14fa3a42b5ac378dd7952b5dd6/result.json",
+      "bytes": 367041,
+      "sha256": "352357575334c61a7f45f15b25cdf16b1a54cca4754f05ea3c53081a95cfe4a3"
+    },
+    {
+      "path": "output/ais_single_task/runs/9d2ffbc4af7940f1b44eae71ea8be751/observed_tracks.json",
+      "bytes": 312651,
+      "sha256": "e0b47e9d737697b6e22792fc32297ee68c7b81dfb2cd12a45697e661704f2db5"
+    },
+    {
+      "path": "output/ais_single_task/runs/9d2ffbc4af7940f1b44eae71ea8be751/ompl_input.json",
+      "bytes": 2122726,
+      "sha256": "b49522d28c09a2c3d6ce4e48a4499274cc287257e68551380edc6c6d09be1232"
+    },
+    {
+      "path": "output/ais_single_task/runs/9d2ffbc4af7940f1b44eae71ea8be751/ompl_output.json",
+      "bytes": 2799,
+      "sha256": "71b5a2309f11406bca5615ef730f336d893e5ef98c0346671672fd309cb242b5"
+    },
+    {
+      "path": "output/ais_single_task/runs/9d2ffbc4af7940f1b44eae71ea8be751/planning_config.json",
+      "bytes": 5669,
+      "sha256": "eb937e0c86bf4fc08dddd84d2cf360c03977fa6f2df1cec4fc91040ba170b7e2"
+    },
+    {
+      "path": "output/ais_single_task/runs/9d2ffbc4af7940f1b44eae71ea8be751/quality.json",
+      "bytes": 501,
+      "sha256": "af99e6d335a2ec28be6a12e4af7a06989136ee0b0c1d3d23a6d81476ceae9de5"
+    },
+    {
+      "path": "output/ais_single_task/runs/9d2ffbc4af7940f1b44eae71ea8be751/result.json",
+      "bytes": 370989,
+      "sha256": "8573f9050ce1978c9d7ff35db355acefc68d9746d628f5bda12552dac593c02c"
+    },
+    {
+      "path": "output/ais_single_task/runs/b78cd477f22e4b0f922e867b06f19b8b/observed_tracks.json",
+      "bytes": 102226,
+      "sha256": "9de6900702af1a683c0c887eb4ffca7e8d56a53012a4ced6d820ddd5b149aa41"
+    },
+    {
+      "path": "output/ais_single_task/runs/b78cd477f22e4b0f922e867b06f19b8b/planning_config.json",
+      "bytes": 5669,
+      "sha256": "eb937e0c86bf4fc08dddd84d2cf360c03977fa6f2df1cec4fc91040ba170b7e2"
+    },
+    {
+      "path": "output/ais_single_task/runs/b78cd477f22e4b0f922e867b06f19b8b/quality.json",
+      "bytes": 503,
+      "sha256": "469bec7d6ea91a3d69e6b9bbcb2174e7504e06226df29f3e45b893bab340adfd"
+    },
+    {
+      "path": "output/ais_single_task/runs/b78cd477f22e4b0f922e867b06f19b8b/result.json",
+      "bytes": 366047,
+      "sha256": "a34f76c32c9f4de62eeeed9d7dee3aef15a82fcdee1754a1872cad5d86092f32"
+    },
+    {
+      "path": "output/ais_single_task/runs/c1933e830f4d4c7798c307ac3523f26e/observed_tracks.json",
+      "bytes": 102225,
+      "sha256": "6339c3492e4254153d74c25f24154dade35684f19d2039c91bd2a842e6b8a34d"
+    },
+    {
+      "path": "output/ais_single_task/runs/c1933e830f4d4c7798c307ac3523f26e/ompl_input.json",
+      "bytes": 2057996,
+      "sha256": "5e9108b549d1fcfccf5fedbbc5d99bc5a290c5ad3a233a253b4566a60f8984cc"
+    },
+    {
+      "path": "output/ais_single_task/runs/c1933e830f4d4c7798c307ac3523f26e/ompl_output.json",
+      "bytes": 32274,
+      "sha256": "9f6137b7600eaf39cc299400635e8291c7632f8abe7283b974ed24e941a43070"
+    },
+    {
+      "path": "output/ais_single_task/runs/c1933e830f4d4c7798c307ac3523f26e/planning_config.json",
+      "bytes": 5669,
+      "sha256": "eb937e0c86bf4fc08dddd84d2cf360c03977fa6f2df1cec4fc91040ba170b7e2"
+    },
+    {
+      "path": "output/ais_single_task/runs/c1933e830f4d4c7798c307ac3523f26e/quality.json",
+      "bytes": 502,
+      "sha256": "2024d756eaea40857d90cd3ab6c95fd279e498a4f2ddc7e60254a0730c780ace"
+    },
+    {
+      "path": "output/ais_single_task/runs/c1933e830f4d4c7798c307ac3523f26e/result.json",
+      "bytes": 449239,
+      "sha256": "3ca607f326cd08789a75c415d263d24707ed00a4d81473dbacdcd4933bd0bf2e"
+    },
+    {
+      "path": "output/ais_single_task/runs/c75b6a31bc7f441da5297f3ed4771b33/observed_tracks.json",
+      "bytes": 198132,
+      "sha256": "02894d8d84ee0b6aa4ae9cc03ae1d461c560b8cc73f6ed14771c5da651f6a1c4"
+    },
+    {
+      "path": "output/ais_single_task/runs/c75b6a31bc7f441da5297f3ed4771b33/ompl_input.json",
+      "bytes": 2087074,
+      "sha256": "84ec104022904fe7c41978f8106b3a823afd4fb6d7501bf54bdda251fdaeb970"
+    },
+    {
+      "path": "output/ais_single_task/runs/c75b6a31bc7f441da5297f3ed4771b33/ompl_output.json",
+      "bytes": 2814,
+      "sha256": "fb151eac27c5f6e4047227655c8448d9810f1eb5a6b0520b78b767f7508a0da5"
+    },
+    {
+      "path": "output/ais_single_task/runs/c75b6a31bc7f441da5297f3ed4771b33/planning_config.json",
+      "bytes": 5669,
+      "sha256": "eb937e0c86bf4fc08dddd84d2cf360c03977fa6f2df1cec4fc91040ba170b7e2"
+    },
+    {
+      "path": "output/ais_single_task/runs/c75b6a31bc7f441da5297f3ed4771b33/quality.json",
+      "bytes": 501,
+      "sha256": "f9f4760011068db54bf63afc98e32a2702f479c0944cf213da36e53dc63c7fa4"
+    },
+    {
+      "path": "output/ais_single_task/runs/c75b6a31bc7f441da5297f3ed4771b33/result.json",
+      "bytes": 370571,
+      "sha256": "456728aafb01c32b4882909df984a9ecc30d36e87587e1072d4ed852411c4cb1"
+    },
+    {
+      "path": "output/ais_single_task/runs/cb97b6323b844676a0c3f38f23754234/observed_tracks.json",
+      "bytes": 197324,
+      "sha256": "a39b148b6df644eab0cc8446f43f3ea6ba427a64a61dbb28a8e49e7150fb736d"
+    },
+    {
+      "path": "output/ais_single_task/runs/cb97b6323b844676a0c3f38f23754234/planning_config.json",
+      "bytes": 5669,
+      "sha256": "eb937e0c86bf4fc08dddd84d2cf360c03977fa6f2df1cec4fc91040ba170b7e2"
+    },
+    {
+      "path": "output/ais_single_task/runs/cb97b6323b844676a0c3f38f23754234/quality.json",
+      "bytes": 501,
+      "sha256": "b0be7441f2bfcbcc11ac54642ec9a60b4b81d787cb0c182907a13a646f61aa47"
+    },
+    {
+      "path": "output/ais_single_task/runs/cb97b6323b844676a0c3f38f23754234/result.json",
+      "bytes": 316534,
+      "sha256": "d5e46c48e759e5c9fc7f7c960adc27ac44f67c4983d1445c42a7c7d2e14867d6"
+    },
+    {
+      "path": "output/research_points/selection.json",
+      "bytes": 9575,
+      "sha256": "73fc3ab4146a5a645716c1b735c67a18bb07d972b4b6033f0b7786678e4ac3b6"
+    },
+    {
+      "path": "output/research_points/study/M1/request.json",
+      "bytes": 2538,
+      "sha256": "717c0d3df3f6e8e51a76317cd8657118cc186cc5a2bae1667147ba6558a4a57c"
+    },
+    {
+      "path": "output/research_points/study/M1/result.json",
+      "bytes": 365520,
+      "sha256": "d7a57b9c666e3b42d69fb6df7b61c5f7654f03c11f73cf579c72444d9ac8f90c"
+    },
+    {
+      "path": "output/research_points/study/M1/selection.json",
+      "bytes": 9237,
+      "sha256": "1e778e5c5410ca25915003dbdd1cf446a327ddeb4fecd4de43214ff75887f3ab"
+    },
+    {
+      "path": "output/research_points/study/M2/request.json",
+      "bytes": 2597,
+      "sha256": "198636e8c477927180c0b0a657c59188282d4b5bce97a51185914e9608e3d582"
+    },
+    {
+      "path": "output/research_points/study/M2/result.json",
+      "bytes": 366845,
+      "sha256": "db63e590af9d4093819080d1f2e37ca6b010987833615ec42d28e08cecfdece5"
+    },
+    {
+      "path": "output/research_points/study/M2/selection.json",
+      "bytes": 8614,
+      "sha256": "0992b045a9525909ab09b586652630bd86a059f57ead79fb21ca2a7756222485"
+    },
+    {
+      "path": "output/research_points/study/M3/request.json",
+      "bytes": 2552,
+      "sha256": "beb4d58ba204cabcca960dce60d97c6b370991d3296ebfe92d9342bcd30b2548"
+    },
+    {
+      "path": "output/research_points/study/M3/result.json",
+      "bytes": 366515,
+      "sha256": "28700e1168214f376ea7c3bcbb33326013a6cf1cef286ad3028a66470329d42a"
+    },
+    {
+      "path": "output/research_points/study/M3/selection.json",
+      "bytes": 10604,
+      "sha256": "a122c204b34772147cc721f4efbeb9972aaaf9199bee711be8be767a88ab8075"
+    },
+    {
+      "path": "output/research_points/study/M4/request.json",
+      "bytes": 2521,
+      "sha256": "5c1808ecd8f8962780c55f430965e8f26fcbe5762d49b2ab35f69505b22a1288"
+    },
+    {
+      "path": "output/research_points/study/M4/result.json",
+      "bytes": 396085,
+      "sha256": "799696bf71e9580cca3c466faca02b7b3bab08f5811a51d1c7934668d38b087d"
+    },
+    {
+      "path": "output/research_points/study/M4/selection.json",
+      "bytes": 9284,
+      "sha256": "f5b08515d3fe63afa3aa54d00cda8a512f36e8d6cf498f96d4f6e83d3ce215ed"
+    },
+    {
+      "path": "output/research_points/study/study.json",
+      "bytes": 445912,
+      "sha256": "abca3e43e9d095dd59a055db97d5f72f2be4c4a8aba03bb8eb2d826061a786cc"
+    }
+  ],
+  "notes": [
+    "Original reviewed input bytes, including historical baseline results.",
+    "Restored to their original relative paths by scripts/bootstrap_project.py."
+  ]
+}

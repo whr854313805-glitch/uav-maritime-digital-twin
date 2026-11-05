@@ -1,0 +1,332 @@
+{
+  "profile": "reference_90_15_30_utm_v1",
+  "parameters": [
+    {
+      "parameter": "ship_buffer_m",
+      "value": 90,
+      "classification": "用户确认的样本推导简化",
+      "basis": "统一AIS参考点船体包络60m+研究净距30m",
+      "decision": "已应用；非维港平均/最大船或合规半径",
+      "source": "https://www.cad.gov.hk/english/sua_safetyreq_operatingreq.html"
+    },
+    {
+      "parameter": "physical_lateral_clearance_reference_m",
+      "value": 30,
+      "classification": "有条件官方参考",
+      "basis": "CAD标准A2相应速度档的横向间距；须满足类别/操作条件",
+      "decision": "可用作研究距离下限参照，不等于AIS点半径",
+      "source": "https://www.cad.gov.hk/english/sua_safetyreq_operatingreq.html"
+    },
+    {
+      "parameter": "speed_mps",
+      "value": 15,
+      "classification": "厂家数值参照的研究假设",
+      "basis": "DJI FlyCart30自动航线最高15m/s；本模型借鉴数值，不复现整机",
+      "decision": "已应用；非平均派送速度",
+      "source": "https://www.cad.gov.hk/english/sua_safetyreq_operatingreq.html ; https://www.dji.com/support/product/flycart-30"
+    },
+    {
+      "parameter": "building_buffer_m",
+      "value": 30,
+      "classification": "有条件官方数值的研究适配",
+      "basis": "CAD横向净距30m参考；位于当前投影建筑保守包络外",
+      "decision": "已应用；非实飞合规证明",
+      "source": "https://www.cad.gov.hk/english/sua_safetyreq_operatingreq.html"
+    },
+    {
+      "parameter": "grid_step_m",
+      "value": 200,
+      "classification": "工程/数值设定",
+      "basis": "原搜索分辨率；没有来源证明200最优",
+      "decision": "保留明确假设标签；需敏感性验证，不能伪挂论文",
+      "source": ""
+    },
+    {
+      "parameter": "endpoint_connector_cells",
+      "value": 1,
+      "classification": "工程/数值设定",
+      "basis": "端点向周围一格连接；最多9候选",
+      "decision": "保留明确假设标签；需敏感性验证，不能伪挂论文",
+      "source": ""
+    },
+    {
+      "parameter": "clearance_tolerance_m",
+      "value": 0.001,
+      "classification": "工程/数值设定",
+      "basis": "浮点判定额外余量；不是1mm定位精度",
+      "decision": "保留明确假设标签；需敏感性验证，不能伪挂论文",
+      "source": ""
+    },
+    {
+      "parameter": "ship_soft_cost_weight",
+      "value": 1,
+      "classification": "工程/数值设定",
+      "basis": "优化目标权重，非风险概率",
+      "decision": "保留明确假设标签；需敏感性验证，不能伪挂论文",
+      "source": ""
+    },
+    {
+      "parameter": "soft_distance_factor",
+      "value": 1.5,
+      "classification": "工程/数值设定",
+      "basis": "1.5倍船距内软代价；非额外法规",
+      "decision": "保留明确假设标签；需敏感性验证，不能伪挂论文",
+      "source": ""
+    },
+    {
+      "parameter": "max_expanded_states",
+      "value": 20000,
+      "classification": "工程/数值设定",
+      "basis": "计算资源上限；非无解证明",
+      "decision": "保留明确假设标签；需敏感性验证，不能伪挂论文",
+      "source": ""
+    },
+    {
+      "parameter": "gate_step_m",
+      "value": 25,
+      "classification": "工程/数值设定",
+      "basis": "原研究点枚举步长",
+      "decision": "保留明确假设标签；需敏感性验证，不能伪挂论文",
+      "source": ""
+    },
+    {
+      "parameter": "gate_max_offset_fraction",
+      "value": 0.3333333333333333,
+      "classification": "工程/数值设定",
+      "basis": "原限制偏移幅度规则",
+      "decision": "保留明确假设标签；需敏感性验证，不能伪挂论文",
+      "source": ""
+    },
+    {
+      "parameter": "conflict_scan_step_s",
+      "value": 5,
+      "classification": "工程/数值设定",
+      "basis": "诊断实验出发时间网格；可能漏掉网格之间冲突",
+      "decision": "保留明确假设标签；需敏感性验证，不能伪挂论文",
+      "source": ""
+    },
+    {
+      "parameter": "max_gap_seconds",
+      "value": 120,
+      "classification": "未校准数据质量阈值",
+      "basis": "原采集规则；AIS接口未规定此数值",
+      "decision": "原件分段保持可复现；未验证120s插值精度或30m/s船速上限",
+      "source": "https://aisstream.io/documentation ; https://github.com/movingpandas/movingpandas/blob/main/movingpandas/trajectory.py"
+    },
+    {
+      "parameter": "max_speed_mps",
+      "value": 30,
+      "classification": "未校准数据质量阈值",
+      "basis": "原采集规则；AIS接口未规定此数值",
+      "decision": "原件分段保持可复现；未验证120s插值精度或30m/s船速上限",
+      "source": "https://aisstream.io/documentation ; https://github.com/movingpandas/movingpandas/blob/main/movingpandas/trajectory.py"
+    },
+    {
+      "parameter": "max_report_age_seconds",
+      "value": 120,
+      "classification": "未校准数据质量阈值",
+      "basis": "原采集规则；AIS接口未规定此数值",
+      "decision": "原件分段保持可复现；未验证120s插值精度或30m/s船速上限",
+      "source": "https://aisstream.io/documentation ; https://github.com/movingpandas/movingpandas/blob/main/movingpandas/trajectory.py"
+    },
+    {
+      "parameter": "max_future_seconds",
+      "value": 5,
+      "classification": "未校准数据质量阈值",
+      "basis": "原采集规则；AIS接口未规定此数值",
+      "decision": "原件分段保持可复现；未验证120s插值精度或30m/s船速上限",
+      "source": "https://aisstream.io/documentation ; https://github.com/movingpandas/movingpandas/blob/main/movingpandas/trajectory.py"
+    },
+    {
+      "parameter": "legacy_window_seconds",
+      "value": 600,
+      "classification": "已退出当前判定",
+      "basis": "只用于历史审计统计",
+      "decision": "不得恢复成当前最低任务时长",
+      "source": ""
+    },
+    {
+      "parameter": "metres_per_degree",
+      "value": null,
+      "classification": "当前AIS入口已替换",
+      "basis": "pyproj/PROJ WGS84/UTM50N；EPSG32650，旧局部换算仅历史模式",
+      "decision": "不再用于当前AIS规划和回放",
+      "source": ""
+    },
+    {
+      "parameter": "projection_origin",
+      "value": [
+        22.295,
+        114.195
+      ],
+      "classification": "研究坐标原点",
+      "basis": "项目局部坐标参考",
+      "decision": "不是官方坐标变换参数",
+      "source": ""
+    },
+    {
+      "parameter": "bbox",
+      "value": [
+        22.27,
+        114.12,
+        22.32,
+        114.27
+      ],
+      "classification": "研究范围",
+      "basis": "项目框选维港，不是行政边界",
+      "decision": "保持范围，注明研究设计",
+      "source": ""
+    },
+    {
+      "parameter": "point_count_and_tasks",
+      "value": [
+        8,
+        4
+      ],
+      "classification": "筛选结果",
+      "basis": "15条官方首末站候选经既有几何规则得到4条/8派生端点",
+      "decision": "不是论文规定数量；25m/1/3会影响结果",
+      "source": "https://static.data.gov.hk/td/routes-fares-xml/ROUTE_FERRY.xml"
+    },
+    {
+      "parameter": "task_coordinates",
+      "value": "M1-M4/selection.json",
+      "classification": "官方锚点派生",
+      "basis": "站序/站点XML，EPSG2326转4326，再沿连接线偏移",
+      "decision": "原锚点来源真实；派生点不是认证起降设施",
+      "source": "https://static.data.gov.hk/td/routes-fares-xml/STOP_FERRY.xml"
+    },
+    {
+      "parameter": "time_window",
+      "value": "last_observation - fixed_departure",
+      "classification": "记录推导",
+      "basis": "各任务实际起时与最后有效记录决定；未知另列",
+      "decision": "不是单船连续覆盖时长",
+      "source": ""
+    },
+    {
+      "parameter": "departure_offset_seconds",
+      "value": 0,
+      "classification": "实验设定",
+      "basis": "当前固定出发；独立冲突诊断另存时刻",
+      "decision": "保持基准和诊断分开",
+      "source": ""
+    },
+    {
+      "parameter": "max_flight_seconds",
+      "value": null,
+      "classification": "记录范围推导",
+      "basis": "null表示受剩余记录时长限制",
+      "decision": "不表示无限续航",
+      "source": ""
+    },
+    {
+      "parameter": "altitude_m_in_2D",
+      "value": 0,
+      "classification": "接口占位",
+      "basis": "二维不建模高度；所有建筑高度参与",
+      "decision": "不解释为真实水面飞行",
+      "source": ""
+    },
+    {
+      "parameter": "wind_cost_weight_in_2D",
+      "value": 0,
+      "classification": "排除项",
+      "basis": "二维入口排除风；非实测无风",
+      "decision": "不用于天气放行",
+      "source": ""
+    },
+    {
+      "parameter": "capture_duration_s",
+      "value": 3600,
+      "classification": "实验设定",
+      "basis": "本次接收一小时；不是服务商稳定性标准",
+      "decision": "报告实际收到的消息与缺口",
+      "source": "https://aisstream.io/documentation"
+    },
+    {
+      "parameter": "raw_data_size_and_hash",
+      "value": 658582,
+      "classification": "原件测量",
+      "basis": "文件字节数与SHA256",
+      "decision": "真实文件统计，非论文值",
+      "source": "https://aisstream.io/documentation"
+    },
+    {
+      "parameter": "observations_and_ships",
+      "value": [
+        923,
+        130
+      ],
+      "classification": "数据统计",
+      "basis": "基础校验后923消息/130船",
+      "decision": "不是区域全部船舶数量",
+      "source": "https://aisstream.io/documentation"
+    },
+    {
+      "parameter": "longest_segment_seconds",
+      "value": 333.93307614326477,
+      "classification": "本次数据统计",
+      "basis": "按120s等规则分段求最大值",
+      "decision": "不是AIS或船舶发报最长时间",
+      "source": ""
+    },
+    {
+      "parameter": "legacy.weather",
+      "value": "see numeric_inventory.json",
+      "classification": "当前单机二维入口未启用或被覆盖",
+      "basis": "历史参数完整枚举，来源参见既有数据真实性报告；不作为当前验证依据",
+      "decision": "不删历史，不用旧数值支持新实验",
+      "source": ""
+    },
+    {
+      "parameter": "legacy.time",
+      "value": "see numeric_inventory.json",
+      "classification": "当前单机二维入口未启用或被覆盖",
+      "basis": "历史参数完整枚举，来源参见既有数据真实性报告；不作为当前验证依据",
+      "decision": "不删历史，不用旧数值支持新实验",
+      "source": ""
+    },
+    {
+      "parameter": "legacy.energy",
+      "value": "see numeric_inventory.json",
+      "classification": "当前单机二维入口未启用或被覆盖",
+      "basis": "历史参数完整枚举，来源参见既有数据真实性报告；不作为当前验证依据",
+      "decision": "不删历史，不用旧数值支持新实验",
+      "source": ""
+    },
+    {
+      "parameter": "legacy.coordination",
+      "value": "see numeric_inventory.json",
+      "classification": "当前单机二维入口未启用或被覆盖",
+      "basis": "历史参数完整枚举，来源参见既有数据真实性报告；不作为当前验证依据",
+      "decision": "不删历史，不用旧数值支持新实验",
+      "source": ""
+    },
+    {
+      "parameter": "legacy.corridors",
+      "value": "see numeric_inventory.json",
+      "classification": "当前单机二维入口未启用或被覆盖",
+      "basis": "历史参数完整枚举，来源参见既有数据真实性报告；不作为当前验证依据",
+      "decision": "不删历史，不用旧数值支持新实验",
+      "source": ""
+    }
+  ],
+  "ship_envelope_radius_m": 60,
+  "extra_clearance_m": 30,
+  "source_dimension_evidence_sha256": "bc369b9e4979f03805ed735b888b31bae8558032c37aee73c2ae0b93cac4f5d6",
+  "projection": {
+    "crs": "EPSG:32650",
+    "basis": "WGS84 UTM zone50N contains Hong Kong study longitudes; projected metres not exact geodesic distance",
+    "reference": "https://proj.org/en/stable/operations/projections/utm.html"
+  },
+  "frontend_projection_library": {
+    "package": "proj4",
+    "version": "2.12.1",
+    "license": "MIT",
+    "source": "https://registry.npmjs.org/proj4/2.12.1",
+    "tarball_sha1": "1a5422a9273cbf17df8e2e9af91aced63bebded7",
+    "js_sha256": "9ecae61d88a976481c70d25069066205b10d541f098cdb69c02f3dd4dcac99cf"
+  },
+  "scope": "real observed positions + explicit model assumptions and engineering constants; source traceability is not physical calibration"
+}

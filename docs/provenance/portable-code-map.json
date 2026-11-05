@@ -1,0 +1,186 @@
+[
+  {
+    "file": "portable_runtime.py",
+    "sha256": "1db14c14ac271dff7977fc94820b8547fc178be89ac05b766650b73e8780e342",
+    "functions": [
+      {
+        "name": "settings",
+        "line": 14
+      },
+      {
+        "name": "_local_path",
+        "line": 27
+      },
+      {
+        "name": "_anylogic_home",
+        "line": 32
+      },
+      {
+        "name": "_validate_anylogic",
+        "line": 37
+      },
+      {
+        "name": "_registry_installations",
+        "line": 46
+      },
+      {
+        "name": "find_anylogic",
+        "line": 68
+      },
+      {
+        "name": "find_python",
+        "line": 103
+      }
+    ]
+  },
+  {
+    "file": "prepare_portable_model.py",
+    "sha256": "055cd48a24a8175f5365cd1f5a7a92bc9786fbbee4309641efe71ab53721763c",
+    "functions": [
+      {
+        "name": "startup_code",
+        "line": 10
+      },
+      {
+        "name": "prepare_model",
+        "line": 30
+      },
+      {
+        "name": "template_startup_code",
+        "line": 48
+      }
+    ]
+  },
+  {
+    "file": "start_full_demo.py",
+    "sha256": "fb4a35ff947775168ff57d8d0f4107d9a13ed914a5d24ed8e811e30b0cea03a1",
+    "functions": [
+      {
+        "name": "focus",
+        "line": 22
+      },
+      {
+        "name": "check_environment",
+        "line": 63
+      },
+      {
+        "name": "main",
+        "line": 90
+      }
+    ]
+  },
+  {
+    "file": "presentation_controls.py",
+    "sha256": "7715a3ed7eab4f2334cad2226554786f92047c191d11165afe12b3da61402c01",
+    "functions": [
+      {
+        "name": "read",
+        "line": 22
+      },
+      {
+        "name": "_powershell_json",
+        "line": 26
+      },
+      {
+        "name": "process_identity",
+        "line": 37
+      },
+      {
+        "name": "browser_apps",
+        "line": 48
+      },
+      {
+        "name": "alive",
+        "line": 65
+      },
+      {
+        "name": "_same_path",
+        "line": 75
+      },
+      {
+        "name": "owned_model_metadata",
+        "line": 82
+      },
+      {
+        "name": "owned_metadata",
+        "line": 102
+      },
+      {
+        "name": "local_lock",
+        "line": 122
+      },
+      {
+        "name": "install",
+        "line": 145
+      },
+      {
+        "name": "_install",
+        "line": 150
+      },
+      {
+        "name": "install_for_model",
+        "line": 235
+      }
+    ]
+  },
+  {
+    "file": "scripts/bootstrap_project.py",
+    "sha256": "fe3439155ac30bdb07f02664898ed67a85246458b79fb17de2794fe654519b01",
+    "functions": [
+      {
+        "name": "sha",
+        "line": 15
+      },
+      {
+        "name": "restore",
+        "line": 23
+      }
+    ]
+  },
+  {
+    "file": "scripts/verify_project.py",
+    "sha256": "8ef18e316702d7a33788a008abdeade94181ff55a375b6e787ed65f304947163",
+    "functions": [
+      {
+        "name": "read",
+        "line": 37
+      },
+      {
+        "name": "sha",
+        "line": 41
+      },
+      {
+        "name": "require",
+        "line": 49
+      },
+      {
+        "name": "within",
+        "line": 54
+      },
+      {
+        "name": "locate",
+        "line": 60
+      },
+      {
+        "name": "verify",
+        "line": 69
+      },
+      {
+        "name": "main",
+        "line": 337
+      }
+    ]
+  },
+  {
+    "file": "scripts/setup_runtime.ps1",
+    "sha256": "cf1db66ae8bcf62b35743ea5e5c2300c450738564ef9035dcbff79e4cfb7647a"
+  },
+  {
+    "file": "scripts/start_project.ps1",
+    "sha256": "42d00eda77d7fd998c47c5a30c45bc3169be77ae4bcfde846dddbed6035e2f14"
+  },
+  {
+    "file": "anylogic/AIS_Visual_Demo.alp",
+    "sha256": "c9a587f4fc25ca7b0225eb97ae8c17518dce7c73b67bec290bfd1eda7ab57b2e"
+  }
+]

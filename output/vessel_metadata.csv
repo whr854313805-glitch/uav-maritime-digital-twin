@@ -1,9 +1,0 @@
-vessel_id,real_vessel_name,imo_no,ship_type,flag,arrival_time,data_source_grade,notes
-StarFerry_0,Star Ferry (one of 8 vessels),—,PASSENGER FERRY,"HONG KONG, CHINA",—,GRADE A (官方时刻表 + 真实码头坐标 + 9 min 真实航行),Star Ferry 官方 Open Data CSV; 真实码头 Central Pier 7 / Kowloon Point Pier
-StarFerry_1,Star Ferry (one of 8 vessels),—,PASSENGER FERRY,"HONG KONG, CHINA",—,GRADE A (官方时刻表 + 真实码头坐标 + 9 min 真实航行),Star Ferry 官方 Open Data CSV; 真实码头 Central Pier 7 / Kowloon Point Pier
-StarFerry_2,Star Ferry (one of 8 vessels),—,PASSENGER FERRY,"HONG KONG, CHINA",—,GRADE A (官方时刻表 + 真实码头坐标 + 9 min 真实航行),Star Ferry 官方 Open Data CSV; 真实码头 Central Pier 7 / Kowloon Point Pier
-Cargo_0,HELIOS,9810733,BULK/ WOODCHIP/ CEMENT/ ORE CARRIER,PANAMA,2026/04/27 18:04,GRADE B (真实船舶身份 + 合成主航道航线),MarDep RP06005i.XML; 当前位置: POTOI ISLAND
-Cargo_1,JIN XIANG,9566588,BULK/ WOODCHIP/ CEMENT/ ORE CARRIER,"HONG KONG, CHINA",2026/04/27 15:32,GRADE B (真实船舶身份 + 合成主航道航线),MarDep RP06005i.XML; 当前位置: POTOI ISLAND
-Yacht_0,OCEAN STAR,TEMP00167,PLEASURE VESSEL/ YACHT,CHINA,2024/02/03 16:56,GRADE B (真实船舶身份 + 合成港内活动),MarDep RP06005i.XML; 当前位置: YAU MA TEI ANCHORAGE
-Yacht_1,SUNONE,9663829,PLEASURE VESSEL/ YACHT,PANAMA,2023/11/10 06:27,GRADE B (真实船舶身份 + 合成港内活动),MarDep RP06005i.XML; 当前位置: KWUN TONG TYPHOON SHELTER
-Yacht_2,CLB65-5224,TEMP00088,PLEASURE VESSEL/ YACHT,CHINA,2023/05/09 18:00,GRADE B (真实船舶身份 + 合成港内活动),MarDep RP06005i.XML; 当前位置: CHEUNG SHA WAN

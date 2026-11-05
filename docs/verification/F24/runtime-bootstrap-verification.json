@@ -1,0 +1,56 @@
+{
+  "complete": true,
+  "cases": {
+    "not_yet_extracted_check": {
+      "exit_code": 2,
+      "seconds": 0.219,
+      "stdout": "Offline Python runtime has not been extracted for this version.",
+      "stderr": ""
+    },
+    "first_launch_windows_powershell_5": {
+      "exit_code": 0,
+      "seconds": 3.625,
+      "stdout": "Preparing offline Python. This only runs on the first launch or after a runtime update.\nPython 3.11.9 and project dependencies are ready.\nOffline Python runtime prepared successfully.",
+      "stderr": ""
+    },
+    "ready_launch_validates_critical_files": {
+      "exit_code": 0,
+      "seconds": 0.594,
+      "stdout": "Offline Python runtime is ready.",
+      "stderr": ""
+    },
+    "relocated_isolated_import": {
+      "python": "3.11.9",
+      "isolated": 1,
+      "root": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\运行库 Windows离线首启验收\\组员项目 含中文与空格"
+    },
+    "ready_branch_detects_modified_critical_file": {
+      "exit_code": 2,
+      "seconds": 0.562,
+      "stdout": "Offline Python runtime has not been extracted for this version.",
+      "stderr": ""
+    },
+    "modified_managed_runtime_repaired_from_offline_parts": {
+      "exit_code": 0,
+      "seconds": 3.969,
+      "stdout": "Preparing offline Python. This only runs on the first launch or after a runtime update.\nPython 3.11.9 and project dependencies are ready.\nPrevious managed runtime saved at C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\运行库 Windows离线首启验收\\组员项目 含中文与空格\\.local\\python-previous-7fd9156aa4dd4045be7346bcaa262eda\nOffline Python runtime prepared successfully.",
+      "stderr": ""
+    },
+    "missing_part_rejected": {
+      "exit_code": 1,
+      "seconds": 0.25,
+      "stdout": "Preparing offline Python. This only runs on the first launch or after a runtime update.",
+      "stderr": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\运行库 Windows离线首启验收\\missing-part\\setup_runtime\n.ps1 : Offline runtime part is missing: windows-python.zip.part01. Download the complete repository.\n    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException\n    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,setup_runtime.ps1"
+    },
+    "corrupt_part_rejected": {
+      "exit_code": 1,
+      "seconds": 0.25,
+      "stdout": "Preparing offline Python. This only runs on the first launch or after a runtime update.",
+      "stderr": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\运行库 Windows离线首启验收\\corrupt-part\\setup_runtime\n.ps1 : Offline runtime part is damaged: windows-python.zip.part01. Download it again.\n    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException\n    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,setup_runtime.ps1"
+    }
+  },
+  "critical_files_verified": 93,
+  "runtime_manifest_sha256": "81e6550ab1278823b97227ace4831acb0ea0fec15a389cd9fc6b8f761af75ff1",
+  "runtime_archive_bytes": 81073168,
+  "original_package_parts_unchanged": true
+}

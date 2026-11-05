@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-11-05T19:10:06.673497+00:00",
+  "project": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\Git下载验收 中文空格",
+  "python": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\Git下载验收 中文空格\\runtime\\python\\python.exe",
+  "mode": "saved_files_only_no_recompute",
+  "checks": [
+    {
+      "name": "necessary_files",
+      "passed": true,
+      "detail": {
+        "file_count": 36
+      },
+      "seconds": 0.0
+    },
+    {
+      "name": "installed_dependencies",
+      "passed": true,
+      "detail": {
+        "original_project_modules_imported": true,
+        "Pillow_imported": true,
+        "Playwright_imported": true,
+        "solver_invoked": false
+      },
+      "seconds": 0.312
+    },
+    {
+      "name": "all_16_saved_catalog_entries",
+      "passed": true,
+      "detail": {
+        "saved_entries": 16,
+        "recalculable": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "current",
+          "detour_M1",
+          "encounter_M1_opposing",
+          "encounter_M1_same_direction",
+          "encounter_M1_singleton",
+          "encounter_M1_start_conflict"
+        ],
+        "view_only": [
+          "detour_M2",
+          "detour_M3",
+          "detour_M4",
+          "grid_100",
+          "grid_200",
+          "grid_400"
+        ],
+        "original_catalog_baseline_and_override_checks_passed": true
+      },
+      "seconds": 0.157
+    },
+    {
+      "name": "six_saved_demonstration_bindings",
+      "passed": true,
+      "detail": {
+        "saved_demonstrations": 6,
+        "bindings_match_current_saved_results": true
+      },
+      "seconds": 0.047
+    },
+    {
+      "name": "capture_and_raw_AIS_identity",
+      "passed": true,
+      "detail": {
+        "capture_id": "621a8559a44d406a8e617cee31a65e04",
+        "raw_sha256": "5c843f96122ff456ffcb2ae8d852ad59162cb2d06d0f04d369a173083fdec3d8",
+        "valid_positions": 923,
+        "vessels": 130,
+        "original_capture_parser_and_hash_checks_passed": true
+      },
+      "seconds": 0.015
+    },
+    {
+      "name": "frozen_research_point_selections",
+      "passed": true,
+      "detail": {
+        "selection_files": [
+          "output/research_points/selection.json",
+          "output/research_points/study/M1/selection.json",
+          "output/research_points/study/M2/selection.json",
+          "output/research_points/study/M3/selection.json",
+          "output/research_points/study/M4/selection.json"
+        ],
+        "endpoints_unchanged": true
+      },
+      "seconds": 0.016
+    },
+    {
+      "name": "official_buildings_and_original_raw_files",
+      "passed": true,
+      "detail": {
+        "building_count": 35335,
+        "buildings_sha256": "4cbca41e26d1fd00c11c80274f744ed27fbda29b89e519594619d151bcded97a",
+        "original_load_environment_hash_checks_passed": true,
+        "display_only_scenery": true
+      },
+      "seconds": 2.094
+    },
+    {
+      "name": "pinned_OMPL_runtime",
+      "passed": true,
+      "detail": {
+        "version": "2.0.2",
+        "declared_upstream_commit": "1ae6ac0bf7e9cb67d8994a8b8742833f813fdd39",
+        "runtime_files_verified": [
+          "libgcc_s_seh-1.dll",
+          "libstdc++-6.dll",
+          "libwinpthread-1.dll",
+          "sst_worker.exe"
+        ],
+        "adapter_source_hash_verified": true,
+        "solver_invoked": false
+      },
+      "seconds": 0.015
+    }
+  ],
+  "recomputations": [],
+  "scope": "Offline historical AIS, original observed-segment rules and fixed research points.",
+  "limits": [
+    "No AnyLogic UI verification is performed by this script.",
+    "No real-flight safety, future-ship prediction or global-optimality claim.",
+    "16 catalog entries are not 16 independent experiments.",
+    "Historical grid results and not-tested entries are not new SST verification."
+  ],
+  "passed": true,
+  "elapsed_seconds": 2.656
+}

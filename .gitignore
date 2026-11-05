@@ -1,103 +1,29 @@
-# Python
+# Secrets and machine configuration
+.env
+.env.*
+!.env.example
+settings.local.json
+# Automatically unpacked runtime and reviewed data
+/runtime/python/
+/data/
+/output/
+# Only local simulation workspaces, browser profiles and generated logs
+.local/
+.venv/
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-ENV/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Virtual environments
-.venv
-venv/
-ENV/
-
-# IDE and editors
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-*.sublime-project
-*.sublime-workspace
-.claude/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb
-
-# Testing
 .pytest_cache/
 .coverage
-htmlcov/
-.tox/
-
-# === 大型外部数据 (不提交) ===
-data/hko/*.json
-data/hko/*.csv
-data/geospatial/*.tif
-data/open3dhk/*.zip
-data/open3dhk/*.geojson
-
-# === 临时数据 (不提交) ===
-output/maritime_baseline_24h.csv
-output/maritime_baseline_24h.xlsx
-output/maritime_baseline_24h_with_step.xlsx
-output/vessel_positions.bad_landlocked.csv
-output/step_log.txt
-output/maritime_traffic_map.png
-output/positions_inline.json
-output/reroute_demo_minute720.json
-output/reroute_paths_hourly.json
-
-# 注意: V&V 核心数据必须提交
-#   output/vessel_positions.csv, all_real_vessels.json, buildings_hk.json,
-#   vv_*.csv, vv_*.json, multi_uav_coordination.json, uav_*.csv 等
-
-# AnyLogic 缓存 (6+ MB, 不需要)
-uav-maritime-twin1/cache/giscache-tiles-1*
-uav-maritime-twin1/al_internal/
-
-# MATLAB
-*.asv
-slprj/
-*.slxc
-
-# Node.js
-node_modules/
-visualization/cesium-app/dist/
-
-# Environment variables
-.env
-.env.local
-
-# OS
-.DS_Store
-Thumbs.db
-.AppleDouble
-.LSOverride
-
-# Logs
 *.log
-
-# Temporary files
 *.tmp
-*.temp
-*~
+*.alp.autosave
+anylogic/*_session/
+anylogic/session/
+anylogic/*_classes/
+anylogic/classes/
+anylogic/visual_demo/state.json
+anylogic/visual_demo/startup_error.txt
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store

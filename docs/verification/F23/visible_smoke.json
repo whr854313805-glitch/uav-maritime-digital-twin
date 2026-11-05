@@ -1,0 +1,35 @@
+{
+  "complete": true,
+  "native_visible_client_version": 2,
+  "actual_slider_handle_drag_values": [
+    1,
+    10
+  ],
+  "actual_middle_pan_camera_before": {
+    "pos": [
+      -2685.262593884807,
+      521.6125475756791,
+      107.51484184274662
+    ],
+    "pan": [
+      0,
+      0,
+      0
+    ],
+    "version": 2
+  },
+  "actual_middle_pan_camera_after": {
+    "pos": [
+      -2867.0149715944403,
+      419.96514641300257,
+      442.7648377553721
+    ],
+    "pan": [
+      210.78256943161568,
+      -91.69967948233742,
+      -3.181617709089882e-14
+    ],
+    "version": 2
+  },
+  "pan_reset": true
+}

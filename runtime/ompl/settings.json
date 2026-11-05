@@ -1,0 +1,798 @@
+{
+  "fixed_requests": [
+    {
+      "request": {
+        "task_id": "M1_OPPOSING",
+        "window_policy": "observed_segments_v3",
+        "start": [
+          22.29155064606866,
+          114.16620614083803
+        ],
+        "end": [
+          22.288838758860937,
+          114.16322690760023
+        ],
+        "speed_mps": 15,
+        "buffer_m": 90,
+        "window_start_utc": "2026-11-03T12:38:59.758000+00:00",
+        "departure_offset_seconds": 0,
+        "max_expanded_states": 20000,
+        "max_flight_seconds": null,
+        "parameter_basis": "60m common ship envelope derived from four recorded dimension samples +30m reference clearance;15m/s waypoint-speed reference;30m building research clearance. Simplified model, not regulatory compliance.",
+        "research_points": {
+          "method": "official_pier_anchors_first_static_free_fairway_gate_v1",
+          "selection_file": "output/research_points/study/M1/selection.json",
+          "selection_sha256": "1e778e5c5410ca25915003dbdd1cf446a327ddeb4fecd4de43214ff75887f3ab",
+          "gates": [
+            {
+              "anchor": {
+                "stop_id": "101119",
+                "name": "Star Ferry Pier at Salisbury Road",
+                "name_zh": "梳士巴利道天星渡輪碼頭",
+                "lat": 22.293761992775078,
+                "lon": 114.1686354887804,
+                "x_hk1980": 835419.0,
+                "y_hk1980": 817205.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.29155064606866,
+                114.16620614083803
+              ],
+              "offset_m": 350,
+              "minimum_building_envelope_clearance_m": 140.37059202812236,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            },
+            {
+              "anchor": {
+                "stop_id": "101339",
+                "name": "Central Pier No.7 at Man Kwong Street",
+                "name_zh": "民光街中環 七號碼頭",
+                "lat": 22.286943318826864,
+                "lon": 114.16114460936392,
+                "x_hk1980": 834647.0,
+                "y_hk1980": 816450.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.288838758860937,
+                114.16322690760023
+              ],
+              "offset_m": 300,
+              "minimum_building_envelope_clearance_m": 163.49666647765883,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            }
+          ],
+          "roles": [
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site",
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+          ]
+        },
+        "window_start_basis": "Fixed protocol: earliest eligible per route/category, selected before replanning; baseline unchanged",
+        "parameter_profile": "reference_90_15_30_utm_v1"
+      },
+      "seed": 42,
+      "solve_seconds": 10.0,
+      "selection_radius": 0.2,
+      "pruning_radius": 0.01,
+      "terminal_region_m": 15.0,
+      "query_time_upper_s": 31.17280411720276,
+      "query_basis": "Recorded fixed-request original feasible flight duration; opposing additionally limited to original reference segment. Query bound only, no original route points supplied."
+    },
+    {
+      "request": {
+        "task_id": "M1_SAME_DIRECTION",
+        "window_policy": "observed_segments_v3",
+        "start": [
+          22.29155064606866,
+          114.16620614083803
+        ],
+        "end": [
+          22.288838758860937,
+          114.16322690760023
+        ],
+        "speed_mps": 15,
+        "buffer_m": 90,
+        "window_start_utc": "2026-11-03T12:57:39.758000+00:00",
+        "departure_offset_seconds": 0,
+        "max_expanded_states": 20000,
+        "max_flight_seconds": null,
+        "parameter_basis": "60m common ship envelope derived from four recorded dimension samples +30m reference clearance;15m/s waypoint-speed reference;30m building research clearance. Simplified model, not regulatory compliance.",
+        "research_points": {
+          "method": "official_pier_anchors_first_static_free_fairway_gate_v1",
+          "selection_file": "output/research_points/study/M1/selection.json",
+          "selection_sha256": "1e778e5c5410ca25915003dbdd1cf446a327ddeb4fecd4de43214ff75887f3ab",
+          "gates": [
+            {
+              "anchor": {
+                "stop_id": "101119",
+                "name": "Star Ferry Pier at Salisbury Road",
+                "name_zh": "梳士巴利道天星渡輪碼頭",
+                "lat": 22.293761992775078,
+                "lon": 114.1686354887804,
+                "x_hk1980": 835419.0,
+                "y_hk1980": 817205.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.29155064606866,
+                114.16620614083803
+              ],
+              "offset_m": 350,
+              "minimum_building_envelope_clearance_m": 140.37059202812236,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            },
+            {
+              "anchor": {
+                "stop_id": "101339",
+                "name": "Central Pier No.7 at Man Kwong Street",
+                "name_zh": "民光街中環 七號碼頭",
+                "lat": 22.286943318826864,
+                "lon": 114.16114460936392,
+                "x_hk1980": 834647.0,
+                "y_hk1980": 816450.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.288838758860937,
+                114.16322690760023
+              ],
+              "offset_m": 300,
+              "minimum_building_envelope_clearance_m": 163.49666647765883,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            }
+          ],
+          "roles": [
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site",
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+          ]
+        },
+        "window_start_basis": "Fixed protocol: earliest eligible per route/category, selected before replanning; baseline unchanged",
+        "parameter_profile": "reference_90_15_30_utm_v1"
+      },
+      "seed": 42,
+      "solve_seconds": 10.0,
+      "selection_radius": 0.2,
+      "pruning_radius": 0.01,
+      "terminal_region_m": 15.0,
+      "query_time_upper_s": 35.72386021393679,
+      "query_basis": "Recorded fixed-request original feasible flight duration; opposing additionally limited to original reference segment. Query bound only, no original route points supplied."
+    },
+    {
+      "request": {
+        "task_id": "M1_START_CONFLICT",
+        "window_policy": "observed_segments_v3",
+        "start": [
+          22.29155064606866,
+          114.16620614083803
+        ],
+        "end": [
+          22.288838758860937,
+          114.16322690760023
+        ],
+        "speed_mps": 15,
+        "buffer_m": 90,
+        "window_start_utc": "2026-11-03T12:57:44.758000+00:00",
+        "departure_offset_seconds": 0,
+        "max_expanded_states": 20000,
+        "max_flight_seconds": null,
+        "parameter_basis": "60m common ship envelope derived from four recorded dimension samples +30m reference clearance;15m/s waypoint-speed reference;30m building research clearance. Simplified model, not regulatory compliance.",
+        "research_points": {
+          "method": "official_pier_anchors_first_static_free_fairway_gate_v1",
+          "selection_file": "output/research_points/study/M1/selection.json",
+          "selection_sha256": "1e778e5c5410ca25915003dbdd1cf446a327ddeb4fecd4de43214ff75887f3ab",
+          "gates": [
+            {
+              "anchor": {
+                "stop_id": "101119",
+                "name": "Star Ferry Pier at Salisbury Road",
+                "name_zh": "梳士巴利道天星渡輪碼頭",
+                "lat": 22.293761992775078,
+                "lon": 114.1686354887804,
+                "x_hk1980": 835419.0,
+                "y_hk1980": 817205.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.29155064606866,
+                114.16620614083803
+              ],
+              "offset_m": 350,
+              "minimum_building_envelope_clearance_m": 140.37059202812236,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            },
+            {
+              "anchor": {
+                "stop_id": "101339",
+                "name": "Central Pier No.7 at Man Kwong Street",
+                "name_zh": "民光街中環 七號碼頭",
+                "lat": 22.286943318826864,
+                "lon": 114.16114460936392,
+                "x_hk1980": 834647.0,
+                "y_hk1980": 816450.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.288838758860937,
+                114.16322690760023
+              ],
+              "offset_m": 300,
+              "minimum_building_envelope_clearance_m": 163.49666647765883,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            }
+          ],
+          "roles": [
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site",
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+          ]
+        },
+        "window_start_basis": "Fixed protocol: earliest eligible per route/category, selected before replanning; baseline unchanged",
+        "parameter_profile": "reference_90_15_30_utm_v1"
+      },
+      "seed": 42,
+      "solve_seconds": 10.0,
+      "selection_radius": 0.2,
+      "pruning_radius": 0.01,
+      "terminal_region_m": 15.0
+    },
+    {
+      "request": {
+        "task_id": "M1_SINGLETON",
+        "window_policy": "observed_segments_v3",
+        "start": [
+          22.29155064606866,
+          114.16620614083803
+        ],
+        "end": [
+          22.288838758860937,
+          114.16322690760023
+        ],
+        "speed_mps": 15,
+        "buffer_m": 90,
+        "window_start_utc": "2026-11-03T12:38:59.758000+00:00",
+        "departure_offset_seconds": 0,
+        "max_expanded_states": 20000,
+        "max_flight_seconds": null,
+        "parameter_basis": "60m common ship envelope derived from four recorded dimension samples +30m reference clearance;15m/s waypoint-speed reference;30m building research clearance. Simplified model, not regulatory compliance.",
+        "research_points": {
+          "method": "official_pier_anchors_first_static_free_fairway_gate_v1",
+          "selection_file": "output/research_points/study/M1/selection.json",
+          "selection_sha256": "1e778e5c5410ca25915003dbdd1cf446a327ddeb4fecd4de43214ff75887f3ab",
+          "gates": [
+            {
+              "anchor": {
+                "stop_id": "101119",
+                "name": "Star Ferry Pier at Salisbury Road",
+                "name_zh": "梳士巴利道天星渡輪碼頭",
+                "lat": 22.293761992775078,
+                "lon": 114.1686354887804,
+                "x_hk1980": 835419.0,
+                "y_hk1980": 817205.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.29155064606866,
+                114.16620614083803
+              ],
+              "offset_m": 350,
+              "minimum_building_envelope_clearance_m": 140.37059202812236,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            },
+            {
+              "anchor": {
+                "stop_id": "101339",
+                "name": "Central Pier No.7 at Man Kwong Street",
+                "name_zh": "民光街中環 七號碼頭",
+                "lat": 22.286943318826864,
+                "lon": 114.16114460936392,
+                "x_hk1980": 834647.0,
+                "y_hk1980": 816450.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.288838758860937,
+                114.16322690760023
+              ],
+              "offset_m": 300,
+              "minimum_building_envelope_clearance_m": 163.49666647765883,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            }
+          ],
+          "roles": [
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site",
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+          ]
+        },
+        "window_start_basis": "Fixed protocol: earliest eligible per route/category, selected before replanning; baseline unchanged",
+        "parameter_profile": "reference_90_15_30_utm_v1"
+      },
+      "seed": 42,
+      "solve_seconds": 10.0,
+      "selection_radius": 0.2,
+      "pruning_radius": 0.01,
+      "terminal_region_m": 15.0,
+      "query_time_upper_s": 31.17280411720276,
+      "query_basis": "Recorded fixed-request original feasible flight duration; opposing additionally limited to original reference segment. Query bound only, no original route points supplied."
+    },
+    {
+      "request": {
+        "task_id": "HARBOUR_M1_7030",
+        "window_policy": "observed_segments_v3",
+        "start": [
+          22.29155064606866,
+          114.16620614083803
+        ],
+        "end": [
+          22.288838758860937,
+          114.16322690760023
+        ],
+        "speed_mps": 15,
+        "buffer_m": 90,
+        "window_start_utc": "2026-11-03T13:13:16.314380+00:00",
+        "departure_offset_seconds": 0,
+        "max_expanded_states": 20000,
+        "max_flight_seconds": null,
+        "parameter_basis": "60m common ship envelope derived from four recorded dimension samples +30m reference clearance;15m/s waypoint-speed reference;30m building research clearance. Simplified model, not regulatory compliance.",
+        "research_points": {
+          "method": "official_pier_anchors_first_static_free_fairway_gate_v1",
+          "selection_file": "output/research_points/study/M1/selection.json",
+          "selection_sha256": "1e778e5c5410ca25915003dbdd1cf446a327ddeb4fecd4de43214ff75887f3ab",
+          "gates": [
+            {
+              "anchor": {
+                "stop_id": "101119",
+                "name": "Star Ferry Pier at Salisbury Road",
+                "name_zh": "梳士巴利道天星渡輪碼頭",
+                "lat": 22.293761992775078,
+                "lon": 114.1686354887804,
+                "x_hk1980": 835419.0,
+                "y_hk1980": 817205.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.29155064606866,
+                114.16620614083803
+              ],
+              "offset_m": 350,
+              "minimum_building_envelope_clearance_m": 140.37059202812236,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            },
+            {
+              "anchor": {
+                "stop_id": "101339",
+                "name": "Central Pier No.7 at Man Kwong Street",
+                "name_zh": "民光街中環 七號碼頭",
+                "lat": 22.286943318826864,
+                "lon": 114.16114460936392,
+                "x_hk1980": 834647.0,
+                "y_hk1980": 816450.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.288838758860937,
+                114.16322690760023
+              ],
+              "offset_m": 300,
+              "minimum_building_envelope_clearance_m": 163.49666647765883,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            }
+          ],
+          "roles": [
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site",
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+          ]
+        },
+        "window_start_basis": "Frozen previous M1 experiment departure for comparison; not selected again by route success.",
+        "parameter_profile": "reference_90_15_30_utm_v1"
+      },
+      "seed": 42,
+      "solve_seconds": 10.0,
+      "selection_radius": 0.2,
+      "pruning_radius": 0.01,
+      "terminal_region_m": 15.0,
+      "query_time_upper_s": 28.649401651795674,
+      "query_basis": "Recorded fixed-request original feasible flight duration; opposing additionally limited to original reference segment. Query bound only, no original route points supplied."
+    },
+    {
+      "request": {
+        "task_id": "HARBOUR_M2_7019",
+        "window_policy": "observed_segments_v3",
+        "start": [
+          22.295538829006446,
+          114.19760600500376
+        ],
+        "end": [
+          22.299549469182796,
+          114.19232661101557
+        ],
+        "speed_mps": 15,
+        "buffer_m": 90,
+        "window_start_utc": "2026-11-03T13:13:16.314380+00:00",
+        "departure_offset_seconds": 0,
+        "max_expanded_states": 20000,
+        "max_flight_seconds": null,
+        "parameter_basis": "60m common ship envelope derived from four recorded dimension samples +30m reference clearance;15m/s waypoint-speed reference;30m building research clearance. Simplified model, not regulatory compliance.",
+        "research_points": {
+          "method": "official_pier_anchors_first_static_free_fairway_gate_v1",
+          "selection_file": "output/research_points/study/M2/selection.json",
+          "selection_sha256": "0992b045a9525909ab09b586652630bd86a059f57ead79fb21ca2a7756222485",
+          "gates": [
+            {
+              "anchor": {
+                "stop_id": "101110",
+                "name": "North Point (West) Ferry Pier (near North Point Promenade)",
+                "name_zh": "北角（西）渡輪碼頭(近北角海濱花園)",
+                "lat": 22.293823779143604,
+                "lon": 114.19986360567029,
+                "x_hk1980": 838637.0,
+                "y_hk1980": 817212.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.295538829006446,
+                114.19760600500376
+              ],
+              "offset_m": 300,
+              "minimum_building_envelope_clearance_m": 154.539314625791,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            },
+            {
+              "anchor": {
+                "stop_id": "101111",
+                "name": "Hung Hom (North) Ferry Pier at Wa Shun Street",
+                "name_zh": "華信街紅磡（北）渡輪碼頭",
+                "lat": 22.301121598223734,
+                "lon": 114.19025714373792,
+                "x_hk1980": 837647.0,
+                "y_hk1980": 818020.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.299549469182796,
+                114.19232661101557
+              ],
+              "offset_m": 275,
+              "minimum_building_envelope_clearance_m": 190.64953889390335,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            }
+          ],
+          "roles": [
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site",
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+          ]
+        },
+        "window_start_basis": "Frozen previous M1 experiment departure for comparison; not selected again by route success.",
+        "parameter_profile": "reference_90_15_30_utm_v1"
+      },
+      "seed": 42,
+      "solve_seconds": 10.0,
+      "selection_radius": 0.2,
+      "pruning_radius": 0.01,
+      "terminal_region_m": 15.0,
+      "query_time_upper_s": 46.84806615139605,
+      "query_basis": "Recorded fixed-request original feasible flight duration; opposing additionally limited to original reference segment. Query bound only, no original route points supplied."
+    },
+    {
+      "request": {
+        "task_id": "HARBOUR_M3_7023",
+        "window_policy": "observed_segments_v3",
+        "start": [
+          22.287611325870845,
+          114.22752228550549
+        ],
+        "end": [
+          22.28941229498438,
+          114.23261116422128
+        ],
+        "speed_mps": 15,
+        "buffer_m": 90,
+        "window_start_utc": "2026-11-03T13:13:16.314380+00:00",
+        "departure_offset_seconds": 0,
+        "max_expanded_states": 20000,
+        "max_flight_seconds": null,
+        "parameter_basis": "60m common ship envelope derived from four recorded dimension samples +30m reference clearance;15m/s waypoint-speed reference;30m building research clearance. Simplified model, not regulatory compliance.",
+        "research_points": {
+          "method": "official_pier_anchors_first_static_free_fairway_gate_v1",
+          "selection_file": "output/research_points/study/M3/selection.json",
+          "selection_sha256": "a122c204b34772147cc721f4efbeb9972aaaf9199bee711be8be767a88ab8075",
+          "gates": [
+            {
+              "anchor": {
+                "stop_id": "101321",
+                "name": "Sai Wan Ho Ferry Pier at Tai Hong Street",
+                "name_zh": "太康街西灣河渡輪碼頭",
+                "lat": 22.286404382819434,
+                "lon": 114.22411190674921,
+                "x_hk1980": 841136.0,
+                "y_hk1980": 816391.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.287611325870845,
+                114.22752228550549
+              ],
+              "offset_m": 375,
+              "minimum_building_envelope_clearance_m": 207.67713733541058,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            },
+            {
+              "anchor": {
+                "stop_id": "101322",
+                "name": "Sam Ka Tsuen Ferry Pier at Shung Shun Street",
+                "name_zh": "崇信街三家村渡輪碼頭",
+                "lat": 22.290780163775977,
+                "lon": 114.23647626014505,
+                "x_hk1980": 842410.0,
+                "y_hk1980": 816876.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.28941229498438,
+                114.23261116422128
+              ],
+              "offset_m": 425,
+              "minimum_building_envelope_clearance_m": 312.86349378517406,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            }
+          ],
+          "roles": [
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site",
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+          ]
+        },
+        "window_start_basis": "Frozen previous M1 experiment departure for comparison; not selected again by route success.",
+        "parameter_profile": "reference_90_15_30_utm_v1"
+      },
+      "seed": 42,
+      "solve_seconds": 10.0,
+      "selection_radius": 0.2,
+      "pruning_radius": 0.01,
+      "terminal_region_m": 15.0,
+      "query_time_upper_s": 37.42661871249561,
+      "query_basis": "Recorded fixed-request original feasible flight duration; opposing additionally limited to original reference segment. Query bound only, no original route points supplied."
+    },
+    {
+      "request": {
+        "task_id": "HARBOUR_M4_7000036",
+        "window_policy": "observed_segments_v3",
+        "start": [
+          22.292584334929305,
+          114.17601921219325
+        ],
+        "end": [
+          22.287839811702035,
+          114.23641693462697
+        ],
+        "speed_mps": 15,
+        "buffer_m": 90,
+        "window_start_utc": "2026-11-03T13:13:16.314380+00:00",
+        "departure_offset_seconds": 0,
+        "max_expanded_states": 20000,
+        "max_flight_seconds": null,
+        "parameter_basis": "60m common ship envelope derived from four recorded dimension samples +30m reference clearance;15m/s waypoint-speed reference;30m building research clearance. Simplified model, not regulatory compliance.",
+        "research_points": {
+          "method": "official_pier_anchors_first_static_free_fairway_gate_v1",
+          "selection_file": "output/research_points/study/M4/selection.json",
+          "selection_sha256": "f5b08515d3fe63afa3aa54d00cda8a512f36e8d6cf498f96d4f6e83d3ce215ed",
+          "gates": [
+            {
+              "anchor": {
+                "stop_id": "80000024",
+                "name": "Landing Steps No.1 of Kowloon Public Pier",
+                "name_zh": "九龍公眾碼頭一號梯台",
+                "lat": 22.293003510873493,
+                "lon": 114.17068310757006,
+                "x_hk1980": 835630.0,
+                "y_hk1980": 817121.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.292584334929305,
+                114.17601921219325
+              ],
+              "offset_m": 550,
+              "minimum_building_envelope_clearance_m": 78.16992579299924,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            },
+            {
+              "anchor": {
+                "stop_id": "80000022",
+                "name": "Lei Yue Mun Landing",
+                "name_zh": "鯉魚門梯台",
+                "lat": 22.287763597894003,
+                "lon": 114.23738713546756,
+                "x_hk1980": 842504.0,
+                "y_hk1980": 816542.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.287839811702035,
+                114.23641693462697
+              ],
+              "offset_m": 100,
+              "minimum_building_envelope_clearance_m": 11.332266626248071,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            }
+          ],
+          "roles": [
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site",
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+          ]
+        },
+        "window_start_basis": "Frozen previous M1 experiment departure for comparison; not selected again by route success.",
+        "parameter_profile": "reference_90_15_30_utm_v1"
+      },
+      "seed": 42,
+      "solve_seconds": 60.0,
+      "selection_radius": 0.011999881594568962,
+      "pruning_radius": 0.00023999763189137924,
+      "terminal_region_m": 75.0,
+      "query_time_upper_s": 447.79312870939197,
+      "query_basis": "Recorded fixed-request original feasible flight duration; opposing additionally limited to original reference segment. Query bound only, no original route points supplied."
+    },
+    {
+      "request": {
+        "task_id": "AIS_TST_CENTRAL_CRUISE",
+        "window_policy": "observed_segments_v3",
+        "start": [
+          22.29155064606866,
+          114.16620614083803
+        ],
+        "end": [
+          22.288838758860937,
+          114.16322690760023
+        ],
+        "speed_mps": 15,
+        "buffer_m": 90,
+        "window_start_utc": "2026-11-03T13:13:16.314380+00:00",
+        "departure_offset_seconds": 0,
+        "max_expanded_states": 20000,
+        "max_flight_seconds": null,
+        "parameter_basis": "60m common ship envelope derived from four recorded dimension samples +30m reference clearance;15m/s waypoint-speed reference;30m building research clearance. Simplified model, not regulatory compliance.",
+        "research_points": {
+          "method": "official_pier_anchors_first_static_free_fairway_gate_v1",
+          "selection_file": "output/research_points/selection.json",
+          "selection_sha256": "73fc3ab4146a5a645716c1b735c67a18bb07d972b4b6033f0b7786678e4ac3b6",
+          "gates": [
+            {
+              "anchor": {
+                "stop_id": "101119",
+                "name": "Star Ferry Pier at Salisbury Road",
+                "x_hk1980": 835419.0,
+                "y_hk1980": 817205.0,
+                "lat": 22.293761992775078,
+                "lon": 114.1686354887804,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.29155064606866,
+                114.16620614083803
+              ],
+              "offset_m": 350,
+              "minimum_building_envelope_clearance_m": 140.37059202812236,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            },
+            {
+              "anchor": {
+                "stop_id": "101339",
+                "name": "Central Pier No.7 at Man Kwong Street",
+                "x_hk1980": 834647.0,
+                "y_hk1980": 816450.0,
+                "lat": 22.286943318826864,
+                "lon": 114.16114460936392,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.288838758860937,
+                114.16322690760023
+              ],
+              "offset_m": 300,
+              "minimum_building_envelope_clearance_m": 163.49666647765883,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            }
+          ],
+          "roles": [
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site",
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+          ]
+        },
+        "window_start_basis": "Frozen previous M1 experiment departure for comparison; not selected again by route success.",
+        "parameter_profile": "reference_90_15_30_utm_v1"
+      },
+      "seed": 42,
+      "solve_seconds": 10.0,
+      "selection_radius": 0.2,
+      "pruning_radius": 0.01,
+      "terminal_region_m": 15.0,
+      "query_time_upper_s": 28.649401651795674,
+      "query_basis": "Recorded fixed-request original feasible flight duration; opposing additionally limited to original reference segment. Query bound only, no original route points supplied."
+    },
+    {
+      "request": {
+        "task_id": "HARBOUR_M1_7030_DETOUR_VALIDATION",
+        "window_policy": "observed_segments_v3",
+        "start": [
+          22.29155064606866,
+          114.16620614083803
+        ],
+        "end": [
+          22.288838758860937,
+          114.16322690760023
+        ],
+        "speed_mps": 15,
+        "buffer_m": 90,
+        "window_start_utc": "2026-11-03T12:38:59.758000+00:00",
+        "departure_offset_seconds": 0,
+        "max_expanded_states": 20000,
+        "max_flight_seconds": null,
+        "parameter_basis": "60m common ship envelope derived from four recorded dimension samples +30m reference clearance;15m/s waypoint-speed reference;30m building research clearance. Simplified model, not regulatory compliance.",
+        "research_points": {
+          "method": "official_pier_anchors_first_static_free_fairway_gate_v1",
+          "selection_file": "output/research_points/study/M1/selection.json",
+          "selection_sha256": "1e778e5c5410ca25915003dbdd1cf446a327ddeb4fecd4de43214ff75887f3ab",
+          "gates": [
+            {
+              "anchor": {
+                "stop_id": "101119",
+                "name": "Star Ferry Pier at Salisbury Road",
+                "name_zh": "梳士巴利道天星渡輪碼頭",
+                "lat": 22.293761992775078,
+                "lon": 114.1686354887804,
+                "x_hk1980": 835419.0,
+                "y_hk1980": 817205.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.29155064606866,
+                114.16620614083803
+              ],
+              "offset_m": 350,
+              "minimum_building_envelope_clearance_m": 140.37059202812236,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            },
+            {
+              "anchor": {
+                "stop_id": "101339",
+                "name": "Central Pier No.7 at Man Kwong Street",
+                "name_zh": "民光街中環 七號碼頭",
+                "lat": 22.286943318826864,
+                "lon": 114.16114460936392,
+                "x_hk1980": 834647.0,
+                "y_hk1980": 816450.0,
+                "source_kind": "official_derived"
+              },
+              "point": [
+                22.288838758860937,
+                114.16322690760023
+              ],
+              "offset_m": 300,
+              "minimum_building_envelope_clearance_m": 163.49666647765883,
+              "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+            }
+          ],
+          "roles": [
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site",
+            "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+          ]
+        },
+        "window_start_basis": "Separate targeted validation: earliest eligible conflict on fixed 5-second grid; baseline unchanged",
+        "parameter_profile": "reference_90_15_30_utm_v1"
+      },
+      "seed": 42,
+      "solve_seconds": 10.0,
+      "selection_radius": 0.2,
+      "pruning_radius": 0.01,
+      "terminal_region_m": 15.0,
+      "query_time_upper_s": 37.398773523428694,
+      "query_basis": "Recorded fixed-request original feasible flight duration; opposing additionally limited to original reference segment. Query bound only, no original route points supplied."
+    }
+  ],
+  "default": {
+    "seed": 42,
+    "solve_seconds": 10.0,
+    "selection_radius": 0.2,
+    "pruning_radius": 0.01,
+    "terminal_region_m": 15.0
+  },
+  "note": "Bounds are solver query budgets, not new safety rules. No automatic retries or legacy fallback. All terminal flight legs must meet original endpoint/time/safety constraints."
+}

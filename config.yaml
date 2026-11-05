@@ -1,0 +1,143 @@
+schema_version: 1
+algorithm_version: official-envelopes-v2
+seed: 42
+weather:
+  mode: observation_snapshot
+  snapshot_id: 4f50d0c0a0a7f17a
+  max_age_seconds: 1800
+  observation_time_policy: same_saved_wind_snapshot_for_all_synthetic_ship_minutes_not_historical_weather
+time:
+  timezone: Asia/Hong_Kong
+  duration_minutes: 1440
+  vessel_sample_seconds: 60
+  evaluation_interval_minutes: 1
+projection:
+  kind: local_equirectangular
+  origin_lat: 22.295
+  origin_lon: 114.195
+  metres_per_degree: 111000.0
+region:
+  lat_min: 22.27
+  lat_max: 22.32
+  lon_min: 114.12
+  lon_max: 114.27
+planning:
+  grid_step_m: 200.0
+  endpoint_connector_cells: 1
+  clearance_tolerance_m: 0.001
+  building_height_threshold_m: 50.0
+  building_buffer_m: 50.0
+  wind_threshold_mps: 8.0
+  wind_sample_step_m: 25.0
+  wind_cost_weight: 0.5
+  ship_soft_cost_weight: 1.0
+data:
+  vessel_positions: data/official/snapshots/28991d3a0c66d1fa/synthetic_positions.csv
+  vessel_metadata: data/official/snapshots/28991d3a0c66d1fa/synthetic_vessel_metadata.csv
+  static_vessels: data/official/snapshots/28991d3a0c66d1fa/synthetic_static_targets.json
+  wind: data/hko/snapshots/4f50d0c0a0a7f17a/wind.json
+  buildings: data/official/snapshots/28991d3a0c66d1fa/buildings.json
+  wind_raw: data/hko/snapshots/4f50d0c0a0a7f17a/wind_raw.csv
+  station_coordinates_raw: data/hko/snapshots/4f50d0c0a0a7f17a/stations_raw.html
+  official_manifest: data/official/snapshots/28991d3a0c66d1fa/source_manifest.json
+  fairways: data/official/snapshots/28991d3a0c66d1fa/fairways.geojson
+  vessel_registry: data/official/snapshots/28991d3a0c66d1fa/vessel_registry.json
+  terrain: data/official/snapshots/28991d3a0c66d1fa/dtm_5m_crop.tif
+  terrain_metadata: data/official/snapshots/28991d3a0c66d1fa/terrain_metadata.json
+  ferry_reference: data/official/snapshots/28991d3a0c66d1fa/ferry_reference.json
+  ferry_piers: data/official/snapshots/28991d3a0c66d1fa/ferry_piers.json
+sources:
+  vessel_positions: controlled_synthetic_agents_not_AIS
+  static_vessels: explicit_synthetic_pressure_targets_not_real_vessel_positions
+  wind: hko_observation_frozen_snapshot
+  buildings: LandsD_CSDI_official_polygons_derived_conservative_envelopes
+  fairways: Marine_Department_CSDI_official_polygons_context_not_UAV_permission
+  terrain: LandsD_official_5m_DTM_crop_HK1980_HKPD
+  registry: fresh_official_administrative_snapshot_no_coordinates
+energy:
+  battery_wh: 548.0
+  cruise_power_w: 600.0
+  takeoff_landing_power_w: 780.0
+  takeoff_seconds: 60.0
+  landing_seconds: 60.0
+  reserve_fraction: 0.2
+  wind_power_increase_per_mps: 0.01
+  parameter_status: manufacturer_reference_nominal_battery_only_other_power_and_reserve_parameters_uncalibrated
+  battery_count: 2
+  battery_model: DJI TB60
+  battery_single_nominal_wh: 274.0
+  battery_source: https://www.dji.com/support/product/matrice-300
+coordination:
+  horizontal_separation_m: 150.0
+  vertical_separation_m: 30.0
+  initial_stagger_seconds: 30.0
+  parameter_status: research_assumptions_not_regulatory_standards
+corridors:
+- id: C1
+  name: 中环 → 启德邮轮码头
+  use_case: 商业件配送
+  waypoints:
+  - - 22.288
+    - 114.161
+  - - 22.301
+    - 114.18
+  - - 22.305
+    - 114.215
+  altitude_m: 80
+  speed_mps: 15
+  buffer_m: 150
+  color: '#1565c0'
+- id: C2
+  name: 尖沙咀 → 红磡医院
+  use_case: 紧急医疗
+  waypoints:
+  - - 22.294
+    - 114.17
+  - - 22.302
+    - 114.184
+  altitude_m: 60
+  speed_mps: 18
+  buffer_m: 100
+  color: '#e53935'
+- id: C3
+  name: 北角 → 鲤鱼门
+  use_case: 货物配送
+  waypoints:
+  - - 22.29
+    - 114.197
+  - - 22.293
+    - 114.22
+  - - 22.293
+    - 114.243
+  altitude_m: 90
+  speed_mps: 12
+  buffer_m: 200
+  color: '#7b1fa2'
+- id: C4
+  name: 西九龙 → 中环
+  use_case: 跨海件
+  waypoints:
+  - - 22.302
+    - 114.15
+  - - 22.295
+    - 114.158
+  - - 22.288
+    - 114.165
+  altitude_m: 70
+  speed_mps: 14
+  buffer_m: 120
+  color: '#43a047'
+- id: C5
+  name: 尖沙咀 → 北角
+  use_case: 跨海短送
+  waypoints:
+  - - 22.294
+    - 114.17
+  - - 22.296
+    - 114.183
+  - - 22.29
+    - 114.197
+  altitude_m: 80
+  speed_mps: 16
+  buffer_m: 150
+  color: '#fb8c00'

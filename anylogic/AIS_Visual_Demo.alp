@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.8.202602271013" AlpVersion="8.9.7">
+  <Model>
+    <Id>1794100000001</Id>
+    <Name>AIS_Visual_Demo</Name>
+    <EngineVersion>6</EngineVersion>
+    <JavaPackageName>ais_visual_demo</JavaPackageName>
+    <ModelTimeUnit>Second</ModelTimeUnit>
+    <Folders />
+    <ActiveObjectClasses>
+      <ActiveObjectClass>
+        <Id>1794100000002</Id>
+        <Name>Main</Name>
+        <StartupCode>if (System.getProperty("uav.launcher.required", "true").equals("true")) throw new RuntimeException("Please launch this project using the root start.cmd or 启动完整演示.cmd. The launcher creates the machine-local model under .local/model.");
+</StartupCode>
+        <Generic>false</Generic>
+        <GenericParameter>
+          <Id>1794100000003</Id>
+          <Name>1794100000003</Name>
+          <GenericParameterValue Class="CodeValue">
+            <Code>T extends Agent</Code>
+          </GenericParameterValue>
+          <GenericParameterLabel>Generic parameter:</GenericParameterLabel>
+        </GenericParameter>
+        <FlowChartsUsage>ENTITY</FlowChartsUsage>
+        <SamplesToKeep>100</SamplesToKeep>
+        <LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+        <ElementsLimitValue>100</ElementsLimitValue>
+        <MakeDefaultViewArea>true</MakeDefaultViewArea>
+        <SceneGridColor />
+        <SceneBackgroundColor>-4144960</SceneBackgroundColor>
+        <SceneSkybox>null</SceneSkybox>
+        <AgentProperties>
+          <EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+          <RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+          <RotateAnimationVertically>false</RotateAnimationVertically>
+          <VelocityCode Class="CodeUnitValue">
+            <Code>10</Code>
+            <Unit Class="SpeedUnits">MPS</Unit>
+          </VelocityCode>
+          <PhysicalLength Class="CodeUnitValue">
+            <Code>1</Code>
+            <Unit Class="LengthUnits">METER</Unit>
+          </PhysicalLength>
+          <PhysicalWidth Class="CodeUnitValue">
+            <Code>1</Code>
+            <Unit Class="LengthUnits">METER</Unit>
+          </PhysicalWidth>
+          <PhysicalHeight Class="CodeUnitValue">
+            <Code>1</Code>
+            <Unit Class="LengthUnits">METER</Unit>
+          </PhysicalHeight>
+        </AgentProperties>
+        <EnvironmentProperties>
+          <EnableSteps>true</EnableSteps>
+          <StepDurationCode Class="CodeUnitValue">
+            <Code>60.0</Code>
+            <Unit Class="TimeUnits">SECOND</Unit>
+          </StepDurationCode>
+          <SpaceType>CONTINUOUS</SpaceType>
+          <WidthCode>500</WidthCode>
+          <HeightCode>500</HeightCode>
+          <ZHeightCode>0</ZHeightCode>
+          <ColumnsCountCode>100</ColumnsCountCode>
+          <RowsCountCode>100</RowsCountCode>
+          <NeigborhoodType>MOORE</NeigborhoodType>
+          <LayoutType>USER_DEF</LayoutType>
+          <NetworkType>USER_DEF</NetworkType>
+          <ConnectionsPerAgentCode>2</ConnectionsPerAgentCode>
+          <ConnectionsRangeCode>50</ConnectionsRangeCode>
+          <NeighborLinkFractionCode>0.95</NeighborLinkFractionCode>
+          <MCode>10</MCode>
+        </EnvironmentProperties>
+        <DatasetsCreationProperties>
+          <AutoCreate>true</AutoCreate>
+          <Id>1794100000004</Id>
+          <OccurrenceAtTime>true</OccurrenceAtTime>
+          <OccurrenceDate>1775462400000</OccurrenceDate>
+          <OccurrenceTime Class="CodeUnitValue">
+            <Code>0</Code>
+            <Unit Class="TimeUnits">SECOND</Unit>
+          </OccurrenceTime>
+          <RecurrenceCode Class="CodeUnitValue">
+            <Code>1</Code>
+            <Unit Class="TimeUnits">SECOND</Unit>
+          </RecurrenceCode>
+        </DatasetsCreationProperties>
+        <ScaleRuler>
+          <Id>1794100000005</Id>
+          <Name>scale</Name>
+          <X>0</X>
+          <Y>-150</Y>
+          <PublicFlag>false</PublicFlag>
+          <PresentationFlag>false</PresentationFlag>
+          <ShowLabel>false</ShowLabel>
+          <DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+          <Length>100</Length>
+          <Rotation>0</Rotation>
+          <ScaleType>BASED_ON_LENGTH</ScaleType>
+          <ModelLength>10</ModelLength>
+          <LengthUnits>METER</LengthUnits>
+          <Scale>10</Scale>
+          <InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+        </ScaleRuler>
+        <CurrentLevel>1794100000008</CurrentLevel>
+        <ConnectionsId>1794100000006</ConnectionsId>
+        <AgentLinks>
+          <AgentLink>
+            <Id>1794100000006</Id>
+            <Name>connections</Name>
+            <X>30</X>
+            <Y>-220</Y>
+            <Label>
+              <X>15</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>false</PublicFlag>
+            <PresentationFlag>false</PresentationFlag>
+            <ShowLabel>false</ShowLabel>
+            <HandleReceiveInConnections>false</HandleReceiveInConnections>
+            <AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+            <AgentLinkBidirectional>true</AgentLinkBidirectional>
+            <MessageType>Object</MessageType>
+            <LineStyle>SOLID</LineStyle>
+            <LineWidth>1</LineWidth>
+            <LineColor>-16777216</LineColor>
+            <LineZOrder>UNDER_AGENTS</LineZOrder>
+            <LineArrow>NONE</LineArrow>
+            <LineArrowPosition>END</LineArrowPosition>
+          </AgentLink>
+        </AgentLinks>
+        <Presentation>
+          <Level>
+            <Id>1794100000007</Id>
+            <Name>level</Name>
+            <X>0</X>
+            <Y>0</Y>
+            <Label>
+              <X>10</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>true</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>false</ShowLabel>
+            <DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+            <Z>0</Z>
+            <LevelVisibility>ALWAYS_SHOW</LevelVisibility>
+          </Level>
+          <Level>
+            <Id>1794100000008</Id>
+            <Name>level1</Name>
+            <X>0</X>
+            <Y>0</Y>
+            <Label>
+              <X>10</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>true</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>false</ShowLabel>
+            <DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+            <Z>0</Z>
+            <LevelVisibility>ALWAYS_SHOW</LevelVisibility>
+          </Level>
+          <Level>
+            <Id>1794100000009</Id>
+            <Name>level2</Name>
+            <X>0</X>
+            <Y>0</Y>
+            <Label>
+              <X>10</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>true</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>false</ShowLabel>
+            <DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+            <Z>0</Z>
+            <LevelVisibility>ALWAYS_SHOW</LevelVisibility>
+          </Level>
+          <Camera3D>
+            <Id>1794100000010</Id>
+            <Name>demoCamera3D</Name>
+            <X>0</X>
+            <Y>-700</Y>
+            <Z>700</Z>
+            <Label>
+              <X>0</X>
+              <Y>-10</Y>
+            </Label>
+            <ShowLabel>false</ShowLabel>
+            <RotationX>45</RotationX>
+            <RotationZ>90</RotationZ>
+          </Camera3D>
+          <Control Type="Window3D">
+            <Id>1794100000011</Id>
+            <Name>demoWindow3D</Name>
+            <X>30</X>
+            <Y>240</Y>
+            <Width>990</Width>
+            <Height>630</Height>
+            <MakeDefaultViewArea>false</MakeDefaultViewArea>
+            <Label>
+              <X>0</X>
+              <Y>-10</Y>
+            </Label>
+            <ShowLabel>false</ShowLabel>
+            <FollowCamera>true</FollowCamera>
+            <NavigationType>rotationOnly</NavigationType>
+            <FarClippingDistance>20000</FarClippingDistance>
+            <Camera>demoCamera3D</Camera>
+          </Control>
+        </Presentation>
+      </ActiveObjectClass>
+    </ActiveObjectClasses>
+    <DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
+    <MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
+    <AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
+    <AbsoluteAccuracy>1.0E-5</AbsoluteAccuracy>
+    <FixedTimeStep>0.001</FixedTimeStep>
+    <RelativeAccuracy>1.0E-5</RelativeAccuracy>
+    <TimeAccuracy>1.0E-5</TimeAccuracy>
+    <InspectionWindowColorTheme>DEFAULT</InspectionWindowColorTheme>
+    <Frame>
+      <Id>1794100000012</Id>
+      <Width>1680</Width>
+      <Height>1060</Height>
+    </Frame>
+    <Experiments>
+      <SimulationExperiment ActiveObjectClassId="1794100000002">
+        <Id>1794100000013</Id>
+        <Name>Simulation</Name>
+        <CommandLineArguments />
+        <MaximumMemory>1536</MaximumMemory>
+        <RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+        <CustomGeneratorCode>new Random()</CustomGeneratorCode>
+        <SeedValue>1</SeedValue>
+        <SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+        <VmArgs />
+        <LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+        <Presentation>
+          <Text>
+            <Id>1794100000014</Id>
+            <Name>text</Name>
+            <X>50</X>
+            <Y>30</Y>
+            <Label>
+              <X>10</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>true</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>false</ShowLabel>
+            <DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+            <EmbeddedIcon>false</EmbeddedIcon>
+            <Z>0</Z>
+            <Rotation>0.0</Rotation>
+            <Color>-12490271</Color>
+            <Text>uav-maritime-twin1</Text>
+            <Font>
+              <Name>SansSerif</Name>
+              <Size>24</Size>
+              <Style>0</Style>
+            </Font>
+            <Alignment>LEFT</Alignment>
+          </Text>
+        </Presentation>
+        <Parameters>
+			</Parameters>
+        <PresentationProperties>
+          <EnableZoomAndPanning>true</EnableZoomAndPanning>
+          <ExecutionMode>realTimeScaled</ExecutionMode>
+          <Title>维港无人机 · 二维计算 / 三维演示</Title>
+          <EnableDeveloperPanel>true</EnableDeveloperPanel>
+          <ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+          <RealTimeScale>1.0</RealTimeScale>
+        </PresentationProperties>
+        <ModelTimeProperties>
+          <StopOption>Never</StopOption>
+          <InitialDate>1775433600000</InitialDate>
+          <InitialTime>0.0</InitialTime>
+          <FinalDate>1778025600000</FinalDate>
+          <FinalTime>3600.0</FinalTime>
+        </ModelTimeProperties>
+        <BypassInitialScreen>true</BypassInitialScreen>
+      </SimulationExperiment>
+    </Experiments>
+    <ModelResources>
+      <Resource>
+        <Id>1794100000015</Id>
+        <Path>harbour_background.png</Path>
+        <ReferencedFromUserCode>true</ReferencedFromUserCode>
+        <Location>FILE_SYSTEM</Location>
+      </Resource>
+    </ModelResources>
+  </Model>
+</AnyLogicWorkspace>

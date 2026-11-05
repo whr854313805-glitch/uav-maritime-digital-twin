@@ -1,0 +1,13 @@
+{
+  "library": "OMPL",
+  "version": "2.0.2",
+  "commit": "1ae6ac0bf7e9cb67d8994a8b8742833f813fdd39",
+  "upstream_search_unmodified": true,
+  "runtime_sha256": {
+    "libgcc_s_seh-1.dll": "791ebf66e99c7c1b4ed3666468cec45a0172b4c8942ac6c84c3e9cab3e1b5270",
+    "libstdc++-6.dll": "4e4822dc4aaa99383f581dae7ab9464ae89346c5ca742f7efbcdebe20b0fe7b5",
+    "libwinpthread-1.dll": "ee4f503512b09d7e2668518c41d6c176755a354523ae15aa4d36220c9cb31791",
+    "sst_worker.exe": "b54b787e8e767ecdd63f5cd882336902a095ec178e64b97f71d15d2dc49cfccc"
+  },
+  "adapter_source_sha256": "5260e4e32321b5fbe66094208ed9da3df1f3264490b6be7899f98b815caa0742"
+}

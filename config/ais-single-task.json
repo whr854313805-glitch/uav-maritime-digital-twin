@@ -1,0 +1,68 @@
+{
+  "task_id": "AIS_TST_CENTRAL_CRUISE",
+  "window_policy": "observed_segments_v3",
+  "start": [
+    22.29155064606866,
+    114.16620614083803
+  ],
+  "end": [
+    22.288838758860937,
+    114.16322690760023
+  ],
+  "speed_mps": 15,
+  "buffer_m": 90,
+  "window_start_utc": "2026-11-03T13:13:16.314380+00:00",
+  "departure_offset_seconds": 0,
+  "max_expanded_states": 20000,
+  "max_flight_seconds": null,
+  "parameter_basis": "60m common ship envelope derived from four recorded dimension samples +30m reference clearance;15m/s waypoint-speed reference;30m building research clearance. Simplified model, not regulatory compliance.",
+  "research_points": {
+    "method": "official_pier_anchors_first_static_free_fairway_gate_v1",
+    "selection_file": "output/research_points/selection.json",
+    "selection_sha256": "73fc3ab4146a5a645716c1b735c67a18bb07d972b4b6033f0b7786678e4ac3b6",
+    "gates": [
+      {
+        "anchor": {
+          "stop_id": "101119",
+          "name": "Star Ferry Pier at Salisbury Road",
+          "x_hk1980": 835419.0,
+          "y_hk1980": 817205.0,
+          "lat": 22.293761992775078,
+          "lon": 114.1686354887804,
+          "source_kind": "official_derived"
+        },
+        "point": [
+          22.29155064606866,
+          114.16620614083803
+        ],
+        "offset_m": 350,
+        "minimum_building_envelope_clearance_m": 140.37059202812236,
+        "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+      },
+      {
+        "anchor": {
+          "stop_id": "101339",
+          "name": "Central Pier No.7 at Man Kwong Street",
+          "x_hk1980": 834647.0,
+          "y_hk1980": 816450.0,
+          "lat": 22.286943318826864,
+          "lon": 114.16114460936392,
+          "source_kind": "official_derived"
+        },
+        "point": [
+          22.288838758860937,
+          114.16322690760023
+        ],
+        "offset_m": 300,
+        "minimum_building_envelope_clearance_m": 163.49666647765883,
+        "role": "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+      }
+    ],
+    "roles": [
+      "derived_2D_cruise_gate_not_takeoff_or_landing_site",
+      "derived_2D_cruise_gate_not_takeoff_or_landing_site"
+    ]
+  },
+  "window_start_basis": "Frozen previous M1 experiment departure for comparison; not selected again by route success.",
+  "parameter_profile": "reference_90_15_30_utm_v1"
+}

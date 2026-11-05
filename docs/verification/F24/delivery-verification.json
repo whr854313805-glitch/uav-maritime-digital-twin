@@ -1,0 +1,78 @@
+{
+  "complete": true,
+  "platform": "Windows x64, Windows PowerShell 5.1",
+  "scope": "Relocation to another directory on this physical Windows PC; not another team member physical PC.",
+  "original_F23_jar_sha256": "a948f77b69ed52a6260df395db9bcd061b89913c1a827e48cb0020e0b9fe3f2e",
+  "model_XML_only_startup_changed": true,
+  "protected_files_checked": 63,
+  "authorized_protected_difference": "ALP StartupCode template only",
+  "reviewed_data_files_unchanged": 140,
+  "saved_catalog_entries": 16,
+  "recalculable_entries": 10,
+  "native_cases_passed": 6,
+  "optional_recomputations": [
+    {
+      "key": "M2",
+      "run_id": "58f88c91c379435fb6375d696b0e04b1",
+      "status": "planned",
+      "failure_reason": null,
+      "publish": false,
+      "saved_results_unchanged": true,
+      "new_run_directory": "output/ais_single_task/runs/58f88c91c379435fb6375d696b0e04b1",
+      "geometry_check": {
+        "geometry_valid": true,
+        "distance_m": 702.7209921209407,
+        "minimum_ship_distance_m": null,
+        "minimum_building_clearance_m": 228.20434811969568
+      },
+      "raw_AIS_continuous_check": {
+        "minimum_distance_m": 763.1384202829324,
+        "nearest_ship": "477995063"
+      },
+      "maximum_speed_error_mps": 1.7763568394002505e-15,
+      "search_method": "validated_exact_straight_motion_no_search",
+      "algorithm": "OMPL 2.0.2 control::SST",
+      "distance_m": 702.7209921209407
+    },
+    {
+      "key": "encounter_M1_opposing",
+      "run_id": "a407deb722024b6c836d9a724edd7011",
+      "status": "planned",
+      "failure_reason": null,
+      "publish": false,
+      "saved_results_unchanged": true,
+      "new_run_directory": "output/ais_single_task/runs/a407deb722024b6c836d9a724edd7011",
+      "geometry_check": {
+        "geometry_valid": true,
+        "distance_m": 435.1324423818528,
+        "minimum_ship_distance_m": null,
+        "minimum_building_clearance_m": 213.43055005873123
+      },
+      "raw_AIS_continuous_check": {
+        "minimum_distance_m": 90.51231943916852,
+        "nearest_ship": "477995430"
+      },
+      "maximum_speed_error_mps": 5.760725230175012e-11,
+      "search_method": "official_SST_plus_explicit_terminal_leg",
+      "algorithm": "OMPL 2.0.2 control::SST",
+      "distance_m": 435.13244238191743
+    }
+  ],
+  "cleanup": {
+    "files": 107,
+    "bytes": 1383124,
+    "recovery_manifest": "Original development machine work/cleanup_backup_20261106/manifest.json"
+  },
+  "source_sha256": {
+    "ais_anylogic_bridge.py": "ec7c44de473394d3b38d5a327e2d0e2042d1a2a599275b5689a39d7a49097c78",
+    "build_anylogic_visual.py": "a3d22473d7fafa8594acc92df8ad15da20d673fab2e17a2bc58c5ddfa18ecf40",
+    "portable_runtime.py": "1db14c14ac271dff7977fc94820b8547fc178be89ac05b766650b73e8780e342",
+    "prepare_anylogic_visual.py": "fee89d8f737612dbae7212eb11877b198bac801d08800879214978644059a6ff",
+    "prepare_portable_model.py": "055cd48a24a8175f5365cd1f5a7a92bc9786fbbee4309641efe71ab53721763c",
+    "presentation_controls.py": "7715a3ed7eab4f2334cad2226554786f92047c191d11165afe12b3da61402c01",
+    "run_ais_single_task.py": "25384041daba736316ca11c07cee164a7e268675af86b5bfab263e2fdad1b761",
+    "select_research_points.py": "eae5a975be2704bef59e3fdfa9e15d2f6d3d924ce44dc12f76b84733cceb7cae",
+    "start_full_demo.py": "fb4a35ff947775168ff57d8d0f4107d9a13ed914a5d24ed8e811e30b0cea03a1",
+    "verify_ais_encounters.py": "30dc3883d08a602b7c717f02c25952ec0db3ec70693865837cf7cac94d036199"
+  }
+}

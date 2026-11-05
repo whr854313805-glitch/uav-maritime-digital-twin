@@ -1,0 +1,64 @@
+{
+  "land_regions": 2,
+  "land_rings": 1371,
+  "coast_segments": 73,
+  "vegetation_rings": 98,
+  "buildings": 35352,
+  "landmarks": [
+    [
+      "Bank of China",
+      303.3
+    ],
+    [
+      "HKCEC",
+      66.7
+    ],
+    [
+      "IFC 1",
+      169.79999999999998
+    ],
+    [
+      "ICC",
+      460.6
+    ],
+    [
+      "IFC 2",
+      378.5
+    ],
+    [
+      "Clock Tower",
+      40.199999999999996
+    ]
+  ],
+  "scenery_bytes": 19706296,
+  "scenery_sha256": "0f48211ce6739b2a77e3ca16411771882a5268c21e4c5810f81238f9b8c64c2e",
+  "provenance": {
+    "buildings_file": "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\data\\official\\snapshots\\28991d3a0c66d1fa\\buildings.json",
+    "buildings_sha256": "4cbca41e26d1fd00c11c80274f744ed27fbda29b89e519594619d151bcded97a",
+    "coast_raw_sha256": "29b7474937e11f9043ad82b8146e47e72e54f980e2b0332f023087a51ab27bb0",
+    "coast_request": {
+      "url": "https://portal.csdi.gov.hk/server/rest/services/common/landsd_rcd_1637221267230_27829/FeatureServer/6/query?f=geojson&where=CLASS%3D%27SLN%27+AND+TYPE%3D%27COA%27&geometry=114.105%2C22.255%2C114.29%2C22.34&geometryType=esriGeometryEnvelope&inSR=4326&outSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&resultRecordCount=3000",
+      "fetched_at_utc": "2026-11-05T14:09:41.302407+00:00",
+      "bytes": 128712,
+      "http_status": 200,
+      "sha256": "29b7474937e11f9043ad82b8146e47e72e54f980e2b0332f023087a51ab27bb0",
+      "dataset": "landsd_rcd_1637221267230_27829",
+      "layer": "HYDRLINE CLASS=SLN TYPE=COA",
+      "scale": "1:100000 generalized topographic coastline; display only"
+    },
+    "vegetation_raw_sha256": "c811c7625be688cb39118c560fab4c3fafb17858ebfec023698a3f7157158dc7",
+    "land_processing": "Official generalized coastline and reclamation edges polygonized with crop boundary on a 0.01m processing grid; land components identified by independent official vegetation representative points. Derived generalized display background, not certified surveyed land polygon.",
+    "geometry_simplification_m": 3,
+    "unknown_building_height_m": 40,
+    "height_basis": "Official stored TopHeight minus BaseHeight, not promotional architectural height; unknown 40m remains illustrative; flat ground is display only.",
+    "runtime_network_requests": 0,
+    "vegetation_processing": "Selected official vegetation polygons without interior holes, area >=5000 m2, simplified 12m; at most 100 display patches, not a complete vegetation inventory.",
+    "reclamation_raw_sha256": "483abd510649a6771df857580397a09f73f3ad91277df519ab852a9edab8fe07",
+    "reclamation_request": {
+      "url": "https://portal.csdi.gov.hk/server/rest/services/common/landsd_rcd_1637221267230_27829/FeatureServer/6/query?f=geojson&where=CLASS%3D%27SLN%27+AND+TYPE%3D%27RLE%27&geometry=114.105%2C22.255%2C114.29%2C22.34&geometryType=esriGeometryEnvelope&inSR=4326&outSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&resultRecordCount=3000",
+      "bytes": 3653,
+      "status": 200
+    },
+    "coastline_closure_precision_grid_m": 0.01
+  }
+}

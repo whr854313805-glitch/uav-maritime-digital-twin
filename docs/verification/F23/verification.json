@@ -1,0 +1,202 @@
+{
+  "complete": true,
+  "checks": [
+    {
+      "feature": "native_middle_button_pan",
+      "before": {
+        "position": [
+          0,
+          463.322,
+          342.145
+        ],
+        "target": [
+          2.8370250667841305e-14,
+          0.0006458333328964727,
+          -1.4210854715202004e-14
+        ],
+        "quaternion": [
+          -1.3793544008803956e-17,
+          0.45053133747322277,
+          0.8927606140251647,
+          -2.733291070926859e-17
+        ],
+        "zoom": 1,
+        "state": {
+          "factor": 1,
+          "min": 0.25,
+          "max": 4,
+          "wheelEvents": 0,
+          "installed": true,
+          "version": 2,
+          "pan": [
+            0,
+            0,
+            0
+          ],
+          "panEvents": 0
+        },
+        "viewport": [
+          1515,
+          1011,
+          1,
+          0,
+          0
+        ],
+        "buttons": {
+          "ORBIT": 0,
+          "PAN": 1,
+          "ZOOM": -1
+        }
+      },
+      "after": {
+        "position": [
+          75.60330458356934,
+          440.866192012616,
+          342.14499999999816
+        ],
+        "target": [
+          75.6033045835694,
+          -22.455162154048796,
+          -1.4210854715202004e-14
+        ],
+        "quaternion": [
+          -2.7637126257619226e-17,
+          0.4505313374732229,
+          0.8927606140251647,
+          -5.476497583058711e-17
+        ],
+        "zoom": 1,
+        "state": {
+          "factor": 1,
+          "min": 0.25,
+          "max": 4,
+          "wheelEvents": 0,
+          "installed": true,
+          "version": 2,
+          "pan": [
+            75.60330458356937,
+            -22.455807987381693,
+            0
+          ],
+          "panEvents": 12
+        },
+        "viewport": [
+          1515,
+          1011,
+          1,
+          0,
+          0
+        ],
+        "buttons": {
+          "ORBIT": 0,
+          "PAN": 1,
+          "ZOOM": -1
+        }
+      },
+      "camera_and_target_translate_equally": true,
+      "scene_data_and_clock_unchanged": true
+    },
+    {
+      "feature": "left_rotation_ctrl_zoom_and_reset",
+      "passed": true
+    },
+    {
+      "feature": "playback_at_speed",
+      "rate": 1,
+      "time_before": 2761.556380033493,
+      "time_after": 2763.1563800334916,
+      "original_trajectory_position_matches": true
+    },
+    {
+      "feature": "playback_at_speed",
+      "rate": 10,
+      "time_before": 2763.1563800334916,
+      "time_after": 2778.1563800334916,
+      "original_trajectory_position_matches": true
+    },
+    {
+      "feature": "pan_persists_during_native_follow_and_reset",
+      "pan": [
+        47.414207883328345,
+        10.56118336932883,
+        1.1973116786853522e-17
+      ],
+      "passed": true
+    }
+  ],
+  "javascript_errors": [],
+  "external_requests": [],
+  "source_sha256": {
+    "anylogic/NativeDemoView.java": "cbc5b8146a0589499c9d9381ee62bec9f0a134199ce0c592791f9f2a117cd1b0",
+    "anylogic/ctrl_wheel.js": "c862f80ebbcc6eaa1979093aaf9bbe41f86e1ead31b034655d01bf9d0bde34e1",
+    "anylogic/native-visual-demo.jar": "a948f77b69ed52a6260df395db9bcd061b89913c1a827e48cb0020e0b9fe3f2e",
+    "build_anylogic_visual.py": "c2b54519a24550125f5cbf2e62cbfcfbf5619e67ad8b9032bad8e6165f0d5642",
+    "anylogic/visual_sources/NativeWorkbench.java": "4346ee1d865fa9add9d59eb76a74c31897e486b72c596fdcfe135cf12a638302"
+  },
+  "protected": {
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\__init__.py": "7c020d12fecbd360773dab66be040d7afedcced85f8916402bade41ef7f917a8",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\ais_data.py": "d484861627b9006ab6f33cc5cb41098c26f41b2e061608b12946e1c923fb470a",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\ais_replay.py": "ec4f69fa6ad598268a6ef83202af96439f44f8cee3926a4ca31737694ca26d57",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\ais_segments.py": "64ca45b06cf41e162f63ea1bc8f3037d91ce3031a851ff00e4b3cd2ff1c46300",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\ais_single_task.py": "e80c88262a4442c108867ad1ac284ae42f01ec404abf96b933d22046298aa71f",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\anylogic_workspace.py": "3669b2f5d24083a773793ef75ba2eb0ce42afe6abc7bed16bde8c2a6d425f747",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\collision_detection.py": "cf90b1b52a1c9d34d0211f171f26cf66cb797660bc449910f11f0ee331d255bd",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\departure_search.py": "1f6c42d3182ef40f215a1a3453180566c940e6703fb18a7c4b58d722228c51be",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\download_geospatial.py": "1a43a652e64b70c90c2b6cedb18de0efd7ae066b71acdad45c0616fb85c68d39",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\flight_simulation.py": "89300a42d344a5c045aac1a9f9afa72fff1f4a7a49b8c87bfb930e9ac48a7951",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\geospatial_loader.py": "ca929022a60de7f71ac3b4713df953779c8e19bca6e43fc6288988a8f6da3551",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\hko_api_client.py": "395da6a72295e0b5e15341b34c546219bf67bcaadfac5b16fa895841c9539bd3",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\hko_weather.py": "79439f90bbb4357517a66a41190e057e9a7ea60a10253ae49404e2802755c025",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\maritime_agents.py": "bfd881335dc7f4989c40345d482c6d557df9e42632180daabf05df9a008dd6a5",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\maritime_simulator.py": "423ca2a7a0598c9fef6b94b01d623e97c956e5deb555b5ceddc5c1e72344b64e",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\metric_projection.py": "3dbe625d32cfc2d9fb8541950f008b3728731a63db89f2f3b16855f04cbdf397",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\official_data.py": "0a117d42c7dd4d072d2b712bd10ee382823c65cc6aae620bf323930554102d3d",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\ompl_sst.py": "7455294f1430c47cb1df44c2eea95a1cb4e59355d4b81e0075c9041f92dd5818",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\path_shortening.py": "d42503f6baf9b3d625dd31efaed3a1fbcfa9d82852e8da5e061bd5fee8be3e64",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\planning_report.py": "e28c9e3955cdd1f891f302eff4af590e5e9bdab653db8a6f81e426e7c153fffa",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\project_config.py": "bc24270a05f715296f697b9638c54cd4f3a3c8967980541ccbdc42264abd7ff0",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\rejection_diagnostics.py": "df1cf400765e5dbc75282eb37fa8fbe42f4fe9bbcdcf5af13248a7cfccf4966b",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\safe_planning.py": "f4f2340873535fb5e1550bd868e3067291220e82f0fea09612780e6055a11357",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\site_catalog.py": "8c6dba8cbba1d16c126be07c689ff224c7429e05d76063d8e43f585c0a963a0e",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\temporal_planning.py": "b077904e75c432c851031dc52bd7a4ad0760a57282567f52789497803ca28fbd",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\terrain_clearance.py": "35dfbcedeb6a19500aada78050ed161b658970a403a1070d2b7e8d42ab275b5e",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\vtol_missions.py": "dd76711e24f009a758182543eb7dc6ea0778f32d34eb834362a57e44e0c78f60",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\src\\vtol_scenarios.py": "d5b4972ab34fed17fccc68ed708fc0e50bdf9d70bd763b851369ea98f12ad9d5",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\config.yaml": "1a61570296343e819097edb92f3b33ee0d28237f4708ae97608df5c0f843d167",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\config\\ais-single-task.json": "4b367cd1d6f14adb4a219093139f39e222ac2642158669452fbc5d80ebf125a6",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\config\\parameter-sources.json": "4686ef11387b7f444b4a527a776d7f32cee8f16a977ffb7101f15766267df72b",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\anylogic\\workbench\\workspace.json": "39af3069ad27f045a52869affb48bc906088ac17e48822cf84c329aebc210997",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\ompl_sst\\catalog.json": "ab530fd4b8cc04ebf6c6b06e6b9cb2402e4699ab6d27eb15969ca5ff1d8d4df1",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\data\\ais\\captures\\621a8559a44d406a8e617cee31a65e04\\messages.jsonl": "5c843f96122ff456ffcb2ae8d852ad59162cb2d06d0f04d369a173083fdec3d8",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\data\\official\\snapshots\\28991d3a0c66d1fa\\buildings.json": "4cbca41e26d1fd00c11c80274f744ed27fbda29b89e519594619d151bcded97a",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\runtime\\ompl\\libgcc_s_seh-1.dll": "791ebf66e99c7c1b4ed3666468cec45a0172b4c8942ac6c84c3e9cab3e1b5270",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\runtime\\ompl\\libstdc++-6.dll": "4e4822dc4aaa99383f581dae7ab9464ae89346c5ca742f7efbcdebe20b0fe7b5",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\runtime\\ompl\\libwinpthread-1.dll": "ee4f503512b09d7e2668518c41d6c176755a354523ae15aa4d36220c9cb31791",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\runtime\\ompl\\manifest.json": "63a14e5182d48230fde8891df50a3094457f5e02d3f0452bdfddefd43e3db729",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\runtime\\ompl\\settings.json": "996f4e86f49c2969f8b0e88030ac15279908c338be7a55858e4d6eb24acf9235",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\runtime\\ompl\\sst_probe.cpp": "5260e4e32321b5fbe66094208ed9da3df1f3264490b6be7899f98b815caa0742",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\runtime\\ompl\\sst_worker.exe": "b54b787e8e767ecdd63f5cd882336902a095ec178e64b97f71d15d2dc49cfccc",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\runs\\b78cd477f22e4b0f922e867b06f19b8b\\result.json": "a34f76c32c9f4de62eeeed9d7dee3aef15a82fcdee1754a1872cad5d86092f32",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\runs\\217f1a589e83416cb15db50d352d6064\\result.json": "f466bfca620157e16b599eb2b084190b8d5fe0d257be52ee52a32aba1b76f9fc",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\runs\\7a344c14fa3a42b5ac378dd7952b5dd6\\result.json": "352357575334c61a7f45f15b25cdf16b1a54cca4754f05ea3c53081a95cfe4a3",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\runs\\c1933e830f4d4c7798c307ac3523f26e\\result.json": "3ca607f326cd08789a75c415d263d24707ed00a4d81473dbacdcd4933bd0bf2e",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\latest.json": "3b1a54bf38d684e7c8e5865c293fc4652b15c295c14f3e8e96b9d9779021dee8",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\runs\\9d2ffbc4af7940f1b44eae71ea8be751\\result.json": "8573f9050ce1978c9d7ff35db355acefc68d9746d628f5bda12552dac593c02c",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\detour_verification\\M2_result.json": "25b579a52f9b9d3abccc48b828c6276bade265e092bb61326464f61fa95f366f",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\detour_verification\\M3_result.json": "18fa121fc308ed38d34a840d2ff35ffbffc3d5985aa6a57fb4262d0cda513ff1",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\detour_verification\\M4_result.json": "56debb4b46c25f84737dd7f74c61e234f508f5f43e87e2a7f67cdf05d91bbe90",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\runs\\cb97b6323b844676a0c3f38f23754234\\result.json": "d5e46c48e759e5c9fc7f7c960adc27ac44f67c4983d1445c42a7c7d2e14867d6",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\runs\\5694403b3ec5445fb4be6021ffe23650\\result.json": "42921e1b9e8108ed56e60edad93bf3aa00734c2afbe3ba718b0045e39b663ab0",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\runs\\c75b6a31bc7f441da5297f3ed4771b33\\result.json": "456728aafb01c32b4882909df984a9ecc30d36e87587e1072d4ed852411c4cb1",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\runs\\2fa48b9b62d04a32bcfdad800ee139ce\\result.json": "ae9620e3b41a5b56bb217115f45b4715334baa5b76736727b96d6bcd02c89c08",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\grid_sensitivity\\100\\result.json": "df807b3eea016f00d6fe6306b55f87782225df65de601966bad421bf7aec08e4",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\grid_sensitivity\\200\\result.json": "f80465c3a96c7442ddc1119bcd419afdd25cafbdafffe578afa226405e992169",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\ais_single_task\\grid_sensitivity\\400\\result.json": "507299da1c0deaa4c3a2ce3f83d741475aa1f14bbd803db48172432dcfcda00d",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\output\\research_points\\study\\study.json": "abca3e43e9d095dd59a055db97d5f72f2be4c4a8aba03bb8eb2d826061a786cc",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\anylogic\\NativeScenery.java": "688f7d3e4ed823c2ac28c4999aee257a00cb956db93412e50a359bbd79cd25ad",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\anylogic\\visual_demo\\scenery.json": "0f48211ce6739b2a77e3ca16411771882a5268c21e4c5810f81238f9b8c64c2e",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\anylogic\\NativeWorkbench.java": "b4a0b614f17773080f3d79b794f8b337e1ee21106d54f6d31bfb5d1e1d23c812",
+    "C:\\Users\\Rozz\\Documents\\Codex\\2026-10-28\\ang\\outputs\\uav-maritime-twin-windows\\anylogic\\AIS_Visual_Demo.alp": "f4e7efd160ee071f6e7b9a80c06a4e9346419792597a2008b3b6f3ddd90eacec"
+  },
+  "scope": "Native presentation input and playback only. Does not revalidate planner performance."
+}

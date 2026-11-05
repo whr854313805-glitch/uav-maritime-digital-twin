@@ -1,0 +1,27 @@
+{
+  "workspace_sha256": "39af3069ad27f045a52869affb48bc906088ac17e48822cf84c329aebc210997",
+  "raw_sha256": "5c843f96122ff456ffcb2ae8d852ad59162cb2d06d0f04d369a173083fdec3d8",
+  "background_png_sha256": "8823b5193e56193b3ff2fb2198c79252a9b9470ec0e9e288373f51dcf2464273",
+  "scene": {
+    "capture_id": "621a8559a44d406a8e617cee31a65e04",
+    "raw_sha256": "5c843f96122ff456ffcb2ae8d852ad59162cb2d06d0f04d369a173083fdec3d8",
+    "raw_bytes": 658582,
+    "positions": 923,
+    "vessels": 130,
+    "break_count": 571,
+    "longest_seconds": 333.93307614326477,
+    "quality": {
+      "window_seconds": 600,
+      "max_gap_seconds": 120,
+      "max_speed_mps": 30,
+      "max_report_age_seconds": 120,
+      "max_future_seconds": 5
+    },
+    "display_features": 27630,
+    "display_polygons": 27641,
+    "background_source_sha256": "bc26f39854143fc969b6b97bede4aa17874a5b86645b297567cb27ce8c7cb35c",
+    "raster_width": 5000,
+    "raster_height": 1871,
+    "raster_basis": "Local display raster of official outlines; no planning geometry is rasterized or altered."
+  }
+}

@@ -1,6 +1,0 @@
-corridor_id,corridor_name,altitude_m,buffer_m,minutes_clear,minutes_warning,minutes_blocked,compliance_rate_pct
-C1,中环 → 启德邮轮码头,80,150,0,0,1440,0.0
-C2,尖沙咀 → 红磡医院,60,100,1440,0,0,100.0
-C3,北角 → 鲤鱼门,90,200,792,168,480,55.0
-C4,西九龙 → 中环,70,120,330,336,774,22.9
-C5,尖沙咀 → 北角,80,150,0,0,1440,0.0

@@ -1,0 +1,42 @@
+{
+  "complete": true,
+  "project_root": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\组员电脑验证 含空格\\uav",
+  "before": {
+    "project_root": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\组员电脑验证 含空格\\uav",
+    "pid": 2280,
+    "browser_started": "2026-11-05T19:02:21.5060150Z",
+    "debug_port": 50206,
+    "url": "http://localhost:27744",
+    "profile": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\组员电脑验证 含空格\\uav\\.local\\controlled-demo-chrome",
+    "java_pid": 3324,
+    "java_started": "2026-11-05T19:02:19.2349950Z",
+    "controls_installed": true
+  },
+  "after": {
+    "project_root": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\组员电脑验证 含空格\\uav",
+    "pid": 35688,
+    "browser_started": "2026-11-05T19:04:42.9520460Z",
+    "debug_port": 61121,
+    "url": "http://localhost:23446",
+    "profile": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\组员电脑验证 含空格\\uav\\.local\\controlled-demo-chrome",
+    "java_pid": 15332,
+    "java_started": "2026-11-05T19:04:40.7026250Z",
+    "controls_installed": true
+  },
+  "close_method": "WM_CLOSE only on the verified owned viewer PID",
+  "old_model_survived_viewer_close": false,
+  "same_model_recovered": false,
+  "new_model_cold_started": true,
+  "no_manual_editor_input": true,
+  "seconds": 18.436999999990803,
+  "native_canvas_and_input_script_ready": true,
+  "launcher_stdout": "Offline Python runtime is ready.\nOffline inputs ready: 140 reviewed files.\n正在启动 AnyLogic 完整演示，请稍候……\n完整演示已就绪。\n",
+  "launcher_state": {
+    "project_root": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\组员电脑验证 含空格\\uav",
+    "workspace": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\组员电脑验证 含空格\\uav\\.local\\anylogic-workspaces\\44382a2971e4",
+    "model": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\work\\组员电脑验证 含空格\\uav\\.local\\model\\AIS_Visual_Demo.alp",
+    "editor_launcher_pid": 17524,
+    "started_unix_s": 1793905469.8060157
+  },
+  "scope": "Relocated Windows project only; prior editors were preserved and received no input."
+}
