@@ -12,6 +12,7 @@ import time
 import urllib.request
 
 from portable_runtime import PROJECT_ROOT, LOCAL_DIR, find_anylogic
+from project_processes import powershell_json, process_identity, model_session, verify_listener
 
 P = PROJECT_ROOT
 PROFILE = LOCAL_DIR / "controlled-demo-chrome"
@@ -24,25 +25,7 @@ def read(path):
 
 
 def _powershell_json(code):
-    result = subprocess.run(
-        ["powershell.exe", "-NoProfile", "-Command",
-         "[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false); " + code],
-        capture_output=True, text=True, encoding="utf-8", creationflags=subprocess.CREATE_NO_WINDOW,
-    )
-    if result.returncode:
-        raise RuntimeError("无法查询本机演示进程，请检查 PowerShell/CIM 是否可用。")
-    return json.loads(result.stdout.strip() or "null")
-
-
-def process_identity(pid):
-    pid = int(pid)
-    if pid <= 0:
-        return None
-    return _powershell_json(
-        f"Get-CimInstance Win32_Process -Filter 'ProcessId = {pid}' | "
-        "ForEach-Object {[pscustomobject]@{pid=$_.ProcessId;"
-        "started=$_.CreationDate.ToUniversalTime().ToString('o')}} | ConvertTo-Json -Compress"
-    )
+    return powershell_json(code)
 
 
 def browser_apps():
@@ -80,23 +63,15 @@ def _same_path(first, second):
 
 
 def owned_model_metadata(url=None):
-    """A closed viewer does not invalidate a still-running model we launched."""
     try:
-        meta = read(STATE)
-        if not isinstance(meta, dict):
-            return None
-        if not _same_path(meta.get("project_root"), P):
-            return None
-        if not isinstance(meta.get("url"), str) or not re.fullmatch(r"http://localhost:\d+", meta["url"]):
-            return None
-        if url is not None and meta.get("url") != url:
-            return None
-        java = process_identity(meta["java_pid"])
-        if not java or java["started"] != meta.get("java_started"):
-            return None
+        meta=read(STATE)
+        session=model_session(meta.get('java_pid'))
+        if not session or not _same_path(meta.get('project_root'),P):return None
+        if meta.get('launch_id')!=session['launch_id'] or meta.get('java_start_ms')!=session['java_start_ms']:return None
+        if not isinstance(meta.get('url'),str) or not re.fullmatch(r'http://localhost:\d+',meta['url']):return None
+        if url is not None and url!=meta['url']:return None
         return meta
-    except (OSError, KeyError, TypeError, ValueError):
-        return None
+    except (OSError,KeyError,TypeError,ValueError):return None
 
 
 def owned_metadata(url=None, apps=None):
@@ -150,6 +125,9 @@ def install(url, java_pid=None):
 def _install(url, java_pid=None):
     if not alive(url):
         raise RuntimeError("本项目的 AnyLogic 演示尚未启动。")
+    session=model_session(java_pid) if java_pid is not None else model_session()
+    if not session:raise RuntimeError('模型PID不属于本项目的已登记启动，未接管任何窗口。')
+    verify_listener(int(url.rsplit(':',1)[1]),session['java_pid'])
     apps = browser_apps()
     model_meta = owned_model_metadata(url)
     meta = owned_metadata(url, apps)
@@ -163,6 +141,10 @@ def _install(url, java_pid=None):
     native_apps = [app for app in apps if app["url"] == url and app["parent"] == java_pid]
     if not native_apps and not (model_meta and model_meta["java_pid"] == java_pid):
         raise RuntimeError("没有找到该模型进程对应的原生动画窗口。")
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError as exc:
+        raise RuntimeError("缺少 Playwright。请先运行项目的环境初始化脚本。") from exc
     reuse = False
     debug = meta.get("debug_port") if meta else None
     if debug:
@@ -174,59 +156,44 @@ def _install(url, java_pid=None):
     if not reuse:
         if meta:
             raise RuntimeError("现有演示窗口的控制连接已失效。请关闭该演示后重新启动。")
-        PROFILE.mkdir(parents=True, exist_ok=True)
-        portfile = PROFILE / "DevToolsActivePort"
-        portfile.unlink(missing_ok=True)
-        executable = find_anylogic() / "chromium/chromium-win64/chrome.exe"
-        child = subprocess.Popen([
-            str(executable), "--app=" + url, "--user-data-dir=" + str(PROFILE),
-            "--remote-debugging-address=127.0.0.1", "--remote-debugging-port=0", "--no-first-run",
-        ])
-        for _ in range(100):
-            if portfile.exists():
-                lines = portfile.read_text(encoding="utf-8").splitlines()
-                if lines and lines[0].isdigit():
-                    debug = int(lines[0])
-                    break
-            if child.poll() is not None:
-                raise RuntimeError("AnyLogic 动画客户端未能启动。")
-            time.sleep(.1)
-        else:
-            raise RuntimeError("等待动画客户端的本地控制连接超时。")
-        browser = process_identity(child.pid)
-        if not browser:
-            raise RuntimeError("动画客户端已经退出。")
+        child,debug,browser = _start_client(url)
         meta = {
             "project_root": str(P), "pid": child.pid, "browser_started": browser["started"],
             "debug_port": debug, "url": url, "profile": str(PROFILE),
             "java_pid": int(java_pid), "java_started": java["started"],
+            "launch_id":session["launch_id"], "java_start_ms":session["java_start_ms"],
         }
     try:
-        from playwright.sync_api import sync_playwright
-    except ImportError as exc:
-        raise RuntimeError("缺少 Playwright。请先运行项目的环境初始化脚本。") from exc
-    with sync_playwright() as pw:
-        browser = pw.chromium.connect_over_cdp(f"http://127.0.0.1:{debug}")
-        context = browser.contexts[0]
-        script = SCRIPT.read_text(encoding="utf-8")
-        context.add_init_script(script)
-        page = next((item for item in context.pages if item.url.rstrip("/") == url), None)
-        if page is None:
-            raise RuntimeError("动画客户端页面与本项目运行地址不一致。")
-        page.wait_for_load_state("domcontentloaded")
-        page.evaluate(script)
-        page.wait_for_function("()=>window.__maritimeViewControls?.installed", timeout=20000)
-        meta["controls_installed"] = True
-        temp_state = STATE.with_suffix(".tmp")
-        temp_state.write_text(json.dumps(meta, indent=2), encoding="utf-8")
-        temp_state.replace(STATE)
-        (LOCAL_DIR / "visual_endpoint.txt").write_text(url, encoding="utf-8")
+      with sync_playwright() as pw:
+          browser = pw.chromium.connect_over_cdp(f"http://127.0.0.1:{debug}")
+          context = browser.contexts[0]
+          script = SCRIPT.read_text(encoding="utf-8")
+          context.add_init_script(script)
+          page = next((item for item in context.pages if item.url.rstrip("/") == url), None)
+          if page is None:
+              raise RuntimeError("动画客户端页面与本项目运行地址不一致。")
+          page.wait_for_load_state("domcontentloaded")
+          page.evaluate(script)
+          page.wait_for_function("()=>window.__maritimeViewControls?.installed", timeout=20000)
+          meta["controls_installed"] = True
+          temp_state = STATE.with_suffix(".tmp")
+          temp_state.write_text(json.dumps(meta, indent=2), encoding="utf-8")
+          temp_state.replace(STATE)
+          (LOCAL_DIR / "visual_endpoint.txt").write_text(url, encoding="utf-8")
+    except Exception:
+        if not reuse:
+            identity=process_identity(meta["pid"])
+            if identity and identity["started"]==meta["browser_started"]:
+                from project_processes import stop_tree
+                stop_tree(meta["pid"],identity["start_ms"])
+        raise
     for app in native_apps:
         if app["pid"] != meta["pid"]:
             identity = process_identity(app["pid"])
             if identity and identity["started"] == app["started"]:
                 try:
-                    os.kill(app["pid"], 15)
+                    from project_processes import terminate_identity
+                    terminate_identity(app['pid'],identity['start_ms'])
                 except ProcessLookupError:
                     pass
     return meta
@@ -234,7 +201,9 @@ def _install(url, java_pid=None):
 
 def install_for_model(java_pid):
     java_pid = int(java_pid)
-    for _ in range(100):
+    if not model_session(java_pid):raise RuntimeError("模型启动身份不属于本项目。")
+    deadline=time.monotonic()+60
+    while time.monotonic()<deadline:
         apps = browser_apps()
         meta = owned_metadata(apps=apps)
         if meta and meta["java_pid"] == java_pid and alive(meta["url"]):
@@ -246,3 +215,30 @@ def install_for_model(java_pid):
             raise RuntimeError("等待动画时模型进程已退出。")
         time.sleep(.3)
     raise RuntimeError("等待本模型的原生动画窗口超时，请查看 AnyLogic 错误输出。")
+
+
+def _start_client(url):
+    PROFILE.mkdir(parents=True,exist_ok=True)
+    portfile=PROFILE/'DevToolsActivePort';portfile.unlink(missing_ok=True)
+    executable=find_anylogic()/'chromium/chromium-win64/chrome.exe'
+    child=subprocess.Popen([str(executable),'--app='+url,'--user-data-dir='+str(PROFILE),
+        '--remote-debugging-address=127.0.0.1','--remote-debugging-port=0','--no-first-run'])
+    try:
+        for _ in range(100):
+            if portfile.exists():
+                lines=portfile.read_text(encoding='utf-8').splitlines()
+                if lines and lines[0].isdigit():
+                    debug=int(lines[0]);break
+            if child.poll() is not None:raise RuntimeError('AnyLogic动画客户端未能启动。')
+            time.sleep(.1)
+        else:raise RuntimeError('等待动画客户端的本地控制连接超时。')
+        identity=process_identity(child.pid)
+        if not identity:raise RuntimeError('动画客户端已经退出。')
+        verify_listener(debug,child.pid)
+        return child,debug,identity
+    except Exception:
+        if child.poll() is None:
+            child.terminate()
+            try:child.wait(timeout=3)
+            except subprocess.TimeoutExpired:child.kill();child.wait(timeout=3)
+        raise

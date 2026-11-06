@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-11-06T03:19:47.596640+00:00",
+  "project": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\outputs\\uav-maritime-digital-twin",
+  "python": "C:\\Users\\Rozz\\Documents\\Codex\\2026-11-06\\agents-md-md-anylogic-ctrl-1\\outputs\\uav-maritime-digital-twin\\runtime\\python\\python.exe",
+  "mode": "saved_files_and_optional_original_solver",
+  "checks": [
+    {
+      "name": "published_files_identity",
+      "passed": true,
+      "detail": {
+        "immutable_files_verified": 64
+      },
+      "seconds": 0.078
+    },
+    {
+      "name": "necessary_files",
+      "passed": true,
+      "detail": {
+        "file_count": 36
+      },
+      "seconds": 0.016
+    },
+    {
+      "name": "installed_dependencies",
+      "passed": true,
+      "detail": {
+        "original_project_modules_imported": true,
+        "Pillow_imported": true,
+        "Playwright_imported": true,
+        "solver_invoked": false
+      },
+      "seconds": 0.39
+    },
+    {
+      "name": "all_16_saved_catalog_entries",
+      "passed": true,
+      "detail": {
+        "saved_entries": 16,
+        "recalculable": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "current",
+          "detour_M1",
+          "encounter_M1_opposing",
+          "encounter_M1_same_direction",
+          "encounter_M1_singleton",
+          "encounter_M1_start_conflict"
+        ],
+        "view_only": [
+          "detour_M2",
+          "detour_M3",
+          "detour_M4",
+          "grid_100",
+          "grid_200",
+          "grid_400"
+        ],
+        "original_catalog_baseline_and_override_checks_passed": true
+      },
+      "seconds": 0.188
+    },
+    {
+      "name": "six_saved_demonstration_bindings",
+      "passed": true,
+      "detail": {
+        "saved_demonstrations": 6,
+        "bindings_match_current_saved_results": true
+      },
+      "seconds": 0.062
+    },
+    {
+      "name": "capture_and_raw_AIS_identity",
+      "passed": true,
+      "detail": {
+        "capture_id": "621a8559a44d406a8e617cee31a65e04",
+        "raw_sha256": "5c843f96122ff456ffcb2ae8d852ad59162cb2d06d0f04d369a173083fdec3d8",
+        "valid_positions": 923,
+        "vessels": 130,
+        "original_capture_parser_and_hash_checks_passed": true
+      },
+      "seconds": 0.047
+    },
+    {
+      "name": "frozen_research_point_selections",
+      "passed": true,
+      "detail": {
+        "selection_files": [
+          "output/research_points/selection.json",
+          "output/research_points/study/M1/selection.json",
+          "output/research_points/study/M2/selection.json",
+          "output/research_points/study/M3/selection.json",
+          "output/research_points/study/M4/selection.json"
+        ],
+        "endpoints_unchanged": true
+      },
+      "seconds": 0.031
+    },
+    {
+      "name": "official_buildings_and_original_raw_files",
+      "passed": true,
+      "detail": {
+        "building_count": 35335,
+        "buildings_sha256": "4cbca41e26d1fd00c11c80274f744ed27fbda29b89e519594619d151bcded97a",
+        "original_load_environment_hash_checks_passed": true,
+        "display_only_scenery": true
+      },
+      "seconds": 2.641
+    },
+    {
+      "name": "pinned_OMPL_runtime",
+      "passed": true,
+      "detail": {
+        "version": "2.0.2",
+        "declared_upstream_commit": "1ae6ac0bf7e9cb67d8994a8b8742833f813fdd39",
+        "runtime_files_verified": [
+          "libgcc_s_seh-1.dll",
+          "libstdc++-6.dll",
+          "libwinpthread-1.dll",
+          "sst_worker.exe"
+        ],
+        "adapter_source_hash_verified": true,
+        "solver_invoked": false
+      },
+      "seconds": 0.0
+    },
+    {
+      "name": "optional_original_solver_recompute_M2",
+      "passed": true,
+      "detail": {
+        "key": "M2",
+        "run_id": "26ae80ba8de44378bc2300934530dcee",
+        "status": "planned",
+        "failure_reason": null,
+        "publish": false,
+        "saved_results_unchanged": true,
+        "new_run_directory": "output/ais_single_task/runs/26ae80ba8de44378bc2300934530dcee",
+        "geometry_check": {
+          "geometry_valid": true,
+          "distance_m": 702.7209921209407,
+          "minimum_ship_distance_m": null,
+          "minimum_building_clearance_m": 228.20434811969568
+        },
+        "raw_AIS_continuous_check": {
+          "minimum_distance_m": 763.1384202829324,
+          "nearest_ship": "477995063"
+        },
+        "maximum_speed_error_mps": 1.7763568394002505e-15,
+        "search_method": "validated_exact_straight_motion_no_search",
+        "algorithm": "OMPL 2.0.2 control::SST",
+        "distance_m": 702.7209921209407
+      },
+      "seconds": 13.75
+    },
+    {
+      "name": "optional_original_solver_recompute_encounter_M1_opposing",
+      "passed": true,
+      "detail": {
+        "key": "encounter_M1_opposing",
+        "run_id": "5c3fa2ef5c314e20a34813d7767bf873",
+        "status": "planned",
+        "failure_reason": null,
+        "publish": false,
+        "saved_results_unchanged": true,
+        "new_run_directory": "output/ais_single_task/runs/5c3fa2ef5c314e20a34813d7767bf873",
+        "geometry_check": {
+          "geometry_valid": true,
+          "distance_m": 435.1324423818528,
+          "minimum_ship_distance_m": null,
+          "minimum_building_clearance_m": 213.43055005873123
+        },
+        "raw_AIS_continuous_check": {
+          "minimum_distance_m": 90.51231943916852,
+          "nearest_ship": "477995430"
+        },
+        "maximum_speed_error_mps": 5.760725230175012e-11,
+        "search_method": "official_SST_plus_explicit_terminal_leg",
+        "algorithm": "OMPL 2.0.2 control::SST",
+        "distance_m": 435.13244238191743
+      },
+      "seconds": 25.016
+    }
+  ],
+  "recomputations": [
+    {
+      "key": "M2",
+      "run_id": "26ae80ba8de44378bc2300934530dcee",
+      "status": "planned",
+      "failure_reason": null,
+      "publish": false,
+      "saved_results_unchanged": true,
+      "new_run_directory": "output/ais_single_task/runs/26ae80ba8de44378bc2300934530dcee",
+      "geometry_check": {
+        "geometry_valid": true,
+        "distance_m": 702.7209921209407,
+        "minimum_ship_distance_m": null,
+        "minimum_building_clearance_m": 228.20434811969568
+      },
+      "raw_AIS_continuous_check": {
+        "minimum_distance_m": 763.1384202829324,
+        "nearest_ship": "477995063"
+      },
+      "maximum_speed_error_mps": 1.7763568394002505e-15,
+      "search_method": "validated_exact_straight_motion_no_search",
+      "algorithm": "OMPL 2.0.2 control::SST",
+      "distance_m": 702.7209921209407
+    },
+    {
+      "key": "encounter_M1_opposing",
+      "run_id": "5c3fa2ef5c314e20a34813d7767bf873",
+      "status": "planned",
+      "failure_reason": null,
+      "publish": false,
+      "saved_results_unchanged": true,
+      "new_run_directory": "output/ais_single_task/runs/5c3fa2ef5c314e20a34813d7767bf873",
+      "geometry_check": {
+        "geometry_valid": true,
+        "distance_m": 435.1324423818528,
+        "minimum_ship_distance_m": null,
+        "minimum_building_clearance_m": 213.43055005873123
+      },
+      "raw_AIS_continuous_check": {
+        "minimum_distance_m": 90.51231943916852,
+        "nearest_ship": "477995430"
+      },
+      "maximum_speed_error_mps": 5.760725230175012e-11,
+      "search_method": "official_SST_plus_explicit_terminal_leg",
+      "algorithm": "OMPL 2.0.2 control::SST",
+      "distance_m": 435.13244238191743
+    }
+  ],
+  "scope": "Offline historical AIS, original observed-segment rules and fixed research points.",
+  "limits": [
+    "No AnyLogic UI verification is performed by this script.",
+    "No real-flight safety, future-ship prediction or global-optimality claim.",
+    "16 catalog entries are not 16 independent experiments.",
+    "Historical grid results and not-tested entries are not new SST verification."
+  ],
+  "passed": true,
+  "elapsed_seconds": 42.219
+}

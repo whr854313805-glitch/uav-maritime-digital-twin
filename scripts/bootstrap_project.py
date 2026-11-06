@@ -20,8 +20,9 @@ def sha(path):
     return h.hexdigest()
 
 
-def restore(root=ROOT):
+def restore(root=ROOT, recover_latest=False):
     root = Path(root).resolve()
+    (root/'.local/data-bootstrap.json').unlink(missing_ok=True)
     manifest_path = root / 'runtime/data/current-data.manifest.json'
     manifest = json.loads(manifest_path.read_text(encoding='utf-8-sig'))
     archive = root / 'runtime/data/current-data.zip'
@@ -40,8 +41,30 @@ def restore(root=ROOT):
                 # A newly computed latest result is intentional. Keep it; catalog()
                 # and the verifier check its own input identity independently.
                 if name == 'output/ais_single_task/latest.json':
-                    continue
-                raise ValueError('Reviewed input was changed: ' + name + '. Preserve your changes before restoring a fresh copy.')
+                    sys.path.insert(0, str(root))
+                    from src.validation import validate_result
+                    try:
+                        candidate = json.loads(target.read_text(encoding='utf-8-sig'))
+                        original = json.loads(z.read(name))
+                        validate_result(candidate, capture_id=original['capture_id'], raw_sha256=original['raw_sha256'])
+                        if candidate.get('projection') != original.get('projection'):
+                            raise ValueError('latest.json projection differs from the fixed reference')
+                        from src.validation import number
+                        number(candidate.get('window_start_unix_s'), 'latest window origin')
+                    except (ValueError, TypeError, KeyError, OSError) as error:
+                        if not recover_latest:
+                            raise ValueError('latest.json is invalid: '+str(error)+'. Run scripts/bootstrap_project.py --recover-latest to preserve it and restore the original saved default.') from error
+                        import uuid
+                        backup = root / '.local/recovery' / ('latest-' + uuid.uuid4().hex + '.json')
+                        backup.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(target, backup)
+                        if sha(backup) != sha(target):
+                            raise ValueError('Recovery backup verification failed')
+                        print('Invalid latest preserved at '+str(backup)+'; restoring original saved default, not claiming a new planning success.')
+                    else:
+                        continue
+                else:
+                    raise ValueError('Reviewed input was changed: ' + name + '. Preserve your changes before restoring a fresh copy.')
             target.parent.mkdir(parents=True, exist_ok=True)
             fd, temporary = tempfile.mkstemp(prefix=target.name + '.', suffix='.tmp', dir=target.parent)
             temp = Path(temporary)
@@ -67,9 +90,13 @@ def restore(root=ROOT):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--project', type=Path, default=ROOT)
+    parser.add_argument('--recover-latest', action='store_true')
     args = parser.parse_args()
     try:
-        restore(args.project)
+        sys.path.insert(0,str(args.project.resolve()))
+        from src.release_checks import verify_release
+        verify_release(args.project)
+        restore(args.project,args.recover_latest)
     except Exception as error:
         print('Data setup failed: ' + str(error), file=sys.stderr)
         raise SystemExit(1)

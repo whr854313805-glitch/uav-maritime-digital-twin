@@ -1,10 +1,15 @@
 {
-  "version": "F24-Windows-20261106",
+  "version": "F25-Windows-security-quality-20261106",
   "files": [
     {
       "path": ".gitattributes",
       "bytes": 200,
       "sha256": "f2e191e45633549f3b63e45a439f66b5606e2e497940ec679342b23fad9e0e21"
+    },
+    {
+      "path": ".github/workflows/windows-offline.yml",
+      "bytes": 1926,
+      "sha256": "3e237782de0c8fba4f8033c9200bf5daf95be1ed5666d3060de0d70074a8f45a"
     },
     {
       "path": ".gitignore",
@@ -17,6 +22,16 @@
       "sha256": "1c7ee06aa9acdcd716aa946546b355fc0a49c256df238a8e9f36409b8230099d"
     },
     {
+      "path": "README.md",
+      "bytes": 26043,
+      "sha256": "31aaa1bc11697b330f83c6637bfe43818a9822b0982e213254c662b313112f78"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1325,
+      "sha256": "c856a80833b6d77bdb15e80829ea6dd56ba1978f510986c6b5ac7e0f6b4565a7"
+    },
+    {
       "path": "ais_anylogic_bridge.py",
       "bytes": 5106,
       "sha256": "ec7c44de473394d3b38d5a327e2d0e2042d1a2a599275b5689a39d7a49097c78"
@@ -27,24 +42,14 @@
       "sha256": "c9a587f4fc25ca7b0225eb97ae8c17518dce7c73b67bec290bfd1eda7ab57b2e"
     },
     {
-      "path": "anylogic/ctrl_wheel.js",
-      "bytes": 5229,
-      "sha256": "c862f80ebbcc6eaa1979093aaf9bbe41f86e1ead31b034655d01bf9d0bde34e1"
-    },
-    {
-      "path": "anylogic/harbour_background.png",
-      "bytes": 577580,
-      "sha256": "8823b5193e56193b3ff2fb2198c79252a9b9470ec0e9e288373f51dcf2464273"
-    },
-    {
-      "path": "anylogic/native-visual-demo.jar",
-      "bytes": 64365,
-      "sha256": "a948f77b69ed52a6260df395db9bcd061b89913c1a827e48cb0020e0b9fe3f2e"
+      "path": "anylogic/LoopbackAgent.java",
+      "bytes": 2779,
+      "sha256": "dc164b856a13b517abe7eda00832427a5c0b95922d3a696fd149fa0b493909f0"
     },
     {
       "path": "anylogic/NativeDemoView.java",
-      "bytes": 37689,
-      "sha256": "cbc5b8146a0589499c9d9381ee62bec9f0a134199ce0c592791f9f2a117cd1b0"
+      "bytes": 37982,
+      "sha256": "ef041eb8f9efbbd81b32747c7c884ff380920b4f379db8cfe59ab6e8ce5af074"
     },
     {
       "path": "anylogic/NativeScenery.java",
@@ -53,8 +58,38 @@
     },
     {
       "path": "anylogic/NativeWorkbench.java",
-      "bytes": 30386,
-      "sha256": "b4a0b614f17773080f3d79b794f8b337e1ee21106d54f6d31bfb5d1e1d23c812"
+      "bytes": 30891,
+      "sha256": "9e4a9b1d00c5a47c95e7d1be6e482dba46191345f47a47768ad6759397e873df"
+    },
+    {
+      "path": "anylogic/OwnedJobs.java",
+      "bytes": 1782,
+      "sha256": "ee2206e7271f412e8722e5abe2c2050d28a6ceeea67232a95d1336eda88b4546"
+    },
+    {
+      "path": "anylogic/RunSession.java",
+      "bytes": 1724,
+      "sha256": "6b51e7dc46298786a6270d62b802ef3f531c1807ca8c9dc797210f360773d06b"
+    },
+    {
+      "path": "anylogic/ctrl_wheel.js",
+      "bytes": 6089,
+      "sha256": "ab2ad6a0ee95ccccb18790953258caea0cb97b0f8a8a6bcb7972c47b294e215f"
+    },
+    {
+      "path": "anylogic/harbour_background.png",
+      "bytes": 577580,
+      "sha256": "8823b5193e56193b3ff2fb2198c79252a9b9470ec0e9e288373f51dcf2464273"
+    },
+    {
+      "path": "anylogic/loopback-agent.jar",
+      "bytes": 5088,
+      "sha256": "84675ee1d440f0abebd82f2fd2db08cec6842068cdefc7114cae996d581f44ce"
+    },
+    {
+      "path": "anylogic/native-visual-demo.jar",
+      "bytes": 69573,
+      "sha256": "27fc9ec552bc9a694bbe6f105c1a8377b9b2fd52724da0d5b6fa27db4bcd5f86"
     },
     {
       "path": "anylogic/visual_demo/scenery.json",
@@ -68,8 +103,8 @@
     },
     {
       "path": "anylogic/visual_sources/NativeWorkbench.java",
-      "bytes": 30492,
-      "sha256": "4346ee1d865fa9add9d59eb76a74c31897e486b72c596fdcfe135cf12a638302"
+      "bytes": 30997,
+      "sha256": "ce694b806225be6ca11a850749959a011496e256636e1c87c2382f014f759c2c"
     },
     {
       "path": "anylogic/workbench/provenance.json",
@@ -83,8 +118,13 @@
     },
     {
       "path": "build_anylogic_visual.py",
-      "bytes": 2344,
-      "sha256": "a3d22473d7fafa8594acc92df8ad15da20d673fab2e17a2bc58c5ddfa18ecf40"
+      "bytes": 2898,
+      "sha256": "4c2e146fedc3db9bb632074ba3ed109fff8d6a12ce904e3f3e5dbdb67b56cfe6"
+    },
+    {
+      "path": "config.yaml",
+      "bytes": 4256,
+      "sha256": "1a61570296343e819097edb92f3b33ee0d28237f4708ae97608df5c0f843d167"
     },
     {
       "path": "config/ais-single-task.json",
@@ -97,14 +137,84 @@
       "sha256": "4686ef11387b7f444b4a527a776d7f32cee8f16a977ffb7101f15766267df72b"
     },
     {
-      "path": "config.yaml",
-      "bytes": 4256,
-      "sha256": "1a61570296343e819097edb92f3b33ee0d28237f4708ae97608df5c0f843d167"
-    },
-    {
       "path": "docs/DEVELOPMENT.md",
       "bytes": 1815,
       "sha256": "59a6077e5bc563c504b828263a71ff468091052fabb764680a2f965ed53d4147"
+    },
+    {
+      "path": "docs/F25/code-map.json",
+      "bytes": 14148,
+      "sha256": "b5e010f741844594c095a070b0f342bdfbe56aa509515013b2950595027b86e2"
+    },
+    {
+      "path": "docs/F25/lifecycle.json",
+      "bytes": 249,
+      "sha256": "c9b1fc05007e4873110bb39c7135c036d903eac1ea0112a6a29560cc056cdab2"
+    },
+    {
+      "path": "docs/F25/local-data-and-recompute.json",
+      "bytes": 8165,
+      "sha256": "a8fa34614c99acf2ba2cb8bc02a3c6c86d839b1cff32d36581ec20fe6947e87e"
+    },
+    {
+      "path": "docs/F25/network-boundary.json",
+      "bytes": 815,
+      "sha256": "2bb90230e45c83bc86dad4befea620af02ea118b1f8119ba807f57db7cf2ea1c"
+    },
+    {
+      "path": "docs/F25/portable-six-cases.json",
+      "bytes": 3640,
+      "sha256": "488bb521236b256b9b0a7b7651b9c97a0e844c4ca808c5bbe1c690239c515e80"
+    },
+    {
+      "path": "docs/F25/protected-inputs.json",
+      "bytes": 3019,
+      "sha256": "f3ee7ccd98dae270d8613c6a85fa1109c76ac5e3032d9b3b57b7f29b9f561232"
+    },
+    {
+      "path": "docs/F25/retired-canvas.json",
+      "bytes": 262,
+      "sha256": "5de9501b583f36aeeee01976dbaab5856a4542a5b753b181c4828ee05708bcd7"
+    },
+    {
+      "path": "docs/F25/six_cases_verification.json",
+      "bytes": 3640,
+      "sha256": "488bb521236b256b9b0a7b7651b9c97a0e844c4ca808c5bbe1c690239c515e80"
+    },
+    {
+      "path": "docs/F25/ui_failure_regressions.json",
+      "bytes": 511,
+      "sha256": "f6d9d09372afb39c9fdfd9b2ace64bc38f63f48bea11e78f6a9719c21a251342"
+    },
+    {
+      "path": "docs/F25/ui_short_errors_final.json",
+      "bytes": 373,
+      "sha256": "bcbd2640b92e2214ac7fe278f4a55a51e19bd3491a18227800e6494d496c931c"
+    },
+    {
+      "path": "docs/F25/中文路径副本.png",
+      "bytes": 604311,
+      "sha256": "ed5a243f9df2a78c3331d0fa40cf5682c3ee5c4bbb9cd919729bdf45d99dbec8"
+    },
+    {
+      "path": "docs/F25/修复与验收.md",
+      "bytes": 7424,
+      "sha256": "46bfbfd1b6a9459f3d3a78b944ba1bea5c8ef9a8673ae822e421528a5e823b7f"
+    },
+    {
+      "path": "docs/F25/失败后恢复.png",
+      "bytes": 441059,
+      "sha256": "df6fbddd7e7abc3960237b24ce7cface532c758628195e0af8766f845af79dd8"
+    },
+    {
+      "path": "docs/F25/重新加载成功.png",
+      "bytes": 505166,
+      "sha256": "c47e22fab7f4f7f51da90113f4f3cbfc666efee2bf1ee05464b5b8291e08e14c"
+    },
+    {
+      "path": "docs/REFERENCES.md",
+      "bytes": 917,
+      "sha256": "b9d938b2ab9e8ad78fb8aa0d6349a50427b1dedc37510f306390183574db1f88"
     },
     {
       "path": "docs/provenance/portable-code-map.json",
@@ -152,11 +262,6 @@
       "sha256": "c35d43e4105533e102d785f8d188abb035873668b56943a2c63cd2cf651832b9"
     },
     {
-      "path": "docs/REFERENCES.md",
-      "bytes": 917,
-      "sha256": "b9d938b2ab9e8ad78fb8aa0d6349a50427b1dedc37510f306390183574db1f88"
-    },
-    {
       "path": "docs/verification/F20/production_verification.json",
       "bytes": 4393,
       "sha256": "f74e87bac509aa541f4caa12a5942a8a9830fce226f8beb0ec1fab58514c6688"
@@ -180,6 +285,11 @@
       "path": "docs/verification/F23/visible_smoke.json",
       "bytes": 635,
       "sha256": "41d69d28bc41bb5299e6106350c8c5974e3e30e385184900401e5855a7ecc845"
+    },
+    {
+      "path": "docs/verification/F24/README.md",
+      "bytes": 2307,
+      "sha256": "e6b40c6473c194acbc0a1dbc1a16ca657597721cb3e10dedceb6d63cf8bc4c2d"
     },
     {
       "path": "docs/verification/F24/cold-restart-verification.json",
@@ -207,11 +317,6 @@
       "sha256": "62ab0b350a02dd6ca9c26e255d30b328d35628a9f00e03320b8e7842b493234d"
     },
     {
-      "path": "docs/verification/F24/README.md",
-      "bytes": 2307,
-      "sha256": "e6b40c6473c194acbc0a1dbc1a16ca657597721cb3e10dedceb6d63cf8bc4c2d"
-    },
-    {
       "path": "docs/verification/F24/relocated-demo.png",
       "bytes": 586041,
       "sha256": "b2071183cd6292c3d8d46a18fb5c274a808860212b05726dc572eccb43cf61ec"
@@ -232,9 +337,14 @@
       "sha256": "5f2783d84ca62f4a6dad1c11495bb1bf0acc12102ec240c72706aab1085d6e1f"
     },
     {
+      "path": "job_runner.py",
+      "bytes": 4980,
+      "sha256": "2cf60a1b1482c92281c1d8041988d3dd7b55c46269aa0ba9dd8370e54bf40b3b"
+    },
+    {
       "path": "portable_runtime.py",
-      "bytes": 4473,
-      "sha256": "1db14c14ac271dff7977fc94820b8547fc178be89ac05b766650b73e8780e342"
+      "bytes": 4927,
+      "sha256": "8690f3b6f6b811883310b2f2fdb564905ead728e95f2a3e9ca491bf264bc4196"
     },
     {
       "path": "prepare_anylogic_visual.py",
@@ -243,18 +353,18 @@
     },
     {
       "path": "prepare_portable_model.py",
-      "bytes": 2691,
-      "sha256": "055cd48a24a8175f5365cd1f5a7a92bc9786fbbee4309641efe71ab53721763c"
+      "bytes": 3277,
+      "sha256": "c38b4cc23f5fed214e64416fc3be0db717cc97158827c77c40d8f89db2439777"
     },
     {
       "path": "presentation_controls.py",
-      "bytes": 9946,
-      "sha256": "7715a3ed7eab4f2334cad2226554786f92047c191d11165afe12b3da61402c01"
+      "bytes": 10272,
+      "sha256": "33b0ba2ce99d8232dae8d2cc81cafec8e09ace00531b55524e192b763c4a71c3"
     },
     {
-      "path": "README.md",
-      "bytes": 22889,
-      "sha256": "1a4a6fde0c82b89a9a91f400834089a647a8dd79a27fd944e6affbace3f1c5b1"
+      "path": "project_processes.py",
+      "bytes": 11535,
+      "sha256": "541c33b5ed2a3429a96b92359b69754a9dd3c91cb9e19249b11e6dc74cc76ee3"
     },
     {
       "path": "requirements-runtime.lock.txt",
@@ -277,6 +387,11 @@
       "sha256": "0c0b560977e18dd1becc979b15d9759073847b5077b6b778f2cde5a6411bd2b1"
     },
     {
+      "path": "runtime/ompl/OMPL-LICENSE",
+      "bytes": 1607,
+      "sha256": "f1b0b41dbea7d46f34a723e827b5ef50070d006b34d5463f77a0a06d3dccdf2d"
+    },
+    {
       "path": "runtime/ompl/libgcc_s_seh-1.dll",
       "bytes": 150537,
       "sha256": "791ebf66e99c7c1b4ed3666468cec45a0172b4c8942ac6c84c3e9cab3e1b5270"
@@ -295,11 +410,6 @@
       "path": "runtime/ompl/manifest.json",
       "bytes": 642,
       "sha256": "63a14e5182d48230fde8891df50a3094457f5e02d3f0452bdfddefd43e3db729"
-    },
-    {
-      "path": "runtime/ompl/OMPL-LICENSE",
-      "bytes": 1607,
-      "sha256": "f1b0b41dbea7d46f34a723e827b5ef50070d006b34d5463f77a0a06d3dccdf2d"
     },
     {
       "path": "runtime/ompl/runtime-licenses/gcc/COPYING.RUNTIME",
@@ -358,13 +468,18 @@
     },
     {
       "path": "scripts/bootstrap_project.py",
-      "bytes": 3186,
-      "sha256": "fe3439155ac30bdb07f02664898ed67a85246458b79fb17de2794fe654519b01"
+      "bytes": 5188,
+      "sha256": "db9eead38aa4eaae3e8f7ea0509f4abe1eefe83b41cd40c329523a7478740b61"
     },
     {
       "path": "scripts/release/build_python_runtime.py",
       "bytes": 8916,
       "sha256": "cc73b201d6ffe04642905cfeb9152ab93ef2086b9411a26c5da13c09f2833f73"
+    },
+    {
+      "path": "scripts/release/update_manifest.py",
+      "bytes": 1355,
+      "sha256": "31a9a68809bb3740d273c35e28e57c6a7603b675f85abc6a3f4419e3e89be9df"
     },
     {
       "path": "scripts/setup_runtime.ps1",
@@ -373,13 +488,13 @@
     },
     {
       "path": "scripts/start_project.ps1",
-      "bytes": 1130,
-      "sha256": "42d00eda77d7fd998c47c5a30c45bc3169be77ae4bcfde846dddbed6035e2f14"
+      "bytes": 3289,
+      "sha256": "d36d4896c9faefbe7d56a407fd4466b52f2abef7dd87cb309937a1ee1ae4ac1f"
     },
     {
       "path": "scripts/verify_project.py",
-      "bytes": 20784,
-      "sha256": "8ef18e316702d7a33788a008abdeade94181ff55a375b6e787ed65f304947163"
+      "bytes": 21107,
+      "sha256": "c12540401425e5e19cb2ad15dd318972e60e8bf78ff3474300d773cdfc9b6918"
     },
     {
       "path": "select_research_points.py",
@@ -413,13 +528,13 @@
     },
     {
       "path": "src/ais_single_task.py",
-      "bytes": 17972,
-      "sha256": "e80c88262a4442c108867ad1ac284ae42f01ec404abf96b933d22046298aa71f"
+      "bytes": 17371,
+      "sha256": "db0b3d0301f5292ed3b0d9303d21906df2918bef601d990b85666f7ca173a9fb"
     },
     {
       "path": "src/anylogic_workspace.py",
-      "bytes": 11921,
-      "sha256": "3669b2f5d24083a773793ef75ba2eb0ce42afe6abc7bed16bde8c2a6d425f747"
+      "bytes": 12183,
+      "sha256": "9532d1ff55dfa39a6e55a9d62321ee62c93c50a61421d61c2174952ca1b62efc"
     },
     {
       "path": "src/departure_search.py",
@@ -457,6 +572,11 @@
       "sha256": "bc24270a05f715296f697b9638c54cd4f3a3c8967980541ccbdc42264abd7ff0"
     },
     {
+      "path": "src/release_checks.py",
+      "bytes": 4877,
+      "sha256": "3c466bb0f18f0c78f12ea83f86850c57c958e263e439de39855a9a96be50211b"
+    },
+    {
       "path": "src/safe_planning.py",
       "bytes": 11828,
       "sha256": "f4f2340873535fb5e1550bd868e3067291220e82f0fea09612780e6055a11357"
@@ -467,19 +587,24 @@
       "sha256": "b077904e75c432c851031dc52bd7a4ad0760a57282567f52789497803ca28fbd"
     },
     {
+      "path": "src/validation.py",
+      "bytes": 6742,
+      "sha256": "9deeaf05b3c6211326aa090a9699d4193a74d9285faf647f2ea0b6deac69c9a3"
+    },
+    {
       "path": "start.cmd",
       "bytes": 231,
       "sha256": "d0217b995b4adf97e296567d98d3ce14f46190430e8165bc6effa8b561a222ad"
     },
     {
       "path": "start_full_demo.py",
-      "bytes": 7123,
-      "sha256": "fb4a35ff947775168ff57d8d0f4107d9a13ed914a5d24ed8e811e30b0cea03a1"
+      "bytes": 8891,
+      "sha256": "dac453312acdc8210344903f21d6e0a55ca6fc43ae573bac8564b511a4b4c47a"
     },
     {
-      "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 1325,
-      "sha256": "c856a80833b6d77bdb15e80829ea6dd56ba1978f510986c6b5ac7e0f6b4565a7"
+      "path": "tests/test_security_regressions.py",
+      "bytes": 19100,
+      "sha256": "7349f6509eefd8d70fc5d708a34761c527b2c2c3c6609f9ad360e7be7f50c382"
     },
     {
       "path": "verify_ais_encounters.py",
@@ -492,6 +617,11 @@
       "sha256": "d0217b995b4adf97e296567d98d3ce14f46190430e8165bc6effa8b561a222ad"
     },
     {
+      "path": "恢复默认结果.cmd",
+      "bytes": 137,
+      "sha256": "cf15a92ff4547a0d90e14982ec5bb8d6fe96fa3d3324719e1136811586136f46"
+    },
+    {
       "path": "检查运行环境.cmd",
       "bytes": 233,
       "sha256": "31b51a76e7afb0966ba07b2bf01067a882ce92896970beb97555b3687916f4ba"
@@ -502,6 +632,6 @@
       "sha256": "a72c38bbe27f5b66177619e9763e9856ed1e535263c7c152a76bdf330b5bb698"
     }
   ],
-  "bytes": 157228872,
-  "note": "Original file bytes; Git line-ending conversion disabled. This manifest excludes itself."
+  "bytes": 158902037,
+  "note": "Reviewed release identity, not a publisher signature. Runtime data/results remain byte-identical. Manifest excludes itself."
 }

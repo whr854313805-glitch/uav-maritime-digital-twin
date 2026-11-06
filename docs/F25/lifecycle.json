@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "wrong_PID_rejected_before_browser_access": true,
+  "two_concurrent_cold_starts_one_editor_and_model": true,
+  "fresh_launch_id": "20b79583ebb84c2fb61110c5653e29cc",
+  "phase": "ready",
+  "normal_close_and_retry": true
+}

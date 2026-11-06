@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "listeners": [
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 58030,
+      "OwningProcess": 39072
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 26674,
+      "OwningProcess": 16364
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 25822,
+      "OwningProcess": 40460
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 20818,
+      "OwningProcess": 40820
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 8375,
+      "OwningProcess": 40820
+    }
+  ],
+  "loopback_http_status": 200,
+  "own_NIC_ports_refused": [
+    58030,
+    26674,
+    25822,
+    20818,
+    8375
+  ],
+  "other_physical_computer_tested": false,
+  "all_project_java_and_chromium_listeners_loopback": true
+}

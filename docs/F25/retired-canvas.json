@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "retired_canvas_removed": true,
+  "active_canvas_preserved": true,
+  "before": {
+    "removed": 0,
+    "ids": [
+      "43887canvas"
+    ]
+  },
+  "after": {
+    "removed": 1,
+    "ids": [
+      "43887canvas"
+    ]
+  },
+  "input_version": 3
+}

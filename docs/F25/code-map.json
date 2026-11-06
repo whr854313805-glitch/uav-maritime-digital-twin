@@ -1,0 +1,646 @@
+{
+  "version": "F25",
+  "files": [
+    {
+      "path": "src/validation.py",
+      "bytes": 6742,
+      "sha256": "9deeaf05b3c6211326aa090a9699d4193a74d9285faf647f2ea0b6deac69c9a3",
+      "functions": [
+        {
+          "name": "number",
+          "line": 6
+        },
+        {
+          "name": "coordinates",
+          "line": 17
+        },
+        {
+          "name": "parse_departure",
+          "line": 25
+        },
+        {
+          "name": "validate_request",
+          "line": 44
+        },
+        {
+          "name": "json_safe",
+          "line": 86
+        },
+        {
+          "name": "validate_result",
+          "line": 101
+        }
+      ]
+    },
+    {
+      "path": "src/release_checks.py",
+      "bytes": 4877,
+      "sha256": "3c466bb0f18f0c78f12ea83f86850c57c958e263e439de39855a9a96be50211b",
+      "functions": [
+        {
+          "name": "sha",
+          "line": 9
+        },
+        {
+          "name": "release_identity",
+          "line": 17
+        },
+        {
+          "name": "verify_release",
+          "line": 25
+        },
+        {
+          "name": "_equal",
+          "line": 46
+        },
+        {
+          "name": "verify_workspace",
+          "line": 65
+        },
+        {
+          "name": "point",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "path": "src/ais_single_task.py",
+      "bytes": 17371,
+      "sha256": "db0b3d0301f5292ed3b0d9303d21906df2918bef601d990b85666f7ca173a9fb",
+      "functions": [
+        {
+          "name": "apply_reference_profile",
+          "line": 23
+        },
+        {
+          "name": "select_window",
+          "line": 41
+        },
+        {
+          "name": "export_window",
+          "line": 105
+        },
+        {
+          "name": "load_environment",
+          "line": 133
+        },
+        {
+          "name": "validate_request",
+          "line": 155
+        },
+        {
+          "name": "run_task",
+          "line": 160
+        },
+        {
+          "name": "wind_at",
+          "line": 122
+        },
+        {
+          "name": "edge_objective_cost",
+          "line": 125
+        },
+        {
+          "name": "plan_corridor",
+          "line": 128
+        }
+      ]
+    },
+    {
+      "path": "src/anylogic_workspace.py",
+      "bytes": 12183,
+      "sha256": "9532d1ff55dfa39a6e55a9d62321ee62c93c50a61421d61c2174952ca1b62efc",
+      "functions": [
+        {
+          "name": "read",
+          "line": 14
+        },
+        {
+          "name": "sha",
+          "line": 15
+        },
+        {
+          "name": "hk",
+          "line": 16
+        },
+        {
+          "name": "catalog",
+          "line": 19
+        },
+        {
+          "name": "prepare",
+          "line": 53
+        },
+        {
+          "name": "sections",
+          "line": 97
+        },
+        {
+          "name": "packet",
+          "line": 125
+        },
+        {
+          "name": "add",
+          "line": 21
+        },
+        {
+          "name": "point",
+          "line": 59
+        },
+        {
+          "name": "pixel",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "path": "project_processes.py",
+      "bytes": 11535,
+      "sha256": "541c33b5ed2a3429a96b92359b69754a9dd3c91cb9e19249b11e6dc74cc76ee3",
+      "functions": [
+        {
+          "name": "atomic_json",
+          "line": 7
+        },
+        {
+          "name": "read_json",
+          "line": 16
+        },
+        {
+          "name": "powershell_json",
+          "line": 23
+        },
+        {
+          "name": "process_identity",
+          "line": 33
+        },
+        {
+          "name": "same_path",
+          "line": 40
+        },
+        {
+          "name": "model_session",
+          "line": 45
+        },
+        {
+          "name": "set_phase",
+          "line": 65
+        },
+        {
+          "name": "close_failed_run",
+          "line": 72
+        },
+        {
+          "name": "owned_descendants",
+          "line": 116
+        },
+        {
+          "name": "terminate_identity",
+          "line": 129
+        },
+        {
+          "name": "stop_tree",
+          "line": 148
+        },
+        {
+          "name": "verify_listener",
+          "line": 155
+        },
+        {
+          "name": "launch_pending",
+          "line": 162
+        },
+        {
+          "name": "cleanup_finished_sessions",
+          "line": 170
+        },
+        {
+          "name": "visit",
+          "line": 100
+        }
+      ]
+    },
+    {
+      "path": "job_runner.py",
+      "bytes": 4980,
+      "sha256": "2cf60a1b1482c92281c1d8041988d3dd7b55c46269aa0ba9dd8370e54bf40b3b",
+      "functions": [
+        {
+          "name": "own_job_tree",
+          "line": 7
+        },
+        {
+          "name": "owner_handle",
+          "line": 36
+        },
+        {
+          "name": "main",
+          "line": 53
+        },
+        {
+          "name": "creation",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "path": "start_full_demo.py",
+      "bytes": 8891,
+      "sha256": "dac453312acdc8210344903f21d6e0a55ca6fc43ae573bac8564b511a4b4c47a",
+      "functions": [
+        {
+          "name": "focus",
+          "line": 24
+        },
+        {
+          "name": "check_environment",
+          "line": 65
+        },
+        {
+          "name": "main",
+          "line": 95
+        },
+        {
+          "name": "visit",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "path": "prepare_portable_model.py",
+      "bytes": 3277,
+      "sha256": "c38b4cc23f5fed214e64416fc3be0db717cc97158827c77c40d8f89db2439777",
+      "functions": [
+        {
+          "name": "startup_code",
+          "line": 10
+        },
+        {
+          "name": "prepare_model",
+          "line": 31
+        },
+        {
+          "name": "template_startup_code",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "path": "presentation_controls.py",
+      "bytes": 10272,
+      "sha256": "33b0ba2ce99d8232dae8d2cc81cafec8e09ace00531b55524e192b763c4a71c3",
+      "functions": [
+        {
+          "name": "read",
+          "line": 23
+        },
+        {
+          "name": "_powershell_json",
+          "line": 27
+        },
+        {
+          "name": "browser_apps",
+          "line": 31
+        },
+        {
+          "name": "alive",
+          "line": 48
+        },
+        {
+          "name": "_same_path",
+          "line": 58
+        },
+        {
+          "name": "owned_model_metadata",
+          "line": 65
+        },
+        {
+          "name": "owned_metadata",
+          "line": 77
+        },
+        {
+          "name": "local_lock",
+          "line": 97
+        },
+        {
+          "name": "install",
+          "line": 120
+        },
+        {
+          "name": "_install",
+          "line": 125
+        },
+        {
+          "name": "install_for_model",
+          "line": 202
+        },
+        {
+          "name": "_start_client",
+          "line": 220
+        }
+      ]
+    },
+    {
+      "path": "scripts/bootstrap_project.py",
+      "bytes": 5188,
+      "sha256": "db9eead38aa4eaae3e8f7ea0509f4abe1eefe83b41cd40c329523a7478740b61",
+      "functions": [
+        {
+          "name": "sha",
+          "line": 15
+        },
+        {
+          "name": "restore",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "scripts/start_project.ps1",
+      "bytes": 3289,
+      "sha256": "d36d4896c9faefbe7d56a407fd4466b52f2abef7dd87cb309937a1ee1ae4ac1f"
+    },
+    {
+      "path": "scripts/verify_project.py",
+      "bytes": 21107,
+      "sha256": "c12540401425e5e19cb2ad15dd318972e60e8bf78ff3474300d773cdfc9b6918",
+      "functions": [
+        {
+          "name": "read",
+          "line": 37
+        },
+        {
+          "name": "sha",
+          "line": 41
+        },
+        {
+          "name": "require",
+          "line": 49
+        },
+        {
+          "name": "within",
+          "line": 54
+        },
+        {
+          "name": "locate",
+          "line": 60
+        },
+        {
+          "name": "verify",
+          "line": 69
+        },
+        {
+          "name": "main",
+          "line": 345
+        },
+        {
+          "name": "check",
+          "line": 86
+        },
+        {
+          "name": "published_identity",
+          "line": 101
+        },
+        {
+          "name": "necessary_files",
+          "line": 106
+        },
+        {
+          "name": "dependencies",
+          "line": 129
+        },
+        {
+          "name": "saved_catalog",
+          "line": 144
+        },
+        {
+          "name": "demo_results",
+          "line": 172
+        },
+        {
+          "name": "raw_capture",
+          "line": 187
+        },
+        {
+          "name": "selections",
+          "line": 215
+        },
+        {
+          "name": "official_buildings",
+          "line": 234
+        },
+        {
+          "name": "official_sst",
+          "line": 256
+        },
+        {
+          "name": "independent_recomputed_result",
+          "line": 273
+        }
+      ]
+    },
+    {
+      "path": "anylogic/OwnedJobs.java",
+      "bytes": 1782,
+      "sha256": "ee2206e7271f412e8722e5abe2c2050d28a6ceeea67232a95d1336eda88b4546"
+    },
+    {
+      "path": "anylogic/RunSession.java",
+      "bytes": 1724,
+      "sha256": "6b51e7dc46298786a6270d62b802ef3f531c1807ca8c9dc797210f360773d06b"
+    },
+    {
+      "path": "anylogic/LoopbackAgent.java",
+      "bytes": 2779,
+      "sha256": "dc164b856a13b517abe7eda00832427a5c0b95922d3a696fd149fa0b493909f0"
+    },
+    {
+      "path": "anylogic/NativeWorkbench.java",
+      "bytes": 30891,
+      "sha256": "9e4a9b1d00c5a47c95e7d1be6e482dba46191345f47a47768ad6759397e873df"
+    },
+    {
+      "path": "anylogic/NativeDemoView.java",
+      "bytes": 37982,
+      "sha256": "ef041eb8f9efbbd81b32747c7c884ff380920b4f379db8cfe59ab6e8ce5af074"
+    },
+    {
+      "path": "anylogic/native-visual-demo.jar",
+      "bytes": 69573,
+      "sha256": "27fc9ec552bc9a694bbe6f105c1a8377b9b2fd52724da0d5b6fa27db4bcd5f86"
+    },
+    {
+      "path": "anylogic/loopback-agent.jar",
+      "bytes": 5088,
+      "sha256": "84675ee1d440f0abebd82f2fd2db08cec6842068cdefc7114cae996d581f44ce"
+    },
+    {
+      "path": "tests/test_security_regressions.py",
+      "bytes": 19100,
+      "sha256": "7349f6509eefd8d70fc5d708a34761c527b2c2c3c6609f9ad360e7be7f50c382",
+      "functions": [
+        {
+          "name": "read",
+          "line": 16
+        },
+        {
+          "name": "sha",
+          "line": 17
+        },
+        {
+          "name": "load",
+          "line": 18
+        },
+        {
+          "name": "setUp",
+          "line": 23
+        },
+        {
+          "name": "test_bad_request_types_and_nonfinite",
+          "line": 24
+        },
+        {
+          "name": "test_original_request_is_valid",
+          "line": 33
+        },
+        {
+          "name": "test_nan_produces_structured_error",
+          "line": 34
+        },
+        {
+          "name": "test_result_write_failure_does_not_return_success",
+          "line": 41
+        },
+        {
+          "name": "test_run_directory_denied_returns_structured_error",
+          "line": 46
+        },
+        {
+          "name": "test_early_source_unverified_failure_is_empty_error_packet",
+          "line": 50
+        },
+        {
+          "name": "test_real_workspace",
+          "line": 60
+        },
+        {
+          "name": "test_one_kilometre_wrong_display_rejected",
+          "line": 61
+        },
+        {
+          "name": "test_wrong_display_time_rejected",
+          "line": 66
+        },
+        {
+          "name": "test_release_binary_replacement_rejected",
+          "line": 70
+        },
+        {
+          "name": "setUp",
+          "line": 84
+        },
+        {
+          "name": "fixture",
+          "line": 85
+        },
+        {
+          "name": "test_corrupt_latest_blocks_ready",
+          "line": 95
+        },
+        {
+          "name": "test_explicit_recovery_preserves_bad_file",
+          "line": 101
+        },
+        {
+          "name": "test_missing_projection_cannot_report_ready",
+          "line": 108
+        },
+        {
+          "name": "test_valid_new_latest_is_retained",
+          "line": 113
+        },
+        {
+          "name": "test_interrupted_extract_is_resumable",
+          "line": 119
+        },
+        {
+          "name": "test_process_query_is_bounded",
+          "line": 128
+        },
+        {
+          "name": "test_wrong_pid_not_taken_over",
+          "line": 132
+        },
+        {
+          "name": "test_running_release_mismatch_not_reused",
+          "line": 137
+        },
+        {
+          "name": "test_wrong_project_session_not_accepted",
+          "line": 145
+        },
+        {
+          "name": "test_pid_reuse_cycle_is_not_followed",
+          "line": 149
+        },
+        {
+          "name": "test_client_early_exit_is_reaped",
+          "line": 155
+        },
+        {
+          "name": "test_cleanup_preserves_edited_model_and_active_workspace",
+          "line": 161
+        },
+        {
+          "name": "test_cleanup_finished_cache_keeps_diagnostic_log",
+          "line": 173
+        },
+        {
+          "name": "test_bad_settings_path_type",
+          "line": 182
+        },
+        {
+          "name": "startup_context",
+          "line": 187
+        },
+        {
+          "name": "test_spawn_failure_records_failed_state",
+          "line": 203
+        },
+        {
+          "name": "test_pending_startup_does_not_spawn_duplicate",
+          "line": 211
+        },
+        {
+          "name": "alive",
+          "line": 224
+        },
+        {
+          "name": "run_tree",
+          "line": 233
+        },
+        {
+          "name": "test_forcibly_closed_owner_reaps_job_tree",
+          "line": 254
+        },
+        {
+          "name": "test_job_timeout_reaps_descendants_only",
+          "line": 269
+        },
+        {
+          "name": "test_normal_parent_exit_reaps_orphan",
+          "line": 270
+        },
+        {
+          "name": "test_killed_supervisor_reaps_descendants",
+          "line": 271
+        }
+      ]
+    },
+    {
+      "path": "anylogic/ctrl_wheel.js",
+      "bytes": 6089,
+      "sha256": "ab2ad6a0ee95ccccb18790953258caea0cb97b0f8a8a6bcb7972c47b294e215f"
+    }
+  ]
+}

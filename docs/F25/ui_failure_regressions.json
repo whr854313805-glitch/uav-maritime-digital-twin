@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "F23_pan_zoom_integer_speed",
+      "passed": true,
+      "zoom": 1.4333294145603404
+    },
+    {
+      "check": "nonzero",
+      "passed": true
+    },
+    {
+      "check": "missing_packet",
+      "passed": true
+    },
+    {
+      "check": "production_180s_UI_timeout_and_reaped_child",
+      "passed": true,
+      "seconds": 180.38999999999942
+    },
+    {
+      "check": "reload_after_failures",
+      "passed": true
+    }
+  ]
+}

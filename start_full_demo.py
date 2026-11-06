@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import ctypes
 from ctypes import wintypes
+import hashlib
 import importlib
 import json
 import os
@@ -14,6 +15,7 @@ import time
 import uuid
 
 from portable_runtime import PROJECT_ROOT, LOCAL_DIR, find_anylogic, find_python
+from project_processes import atomic_json,read_json,process_identity,model_session,set_phase,close_failed_run,launch_pending,cleanup_finished_sessions
 
 P = PROJECT_ROOT
 MODEL = P / "anylogic/AIS_Visual_Demo.alp"
@@ -65,6 +67,9 @@ def check_environment():
         raise RuntimeError("此运行包面向 Windows 10/11 64 位系统。")
     if ctypes.sizeof(ctypes.c_void_p) != 8:
         raise RuntimeError("需要 64 位 Python。请使用项目自带的 Windows Python 运行库。")
+    from src.release_checks import verify_release,verify_workspace
+    verified=verify_release(P)
+    verify_workspace(P)
     home = find_anylogic()
     python = find_python()
     required = [MODEL, P / "anylogic/native-visual-demo.jar", P / "anylogic/ctrl_wheel.js",
@@ -82,7 +87,7 @@ def check_environment():
             failures.append(f"{package}: {exc}")
     if failures:
         raise RuntimeError("Python 依赖不可用：" + "; ".join(failures) + "。请先运行项目的环境初始化脚本。")
-    return {"ok": True, "project_root": str(P), "local_directory": str(LOCAL_DIR),
+    return {"ok": True, "release_sha256":verified["release_sha256"], "project_root": str(P), "local_directory": str(LOCAL_DIR),
             "anylogic_home": str(home), "python": str(python),
             "model_template": str(MODEL), "platform": "Windows x64"}
 
@@ -91,6 +96,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="只检查运行环境，不打开演示")
     parser.add_argument("--controls-only", type=int, metavar="JAVA_PID", help=argparse.SUPPRESS)
+    parser.add_argument("--interpreter-redirected",action="store_true",help=argparse.SUPPRESS)
     args = parser.parse_args()
     python = find_python()
     current_python = Path(sys.executable).resolve()
@@ -100,8 +106,9 @@ def main():
         and current_python.name.lower() in ("python.exe", "pythonw.exe")
     )
     if python != current_python and not same_installation:
+        if args.interpreter_redirected:raise RuntimeError("Python路径发生循环重定向，请使用实际python.exe。")
         options = {"creationflags": subprocess.CREATE_NO_WINDOW} if args.controls_only else {}
-        completed = subprocess.run([str(python), str(Path(__file__).resolve()), *sys.argv[1:]], **options)
+        completed = subprocess.run([str(python), str(Path(__file__).resolve()), "--interpreter-redirected", *sys.argv[1:]], **options)
         return completed.returncode
     if args.check:
         print(json.dumps(check_environment(), ensure_ascii=False, indent=2))
@@ -121,32 +128,47 @@ def main():
             focus(meta["pid"])
             print("已打开本项目正在运行的完整演示。")
             return 0
-        model = prepare_model(P, Path(checked["anylogic_home"]), python)
-        # Eclipse forwards -r to an already open workspace without running it.
-        # A fresh workspace makes closing and restarting the model reliable,
-        # while leaving all existing editors and any unsaved work untouched.
-        workspace = LOCAL_DIR / "anylogic-workspaces" / uuid.uuid4().hex[:12]
-        workspace.mkdir(parents=True, exist_ok=False)
-        environment = os.environ.copy()
-        environment.update(ANYLOGIC_HOME=checked["anylogic_home"], UAV_PROJECT_ROOT=str(P), UAV_PYTHON=str(python))
-        child = subprocess.Popen([
-            str(Path(checked["anylogic_home"]) / "AnyLogic.exe"), "-data", str(workspace),
-            "-nosplash", "-r", str(model), "Simulation",
-        ], cwd=str(P), env=environment)
-        (LOCAL_DIR / "launcher-state.json").write_text(json.dumps({
-            "project_root": str(P), "workspace": str(workspace), "model": str(model),
-            "editor_launcher_pid": child.pid, "started_unix_s": time.time(),
-        }, ensure_ascii=False, indent=2), encoding="utf-8")
-        print("正在启动 AnyLogic 完整演示，请稍候……", flush=True)
-        for _ in range(100):
-            meta = owned_metadata()
-            if meta and alive(meta["url"]):
-                focus(meta["pid"])
-                print("完整演示已就绪。")
-                return 0
-            time.sleep(1)
-        print("已启动 AnyLogic。若出现提示，请运行 Simulation；若启动失败，请查看模型错误和 anylogic/visual_demo/controls_setup.log。")
-        return 1
+        previous=read_json(LOCAL_DIR/'launcher-state.json')
+        if launch_pending(previous):
+            raise RuntimeError('本项目上次启动仍未结束；请查看.local/launcher-state.json中的日志，不会重复启动模型。')
+        if previous and previous.get('phase') in ('ready','failed'):
+            close_failed_run(previous)
+        cleanup_finished_sessions()
+        launch_id=uuid.uuid4().hex
+        model=prepare_model(P,Path(checked['anylogic_home']),python,launch_id)
+        workspace=LOCAL_DIR/'anylogic-workspaces'/launch_id
+        workspace.mkdir(parents=True,exist_ok=False)
+        environment=os.environ.copy()
+        agent=P/'anylogic/loopback-agent.jar'
+        environment['JAVA_TOOL_OPTIONS']=(environment.get('JAVA_TOOL_OPTIONS','')+' "-javaagent:'+agent.as_posix()+'"').strip()
+        environment.update(ANYLOGIC_HOME=checked['anylogic_home'],UAV_PROJECT_ROOT=str(P),UAV_PYTHON=str(python),UAV_RUN_ID=launch_id)
+        launch={'release_sha256':checked['release_sha256'],'project_root':str(P),'launch_id':launch_id,'workspace':str(workspace),'model':str(model),
+                'model_sha256':hashlib.sha256(model.read_bytes()).hexdigest(),
+                'phase':'starting','started_unix_s':time.time(),'log':str(workspace/'editor.log')}
+        set_phase(launch,'starting')
+        try:
+            with (workspace/'editor.log').open('ab') as output:
+                child=subprocess.Popen([str(Path(checked['anylogic_home'])/'AnyLogic.exe'),'-data',str(workspace),
+                                        '-nosplash','-r',str(model),'Simulation'],cwd=str(P),env=environment,stdout=output,stderr=subprocess.STDOUT)
+            launch['editor_identity']=process_identity(child.pid)
+            set_phase(launch,'starting')
+            print('正在启动本机受保护的 AnyLogic 演示，请稍候……',flush=True)
+            deadline=time.monotonic()+180
+            while time.monotonic()<deadline:
+                error_log=LOCAL_DIR/('startup-error-'+launch_id+'.log')
+                if error_log.exists():raise RuntimeError('模型初始化失败，见 '+str(error_log))
+                meta=owned_metadata()
+                if meta and alive(meta['url']):
+                    set_phase(launch,'ready');focus(meta['pid']);print('完整演示已就绪。');return 0
+                if child.poll() is not None and child.returncode!=0:
+                    raise RuntimeError('AnyLogic启动进程退出，见 '+launch['log'])
+                time.sleep(.5)
+            raise RuntimeError('模型初始化超时，见 '+launch['log']+' 与 anylogic/visual_demo/controls_setup.log')
+        except Exception as error:
+            try:close_failed_run(launch)
+            finally:set_phase(launch,'failed',error=str(error))
+            raise
+
 
 
 if __name__ == "__main__":

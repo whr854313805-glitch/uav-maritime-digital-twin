@@ -10,6 +10,8 @@ import hashlib
 import json
 import math
 import uuid
+import sys
+from src.validation import json_safe
 
 from src.ais_data import digest, timestamp
 from src.ais_replay import build_capture, replace_json
@@ -151,40 +153,21 @@ def load_environment(root, config):
 
 
 def validate_request(request):
-    for key in ['start', 'end']:
-        point = request[key]
-        if len(point) != 2 or not all(isinstance(v, (int, float)) and math.isfinite(v) for v in point):
-            raise ValueError('Invalid ' + key)
-        if not (-90 <= point[0] <= 90 and -180 <= point[1] <= 180):
-            raise ValueError('Invalid coordinates: ' + key)
-    if request.get('window_policy', FIXED_WINDOW) not in (FIXED_WINDOW, TASK_COVERAGE, OBSERVED_SEGMENTS):
-        raise ValueError('Unsupported window policy')
-    for key in ['speed_mps', 'buffer_m']:
-        if not math.isfinite(request[key]) or request[key] <= 0:
-            raise ValueError('Invalid ' + key)
-    offset = request['departure_offset_seconds']
-    if not math.isfinite(offset) or offset < 0:
-        raise ValueError('Departure offset must be finite and nonnegative')
-    cap = request.get('max_flight_seconds')
-    if cap is not None and (not math.isfinite(cap) or cap <= 0):
-        raise ValueError('Invalid max_flight_seconds')
-    if request.get('window_policy', FIXED_WINDOW)==FIXED_WINDOW and (offset>=600 or cap is None):
-        raise ValueError('Legacy window requires offset < 600 and a flight budget')
-    if type(request['max_expanded_states']) is not int or request['max_expanded_states'] <= 0:
-        raise ValueError('Invalid search budget')
+    from src.validation import validate_request as strict_validate
+    strict_validate(request)
 
 
 def run_task(source, request, root=PROJECT, publish=True):
     """Always publish this attempt's failure, never silently retain old success."""
     source, root = Path(source), Path(root)
     directory = root / 'output/ais_single_task/runs' / uuid.uuid4().hex
-    directory.mkdir(parents=True)
     result = {'schema_version': 1, 'run_id': directory.name, 'status': 'error',
-              'created_at_utc': datetime.now(timezone.utc).isoformat(), 'request': deepcopy(request),
+              'created_at_utc': datetime.now(timezone.utc).isoformat(), 'request': json_safe(deepcopy(request)), 'capture_id': None, 'raw_sha256': None,
               'planner_invoked': False, 'trajectory': None, 'ship_check': None,
               'data_check': None, 'failure_reason': None,
               'experiment': 'Offline recorded-trajectory experiment, not future prediction or real flight safety.'}
     try:
+        directory.mkdir(parents=True)
         validate_request(request)
         points = request.get('research_points')
         if points:
@@ -262,12 +245,20 @@ def run_task(source, request, root=PROJECT, publish=True):
                     result['ship_check']['scope'] = 'supported_observations_and_interpolated_segments_only'
             else:
                 result.update(status='rejected_planning', failure_reason=planned['failure_reason'])
-    except (ValueError, KeyError, TypeError, OSError, RuntimeError) as error:
+    except (ValueError, KeyError, TypeError, OSError, RuntimeError, OverflowError) as error:
         result.update(status='error', failure_reason=str(error), trajectory=None, ship_check=None)
-    result['code_sha256'] = {name: digest(PROJECT / name) for name in
-                             ['src/ais_single_task.py', 'src/metric_projection.py', 'src/ais_segments.py', 'src/ais_replay.py', 'src/ais_data.py',
-                              'src/temporal_planning.py', 'src/ompl_sst.py', 'src/safe_planning.py', 'src/flight_simulation.py']}
-    replace_json(directory / 'result.json', result)
-    if publish:
-        replace_json(root / 'output/ais_single_task/latest.json', result)
+    try:
+        result['code_sha256'] = {name: digest(PROJECT / name) for name in
+                                 ['src/ais_single_task.py', 'src/metric_projection.py', 'src/ais_segments.py', 'src/ais_replay.py', 'src/ais_data.py',
+                                  'src/temporal_planning.py', 'src/ompl_sst.py', 'src/safe_planning.py', 'src/flight_simulation.py']}
+        replace_json(directory / 'result.json', result)
+        if publish:
+            replace_json(root / 'output/ais_single_task/latest.json', result)
+    except (ValueError, TypeError, OSError) as error:
+        result.update(status='error', failure_reason='result_write_failed: '+str(error), trajectory=None, ship_check=None)
+        print(json.dumps(json_safe(result), ensure_ascii=True, allow_nan=False), file=sys.stderr)
+        try:
+            replace_json(directory / 'result.json', result)
+        except (ValueError, TypeError, OSError):
+            pass  # The caller still receives a structured failure; no old success.
     return result

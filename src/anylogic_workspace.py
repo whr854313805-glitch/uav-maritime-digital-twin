@@ -7,6 +7,8 @@ from PIL import Image,ImageDraw
 from src.ais_single_task import run_task
 from src.ais_replay import build_capture,replace_json
 from src.metric_projection import MetricProjection
+from src.validation import parse_departure, validate_result
+from src.release_checks import verify_workspace
 
 P=Path(__file__).resolve().parents[1]
 def read(path):return json.loads(path.read_text(encoding='utf-8-sig'))
@@ -50,8 +52,9 @@ def catalog():
 
 def prepare(target):
     target.mkdir(parents=True,exist_ok=True)
-    ref=read(P/'output/ais_single_task/latest.json');source=P/'data/ais/captures'/ref['capture_id']
-    bundle=build_capture(source);assert bundle['raw_sha256']==ref['raw_sha256']
+    ref=read(P/'output/research_points/study/M2/result.json');source=P/'data/ais/captures'/ref['capture_id']
+    bundle=build_capture(source)
+    if bundle['raw_sha256']!=ref['raw_sha256']:raise ValueError('Workspace source mismatch')
     pr=MetricProjection({'projection':ref['projection']})
     def point(p):
         q=deepcopy(p);q['xy']=pr.project([p['latitude'],p['longitude']]);q['t']=p['timestamp_unix_s']-bundle['start'];return q
@@ -120,7 +123,7 @@ def sections(result,item,workspace):
 
 
 def packet(key,target,run=False,departure=None):
-    workspace=read(P/'anylogic/workbench/workspace.json');item=next((q for q in catalog() if q['key']==key),None)
+    workspace=read(P/'anylogic/workbench/workspace.json');verify_workspace(P,workspace);item=next((q for q in catalog() if q['key']==key),None)
     if item is None:raise ValueError('Unknown catalog key')
     target.mkdir(parents=True,exist_ok=True)
     if run:
@@ -128,28 +131,29 @@ def packet(key,target,run=False,departure=None):
         req=deepcopy(item['request'])
         try:
             if departure is not None:
-                dt=datetime.fromisoformat(departure.strip().replace('Z','+00:00'))
-                if dt.tzinfo is None:dt=dt.replace(tzinfo=timezone(timedelta(hours=8)))
+                dt=parse_departure(departure,naive_hong_kong=True)
                 req['window_start_utc']=dt.astimezone(timezone.utc).isoformat()
             result=run_task(P/'data/ais/captures'/workspace['source']['capture_id'],req,P,publish=False)
-        except ValueError as error:
+        except (ValueError,OverflowError,OSError,TypeError) as error:
             result={'status':'error','failure_reason':'出发时间无效：'+str(error),'submitted_departure':departure,'run_id':uuid.uuid4().hex,'request':req,
                     'trajectory':None,'capture_id':workspace['source']['capture_id'],'raw_sha256':workspace['source']['raw_sha256']}
     else:result=read(P/'output'/item['file'])
-    assert result['capture_id']==workspace['source']['capture_id'] and result['raw_sha256']==workspace['source']['raw_sha256']
+    validate_result(result)
+    if result['status']!='error' and (result.get('capture_id')!=workspace['source']['capture_id'] or result.get('raw_sha256')!=workspace['source']['raw_sha256']):
+        raise ValueError('Result and workspace AIS identity mismatch')
     replace_json(target/'result.json',result)
     req=result['request'];tr=deepcopy(result.get('trajectory'));start=workspace['origin']
     if tr:
         delta=result['window_start_unix_s']-start
         tr['times_s']=[t+delta for t in tr['times_s']];tr['departure_s']+=delta;tr['arrival_s']+=delta
-    pr=MetricProjection({'projection':read(P/'output/ais_single_task/latest.json')['projection']})
+    pr=MetricProjection({'projection':read(P/'output/research_points/study/M2/result.json')['projection']})
     try:when=datetime.fromisoformat(req['window_start_utc']).timestamp()-start
     except (ValueError,TypeError):when=0
     view={'key':key,'label':item['label'],'status':result['status'],'reason':result.get('failure_reason') or '',
           'run_id':result.get('run_id','saved_'+key),'trajectory':tr,'departure':when,
           'start_xy':pr.project(req['start']),'end_xy':pr.project(req['end']),
           'ship_check':result.get('ship_check'),'sections':sections(result,item,workspace),
-          'origin':start,'raw_sha256':workspace['source']['raw_sha256'],'can_run':item['can_run'],
+          'origin':start,'raw_sha256':result.get('raw_sha256'),'can_run':item['can_run'],
           'result_json':str((target/'result.json').resolve())}
     replace_json(target/'packet.json',view)
     return view

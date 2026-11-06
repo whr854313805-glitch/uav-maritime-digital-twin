@@ -1,7 +1,7 @@
 /* Presentation-only input for the native AnyLogic 3D canvas. */
 (() => {
   if (window.__maritimeViewControls) return;
-  const state = {factor: 1, min: .25, max: 4, wheelEvents: 0, installed: true, version: 2, pan: [0, 0, 0], panEvents: 0};
+  const state = {factor: 1, min: .25, max: 4, wheelEvents: 0, installed: true, version: 3, orphanCanvasesRemoved: 0, pan: [0, 0, 0], panEvents: 0};
   window.__maritimeViewControls = state;
   const active = () => {
     const world = window.AnimationSVG?.client?.frameDrawing?.world3d;
@@ -42,7 +42,23 @@
       finally { lastTarget.copy(controls.target); applying = false; }
     };
   }
+  function cleanRetiredCanvases() {
+    const world = window.AnimationSVG?.client?.frameDrawing?.world3d;
+    if (!world?.canvases3d?.length) return;
+    const live = new Map(world.canvases3d.map(c => [String(c.id) + 'canvas', c]));
+    // AnyLogic can leave detached 3D canvases during initialization redraws.
+    // They sit at (0,0) and intercept controls despite no longer owning a view.
+    for (const canvas of document.querySelectorAll('#canvas-group-3d > canvas[data-engine]')) {
+      const owner = live.get(canvas.id);
+      if (!owner) { canvas.remove(); state.orphanCanvasesRemoved++; }
+      else {
+        canvas.style.pointerEvents = owner.active && owner._visible ? 'auto' : 'none';
+        canvas.style.visibility = owner.active && owner._visible ? 'inherit' : 'hidden';
+      }
+    }
+  }
   function apply() {
+    cleanRetiredCanvases();
     const canvas = active(), view = canvas?.windowCamera, camera = view?.camera;
     attachPan(view);
     if (camera && Math.abs(camera.zoom - state.factor) > 1e-9) {

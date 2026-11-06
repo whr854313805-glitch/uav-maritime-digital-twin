@@ -21,6 +21,9 @@ def settings() -> dict:
         raise RuntimeError(f"无法读取本机配置 {path}: {exc}") from exc
     if not isinstance(result, dict):
         raise RuntimeError("settings.local.json 必须是 JSON 对象。")
+    for key in ('anylogic_home','python'):
+        if key in result and (not isinstance(result[key],str) or not result[key].strip() or len(result[key])>2048 or '\0' in result[key]):
+            raise RuntimeError('settings.local.json: '+key+' must be a nonempty path string')
     return result
 
 
@@ -106,6 +109,8 @@ def find_python() -> Path:
         path = _local_path(explicit)
         if not path.is_file():
             raise RuntimeError(f"配置的 Python 不存在：{path}")
+        if path.name.lower() not in ("python.exe","pythonw.exe"):
+            raise RuntimeError("请配置实际 python.exe 路径，不要使用 py.exe 或其他启动器。")
         return path
     for path in (
         PROJECT_ROOT / "runtime/python/python.exe",

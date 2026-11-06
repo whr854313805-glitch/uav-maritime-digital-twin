@@ -98,6 +98,11 @@ def verify(project, recompute):
             print('FAIL ' + name + ': ' + str(error))
             return False
 
+    def published_identity():
+        sys.path.insert(0,str(project))
+        from src.release_checks import verify_release
+        return verify_release(project)
+
     def necessary_files():
         required = [
             'config.yaml', 'config/ais-single-task.json', 'config/parameter-sources.json',
@@ -200,6 +205,8 @@ def verify(project, recompute):
         study = read(project / 'output/research_points/study/study.json')
         require(study['capture_id'] == capture_id and study['raw_ais_sha256'] == expected,
                 'Frozen study uses a different AIS source.')
+        from src.release_checks import verify_workspace
+        verify_workspace(project, workspace)
         state.update(source=source, bundle=bundle, raw_sha256=expected)
         return {'capture_id': capture_id, 'raw_sha256': expected,
                 'valid_positions': bundle['valid_position_count'], 'vessels': bundle['vessel_count'],
@@ -315,6 +322,7 @@ def verify(project, recompute):
                        algorithm=search['algorithm'], distance_m=tr['distance_m'])
         return summary
 
+    check('published_files_identity', published_identity)
     check('necessary_files', necessary_files)
     if check('installed_dependencies', dependencies):
         if check('all_16_saved_catalog_entries', saved_catalog):

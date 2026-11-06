@@ -7,7 +7,7 @@ import json
 import xml.etree.ElementTree as ET
 
 
-def startup_code(project, anylogic, python):
+def startup_code(project, anylogic, python, launch_id, model):
     project, anylogic, python = map(lambda p: Path(p).resolve(), (project, anylogic, python))
     jars = sorted((anylogic / 'plugins').glob('com.google.gson_*.jar'))
     if not jars:
@@ -21,20 +21,22 @@ def startup_code(project, anylogic, python):
             'java.net.URLClassLoader uiLoader = new java.net.URLClassLoader(new java.net.URL[]{'
             'new java.io.File(' + literal(ui) + ').toURI().toURL(),'
             'new java.io.File(' + literal(jars[-1]) + ').toURI().toURL()},getClass().getClassLoader());\n'
+            'uiLoader.loadClass("maritime.RunSession").getMethod("register",String.class,String.class,String.class).invoke(null,' + literal(project) + ',' + json.dumps(launch_id) + ',' + literal(model) + ');\n'
             'uiLoader.loadClass("maritime.NativeDemoView").getMethod("attach",'
             'com.anylogic.engine.Agent.class,String.class,String.class).invoke(null,this,'
             + literal(project) + ',' + literal(python) + ');\n'
-            '} catch(Exception e) {throw new RuntimeException("AIS workstation startup failed",e);}\n')
+            '} catch(Exception e) {try(java.io.PrintWriter log=new java.io.PrintWriter(' + literal(project / '.local' / ('startup-error-'+launch_id+'.log')) + ',"UTF-8")){e.printStackTrace(log);}catch(Exception ignored){}throw new RuntimeException("AIS workstation startup failed",e);}\n')
 
 
-def prepare_model(project, anylogic, python):
+def prepare_model(project, anylogic, python, launch_id):
     project = Path(project).resolve()
     tree = ET.parse(project / 'anylogic/AIS_Visual_Demo.alp')
     node = tree.find('./Model/ActiveObjectClasses/ActiveObjectClass/StartupCode')
     if node is None:
         raise ValueError('F23 model StartupCode missing')
-    node.text = startup_code(project, anylogic, python)
-    target = project / '.local/model/AIS_Visual_Demo.alp'
+    if len(launch_id)!=32 or any(c not in '0123456789abcdef' for c in launch_id):raise ValueError('Invalid launch identity')
+    target = project / '.local/model' / launch_id / 'AIS_Visual_Demo.alp'
+    node.text = startup_code(project, anylogic, python, launch_id, target)
     target.parent.mkdir(parents=True, exist_ok=True)
     rendered = ET.tostring(tree.getroot(), encoding='utf-8', xml_declaration=True)
     # Avoid triggering an unnecessary model reload when the launch paths match.

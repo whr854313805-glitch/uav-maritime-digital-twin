@@ -1,0 +1,40 @@
+name: Windows offline delivery checks
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-windows:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Export clean project to a Unicode path with spaces
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $zipFile = Join-Path $env:RUNNER_TEMP 'uav-source.zip'
+          $targetDir = Join-Path $env:RUNNER_TEMP '组员电脑 离线验收'
+          git archive --format=zip --output=$zipFile HEAD
+          if ($LASTEXITCODE -ne 0) { throw 'Git archive failed' }
+          Expand-Archive -LiteralPath $zipFile -DestinationPath $targetDir
+          "UAV_CI_PROJECT=$targetDir" >> $env:GITHUB_ENV
+      - name: Prepare only the bundled Python and reviewed input archive
+        shell: pwsh
+        run: |
+          Set-Location -LiteralPath $env:UAV_CI_PROJECT
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/setup_runtime.ps1
+          if ($LASTEXITCODE -ne 0) { throw 'Offline Python preparation failed' }
+          & runtime/python/python.exe -B scripts/bootstrap_project.py
+          if ($LASTEXITCODE -ne 0) { throw 'Input preparation failed' }
+      - name: Run failure regressions and original SST recalculations
+        shell: pwsh
+        run: |
+          Set-Location -LiteralPath $env:UAV_CI_PROJECT
+          & runtime/python/python.exe -B -m unittest discover -s tests -v
+          if ($LASTEXITCODE -ne 0) { throw 'Failure regressions failed' }
+          & runtime/python/python.exe -B scripts/verify_project.py --recompute M2 encounter_M1_opposing
+          if ($LASTEXITCODE -ne 0) { throw 'Original solver verification failed' }
+      # AnyLogic GUI is tested locally. A hosted runner has no AnyLogic installation.
