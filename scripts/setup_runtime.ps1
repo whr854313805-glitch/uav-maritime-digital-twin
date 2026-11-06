@@ -39,6 +39,27 @@ function Assert-PathUnder([string]$LiteralTarget, [string]$ExpectedParent) {
     }
 }
 
+function Move-ManagedRuntimeDirectory([string]$SourcePath, [string]$DestinationPath,
+        [string]$SourceParent, [string]$DestinationParent, [int]$RetryCount = 80) {
+    Assert-PathUnder $SourcePath $SourceParent
+    Assert-PathUnder $DestinationPath $DestinationParent
+    for ($attempt = 0; $attempt -le $RetryCount; $attempt++) {
+        try {
+            [IO.Directory]::Move((Get-ExtendedPath $SourcePath), (Get-ExtendedPath $DestinationPath))
+            return
+        } catch [IO.IOException] {
+            $moveError = $_.Exception
+        } catch [UnauthorizedAccessException] {
+            $moveError = $_.Exception
+        }
+        if ($attempt -eq $RetryCount) {
+            throw ('Runtime folder is still unavailable after bounded retries: ' + $SourcePath + '. ' + $moveError.Message)
+        }
+        Write-Verbose 'Runtime folder move is temporarily unavailable; retrying within the fixed limit.'
+        Start-Sleep -Milliseconds 250
+    }
+}
+
 function Remove-Staging([string]$LiteralTarget, [string]$LocalRoot) {
     $absoluteTarget = [IO.Path]::GetFullPath($LiteralTarget)
     $absoluteLocal = [IO.Path]::GetFullPath($LocalRoot).TrimEnd('\') + '\'
@@ -56,6 +77,7 @@ function Remove-Staging([string]$LiteralTarget, [string]$LocalRoot) {
 $runtimeLock = $null
 $temporaryArchive = $null
 $staging = $null
+$backup = $null
 try {
     if (![Environment]::Is64BitOperatingSystem) {
         throw 'This project runtime requires 64-bit Windows 10 or Windows 11.'
@@ -199,12 +221,21 @@ try {
         $backup = Join-Path $localRoot ('python-previous-' + [Guid]::NewGuid().ToString('N'))
         Assert-PathUnder $runtimeRoot (Join-Path $root 'runtime')
         Assert-PathUnder $backup $localRoot
-        [IO.Directory]::Move((Get-ExtendedPath $runtimeRoot), (Get-ExtendedPath $backup))
+        Move-ManagedRuntimeDirectory $runtimeRoot $backup (Join-Path $root 'runtime') $localRoot
         Write-Output ('Previous managed runtime saved at ' + $backup)
     }
     Assert-PathUnder $staging $localRoot
     Assert-PathUnder $runtimeRoot (Join-Path $root 'runtime')
-    [IO.Directory]::Move((Get-ExtendedPath $staging), (Get-ExtendedPath $runtimeRoot))
+    try {
+        Move-ManagedRuntimeDirectory $staging $runtimeRoot $localRoot (Join-Path $root 'runtime')
+    } catch {
+        $publishError = $_.Exception
+        if ($null -ne $backup -and
+                (Test-Path -LiteralPath $backup) -and !(Test-Path -LiteralPath $runtimeRoot)) {
+            Move-ManagedRuntimeDirectory $backup $runtimeRoot $localRoot (Join-Path $root 'runtime')
+        }
+        throw $publishError
+    }
     $staging = $null
     Write-Output 'Offline Python runtime prepared successfully.'
     exit 0

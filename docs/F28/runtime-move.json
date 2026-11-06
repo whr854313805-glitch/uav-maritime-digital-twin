@@ -1,0 +1,8 @@
+{
+  "actual_Windows_CWD_lock_retry_passed": true,
+  "existing_destination_not_overwritten": true,
+  "source_preserved_on_failed_move": true,
+  "production_PowerShell_functions_used": true,
+  "maximum_wait_seconds": 20,
+  "underlying_CI_lock_owner_not_identified": true
+}

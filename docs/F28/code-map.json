@@ -441,6 +441,37 @@
           "line": 134
         }
       ]
+    },
+    {
+      "path": "scripts/setup_runtime.ps1",
+      "bytes": 12530,
+      "sha256": "daa004adc4ab8c6c3c339da9bc0bc5f484cb6715b828268de1a3583fb7f043d5",
+      "functions": [
+        {
+          "name": "Get",
+          "line": 11
+        },
+        {
+          "name": "Get",
+          "line": 18
+        },
+        {
+          "name": "Get",
+          "line": 23
+        },
+        {
+          "name": "Assert",
+          "line": 34
+        },
+        {
+          "name": "Move",
+          "line": 42
+        },
+        {
+          "name": "Remove",
+          "line": 63
+        }
+      ]
     }
   ]
 }

@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 30816,
-      "sha256": "a31bcccfc65e3fea40cfeac72b58277feed912761a85c3f7a284e0c4a8e3303a"
+      "bytes": 30973,
+      "sha256": "84f57f5788fb6237d40554828d9c930e77ac6035efb4ae30b1e3f1c349383e94"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -268,8 +268,8 @@
     },
     {
       "path": "docs/F28/code-map.json",
-      "bytes": 9749,
-      "sha256": "41542ea4d1756c127aa65d701f912ddb2c1ba3cb5bf7ffb9be1165c0fa61a9bf"
+      "bytes": 10348,
+      "sha256": "ca1ec6e92353fd8633050276a05ff042db6a57263a26680caecfbf325da693de"
     },
     {
       "path": "docs/F28/local-recompute.json",
@@ -287,14 +287,19 @@
       "sha256": "efb2cbcb856adfa28e34863f41fa9ee4bdfb13129333b36a7883fa1cc94abcfb"
     },
     {
+      "path": "docs/F28/runtime-move.json",
+      "bytes": 277,
+      "sha256": "996459772941d41e581a249c6d43aa8dc21430af915d4c39eed043f8bff092b5"
+    },
+    {
       "path": "docs/F28/six-cases.json",
       "bytes": 3640,
       "sha256": "2e67ebd9d32b6594d27fdc3da1abd04ec1338cdd72aaa4b10e12d3318c929aaa"
     },
     {
       "path": "docs/F28/修复与验收.md",
-      "bytes": 3481,
-      "sha256": "585ea65710a2475ae713df445af902384c5c851c1cdeb36b8ded24b360497546"
+      "bytes": 3946,
+      "sha256": "23b860f0a761d326ddc2a2682d1a036413e52540ba9513eee75f3055807e54af"
     },
     {
       "path": "docs/F28/新结果自动载入.png",
@@ -593,8 +598,8 @@
     },
     {
       "path": "scripts/setup_runtime.ps1",
-      "bytes": 11193,
-      "sha256": "03324c445bdbf24ad66de2f98104d6ac4e8ddf07ecc972d86afe4b1a8d540309"
+      "bytes": 12530,
+      "sha256": "daa004adc4ab8c6c3c339da9bc0bc5f484cb6715b828268de1a3583fb7f043d5"
     },
     {
       "path": "scripts/start_project.ps1",
@@ -757,6 +762,6 @@
       "sha256": "a72c38bbe27f5b66177619e9763e9856ed1e535263c7c152a76bdf330b5bb698"
     }
   ],
-  "bytes": 159525047,
+  "bytes": 159527882,
   "note": "Reviewed release identity, not a publisher signature. Runtime data/results remain byte-identical. Manifest excludes itself."
 }
