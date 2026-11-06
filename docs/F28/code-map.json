@@ -345,8 +345,8 @@
     },
     {
       "path": "tests/test_catalog_lifecycle.py",
-      "bytes": 11580,
-      "sha256": "0300c714a4e57691365dc016da208c4d7195440772f92fac3d6b58f5e2ea4fef",
+      "bytes": 11590,
+      "sha256": "dda5ef555576fb1b9352aa501e48f56bee375c65417dd735e18254552db79323",
       "functions": [
         {
           "name": "read",

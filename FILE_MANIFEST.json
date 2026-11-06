@@ -269,7 +269,7 @@
     {
       "path": "docs/F28/code-map.json",
       "bytes": 9749,
-      "sha256": "832287dd1b86aa5d11d1f27adb33ea7eb149784555e2c48fbc967b32517139a1"
+      "sha256": "41542ea4d1756c127aa65d701f912ddb2c1ba3cb5bf7ffb9be1165c0fa61a9bf"
     },
     {
       "path": "docs/F28/local-recompute.json",
@@ -293,8 +293,8 @@
     },
     {
       "path": "docs/F28/修复与验收.md",
-      "bytes": 3163,
-      "sha256": "dff2f6f96b7f454d8b0360f76117f2bf0d39b9fbf17bde2e7c9dd8fa15ba9348"
+      "bytes": 3481,
+      "sha256": "585ea65710a2475ae713df445af902384c5c851c1cdeb36b8ded24b360497546"
     },
     {
       "path": "docs/F28/新结果自动载入.png",
@@ -718,8 +718,8 @@
     },
     {
       "path": "tests/test_catalog_lifecycle.py",
-      "bytes": 11580,
-      "sha256": "0300c714a4e57691365dc016da208c4d7195440772f92fac3d6b58f5e2ea4fef"
+      "bytes": 11590,
+      "sha256": "dda5ef555576fb1b9352aa501e48f56bee375c65417dd735e18254552db79323"
     },
     {
       "path": "tests/test_result_and_display_contracts.py",
@@ -757,6 +757,6 @@
       "sha256": "a72c38bbe27f5b66177619e9763e9856ed1e535263c7c152a76bdf330b5bb698"
     }
   ],
-  "bytes": 159524719,
+  "bytes": 159525047,
   "note": "Reviewed release identity, not a publisher signature. Runtime data/results remain byte-identical. Manifest excludes itself."
 }

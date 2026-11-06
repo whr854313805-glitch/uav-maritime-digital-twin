@@ -27,7 +27,7 @@ class CatalogLifecycle(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
-        self.root=Path(self.temp.name)
+        self.root=Path(self.temp.name).resolve()
         self.original=read(ROOT/'output/ais_single_task/latest.json')
         names={'config.yaml','config/ais-single-task.json','runtime/data/current-data.manifest.json',
                'anylogic/workbench/workspace.json','anylogic/workbench/provenance.json',
