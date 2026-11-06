@@ -175,14 +175,17 @@ def cleanup_finished_sessions(keep=3):
     records=sorted(directory.glob('*.json'),key=lambda p:(read_json(p) or {}).get('started_unix_s',p.stat().st_mtime),reverse=True)
     if len(records)<=keep:return []
     rows=powershell_json("Get-CimInstance Win32_Process | Select-Object CommandLine | ConvertTo-Json -Compress")
-    commands=[str(r.get('CommandLine','')).lower() for r in (rows or [])]
+    commands=[str(r.get('CommandLine','')).replace('/','\\').lower() for r in (rows or [])]
     removed=[]
     for file in records[keep:]:
         launch=read_json(file);key=file.stem
         if len(key)!=32 or any(c not in '0123456789abcdef' for c in key) or not launch or launch.get('launch_id')!=key or not same_path(launch.get('project_root'),P):continue
         workspace=(LOCAL_DIR/'anylogic-workspaces'/key).resolve();model=(LOCAL_DIR/'model'/key).resolve()
         if not workspace.is_relative_to((LOCAL_DIR/'anylogic-workspaces').resolve()) or not model.is_relative_to((LOCAL_DIR/'model').resolve()):continue
-        if any(str(workspace).lower() in cmd or str(model).lower() in cmd for cmd in commands):continue
+        # CIM may expose an 8.3 alias (notably RUNNER~1) rather than the long path.
+        # Preserve either representation; never prune a possibly active session.
+        forms=path_forms(LOCAL_DIR/'anylogic-workspaces'/key)|path_forms(LOCAL_DIR/'model'/key)
+        if any(form in cmd for form in forms for cmd in commands):continue
         alp=model/'AIS_Visual_Demo.alp'
         if not alp.exists() or not launch.get('model_sha256') or hashlib.sha256(alp.read_bytes()).hexdigest()!=launch['model_sha256']:continue
         log=workspace/'editor.log'
@@ -194,3 +197,17 @@ def cleanup_finished_sessions(keep=3):
         except OSError:continue # A locked cache can be retried; never force unrelated handles.
         launch['caches_removed']=True;atomic_json(file,launch);removed.append(key)
     return removed
+
+
+def path_forms(path):
+    import ctypes
+    original=Path(path);canonical=original.resolve()
+    forms={str(original),str(canonical)}
+    if os.name=='nt':
+        from ctypes import wintypes
+        function=ctypes.WinDLL('kernel32',use_last_error=True).GetShortPathNameW
+        function.argtypes=[wintypes.LPCWSTR,wintypes.LPWSTR,wintypes.DWORD]
+        buffer=ctypes.create_unicode_buffer(32768)
+        size=function(str(canonical),buffer,len(buffer))
+        if 0<size<len(buffer):forms.add(buffer.value)
+    return {f.replace('/','\\').lower() for f in forms}

@@ -55,12 +55,14 @@ def solve(checker,corridor,departure_s,reservations=()):
             for i,j in (list(zip(range(len(ts)-1),range(1,len(ts)))) if len(ts)>1 else [(0,0)]):ships.append({'mmsi':m,'ta':float(ts[i])-departure_s,'tb':float(ts[j])-departure_s,'a':list(points[i]),'b':list(points[j])})
     ea=speed*upper/2;ec=length/2;eb=math.sqrt(max(0,ea*ea-ec*ec));u=[(b[i]-a[i])/length for i in range(2)];mid=[(a[i]+b[i])/2 for i in range(2)];ex=math.hypot(ea*u[0],eb*u[1]);ey=math.hypot(ea*u[1],eb*u[0])
     data={'start_xy':a,'end_xy':b,'speed_mps':speed,'buffer_m':buffer,'clearance_tolerance_m':tol,'horizon_s':c.timeline.horizon_s-departure_s,'search_time_upper_s':upper,'grid_step_m':c.step,'building_circles':[[float(p[0]),float(p[1]),float(r)] for p,r in c.buildings],'ships':ships,'bounds':[max(c.xmin,mid[0]-ex),min(c.xmax,mid[0]+ex),max(c.ymin,mid[1]-ey),min(c.ymax,mid[1]+ey)],'propagation_step_s':.1,'maximum_control_steps':50,'solve_seconds':options['solve_seconds'],'seed':options['seed'],'goal_numerical_tolerance_m':options.get('terminal_region_m',15.),'terminal_connector_enabled':True,'state_length_scale_m':length,'state_time_scale_s':length/speed,'selection_radius':options['selection_radius'],'pruning_radius':options['pruning_radius'],'goal_bias':.2}
-    worker=runtime/'sst_worker.exe';manifest=read(runtime/'manifest.json')
+    worker=(runtime/'sst_worker.exe').resolve();manifest=read(runtime/'manifest.json')
     for name,expected in manifest['runtime_sha256'].items():
         if digest(runtime/name)!=expected:raise ValueError('OMPL runtime hash mismatch: '+name)
     job=Path(c.inputs.get('ompl_output_dir') or tempfile.mkdtemp(prefix='ais_ompl_'));job.mkdir(parents=True,exist_ok=True);inp=job/'ompl_input.json';out=job/'ompl_output.json';inp.write_text(json.dumps(data,separators=(',',':')),encoding='utf-8')
     try:
-        with (job/'ompl.log').open('w',encoding='utf-8') as log:p=subprocess.run([str(worker),str(inp),str(out)],stdout=log,stderr=subprocess.STDOUT,timeout=options['solve_seconds']+30,cwd=runtime,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+        # The unchanged worker uses narrow C++ file names. Keep its arguments
+        # ASCII and let Windows retain the Unicode working-directory path.
+        with (job/'ompl.log').open('w',encoding='utf-8') as log:p=subprocess.run([str(worker),inp.name,out.name],stdout=log,stderr=subprocess.STDOUT,timeout=options['solve_seconds']+30,cwd=job,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
     except subprocess.TimeoutExpired:return fail('ompl_runtime_timeout')
     if p.returncode:return fail('ompl_native_process_failed')
     native=read(out);stats.update(native_status=native['status'],library_commit=manifest['commit'],worker_sha256=digest(worker),native_input_sha256=digest(inp),native_output_sha256=digest(out),native_result_file=str(out))

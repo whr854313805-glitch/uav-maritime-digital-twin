@@ -143,8 +143,8 @@
     },
     {
       "path": "docs/F25/code-map.json",
-      "bytes": 14309,
-      "sha256": "8e66cd40506145f6f0ed9c2b64eb0c4beb54d884b69db25fdcf8291059b20b29"
+      "bytes": 14982,
+      "sha256": "9c64066a4d8ed9d57dfe0de4fbb2f04a6c04f0adabfce02fe5b7ff04ea78c4ef"
     },
     {
       "path": "docs/F25/lifecycle.json",
@@ -203,8 +203,8 @@
     },
     {
       "path": "docs/F25/修复与验收.md",
-      "bytes": 8354,
-      "sha256": "7ed15acdccc18591756e3e19bf4752082d2cf8c28ab24cd2cedc0c396dff6232"
+      "bytes": 8982,
+      "sha256": "86fb764f29dc0b43368500032d53e8644ee043a9e155fa6ed8248081d859d466"
     },
     {
       "path": "docs/F25/失败后恢复.png",
@@ -368,8 +368,8 @@
     },
     {
       "path": "project_processes.py",
-      "bytes": 11535,
-      "sha256": "541c33b5ed2a3429a96b92359b69754a9dd3c91cb9e19249b11e6dc74cc76ee3"
+      "bytes": 12354,
+      "sha256": "3943438d63217b7d23ebc090cb86a3856e4f19914813c4b4df7ce209bef66350"
     },
     {
       "path": "requirements-runtime.lock.txt",
@@ -568,8 +568,8 @@
     },
     {
       "path": "src/ompl_sst.py",
-      "bytes": 7542,
-      "sha256": "7455294f1430c47cb1df44c2eea95a1cb4e59355d4b81e0075c9041f92dd5818"
+      "bytes": 7703,
+      "sha256": "97181a7e054bbd0ebeba84ca24fdaf54ab69df2c7f1aec143e4e4a658269028e"
     },
     {
       "path": "src/project_config.py",
@@ -637,6 +637,6 @@
       "sha256": "a72c38bbe27f5b66177619e9763e9856ed1e535263c7c152a76bdf330b5bb698"
     }
   ],
-  "bytes": 158905654,
+  "bytes": 158907935,
   "note": "Reviewed release identity, not a publisher signature. Runtime data/results remain byte-identical. Manifest excludes itself."
 }
