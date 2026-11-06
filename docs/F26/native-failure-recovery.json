@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "injection": "false_success",
+      "error_instead_of_success": true,
+      "no_aircraft_or_old_route": true,
+      "controls_recovered": true,
+      "reload_after_restoration_passed": true
+    },
+    {
+      "injection": "bad_site",
+      "error_instead_of_success": true,
+      "no_aircraft_or_old_route": true,
+      "controls_recovered": true,
+      "reload_after_restoration_passed": true
+    },
+    {
+      "injection": "bad_bounds",
+      "error_instead_of_success": true,
+      "no_aircraft_or_old_route": true,
+      "controls_recovered": true,
+      "reload_after_restoration_passed": true
+    }
+  ],
+  "bridge_restored_sha256": "ec7c44de473394d3b38d5a327e2d0e2042d1a2a599275b5689a39d7a49097c78",
+  "data_modified": false
+}

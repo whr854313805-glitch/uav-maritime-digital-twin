@@ -1,0 +1,548 @@
+{
+  "version": "F26",
+  "review_baseline": "f85ace6a8c19e89e343596d36539442017ab36c5",
+  "files": [
+    {
+      "path": "src/validation.py",
+      "bytes": 14322,
+      "sha256": "53372c7f1ef4eae883eea073b777cf9d69887d6862b438a053e81502ed55958f",
+      "functions": [
+        {
+          "name": "number",
+          "line": 6
+        },
+        {
+          "name": "coordinates",
+          "line": 17
+        },
+        {
+          "name": "parse_departure",
+          "line": 25
+        },
+        {
+          "name": "validate_request",
+          "line": 44
+        },
+        {
+          "name": "json_safe",
+          "line": 86
+        },
+        {
+          "name": "validate_result",
+          "line": 101
+        },
+        {
+          "name": "_same_number",
+          "line": 140
+        },
+        {
+          "name": "_validate_success",
+          "line": 148
+        }
+      ]
+    },
+    {
+      "path": "src/release_checks.py",
+      "bytes": 8844,
+      "sha256": "c50e3d2a36160ca9b7d56f005297732456886069b65d5efa0efbbd877fd7afd8",
+      "functions": [
+        {
+          "name": "sha",
+          "line": 9
+        },
+        {
+          "name": "release_identity",
+          "line": 17
+        },
+        {
+          "name": "verify_release",
+          "line": 26
+        },
+        {
+          "name": "_equal",
+          "line": 49
+        },
+        {
+          "name": "workspace_geometry",
+          "line": 68
+        },
+        {
+          "name": "verify_workspace",
+          "line": 125
+        },
+        {
+          "name": "frozen",
+          "line": 83
+        },
+        {
+          "name": "point",
+          "line": 143
+        }
+      ]
+    },
+    {
+      "path": "src/ais_single_task.py",
+      "bytes": 17563,
+      "sha256": "999c5f6ca25587f825990f1acd1099f5effa733a0b0f91489368c63f78c63bda",
+      "functions": [
+        {
+          "name": "apply_reference_profile",
+          "line": 23
+        },
+        {
+          "name": "select_window",
+          "line": 41
+        },
+        {
+          "name": "export_window",
+          "line": 105
+        },
+        {
+          "name": "load_environment",
+          "line": 133
+        },
+        {
+          "name": "validate_request",
+          "line": 155
+        },
+        {
+          "name": "run_task",
+          "line": 160
+        },
+        {
+          "name": "wind_at",
+          "line": 122
+        },
+        {
+          "name": "edge_objective_cost",
+          "line": 125
+        },
+        {
+          "name": "plan_corridor",
+          "line": 128
+        }
+      ]
+    },
+    {
+      "path": "src/anylogic_workspace.py",
+      "bytes": 11976,
+      "sha256": "23c7d021b1260328a3b170f26875e2a8661075d7aa8511b993042a9bd3042cd5",
+      "functions": [
+        {
+          "name": "read",
+          "line": 14
+        },
+        {
+          "name": "sha",
+          "line": 15
+        },
+        {
+          "name": "hk",
+          "line": 16
+        },
+        {
+          "name": "catalog",
+          "line": 19
+        },
+        {
+          "name": "prepare",
+          "line": 53
+        },
+        {
+          "name": "sections",
+          "line": 91
+        },
+        {
+          "name": "packet",
+          "line": 119
+        },
+        {
+          "name": "add",
+          "line": 21
+        },
+        {
+          "name": "point",
+          "line": 59
+        },
+        {
+          "name": "pixel",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "scripts/verify_project.py",
+      "bytes": 21501,
+      "sha256": "205fc4aa346be73776397a672809f2c2cea89fd7c2d35d29e5989f6d984a1925",
+      "functions": [
+        {
+          "name": "read",
+          "line": 37
+        },
+        {
+          "name": "sha",
+          "line": 41
+        },
+        {
+          "name": "require",
+          "line": 49
+        },
+        {
+          "name": "within",
+          "line": 54
+        },
+        {
+          "name": "locate",
+          "line": 60
+        },
+        {
+          "name": "verify",
+          "line": 69
+        },
+        {
+          "name": "main",
+          "line": 347
+        },
+        {
+          "name": "check",
+          "line": 86
+        },
+        {
+          "name": "published_identity",
+          "line": 101
+        },
+        {
+          "name": "necessary_files",
+          "line": 106
+        },
+        {
+          "name": "dependencies",
+          "line": 129
+        },
+        {
+          "name": "saved_catalog",
+          "line": 144
+        },
+        {
+          "name": "demo_results",
+          "line": 174
+        },
+        {
+          "name": "raw_capture",
+          "line": 189
+        },
+        {
+          "name": "selections",
+          "line": 217
+        },
+        {
+          "name": "official_buildings",
+          "line": 236
+        },
+        {
+          "name": "official_sst",
+          "line": 258
+        },
+        {
+          "name": "independent_recomputed_result",
+          "line": 275
+        }
+      ]
+    },
+    {
+      "path": "anylogic/ResultPacket.java",
+      "bytes": 1218,
+      "sha256": "fb3aa52b412c394f335fc5faf0c55122d88d6a306fcc3e29debd18c730090949"
+    },
+    {
+      "path": "anylogic/NativeWorkbench.java",
+      "bytes": 30921,
+      "sha256": "33f62a02b8c9a37f92d6ba05cba5bc301fc84385d6780743b1aee1cc62ffa9db"
+    },
+    {
+      "path": "build_anylogic_visual.py",
+      "bytes": 2925,
+      "sha256": "d162fa4627b11e687e4b0a9b9d5ef4cb88676b122a110ea2f7cf0141483044c7",
+      "functions": []
+    },
+    {
+      "path": "anylogic/native-visual-demo.jar",
+      "bytes": 70989,
+      "sha256": "d2d2f300460759e3f98c9ac31a9b2a754b7e09889a51d8d4e338b5636a5990a9"
+    },
+    {
+      "path": "tests/test_result_and_display_contracts.py",
+      "bytes": 14019,
+      "sha256": "8fc6fe96e55e852f8616a5bf0defbf39810dc4f823d6f14d8d2c91e884a91bf8",
+      "functions": [
+        {
+          "name": "read",
+          "line": 21
+        },
+        {
+          "name": "load",
+          "line": 25
+        },
+        {
+          "name": "setUp",
+          "line": 33
+        },
+        {
+          "name": "test_all_16_saved_results_remain_compatible",
+          "line": 36
+        },
+        {
+          "name": "test_each_success_flag_must_be_a_true_boolean",
+          "line": 43
+        },
+        {
+          "name": "test_failure_reasons_and_planner_status_cannot_claim_success",
+          "line": 57
+        },
+        {
+          "name": "test_invalid_distance_speed_and_timestamps_are_rejected",
+          "line": 68
+        },
+        {
+          "name": "test_projected_path_and_original_endpoints_must_match",
+          "line": 82
+        },
+        {
+          "name": "test_projection_and_reference_profile_cannot_disagree",
+          "line": 92
+        },
+        {
+          "name": "test_recording_window_coverage_and_summary_must_agree",
+          "line": 102
+        },
+        {
+          "name": "test_clearance_claim_and_closest_time_must_be_consistent",
+          "line": 118
+        },
+        {
+          "name": "test_planning_duplicate_cannot_hide_a_different_result",
+          "line": 125
+        },
+        {
+          "name": "test_unknown_positions_are_not_relabelled_as_a_failed_flight",
+          "line": 135
+        },
+        {
+          "name": "test_historical_unrun_entries_do_not_gain_a_fake_run_id",
+          "line": 142
+        },
+        {
+          "name": "test_malformed_saved_and_new_results_cannot_write_a_packet",
+          "line": 148
+        },
+        {
+          "name": "test_inconsistent_new_planner_success_is_persisted_as_error",
+          "line": 164
+        },
+        {
+          "name": "test_contradictory_latest_cannot_mark_bootstrap_complete",
+          "line": 185
+        },
+        {
+          "name": "setUp",
+          "line": 201
+        },
+        {
+          "name": "test_original_geometry_is_preserved",
+          "line": 204
+        },
+        {
+          "name": "test_site_anchor_source_and_labels_cannot_drift",
+          "line": 209
+        },
+        {
+          "name": "test_missing_duplicate_or_reordered_sites_are_rejected",
+          "line": 222
+        },
+        {
+          "name": "test_zero_shifted_inverted_nonfinite_bounds_are_rejected",
+          "line": 231
+        },
+        {
+          "name": "test_changed_frozen_source_cannot_validate_a_matching_bad_display",
+          "line": 239
+        },
+        {
+          "name": "test_bad_display_is_rejected_before_bridge_output",
+          "line": 253
+        },
+        {
+          "name": "test_full_project_check_detects_the_previously_missed_site_shift",
+          "line": 266
+        }
+      ]
+    },
+    {
+      "path": "tests/test_security_regressions.py",
+      "bytes": 20169,
+      "sha256": "a80589f9416265ab41a2862c07167b0c54a045fe86f27585b10aba3ca89e75e9",
+      "functions": [
+        {
+          "name": "read",
+          "line": 16
+        },
+        {
+          "name": "sha",
+          "line": 17
+        },
+        {
+          "name": "load",
+          "line": 18
+        },
+        {
+          "name": "setUp",
+          "line": 23
+        },
+        {
+          "name": "test_bad_request_types_and_nonfinite",
+          "line": 24
+        },
+        {
+          "name": "test_original_request_is_valid",
+          "line": 33
+        },
+        {
+          "name": "test_nan_produces_structured_error",
+          "line": 34
+        },
+        {
+          "name": "test_result_write_failure_does_not_return_success",
+          "line": 41
+        },
+        {
+          "name": "test_run_directory_denied_returns_structured_error",
+          "line": 46
+        },
+        {
+          "name": "test_early_source_unverified_failure_is_empty_error_packet",
+          "line": 50
+        },
+        {
+          "name": "test_real_workspace",
+          "line": 60
+        },
+        {
+          "name": "test_one_kilometre_wrong_display_rejected",
+          "line": 61
+        },
+        {
+          "name": "test_wrong_display_time_rejected",
+          "line": 66
+        },
+        {
+          "name": "test_release_binary_replacement_rejected",
+          "line": 70
+        },
+        {
+          "name": "setUp",
+          "line": 85
+        },
+        {
+          "name": "fixture",
+          "line": 86
+        },
+        {
+          "name": "test_corrupt_latest_blocks_ready",
+          "line": 96
+        },
+        {
+          "name": "test_explicit_recovery_preserves_bad_file",
+          "line": 102
+        },
+        {
+          "name": "test_missing_projection_cannot_report_ready",
+          "line": 109
+        },
+        {
+          "name": "test_valid_new_latest_is_retained",
+          "line": 114
+        },
+        {
+          "name": "test_interrupted_extract_is_resumable",
+          "line": 120
+        },
+        {
+          "name": "test_success_report_survives_english_console_and_unicode_path",
+          "line": 129
+        },
+        {
+          "name": "test_process_query_is_bounded",
+          "line": 141
+        },
+        {
+          "name": "test_wrong_pid_not_taken_over",
+          "line": 145
+        },
+        {
+          "name": "test_running_release_mismatch_not_reused",
+          "line": 150
+        },
+        {
+          "name": "test_wrong_project_session_not_accepted",
+          "line": 158
+        },
+        {
+          "name": "test_pid_reuse_cycle_is_not_followed",
+          "line": 162
+        },
+        {
+          "name": "test_client_early_exit_is_reaped",
+          "line": 168
+        },
+        {
+          "name": "test_cleanup_preserves_edited_model_and_active_workspace",
+          "line": 174
+        },
+        {
+          "name": "test_cleanup_finished_cache_keeps_diagnostic_log",
+          "line": 186
+        },
+        {
+          "name": "test_bad_settings_path_type",
+          "line": 195
+        },
+        {
+          "name": "startup_context",
+          "line": 200
+        },
+        {
+          "name": "test_spawn_failure_records_failed_state",
+          "line": 216
+        },
+        {
+          "name": "test_pending_startup_does_not_spawn_duplicate",
+          "line": 224
+        },
+        {
+          "name": "alive",
+          "line": 237
+        },
+        {
+          "name": "run_tree",
+          "line": 246
+        },
+        {
+          "name": "test_forcibly_closed_owner_reaps_job_tree",
+          "line": 267
+        },
+        {
+          "name": "test_job_timeout_reaps_descendants_only",
+          "line": 282
+        },
+        {
+          "name": "test_normal_parent_exit_reaps_orphan",
+          "line": 283
+        },
+        {
+          "name": "test_killed_supervisor_reaps_descendants",
+          "line": 284
+        }
+      ]
+    }
+  ]
+}

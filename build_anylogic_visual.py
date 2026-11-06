@@ -19,7 +19,7 @@ assert adapted_host.count('if(++frame%5==0)writeState();')==1
 adapted_host=adapted_host.replace('if(++frame%5==0)writeState();','if(viewHook!=null)viewHook.run();if(++frame%5==0)writeState();')
 adapted.write_text(adapted_host,encoding='utf-8')
 
-subprocess.run([str(J/'javac.exe'),'-encoding','UTF-8','-classpath',cp,'-d',str(D/'visual_classes'),str(adapted),str(D/'NativeDemoView.java'),str(D/'NativeScenery.java'),str(D/'OwnedJobs.java'),str(D/'RunSession.java')],check=True)
+subprocess.run([str(J/'javac.exe'),'-encoding','UTF-8','-classpath',cp,'-d',str(D/'visual_classes'),str(adapted),str(D/'NativeDemoView.java'),str(D/'NativeScenery.java'),str(D/'OwnedJobs.java'),str(D/'RunSession.java'),str(D/'ResultPacket.java')],check=True)
 subprocess.run([str(J/'jar.exe'),'--create','--file',str(D/'native-visual-demo.jar'),'-C',str(D/'visual_classes'),'.'],check=True)
 print('Built current presentation JAR; model template preserved.')
 

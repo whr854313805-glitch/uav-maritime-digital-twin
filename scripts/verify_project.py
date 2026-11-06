@@ -155,6 +155,8 @@ def verify(project, recompute):
         for item in items:
             path = within(project, 'output/' + item['file'])
             result = read(path)
+            from src.validation import validate_result
+            validate_result(result)
             require(sha(path) == item['sha256'], 'Saved result hash mismatch: ' + item['key'])
             old = indexed[item['key']]
             require(all(old.get(k) == item.get(k) for k in ['file', 'sha256', 'can_run']),

@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "valid_bridge_packet_accepted": true,
+  "contradictory_native_packets_rejected": 8,
+  "stdout": "PASS valid native packet; rejected invalid packets: 8"
+}

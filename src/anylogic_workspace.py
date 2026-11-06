@@ -8,7 +8,7 @@ from src.ais_single_task import run_task
 from src.ais_replay import build_capture,replace_json
 from src.metric_projection import MetricProjection
 from src.validation import parse_departure, validate_result
-from src.release_checks import verify_workspace
+from src.release_checks import verify_workspace, workspace_geometry
 
 P=Path(__file__).resolve().parents[1]
 def read(path):return json.loads(path.read_text(encoding='utf-8-sig'))
@@ -60,8 +60,7 @@ def prepare(target):
         q=deepcopy(p);q['xy']=pr.project([p['latitude'],p['longitude']]);q['t']=p['timestamp_unix_s']-bundle['start'];return q
     vessels=[{'mmsi':v['mmsi'],'points':[point(q) for q in v['points']],
               'segments':[[point(q) for q in s] for s in v['segments']]} for v in bundle['vessels']]
-    corners=[pr.project([lat,lon]) for lat in [22.27,22.32] for lon in [114.12,114.27]]
-    bounds=[min(q[0] for q in corners),max(q[0] for q in corners),min(q[1] for q in corners),max(q[1] for q in corners)]
+    sites,bounds=workspace_geometry(P,ref['projection'])
     xmin,xmax,ymin,ymax=bounds;w=5000;h=round(w*(ymax-ymin)/(xmax-xmin))
     image=Image.new('RGB',(w,h),'#e8eff4');draw=ImageDraw.Draw(image)
     geompath=P/'output/ais_replay/buildings_display.geojson';geo=read(geompath);polygons=0
@@ -74,11 +73,6 @@ def prepare(target):
             for hole in poly[1:]:draw.polygon([pixel(*q[:2]) for q in hole],fill='#e8eff4')
             polygons+=1
     image.save(P/'anylogic/harbour_background.png')
-    study=read(P/'output/research_points/study/study.json');sites=[]
-    for task in study['tasks']:
-        for i,g in enumerate(task['gates']):sites.append({'task':task['id'],'role':'起点' if i==0 else '终点',
-             'point':g['point'],'xy':pr.project(g['point']),'anchor':g['anchor'],
-             'anchor_xy':pr.project([g['anchor']['lat'],g['anchor']['lon']]),'offset_m':g['offset_m']})
     payload={'schema_version':1,'origin':bundle['start'],'end':bundle['end'],'duration':bundle['end']-bundle['start'],
              'bounds':bounds,'vessels':vessels,'sites':sites,'catalog':catalog(),'breaks':bundle['breaks'],
              'source':{'capture_id':bundle['capture_id'],'raw_sha256':bundle['raw_sha256'],'raw_bytes':bundle['raw_bytes'],
@@ -152,7 +146,11 @@ def packet(key,target,run=False,departure=None):
     view={'key':key,'label':item['label'],'status':result['status'],'reason':result.get('failure_reason') or '',
           'run_id':result.get('run_id','saved_'+key),'trajectory':tr,'departure':when,
           'start_xy':pr.project(req['start']),'end_xy':pr.project(req['end']),
-          'ship_check':result.get('ship_check'),'sections':sections(result,item,workspace),
+          'ship_check':result.get('ship_check'),
+          'checks':{'ships':result.get('ship_check',{}).get('valid') is True if isinstance(result.get('ship_check'),dict) else False,
+                    'geometry':(result.get('planning') or {}).get('geometry_valid') is True,
+                    'coverage':(result.get('coverage_check') or {}).get('valid') is True},
+          'sections':sections(result,item,workspace),
           'origin':start,'raw_sha256':result.get('raw_sha256'),'can_run':item['can_run'],
           'result_json':str((target/'result.json').resolve())}
     replace_json(target/'packet.json',view)

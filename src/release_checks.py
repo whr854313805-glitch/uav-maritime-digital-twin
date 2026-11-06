@@ -18,7 +18,8 @@ def release_identity(root):
     manifest=json.loads((Path(root)/'FILE_MANIFEST.json').read_text(encoding='utf-8-sig'))
     mutable={'anylogic/workbench/workspace.json','anylogic/workbench/provenance.json'}
     rows=[r for r in manifest['files'] if r['path'] not in mutable and
-          (r['path'].startswith(('src/','anylogic/','config/','scripts/','runtime/ompl/')) or '/' not in r['path'] and r['path'].endswith('.py'))]
+          (r['path'].startswith(('src/','anylogic/','config/','scripts/','runtime/ompl/'))
+           or r['path']=='runtime/data/current-data.manifest.json' or '/' not in r['path'] and r['path'].endswith('.py'))]
     return hashlib.sha256(json.dumps(rows,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 
 
@@ -31,13 +32,15 @@ def verify_release(root):
         rel = row['path']
         if rel in mutable:
             continue
-        if not (rel.startswith(('src/', 'anylogic/', 'config/', 'scripts/', 'runtime/ompl/')) or '/' not in rel and rel.endswith('.py')):
+        if not (rel.startswith(('src/', 'anylogic/', 'config/', 'scripts/', 'runtime/ompl/'))
+                or rel == 'runtime/data/current-data.manifest.json' or '/' not in rel and rel.endswith('.py')):
             continue
         file = (root / rel).resolve()
         if not file.is_relative_to(root) or not file.is_file() or file.stat().st_size != row['bytes'] or sha(file) != row['sha256']:
             raise ValueError('Release file identity mismatch: ' + rel)
         checked += 1
-    required = {'anylogic/native-visual-demo.jar', 'anylogic/loopback-agent.jar', 'src/validation.py', 'src/release_checks.py'}
+    required = {'anylogic/native-visual-demo.jar', 'anylogic/loopback-agent.jar', 'src/validation.py',
+                'src/release_checks.py', 'runtime/data/current-data.manifest.json'}
     if not required.issubset({row['path'] for row in manifest['files']}):
         raise ValueError('Release manifest is missing required security components')
     return {'immutable_files_verified': checked, 'release_sha256':release_identity(root)}
@@ -59,7 +62,64 @@ def _equal(actual, expected, path):
     else:
         good = type(actual) is type(expected) and actual == expected
     if not good:
-        raise ValueError('Derived workspace differs from raw AIS: ' + path)
+        raise ValueError('Derived workspace differs from approved inputs: ' + path)
+
+
+def workspace_geometry(root, projection):
+    """Derive display geometry from the reviewed frozen selections and region.
+
+    Never use editable workspace coordinates as the expected values. Checking
+    the original input manifest also rejects a study/selection changed in step
+    with a damaged workspace.
+    """
+    from src.metric_projection import MetricProjection
+    from src.project_config import load_config
+    from src.validation import coordinates, number
+
+    root = Path(root).resolve()
+    manifest = json.loads((root / 'runtime/data/current-data.manifest.json').read_text(encoding='utf-8-sig'))
+    records = {row['path']: row for row in manifest['files']}
+
+    def frozen(name):
+        row = records.get(name)
+        file = (root / name).resolve()
+        if (not row or not file.is_relative_to(root) or not file.is_file()
+                or file.stat().st_size != row['bytes'] or sha(file) != row['sha256']):
+            raise ValueError('Frozen display input identity mismatch: ' + name)
+        return json.loads(file.read_text(encoding='utf-8-sig'))
+
+    study = frozen('output/research_points/study/study.json')
+    tasks = study.get('tasks')
+    if (not isinstance(tasks, list) or [task.get('id') for task in tasks] != ['M1', 'M2', 'M3', 'M4']
+            or study.get('point_count') != 8 or study.get('task_count') != 4):
+        raise ValueError('Frozen display study must contain the original eight points/four tasks')
+    pr = MetricProjection({'projection': projection})
+    sites = []
+    for task in tasks:
+        selection = frozen('output/research_points/study/' + task['id'] + '/selection.json')
+        gates = selection.get('gates')
+        if (selection.get('status') != 'selected' or not isinstance(gates, list) or len(gates) != 2
+                or task.get('gates') != gates):
+            raise ValueError('Display study and frozen selection disagree: ' + task['id'])
+        for index, gate in enumerate(gates):
+            coordinates(gate['point'], 'frozen research point')
+            anchor = gate['anchor']
+            coordinates([anchor['lat'], anchor['lon']], 'frozen pier anchor')
+            sites.append({'task': task['id'], 'role': '起点' if index == 0 else '终点',
+                          'point': deepcopy(gate['point']), 'xy': list(pr.project(gate['point'])),
+                          'anchor': deepcopy(anchor),
+                          'anchor_xy': list(pr.project([anchor['lat'], anchor['lon']])),
+                          'offset_m': gate['offset_m']})
+
+    region = load_config(root / 'config.yaml')['region']
+    south, north, west, east = [number(region[key], 'display region')
+                               for key in ('lat_min', 'lat_max', 'lon_min', 'lon_max')]
+    if not (-90 <= south < north <= 90 and -180 <= west < east <= 180):
+        raise ValueError('Invalid fixed display region')
+    corners = [pr.project([lat, lon]) for lat in (south, north) for lon in (west, east)]
+    bounds = [min(p[0] for p in corners), max(p[0] for p in corners),
+              min(p[1] for p in corners), max(p[1] for p in corners)]
+    return sites, bounds
 
 
 def verify_workspace(root, workspace=None):
@@ -90,5 +150,15 @@ def verify_workspace(root, workspace=None):
     _equal(workspace.get('vessels'), vessels, 'vessels')
     for key, value in [('origin', bundle['start']), ('end', bundle['end']), ('duration', bundle['end'] - bundle['start'])]:
         _equal(workspace.get(key), value, key)
+    sites, bounds = workspace_geometry(root, projection)
+    _equal(workspace.get('sites'), sites, 'sites')
+    # Source coordinates/metadata are frozen exactly; the metre-based derived
+    # XY values above retain the established 1e-6 numerical tolerance.
+    for actual, expected in zip(workspace['sites'], sites):
+        for key in ('point', 'anchor', 'offset_m'):
+            if actual[key] != expected[key]:
+                raise ValueError('Frozen display site differs: ' + key)
+    _equal(workspace.get('bounds'), bounds, 'bounds')
     return {'vessels_checked': len(vessels), 'raw_points_checked': bundle['valid_position_count'],
-            'coordinates_times_and_segments_match_raw_AIS': True}
+            'coordinates_times_and_segments_match_raw_AIS': True,
+            'frozen_sites_and_anchors_checked': len(sites), 'fixed_region_bounds_verified': True}

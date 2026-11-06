@@ -16,7 +16,7 @@ def main():
         body=p.read_bytes()
         if len(body)>=100*1024**2:raise ValueError('GitHub file size exceeded: '+name)
         rows.append({'path':name,'bytes':len(body),'sha256':hashlib.sha256(body).hexdigest()})
-    result={'version':'F25-Windows-security-quality-20261106','files':rows,'bytes':sum(r['bytes'] for r in rows),
+    result={'version':'F26-result-semantics-frozen-display-20261106','files':rows,'bytes':sum(r['bytes'] for r in rows),
             'note':'Reviewed release identity, not a publisher signature. Runtime data/results remain byte-identical. Manifest excludes itself.'}
     (ROOT/'FILE_MANIFEST.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8',newline='')
     print(json.dumps({'files':len(rows),'bytes':result['bytes']}))

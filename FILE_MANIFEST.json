@@ -1,5 +1,5 @@
 {
-  "version": "F25-Windows-security-quality-20261106",
+  "version": "F26-result-semantics-frozen-display-20261106",
   "files": [
     {
       "path": ".gitattributes",
@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 26268,
-      "sha256": "749b90691434a3e2be17f5994cfc2d3e7249f637404490599303e153369ce213"
+      "bytes": 27909,
+      "sha256": "6e7164f5ab45da0844b95d8f7575ef05469b1062228e05ec6ab8e9ba711b20d4"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -58,13 +58,18 @@
     },
     {
       "path": "anylogic/NativeWorkbench.java",
-      "bytes": 30891,
-      "sha256": "9e4a9b1d00c5a47c95e7d1be6e482dba46191345f47a47768ad6759397e873df"
+      "bytes": 30921,
+      "sha256": "33f62a02b8c9a37f92d6ba05cba5bc301fc84385d6780743b1aee1cc62ffa9db"
     },
     {
       "path": "anylogic/OwnedJobs.java",
       "bytes": 1782,
       "sha256": "ee2206e7271f412e8722e5abe2c2050d28a6ceeea67232a95d1336eda88b4546"
+    },
+    {
+      "path": "anylogic/ResultPacket.java",
+      "bytes": 1218,
+      "sha256": "fb3aa52b412c394f335fc5faf0c55122d88d6a306fcc3e29debd18c730090949"
     },
     {
       "path": "anylogic/RunSession.java",
@@ -88,8 +93,8 @@
     },
     {
       "path": "anylogic/native-visual-demo.jar",
-      "bytes": 69573,
-      "sha256": "27fc9ec552bc9a694bbe6f105c1a8377b9b2fd52724da0d5b6fa27db4bcd5f86"
+      "bytes": 70989,
+      "sha256": "d2d2f300460759e3f98c9ac31a9b2a754b7e09889a51d8d4e338b5636a5990a9"
     },
     {
       "path": "anylogic/visual_demo/scenery.json",
@@ -103,8 +108,8 @@
     },
     {
       "path": "anylogic/visual_sources/NativeWorkbench.java",
-      "bytes": 30997,
-      "sha256": "ce694b806225be6ca11a850749959a011496e256636e1c87c2382f014f759c2c"
+      "bytes": 31027,
+      "sha256": "5575c29f80887a2871c20c460b3fbdfbc78fdd6b0bf01a96f731aad5b6d8eaf0"
     },
     {
       "path": "anylogic/workbench/provenance.json",
@@ -118,8 +123,8 @@
     },
     {
       "path": "build_anylogic_visual.py",
-      "bytes": 2898,
-      "sha256": "4c2e146fedc3db9bb632074ba3ed109fff8d6a12ce904e3f3e5dbdb67b56cfe6"
+      "bytes": 2925,
+      "sha256": "d162fa4627b11e687e4b0a9b9d5ef4cb88676b122a110ea2f7cf0141483044c7"
     },
     {
       "path": "config.yaml",
@@ -215,6 +220,46 @@
       "path": "docs/F25/重新加载成功.png",
       "bytes": 505166,
       "sha256": "c47e22fab7f4f7f51da90113f4f3cbfc666efee2bf1ee05464b5b8291e08e14c"
+    },
+    {
+      "path": "docs/F26/code-map.json",
+      "bytes": 13249,
+      "sha256": "e44e947694e9928afc0108ac383e9b9be4033a1ff811a955758943666fd9b879"
+    },
+    {
+      "path": "docs/F26/local-recompute.json",
+      "bytes": 8261,
+      "sha256": "bc7efb16660912ca676d26d90021f99f4eff0855542b40dd183e640a0c5529f4"
+    },
+    {
+      "path": "docs/F26/native-failure-recovery.json",
+      "bytes": 806,
+      "sha256": "dc80096b0d044ac2bb87a8b15f97e809ee3b243f60ce31248bfc86656a7f815c"
+    },
+    {
+      "path": "docs/F26/native-packet-guard.json",
+      "bytes": 180,
+      "sha256": "e300afb7594d5f4c12c82e5c84a4ead76910db15fea9ffd5ebcec2edd05268f7"
+    },
+    {
+      "path": "docs/F26/preserved-inputs.json",
+      "bytes": 202,
+      "sha256": "8ad5ba53f8afbbdf9985feb8e4fac370b87e44ec303ba6468efb2ca45be41ed8"
+    },
+    {
+      "path": "docs/F26/six-cases.json",
+      "bytes": 3640,
+      "sha256": "eebeede2e949ab26f55fa1948386dd87edaa65976ca9f0388860b50dfc240c4b"
+    },
+    {
+      "path": "docs/F26/修复与验收.md",
+      "bytes": 3658,
+      "sha256": "482a5a6512465fda12c2377a468a913bc7c30fff611b7e2294794a0e9ea4e73e"
+    },
+    {
+      "path": "docs/F26/矛盾成功被拒绝.png",
+      "bytes": 369218,
+      "sha256": "0932994b9b5e1139215e53d05a8c131ef073f6792b1c1a27e8155145e570a338"
     },
     {
       "path": "docs/REFERENCES.md",
@@ -483,8 +528,8 @@
     },
     {
       "path": "scripts/release/update_manifest.py",
-      "bytes": 1355,
-      "sha256": "31a9a68809bb3740d273c35e28e57c6a7603b675f85abc6a3f4419e3e89be9df"
+      "bytes": 1362,
+      "sha256": "ad6d1f2c8a182ee039b5a9ee1b668bae36973513bf8d54f1f7ae4ec440275bc3"
     },
     {
       "path": "scripts/setup_runtime.ps1",
@@ -498,8 +543,8 @@
     },
     {
       "path": "scripts/verify_project.py",
-      "bytes": 21410,
-      "sha256": "e7742c918c810d661f08ecd908840c42046e46f5c9a32bbadfbac3a8391d075e"
+      "bytes": 21501,
+      "sha256": "205fc4aa346be73776397a672809f2c2cea89fd7c2d35d29e5989f6d984a1925"
     },
     {
       "path": "select_research_points.py",
@@ -533,13 +578,13 @@
     },
     {
       "path": "src/ais_single_task.py",
-      "bytes": 17371,
-      "sha256": "db0b3d0301f5292ed3b0d9303d21906df2918bef601d990b85666f7ca173a9fb"
+      "bytes": 17563,
+      "sha256": "999c5f6ca25587f825990f1acd1099f5effa733a0b0f91489368c63f78c63bda"
     },
     {
       "path": "src/anylogic_workspace.py",
-      "bytes": 12183,
-      "sha256": "9532d1ff55dfa39a6e55a9d62321ee62c93c50a61421d61c2174952ca1b62efc"
+      "bytes": 11976,
+      "sha256": "23c7d021b1260328a3b170f26875e2a8661075d7aa8511b993042a9bd3042cd5"
     },
     {
       "path": "src/departure_search.py",
@@ -578,8 +623,8 @@
     },
     {
       "path": "src/release_checks.py",
-      "bytes": 4877,
-      "sha256": "3c466bb0f18f0c78f12ea83f86850c57c958e263e439de39855a9a96be50211b"
+      "bytes": 8844,
+      "sha256": "c50e3d2a36160ca9b7d56f005297732456886069b65d5efa0efbbd877fd7afd8"
     },
     {
       "path": "src/safe_planning.py",
@@ -593,8 +638,8 @@
     },
     {
       "path": "src/validation.py",
-      "bytes": 6742,
-      "sha256": "9deeaf05b3c6211326aa090a9699d4193a74d9285faf647f2ea0b6deac69c9a3"
+      "bytes": 14322,
+      "sha256": "53372c7f1ef4eae883eea073b777cf9d69887d6862b438a053e81502ed55958f"
     },
     {
       "path": "start.cmd",
@@ -607,9 +652,14 @@
       "sha256": "dac453312acdc8210344903f21d6e0a55ca6fc43ae573bac8564b511a4b4c47a"
     },
     {
+      "path": "tests/test_result_and_display_contracts.py",
+      "bytes": 14019,
+      "sha256": "8fc6fe96e55e852f8616a5bf0defbf39810dc4f823d6f14d8d2c91e884a91bf8"
+    },
+    {
       "path": "tests/test_security_regressions.py",
-      "bytes": 20108,
-      "sha256": "c629fe1410c4201e2e3c81eec744525ec337e31b8a0bd763a979e3a0603ef2d3"
+      "bytes": 20169,
+      "sha256": "a80589f9416265ab41a2862c07167b0c54a045fe86f27585b10aba3ca89e75e9"
     },
     {
       "path": "verify_ais_encounters.py",
@@ -637,6 +687,6 @@
       "sha256": "a72c38bbe27f5b66177619e9763e9856ed1e535263c7c152a76bdf330b5bb698"
     }
   ],
-  "bytes": 158909930,
+  "bytes": 159339216,
   "note": "Reviewed release identity, not a publisher signature. Runtime data/results remain byte-identical. Manifest excludes itself."
 }

@@ -245,12 +245,16 @@ def run_task(source, request, root=PROJECT, publish=True):
                     result['ship_check']['scope'] = 'supported_observations_and_interpolated_segments_only'
             else:
                 result.update(status='rejected_planning', failure_reason=planned['failure_reason'])
+        if result['status'] == 'planned':
+            from src.validation import validate_result
+            validate_result(result)
     except (ValueError, KeyError, TypeError, OSError, RuntimeError, OverflowError) as error:
         result.update(status='error', failure_reason=str(error), trajectory=None, ship_check=None)
     try:
         result['code_sha256'] = {name: digest(PROJECT / name) for name in
                                  ['src/ais_single_task.py', 'src/metric_projection.py', 'src/ais_segments.py', 'src/ais_replay.py', 'src/ais_data.py',
-                                  'src/temporal_planning.py', 'src/ompl_sst.py', 'src/safe_planning.py', 'src/flight_simulation.py']}
+                                  'src/temporal_planning.py', 'src/ompl_sst.py', 'src/safe_planning.py', 'src/flight_simulation.py',
+                                  'src/validation.py']}
         replace_json(directory / 'result.json', result)
         if publish:
             replace_json(root / 'output/ais_single_task/latest.json', result)

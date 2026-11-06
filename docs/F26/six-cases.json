@@ -1,0 +1,87 @@
+{
+  "complete": true,
+  "cases": [
+    {
+      "key": "M2",
+      "run_id": "217f1a589e83416cb15db50d352d6064",
+      "status": "planned",
+      "result_sha256": "f466bfca620157e16b599eb2b084190b8d5fe0d257be52ee52a32aba1b76f9fc",
+      "button_fits": true,
+      "explanation_displayed": true,
+      "focus_distance_m": 1981.429822210082,
+      "focus_time_s": 2761.556380033493,
+      "route_points": 2,
+      "live_playback_and_2d_3d_sync": true
+    },
+    {
+      "key": "encounter_M1_same_direction",
+      "run_id": "c75b6a31bc7f441da5297f3ed4771b33",
+      "status": "planned",
+      "result_sha256": "456728aafb01c32b4882909df984a9ecc30d36e87587e1072d4ed852411c4cb1",
+      "button_fits": true,
+      "explanation_displayed": true,
+      "focus_distance_m": 1759.5281988108816,
+      "focus_time_s": 1825.0,
+      "route_points": 11,
+      "live_playback_and_2d_3d_sync": true
+    },
+    {
+      "key": "encounter_M1_opposing",
+      "run_id": "5694403b3ec5445fb4be6021ffe23650",
+      "status": "planned",
+      "result_sha256": "42921e1b9e8108ed56e60edad93bf3aa00734c2afbe3ba718b0045e39b663ab0",
+      "button_fits": true,
+      "explanation_displayed": true,
+      "focus_distance_m": 494.83036834201073,
+      "focus_time_s": 705.0,
+      "route_points": 11,
+      "live_playback_and_2d_3d_sync": true
+    },
+    {
+      "key": "encounter_M1_start_conflict",
+      "run_id": "cb97b6323b844676a0c3f38f23754234",
+      "status": "rejected_planning",
+      "result_sha256": "d5e46c48e759e5c9fc7f7c960adc27ac44f67c4983d1445c42a7c7d2e14867d6",
+      "button_fits": true,
+      "explanation_displayed": true,
+      "no_aircraft_or_route": true
+    },
+    {
+      "key": "M4",
+      "run_id": "c1933e830f4d4c7798c307ac3523f26e",
+      "status": "planned",
+      "result_sha256": "3ca607f326cd08789a75c415d263d24707ed00a4d81473dbacdcd4933bd0bf2e",
+      "button_fits": true,
+      "explanation_displayed": true,
+      "focus_distance_m": 797.9438809397537,
+      "focus_time_s": 2761.556380033493,
+      "route_points": 148,
+      "live_playback_and_2d_3d_sync": true
+    },
+    {
+      "key": "encounter_M1_singleton",
+      "run_id": "2fa48b9b62d04a32bcfdad800ee139ce",
+      "status": "planned",
+      "result_sha256": "ae9620e3b41a5b56bb217115f45b4715334baa5b76736727b96d6bcd02c89c08",
+      "button_fits": true,
+      "explanation_displayed": true,
+      "focus_distance_m": 92.43182573303801,
+      "focus_time_s": 710.6552801132202,
+      "route_points": 11,
+      "live_playback_and_2d_3d_sync": true
+    }
+  ],
+  "javascript_errors": [],
+  "external_requests": [],
+  "raw_sha256": "5c843f96122ff456ffcb2ae8d852ad59162cb2d06d0f04d369a173083fdec3d8",
+  "source_sha256": {
+    "prepare_anylogic_visual.py": "fee89d8f737612dbae7212eb11877b198bac801d08800879214978644059a6ff",
+    "build_anylogic_visual.py": "d162fa4627b11e687e4b0a9b9d5ef4cb88676b122a110ea2f7cf0141483044c7",
+    "anylogic/NativeDemoView.java": "ef041eb8f9efbbd81b32747c7c884ff380920b4f379db8cfe59ab6e8ce5af074",
+    "anylogic/native-visual-demo.jar": "d2d2f300460759e3f98c9ac31a9b2a754b7e09889a51d8d4e338b5636a5990a9",
+    "anylogic/AIS_Visual_Demo.alp": "c9a587f4fc25ca7b0225eb97ae8c17518dce7c73b67bec290bfd1eda7ab57b2e",
+    "anylogic/visual_demo/support.json": "b040b1bdf3ecbf45c5b00e90d84578e2da8a2971d1ed80378bde6dbff09066a4",
+    "anylogic/visual_sources/NativeWorkbench.java": "5575c29f80887a2871c20c460b3fbdfbc78fdd6b0bf01a96f731aad5b6d8eaf0"
+  },
+  "limits": "Six presentation entries, not six independent encounters. Singleton and opposing share the same departure."
+}
