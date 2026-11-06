@@ -1,0 +1,9 @@
+{
+  "fresh_Unicode_directory_extraction_passed": true,
+  "second_launch_critical_files_check_passed": true,
+  "fixed_package_archives_unchanged": true,
+  "native_tar_no_longer_used": true,
+  "extra_209_character_root_stress_test_supported": false,
+  "initial_English_Windows_CI_failure_run": 42158574936,
+  "fixed_in_followup_commit": true
+}

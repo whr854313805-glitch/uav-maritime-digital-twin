@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 26043,
-      "sha256": "31aaa1bc11697b330f83c6637bfe43818a9822b0982e213254c662b313112f78"
+      "bytes": 26268,
+      "sha256": "749b90691434a3e2be17f5994cfc2d3e7249f637404490599303e153369ce213"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -143,8 +143,8 @@
     },
     {
       "path": "docs/F25/code-map.json",
-      "bytes": 14148,
-      "sha256": "b5e010f741844594c095a070b0f342bdfbe56aa509515013b2950595027b86e2"
+      "bytes": 14309,
+      "sha256": "8e66cd40506145f6f0ed9c2b64eb0c4beb54d884b69db25fdcf8291059b20b29"
     },
     {
       "path": "docs/F25/lifecycle.json",
@@ -192,14 +192,19 @@
       "sha256": "bcbd2640b92e2214ac7fe278f4a55a51e19bd3491a18227800e6494d496c931c"
     },
     {
+      "path": "docs/F25/unicode-bootstrap.json",
+      "bytes": 341,
+      "sha256": "4b2938c5e141288dcb2ece81e58d4ece8dca6e2e88e4d671d114cb391e59740e"
+    },
+    {
       "path": "docs/F25/中文路径副本.png",
       "bytes": 604311,
       "sha256": "ed5a243f9df2a78c3331d0fa40cf5682c3ee5c4bbb9cd919729bdf45d99dbec8"
     },
     {
       "path": "docs/F25/修复与验收.md",
-      "bytes": 7424,
-      "sha256": "46bfbfd1b6a9459f3d3a78b944ba1bea5c8ef9a8673ae822e421528a5e823b7f"
+      "bytes": 8354,
+      "sha256": "7ed15acdccc18591756e3e19bf4752082d2cf8c28ab24cd2cedc0c396dff6232"
     },
     {
       "path": "docs/F25/失败后恢复.png",
@@ -483,8 +488,8 @@
     },
     {
       "path": "scripts/setup_runtime.ps1",
-      "bytes": 9233,
-      "sha256": "cf1db66ae8bcf62b35743ea5e5c2300c450738564ef9035dcbff79e4cfb7647a"
+      "bytes": 11193,
+      "sha256": "03324c445bdbf24ad66de2f98104d6ac4e8ddf07ecc972d86afe4b1a8d540309"
     },
     {
       "path": "scripts/start_project.ps1",
@@ -632,6 +637,6 @@
       "sha256": "a72c38bbe27f5b66177619e9763e9856ed1e535263c7c152a76bdf330b5bb698"
     }
   ],
-  "bytes": 158902037,
+  "bytes": 158905654,
   "note": "Reviewed release identity, not a publisher signature. Runtime data/results remain byte-identical. Manifest excludes itself."
 }

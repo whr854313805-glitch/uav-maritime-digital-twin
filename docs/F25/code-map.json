@@ -641,6 +641,11 @@
       "path": "anylogic/ctrl_wheel.js",
       "bytes": 6089,
       "sha256": "ab2ad6a0ee95ccccb18790953258caea0cb97b0f8a8a6bcb7972c47b294e215f"
+    },
+    {
+      "path": "scripts/setup_runtime.ps1",
+      "bytes": 11193,
+      "sha256": "03324c445bdbf24ad66de2f98104d6ac4e8ddf07ecc972d86afe4b1a8d540309"
     }
   ]
 }

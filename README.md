@@ -23,7 +23,7 @@
 2. 点击本仓库的 **Code → Download ZIP**，将整个 ZIP **全部解压**；或执行 `git clone https://github.com/whr854313805-glitch/uav-maritime-digital-twin.git`。不能在 ZIP 压缩窗口里直接运行，也不要只下载 `.alp`。
 3. 双击根目录 **启动完整演示.cmd**（英文同名入口为 `start.cmd`）。首次启动会自动展开项目自带的 Python 和离线数据并检查哈希，随后启动 AnyLogic。后续启动复用本目录自己的演示窗口。
 
-**无需另装 Python、pip、Java、MSYS2 或浏览器，无需 AIS API Key。** Java/Chromium 使用组员自行安装的 AnyLogic 所带版本；Python 和全部当前离线数据已经随仓库提供。首次准备期间请保留启动窗口。项目需完整解压到可写目录，并预留约 1 GB 空间；请勿放在压缩包内或 Program Files 等受保护目录。
+**无需另装 Python、pip、Java、MSYS2 或浏览器，无需 AIS API Key。** Java/Chromium 使用组员自行安装的 AnyLogic 所带版本；Python 和全部当前离线数据已经随仓库提供。首次准备期间请保留启动窗口。项目需完整解压到较短可写目录（如 `C:\uav`、桌面或下载目录），并预留约 1 GB 空间；请勿放在压缩包内或 Program Files 等受保护目录。
 
 如果未找到 AnyLogic：先双击 **检查运行环境.cmd**；将 `settings.example.json` 复制为 `settings.local.json`，把 `anylogic_home` 改为你电脑中 `AnyLogic.exe` 所在的文件夹。只需改这一个本机设置，无需改源码。也支持 `ANYLOGIC_HOME` 环境变量。验收使用 8.9.10，其他 8.9 版本未逐台验证。
 
@@ -52,7 +52,7 @@
 - **输入与错误**：拒绝 bool/null/错类型/非有限数、错误经纬度、无效时间和研究点结构；数据尚未验证时以空来源错误返回，不编造来源。输出目录无权限或写盘失败会报告错误，不能沿用上一次成功。
 - **启动和重试**：同目录启动全流程加锁，记录 `starting/ready/failed` 与创建时间；首次接管窗口也核对项目、模型、工作区、JVM 和进程创建时间。失败清理只针对本次所属进程。保留最近三次会话缓存，旧会话只在进程已退出且生成模型未被编辑时清理，并保留诊断日志；改过的模型和运行结果不会按缓存删除。
 
-出现问题时先运行 **检查运行环境.cmd** 和 **验证项目数据.cmd**。日志位于 `.local/launcher-state.json` 指向的位置、`.local/jobs/` 和 `anylogic/visual_demo/controls_setup.log`。文件被杀毒隔离、下载缺件或磁盘不可写时，应恢复完整可信副本或选择可写目录后重试；不要关闭系统防护来绕过错误。
+出现问题时先运行 **检查运行环境.cmd** 和 **验证项目数据.cmd**。日志位于 `.local/launcher-state.json` 指向的位置、`.local/jobs/` 和 `anylogic/visual_demo/controls_setup.log`。中文目录通过 Unicode 解压处理，不依赖 Windows 的系统语言；极长目录仍受 Windows 组件路径长度限制，依赖验证失败时先移到较短目录。文件被杀毒隔离、下载缺件或磁盘不可写时，应恢复完整可信副本或选择可写目录后重试；不要关闭系统防护来绕过错误。
 
 维护者回归命令：`runtime\python\python.exe -B -m unittest discover -s tests -v`。仓库还提供 Windows GitHub Actions，使用仓库自带运行库与数据在全新运行器的中文空格路径下检查并重算；它不安装 AnyLogic，不能替代其他物理电脑上的图形界面验收。详细修复、证据和未验证项见 [`docs/F25/修复与验收.md`](docs/F25/修复与验收.md)。
 
