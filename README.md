@@ -1,6 +1,22 @@
 # 维港无人机巡航规划与 AnyLogic 演示
 
-当前版本：F26 成功结果语义与派生显示校验修复（2026-11-06），保留 F23 交互及 F24/F25 交付内容。
+运行实现：F26；交付材料：2026-11-06 收口版。此次只整理文档，保留既有交互、数据、参数和算法。
+
+**交付状态：组内试运行包。** 已有本机 AnyLogic 与全新 Windows 后端验证；组员实体机完整验收尚未完成，不能据此签正式交付。接收前先看[风险与限制](docs/delivery/风险与限制.md)。
+
+## 接手只需走这条路径
+
+1. **启动**：Windows x64，安装并首次打开 AnyLogic **8.9.10 PLE** → 完整解压项目到较短可写目录（如 `C:\uav`）→ 双击 **启动完整演示.cmd**。Python、依赖与历史数据随库提供，不需要 AIS 密钥。
+2. **运行**：点击“正常直飞”加载 M2，再点“回到出发”“演示播放/暂停”；切换二维/三维查看同一结果。保存案例加载不代表现场重新求解。要新算，在“演示 / 工作台”中选可重算任务，核对原出发时间，点“按此时间规划”。
+3. **验证**：先双击 **检查运行环境.cmd**，再双击 **验证项目数据.cmd**。后者应全部 `PASS` 并输出 `VERIFIED`，报告在 `.local/verification.json`；它不启动求解器，也不检查 GUI。自动化测试与两项实际重算命令见下方“检查与重算”。
+
+| 接手要解决什么 | 看哪里 |
+|---|---|
+| 如何启动、操作、排错；API 和数值依据 | 本 README（下文保留完整说明） |
+| 为什么这样分工、核心模块和数据流 | [设计说明](docs/delivery/设计说明.md) |
+| 已测/未测、复跑命令、组员验收表 | [测试说明](docs/delivery/测试说明.md) |
+| 已知问题、接受条件、正式交付卡点 | [风险与限制](docs/delivery/风险与限制.md) |
+| 只有几分钟如何展示 | [四分钟演示顺序](docs/delivery/演示顺序.md) |
 
 用真实历史 AIS 观测、原官方建筑数据和官方 OMPL 2.0.2 SST 完成单机二维巡航规划，再用 AnyLogic 展示二维/三维同步回放。保留原八个研究点、四条任务、16 个保存结果入口及其中 10 个可重算入口。原规划、阈值、船轨迹与保存结果没有因本次打包而修改。
 
@@ -40,6 +56,17 @@
 - **检查运行环境.cmd**：准备运行库和数据，然后检查 AnyLogic、Python 依赖和模型文件，不打开模型。
 - **验证项目数据.cmd**：核验完整保存目录、输入哈希、冻结点和官方 OMPL 运行库，结果写入 `.local/verification.json`。
 - 开发者可执行 `runtime\python\python.exe scripts\verify_project.py --recompute M2 encounter_M1_opposing`，用原规划入口现场重算并独立检查。它新增运行记录，保留原结果。
+
+也可在项目根目录的 PowerShell **串行**执行（首条会准备离线运行库与数据）：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\start_project.ps1 -Mode check
+& .\runtime\python\python.exe -B -m unittest discover -s .\tests -v
+& .\runtime\python\python.exe -B .\scripts\verify_project.py
+& .\runtime\python\python.exe -B .\scripts\verify_project.py --recompute M2 encounter_M1_opposing
+```
+
+自动化套件当前为 **52 项**；基础检查为 **9 项**；最后一条另外新算 **2 项**，不覆盖 `latest.json` 或保存案例。每条退出码均应为 `0`，失败就保留输出和日志，不通过改清单消除错误。该命令只支持 M2/相向选项，不能据此声称全部十个可重算入口已在当前版新算通过。既有代码证据与未测范围见[测试说明](docs/delivery/测试说明.md)。
 
 
 ## 成功结果与派生显示校验（F26）

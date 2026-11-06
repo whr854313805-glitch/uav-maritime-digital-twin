@@ -1,5 +1,5 @@
 {
-  "version": "F26-result-semantics-frozen-display-20261106",
+  "version": "F27-documentation-closeout-20261106",
   "files": [
     {
       "path": ".gitattributes",
@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 27909,
-      "sha256": "6e7164f5ab45da0844b95d8f7575ef05469b1062228e05ec6ab8e9ba711b20d4"
+      "bytes": 30471,
+      "sha256": "71c99e1e8a99b6f5150b066bb3b7f01e7fdab97276ee0b719ead3623c2125d27"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -265,6 +265,26 @@
       "path": "docs/REFERENCES.md",
       "bytes": 917,
       "sha256": "b9d938b2ab9e8ad78fb8aa0d6349a50427b1dedc37510f306390183574db1f88"
+    },
+    {
+      "path": "docs/delivery/测试说明.md",
+      "bytes": 4975,
+      "sha256": "447846fec3dc1a16135102f7cfd7a1c497d4e51cb4f9bd54e873e4355c05c2f7"
+    },
+    {
+      "path": "docs/delivery/演示顺序.md",
+      "bytes": 3287,
+      "sha256": "5cf6368121315178fd11ce6f35f3da92750e2f61aa3f17854992554b5f4aa98b"
+    },
+    {
+      "path": "docs/delivery/设计说明.md",
+      "bytes": 4691,
+      "sha256": "0794ced980879b1fdf76c3f2f7acba29e75c3df64ebe70e3adb3020606f6828f"
+    },
+    {
+      "path": "docs/delivery/风险与限制.md",
+      "bytes": 4303,
+      "sha256": "a84c4cfb4f7d810482b3d66330e0f821c4878307136926867e4c59c6f5e8b1bd"
     },
     {
       "path": "docs/provenance/portable-code-map.json",
@@ -687,6 +707,6 @@
       "sha256": "a72c38bbe27f5b66177619e9763e9856ed1e535263c7c152a76bdf330b5bb698"
     }
   ],
-  "bytes": 159339216,
+  "bytes": 159359034,
   "note": "Reviewed release identity, not a publisher signature. Runtime data/results remain byte-identical. Manifest excludes itself."
 }
