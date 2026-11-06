@@ -1,6 +1,7 @@
 """Verify the F23 offline AIS project with its installed/bundled Python.
 
-Default: inspect saved files and hashes only; no solver, UI or network access.
+Default: inspect saved files and hashes, synchronizing validated derived catalog
+metadata if needed; no solver, UI or network access. Never rewrites results.
 Optional --recompute creates NEW run files through the original run_task with
 publish=False. It never replaces latest.json or a saved catalog result.
 
@@ -129,47 +130,42 @@ def verify(project, recompute):
     def dependencies():
         sys.path.insert(0, str(project))
         # Reuse original project adapters; importing these does not run planning.
-        from src.anylogic_workspace import catalog
         from src.ais_replay import build_capture
         from src.ais_single_task import apply_reference_profile, load_environment, run_task
         from src.project_config import load_config
         from playwright.sync_api import sync_playwright
         from PIL import Image
-        state.update(catalog_function=catalog, build_capture=build_capture,
+        state.update(build_capture=build_capture,
                      apply_reference_profile=apply_reference_profile, load_environment=load_environment,
                      run_task=run_task, load_config=load_config)
         return {'original_project_modules_imported': True, 'Pillow_imported': True,
                 'Playwright_imported': True, 'solver_invoked': False}
 
     def saved_catalog():
-        items = state['catalog_function']()
-        require({r['key'] for r in items} == EXPECTED_RECALCULABLE | EXPECTED_VIEW_ONLY,
-                'Expected all 16 saved catalog entries.')
-        require({r['key'] for r in items if r['can_run']} == EXPECTED_RECALCULABLE,
-                'The 10 recalculable / 6 view-only entry split changed.')
-        workspace = read(project / 'anylogic/workbench/workspace.json')
-        indexed = {r['key']: r for r in workspace['catalog']}
-        require(set(indexed) == {r['key'] for r in items}, 'Workspace catalog keys differ from the current catalog.')
-        results = {}
-        protected = {project / 'output/ais_single_task/latest.json'}
-        for item in items:
-            path = within(project, 'output/' + item['file'])
-            result = read(path)
-            from src.validation import validate_result
-            validate_result(result)
-            require(sha(path) == item['sha256'], 'Saved result hash mismatch: ' + item['key'])
-            old = indexed[item['key']]
-            require(all(old.get(k) == item.get(k) for k in ['file', 'sha256', 'can_run']),
-                    'Workspace is stale for ' + item['key'])
-            require(result['request'] == item['request'], 'Saved request mismatch: ' + item['key'])
-            results[item['key']] = result
-            protected.add(path)
-            if item.get('baseline_file'):
-                protected.add(within(project, 'output/' + item['baseline_file']))
-        state.update(items=items, results=results, workspace=workspace, protected=protected)
-        return {'saved_entries': 16, 'recalculable': sorted(EXPECTED_RECALCULABLE),
-                'view_only': sorted(EXPECTED_VIEW_ONLY),
-                'original_catalog_baseline_and_override_checks_passed': True}
+        from src.workspace_catalog import catalog_lock, synchronize_locked
+        with catalog_lock(project):
+            workspace, items = synchronize_locked(project, read(project / 'anylogic/workbench/workspace.json'))
+            require({r['key'] for r in items} == EXPECTED_RECALCULABLE | EXPECTED_VIEW_ONLY,
+                    'Expected all 16 saved catalog entries.')
+            require({r['key'] for r in items if r['can_run']} == EXPECTED_RECALCULABLE,
+                    'The 10 recalculable / 6 view-only entry split changed.')
+            results = {}
+            protected = {project / 'output/ais_single_task/latest.json'}
+            for item in items:
+                path = within(project, 'output/' + item['file'])
+                result = read(path)
+                from src.validation import validate_result
+                validate_result(result)
+                require(sha(path) == item['sha256'], 'Saved result hash mismatch: ' + item['key'])
+                require(result['request'] == item['request'], 'Saved request mismatch: ' + item['key'])
+                results[item['key']] = result
+                protected.add(path)
+                if item.get('baseline_file'):
+                    protected.add(within(project, 'output/' + item['baseline_file']))
+            state.update(items=items, results=results, workspace=workspace, protected=protected)
+            return {'saved_entries': 16, 'recalculable': sorted(EXPECTED_RECALCULABLE),
+                    'view_only': sorted(EXPECTED_VIEW_ONLY),
+                    'original_catalog_baseline_and_override_checks_passed': True}
 
     def demo_results():
         support = read(project / 'anylogic/visual_demo/support.json')

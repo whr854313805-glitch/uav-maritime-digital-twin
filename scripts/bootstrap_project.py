@@ -21,6 +21,12 @@ def sha(path):
 
 
 def restore(root=ROOT, recover_latest=False):
+    from src.workspace_catalog import catalog_lock
+    with catalog_lock(root):
+        return _restore(root, recover_latest)
+
+
+def _restore(root, recover_latest):
     root = Path(root).resolve()
     (root/'.local/data-bootstrap.json').unlink(missing_ok=True)
     manifest_path = root / 'runtime/data/current-data.manifest.json'
@@ -42,15 +48,11 @@ def restore(root=ROOT, recover_latest=False):
                 # and the verifier check its own input identity independently.
                 if name == 'output/ais_single_task/latest.json':
                     sys.path.insert(0, str(root))
-                    from src.validation import validate_result
+                    from src.workspace_catalog import validate_current
                     try:
                         candidate = json.loads(target.read_text(encoding='utf-8-sig'))
                         original = json.loads(z.read(name))
-                        validate_result(candidate, capture_id=original['capture_id'], raw_sha256=original['raw_sha256'])
-                        if candidate.get('projection') != original.get('projection'):
-                            raise ValueError('latest.json projection differs from the fixed reference')
-                        from src.validation import number
-                        number(candidate.get('window_start_unix_s'), 'latest window origin')
+                        validate_current(root, candidate, reference=original)
                     except (ValueError, TypeError, KeyError, OSError) as error:
                         if not recover_latest:
                             raise ValueError('latest.json is invalid: '+str(error)+'. Run scripts/bootstrap_project.py --recover-latest to preserve it and restore the original saved default.') from error
@@ -77,6 +79,9 @@ def restore(root=ROOT, recover_latest=False):
             finally:
                 temp.unlink(missing_ok=True)
             restored.append(name)
+    if (root / 'anylogic/workbench/workspace.json').exists():
+        from src.workspace_catalog import synchronize_locked
+        synchronize_locked(root)
     local = root / '.local'
     local.mkdir(exist_ok=True)
     (local / 'data-bootstrap.json').write_text(json.dumps({

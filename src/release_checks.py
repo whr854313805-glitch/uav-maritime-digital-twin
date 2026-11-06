@@ -40,7 +40,7 @@ def verify_release(root):
             raise ValueError('Release file identity mismatch: ' + rel)
         checked += 1
     required = {'anylogic/native-visual-demo.jar', 'anylogic/loopback-agent.jar', 'src/validation.py',
-                'src/release_checks.py', 'runtime/data/current-data.manifest.json'}
+                'src/release_checks.py', 'src/workspace_catalog.py', 'runtime/data/current-data.manifest.json'}
     if not required.issubset({row['path'] for row in manifest['files']}):
         raise ValueError('Release manifest is missing required security components')
     return {'immutable_files_verified': checked, 'release_sha256':release_identity(root)}

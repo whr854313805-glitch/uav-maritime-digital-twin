@@ -69,7 +69,7 @@ class DataIdentity(unittest.TestCase):
         with self.assertRaises(ValueError):verify_workspace(ROOT,workspace)
     def test_release_binary_replacement_rejected(self):
         required=['anylogic/native-visual-demo.jar','anylogic/loopback-agent.jar','src/validation.py','src/release_checks.py',
-                  'runtime/data/current-data.manifest.json']
+                  'src/workspace_catalog.py','runtime/data/current-data.manifest.json']
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);rows=[]
             for name in required:

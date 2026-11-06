@@ -8,7 +8,7 @@ from src.ais_single_task import run_task
 from src.ais_replay import build_capture,replace_json
 from src.metric_projection import MetricProjection
 from src.validation import parse_departure, validate_result
-from src.release_checks import verify_workspace, workspace_geometry
+from src.release_checks import workspace_geometry
 
 P=Path(__file__).resolve().parents[1]
 def read(path):return json.loads(path.read_text(encoding='utf-8-sig'))
@@ -16,10 +16,11 @@ def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def hk(t):return datetime.fromtimestamp(t,timezone(timedelta(hours=8))).isoformat()
 
 
-def catalog():
+def catalog(root=None):
+    root=Path(root) if root is not None else P
     items=[]
     def add(key,label,path,can_run=True):
-        f=P/'output'/path
+        f=root/'output'/path
         if not f.exists():return
         r=read(f);request=r['request']
         items.append({'key':key,'label':label,'file':path,'sha256':sha(f),'status':r['status'],
@@ -32,25 +33,32 @@ def catalog():
     for key,label in [('M1_start_conflict','起点过近'),('M1_opposing','相向运动'),('M1_same_direction','同向运动'),('M1_singleton','孤立实测点')]:
         add('encounter_'+key,label+'案例',f'ais_single_task/encounter_verification/{key}/result.json')
     for grid in [100,200,400]:add('grid_'+str(grid),f'网格对照 {grid}米',f'ais_single_task/grid_sensitivity/{grid}/result.json',False)
-    repair=P/'output/ais_single_task/ompl_sst/catalog.json'
+    repair=root/'output/ais_single_task/ompl_sst/catalog.json'
     if repair.exists():
+        overrides=read(repair)
         for item in items:
-            replacement=read(repair)['overrides'].get(item['key'])
+            replacement=overrides['overrides'].get(item['key'])
             if not replacement:continue
-            path=(P/'output'/replacement['file']).resolve()
-            if not path.is_relative_to((P/'output').resolve()):raise ValueError('Repaired result outside output')
-            baseline=read(P/'output'/item['file']);current=read(path)
+            path=(root/'output'/replacement['file']).resolve()
+            if not path.is_relative_to((root/'output').resolve()):raise ValueError('Repaired result outside output')
+            baseline=read(root/'output'/item['file']);current=read(path)
             if (replacement['baseline_file']!=item['file'] or replacement['baseline_sha256']!=item['sha256'] or
                     sha(path)!=replacement['sha256'] or current['request']!=baseline['request'] or
                     current['raw_sha256']!=baseline['raw_sha256']):
                 raise ValueError('Repaired result differs from its fixed request or AIS source')
             item.update(file=replacement['file'],sha256=sha(path),status=current['status'],
                         baseline_file=replacement['baseline_file'],baseline_run_id=baseline['run_id'],
-                        algorithm=read(repair)['algorithm'])
+                        algorithm=overrides['algorithm'])
     return items
 
 
 def prepare(target):
+    from src.workspace_catalog import catalog_lock
+    with catalog_lock(P):
+        return _prepare(target)
+
+
+def _prepare(target):
     target.mkdir(parents=True,exist_ok=True)
     ref=read(P/'output/research_points/study/M2/result.json');source=P/'data/ais/captures'/ref['capture_id']
     bundle=build_capture(source)
@@ -117,8 +125,12 @@ def sections(result,item,workspace):
 
 
 def packet(key,target,run=False,departure=None):
-    workspace=read(P/'anylogic/workbench/workspace.json');verify_workspace(P,workspace);item=next((q for q in catalog() if q['key']==key),None)
-    if item is None:raise ValueError('Unknown catalog key')
+    from src.workspace_catalog import catalog_lock, synchronize_locked
+    with catalog_lock(P):
+        workspace,items=synchronize_locked(P,read(P/'anylogic/workbench/workspace.json'))
+        item=next((q for q in items if q['key']==key),None)
+        if item is None:raise ValueError('Unknown catalog key')
+        saved=None if run else read(P/'output'/item['file'])
     target.mkdir(parents=True,exist_ok=True)
     if run:
         if not item['can_run']:raise ValueError('This saved experiment is view-only; use a fixed task to replan')
@@ -131,7 +143,7 @@ def packet(key,target,run=False,departure=None):
         except (ValueError,OverflowError,OSError,TypeError) as error:
             result={'status':'error','failure_reason':'出发时间无效：'+str(error),'submitted_departure':departure,'run_id':uuid.uuid4().hex,'request':req,
                     'trajectory':None,'capture_id':workspace['source']['capture_id'],'raw_sha256':workspace['source']['raw_sha256']}
-    else:result=read(P/'output'/item['file'])
+    else:result=saved
     validate_result(result)
     if result['status']!='error' and (result.get('capture_id')!=workspace['source']['capture_id'] or result.get('raw_sha256')!=workspace['source']['raw_sha256']):
         raise ValueError('Result and workspace AIS identity mismatch')

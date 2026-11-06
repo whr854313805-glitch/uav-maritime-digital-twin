@@ -1,0 +1,17 @@
+{
+  "moved_out_of_project_generated_caches": [
+    {
+      "path": "anylogic/visual_classes",
+      "files": 24,
+      "bytes": 140542.0
+    },
+    {
+      "path": "anylogic/agent_classes",
+      "files": 5,
+      "bytes": 7807.0
+    }
+  ],
+  "backup_in_development_work_only": true,
+  "tracked_sources_and_results_preserved": true,
+  "compiled_JAR_retained": true
+}

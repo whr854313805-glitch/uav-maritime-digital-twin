@@ -17,7 +17,10 @@ def replace_json(path, data):
     """Readers see either the previous or complete new replay bundle."""
     path = Path(path);path.parent.mkdir(parents=True,exist_ok=True)
     temporary = path.with_name(path.name+'.'+uuid.uuid4().hex+'.tmp')
-    dump(temporary,data);os.replace(temporary,path)
+    try:
+        dump(temporary,data);os.replace(temporary,path)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 def build_capture(directory):

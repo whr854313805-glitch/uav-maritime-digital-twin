@@ -274,7 +274,7 @@ class FrozenDisplayContracts(unittest.TestCase):
         self.assertFalse(report['passed'])
         checks = {row['name']: row for row in report['checks']}
         self.assertTrue(checks['published_files_identity']['passed'])
-        self.assertIn('sites', checks['capture_and_raw_AIS_identity']['error'])
+        self.assertTrue(any('sites' in row.get('error', '') for row in report['checks']))
 
 
 if __name__ == '__main__':

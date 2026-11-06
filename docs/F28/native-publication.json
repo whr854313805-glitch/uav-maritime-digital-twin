@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "new_run_id": "85d727a7c54045eba38f2f1c7c3ccecd",
+      "new_status": "planned",
+      "GUI_current_reloaded_without_clicking_refresh": true,
+      "all_nine_checks_passed": true,
+      "bootstrap_retained_new_result_and_synced_catalog": true
+    },
+    {
+      "new_run_id": "cc8bdeea404e41b8aa3549c3e501fb2a",
+      "new_status": "planned",
+      "GUI_current_reloaded_without_clicking_refresh": true,
+      "all_nine_checks_passed": true,
+      "bootstrap_retained_new_result_and_synced_catalog": true
+    }
+  ],
+  "uses_actual_new_solver_attempts": true,
+  "manual_departure_draft_preserved": true,
+  "manual_refresh_button_removed": true,
+  "original_latest_workspace_and_provenance_restored_exactly": true
+}

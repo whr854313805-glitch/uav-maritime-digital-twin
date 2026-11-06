@@ -1,5 +1,5 @@
 {
-  "version": "F27-documentation-closeout-20261106",
+  "version": "F28-catalog-lifecycle-20261106",
   "files": [
     {
       "path": ".gitattributes",
@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 30471,
-      "sha256": "71c99e1e8a99b6f5150b066bb3b7f01e7fdab97276ee0b719ead3623c2125d27"
+      "bytes": 30816,
+      "sha256": "a31bcccfc65e3fea40cfeac72b58277feed912761a85c3f7a284e0c4a8e3303a"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -58,8 +58,8 @@
     },
     {
       "path": "anylogic/NativeWorkbench.java",
-      "bytes": 30921,
-      "sha256": "33f62a02b8c9a37f92d6ba05cba5bc301fc84385d6780743b1aee1cc62ffa9db"
+      "bytes": 30635,
+      "sha256": "0ee715d955643f7f0dbc71511cd1a277e9c451c33c9f0609d3b1bbfd515b1fd6"
     },
     {
       "path": "anylogic/OwnedJobs.java",
@@ -93,8 +93,8 @@
     },
     {
       "path": "anylogic/native-visual-demo.jar",
-      "bytes": 70989,
-      "sha256": "d2d2f300460759e3f98c9ac31a9b2a754b7e09889a51d8d4e338b5636a5990a9"
+      "bytes": 70196,
+      "sha256": "c73177125642da5ef395a03a76904b98b8f333a60cd4ca66a3022f50119e865e"
     },
     {
       "path": "anylogic/visual_demo/scenery.json",
@@ -108,8 +108,8 @@
     },
     {
       "path": "anylogic/visual_sources/NativeWorkbench.java",
-      "bytes": 31027,
-      "sha256": "5575c29f80887a2871c20c460b3fbdfbc78fdd6b0bf01a96f731aad5b6d8eaf0"
+      "bytes": 30741,
+      "sha256": "3010ff38944e7f0a65e3fac94b917bd9035bf9e4a7365ae8c4b9bc5902f3a66f"
     },
     {
       "path": "anylogic/workbench/provenance.json",
@@ -262,29 +262,69 @@
       "sha256": "0932994b9b5e1139215e53d05a8c131ef073f6792b1c1a27e8155145e570a338"
     },
     {
+      "path": "docs/F28/cleanup.json",
+      "bytes": 384,
+      "sha256": "5c1f2faaf0cd52dc64cf8cc7cc261884d3e9bc311b3295f459d335f492aa307b"
+    },
+    {
+      "path": "docs/F28/code-map.json",
+      "bytes": 9749,
+      "sha256": "832287dd1b86aa5d11d1f27adb33ea7eb149784555e2c48fbc967b32517139a1"
+    },
+    {
+      "path": "docs/F28/local-recompute.json",
+      "bytes": 8262,
+      "sha256": "04b92c15f1945d60d3929969dea886e96aec60c165d32d4b54ca6a69259c8140"
+    },
+    {
+      "path": "docs/F28/native-publication.json",
+      "bytes": 781,
+      "sha256": "307dd5e8967f403cb43f811c107488a174011102d35a8772c220a6657f34f29e"
+    },
+    {
+      "path": "docs/F28/preserved-inputs.json",
+      "bytes": 203,
+      "sha256": "efb2cbcb856adfa28e34863f41fa9ee4bdfb13129333b36a7883fa1cc94abcfb"
+    },
+    {
+      "path": "docs/F28/six-cases.json",
+      "bytes": 3640,
+      "sha256": "2e67ebd9d32b6594d27fdc3da1abd04ec1338cdd72aaa4b10e12d3318c929aaa"
+    },
+    {
+      "path": "docs/F28/修复与验收.md",
+      "bytes": 3163,
+      "sha256": "dff2f6f96b7f454d8b0360f76117f2bf0d39b9fbf17bde2e7c9dd8fa15ba9348"
+    },
+    {
+      "path": "docs/F28/新结果自动载入.png",
+      "bytes": 121524,
+      "sha256": "e87a9696d03afe716f6cef3726f5d0ce69bdd0dd9320238616326344ddb157c4"
+    },
+    {
       "path": "docs/REFERENCES.md",
       "bytes": 917,
       "sha256": "b9d938b2ab9e8ad78fb8aa0d6349a50427b1dedc37510f306390183574db1f88"
     },
     {
       "path": "docs/delivery/测试说明.md",
-      "bytes": 4975,
-      "sha256": "447846fec3dc1a16135102f7cfd7a1c497d4e51cb4f9bd54e873e4355c05c2f7"
+      "bytes": 5289,
+      "sha256": "b7f2f3ba148730d8c4c1730392e7a08fa8e6831cef02b460276b26ccb6048e7a"
     },
     {
       "path": "docs/delivery/演示顺序.md",
-      "bytes": 3287,
-      "sha256": "5cf6368121315178fd11ce6f35f3da92750e2f61aa3f17854992554b5f4aa98b"
+      "bytes": 3369,
+      "sha256": "4c92d581756558c358239aea97de38ae88ac71099870cb22176190640fd24301"
     },
     {
       "path": "docs/delivery/设计说明.md",
-      "bytes": 4691,
-      "sha256": "0794ced980879b1fdf76c3f2f7acba29e75c3df64ebe70e3adb3020606f6828f"
+      "bytes": 5017,
+      "sha256": "93d2585b0e563a35d9f56665f1fec22771fcc4ef02f5c0a19f99c062f04d1470"
     },
     {
       "path": "docs/delivery/风险与限制.md",
-      "bytes": 4303,
-      "sha256": "a84c4cfb4f7d810482b3d66330e0f821c4878307136926867e4c59c6f5e8b1bd"
+      "bytes": 3912,
+      "sha256": "f208b29e23333b8833dad1bcb24ec688cc72383ced32fc1b58c04d25f0e4343b"
     },
     {
       "path": "docs/provenance/portable-code-map.json",
@@ -443,8 +483,8 @@
     },
     {
       "path": "run_ais_single_task.py",
-      "bytes": 1790,
-      "sha256": "25384041daba736316ca11c07cee164a7e268675af86b5bfab263e2fdad1b761"
+      "bytes": 2139,
+      "sha256": "64f597f2164fe69469832bf48d899f56c81ebf504e9623af37a86cb657cd63d2"
     },
     {
       "path": "runtime/data/current-data.manifest.json",
@@ -538,8 +578,8 @@
     },
     {
       "path": "scripts/bootstrap_project.py",
-      "bytes": 5351,
-      "sha256": "e45a493bf876d559f4d3a43a13e0e82e39ac3565d0c31bcd901a8e39b8847fba"
+      "bytes": 5295,
+      "sha256": "6e492b0f67d78b16ec2475c57457737c1aa829353962496a2e57685178e05a67"
     },
     {
       "path": "scripts/release/build_python_runtime.py",
@@ -563,8 +603,8 @@
     },
     {
       "path": "scripts/verify_project.py",
-      "bytes": 21501,
-      "sha256": "205fc4aa346be73776397a672809f2c2cea89fd7c2d35d29e5989f6d984a1925"
+      "bytes": 21323,
+      "sha256": "f494c88e8f794e030a76f171e4625e2bac0653f35d0b74a9e8ed635ef4831a43"
     },
     {
       "path": "select_research_points.py",
@@ -588,8 +628,8 @@
     },
     {
       "path": "src/ais_replay.py",
-      "bytes": 6466,
-      "sha256": "ec4f69fa6ad598268a6ef83202af96439f44f8cee3926a4ca31737694ca26d57"
+      "bytes": 6534,
+      "sha256": "e9637474c6990535828fbf77e165e51aaf12c66ffb5f03144dbeb183a7857466"
     },
     {
       "path": "src/ais_segments.py",
@@ -598,13 +638,13 @@
     },
     {
       "path": "src/ais_single_task.py",
-      "bytes": 17563,
-      "sha256": "999c5f6ca25587f825990f1acd1099f5effa733a0b0f91489368c63f78c63bda"
+      "bytes": 18457,
+      "sha256": "056d82195f3ea520d06a8cd1d65833079f6246be252fa6b328bead69341efcb4"
     },
     {
       "path": "src/anylogic_workspace.py",
-      "bytes": 11976,
-      "sha256": "23c7d021b1260328a3b170f26875e2a8661075d7aa8511b993042a9bd3042cd5"
+      "bytes": 12343,
+      "sha256": "c5b69c3653b2ac3aa903acd6120a6d9aafba3bfb6b53fcd741b173c424375b9b"
     },
     {
       "path": "src/departure_search.py",
@@ -643,8 +683,8 @@
     },
     {
       "path": "src/release_checks.py",
-      "bytes": 8844,
-      "sha256": "c50e3d2a36160ca9b7d56f005297732456886069b65d5efa0efbbd877fd7afd8"
+      "bytes": 8872,
+      "sha256": "f5fbbb8f03986a8d2d9483622b5e1e2135d188e49e00180ff7298eaeaecc66b5"
     },
     {
       "path": "src/safe_planning.py",
@@ -662,24 +702,34 @@
       "sha256": "53372c7f1ef4eae883eea073b777cf9d69887d6862b438a053e81502ed55958f"
     },
     {
+      "path": "src/workspace_catalog.py",
+      "bytes": 5551,
+      "sha256": "4d5a4a97fac71e087283c40541c54ea150e0a455498c196d368a7f6049af5776"
+    },
+    {
       "path": "start.cmd",
       "bytes": 231,
       "sha256": "d0217b995b4adf97e296567d98d3ce14f46190430e8165bc6effa8b561a222ad"
     },
     {
       "path": "start_full_demo.py",
-      "bytes": 8891,
-      "sha256": "dac453312acdc8210344903f21d6e0a55ca6fc43ae573bac8564b511a4b4c47a"
+      "bytes": 8919,
+      "sha256": "c9e24197d73397680a96c06fe0f9293cdf0dfeaa115615f22e03c8505b6ffe05"
+    },
+    {
+      "path": "tests/test_catalog_lifecycle.py",
+      "bytes": 11580,
+      "sha256": "0300c714a4e57691365dc016da208c4d7195440772f92fac3d6b58f5e2ea4fef"
     },
     {
       "path": "tests/test_result_and_display_contracts.py",
-      "bytes": 14019,
-      "sha256": "8fc6fe96e55e852f8616a5bf0defbf39810dc4f823d6f14d8d2c91e884a91bf8"
+      "bytes": 14029,
+      "sha256": "f8f1311ae737962b1040e3669cf6598d1abd4cc4690e9f2be6bd0d170224c9ba"
     },
     {
       "path": "tests/test_security_regressions.py",
-      "bytes": 20169,
-      "sha256": "a80589f9416265ab41a2862c07167b0c54a045fe86f27585b10aba3ca89e75e9"
+      "bytes": 20196,
+      "sha256": "1742a93a8113c506fd3a77dd2f6bc69743b7ee5005baf2320311d7a7451a65a3"
     },
     {
       "path": "verify_ais_encounters.py",
@@ -707,6 +757,6 @@
       "sha256": "a72c38bbe27f5b66177619e9763e9856ed1e535263c7c152a76bdf330b5bb698"
     }
   ],
-  "bytes": 159359034,
+  "bytes": 159524719,
   "note": "Reviewed release identity, not a publisher signature. Runtime data/results remain byte-identical. Manifest excludes itself."
 }

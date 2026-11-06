@@ -67,9 +67,10 @@ def check_environment():
         raise RuntimeError("此运行包面向 Windows 10/11 64 位系统。")
     if ctypes.sizeof(ctypes.c_void_p) != 8:
         raise RuntimeError("需要 64 位 Python。请使用项目自带的 Windows Python 运行库。")
-    from src.release_checks import verify_release,verify_workspace
+    from src.release_checks import verify_release
     verified=verify_release(P)
-    verify_workspace(P)
+    from src.workspace_catalog import synchronize
+    synchronize(P)
     home = find_anylogic()
     python = find_python()
     required = [MODEL, P / "anylogic/native-visual-demo.jar", P / "anylogic/ctrl_wheel.js",

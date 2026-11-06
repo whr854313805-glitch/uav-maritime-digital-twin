@@ -158,7 +158,7 @@ def validate_request(request):
 
 
 def run_task(source, request, root=PROJECT, publish=True):
-    """Always publish this attempt's failure, never silently retain old success."""
+    """Report this attempt; publish only source-verified displayable defaults."""
     source, root = Path(source), Path(root)
     directory = root / 'output/ais_single_task/runs' / uuid.uuid4().hex
     result = {'schema_version': 1, 'run_id': directory.name, 'status': 'error',
@@ -254,10 +254,24 @@ def run_task(source, request, root=PROJECT, publish=True):
         result['code_sha256'] = {name: digest(PROJECT / name) for name in
                                  ['src/ais_single_task.py', 'src/metric_projection.py', 'src/ais_segments.py', 'src/ais_replay.py', 'src/ais_data.py',
                                   'src/temporal_planning.py', 'src/ompl_sst.py', 'src/safe_planning.py', 'src/flight_simulation.py',
-                                  'src/validation.py']}
+                                  'src/validation.py', 'src/workspace_catalog.py']}
         replace_json(directory / 'result.json', result)
         if publish:
-            replace_json(root / 'output/ais_single_task/latest.json', result)
+            from src.workspace_catalog import publish_result
+            try:
+                publish_result(root, result)
+            except (ValueError, TypeError, KeyError, OSError, RuntimeError) as error:
+                # A completed calculation and a failed publication are separate.
+                # In particular, never rewrite result.json as error after its
+                # valid planned copy has already reached latest.json.
+                failure = dict(result, status='error', failure_reason='result_publish_failed: '+str(error),
+                               trajectory=None, ship_check=None)
+                print(json.dumps(json_safe(failure), ensure_ascii=True, allow_nan=False), file=sys.stderr)
+                try:
+                    replace_json(directory / 'publication_error.json', failure)
+                except (ValueError, TypeError, OSError):
+                    pass
+                return failure
     except (ValueError, TypeError, OSError) as error:
         result.update(status='error', failure_reason='result_write_failed: '+str(error), trajectory=None, ship_check=None)
         print(json.dumps(json_safe(result), ensure_ascii=True, allow_nan=False), file=sys.stderr)

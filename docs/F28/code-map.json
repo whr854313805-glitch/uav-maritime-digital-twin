@@ -1,0 +1,446 @@
+{
+  "version": "F28",
+  "files": [
+    {
+      "path": "src/workspace_catalog.py",
+      "bytes": 5551,
+      "sha256": "4d5a4a97fac71e087283c40541c54ea150e0a455498c196d368a7f6049af5776",
+      "functions": [
+        {
+          "name": "read",
+          "line": 13
+        },
+        {
+          "name": "catalog_lock",
+          "line": 18
+        },
+        {
+          "name": "validate_current",
+          "line": 41
+        },
+        {
+          "name": "_workspace",
+          "line": 61
+        },
+        {
+          "name": "_items",
+          "line": 72
+        },
+        {
+          "name": "_write",
+          "line": 89
+        },
+        {
+          "name": "synchronize_locked",
+          "line": 100
+        },
+        {
+          "name": "synchronize",
+          "line": 107
+        },
+        {
+          "name": "publish_result",
+          "line": 112
+        }
+      ]
+    },
+    {
+      "path": "src/anylogic_workspace.py",
+      "bytes": 12343,
+      "sha256": "c5b69c3653b2ac3aa903acd6120a6d9aafba3bfb6b53fcd741b173c424375b9b",
+      "functions": [
+        {
+          "name": "read",
+          "line": 14
+        },
+        {
+          "name": "sha",
+          "line": 15
+        },
+        {
+          "name": "hk",
+          "line": 16
+        },
+        {
+          "name": "catalog",
+          "line": 19
+        },
+        {
+          "name": "prepare",
+          "line": 55
+        },
+        {
+          "name": "_prepare",
+          "line": 61
+        },
+        {
+          "name": "sections",
+          "line": 99
+        },
+        {
+          "name": "packet",
+          "line": 127
+        },
+        {
+          "name": "add",
+          "line": 22
+        },
+        {
+          "name": "point",
+          "line": 67
+        },
+        {
+          "name": "pixel",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "path": "src/ais_single_task.py",
+      "bytes": 18457,
+      "sha256": "056d82195f3ea520d06a8cd1d65833079f6246be252fa6b328bead69341efcb4",
+      "functions": [
+        {
+          "name": "apply_reference_profile",
+          "line": 23
+        },
+        {
+          "name": "select_window",
+          "line": 41
+        },
+        {
+          "name": "export_window",
+          "line": 105
+        },
+        {
+          "name": "load_environment",
+          "line": 133
+        },
+        {
+          "name": "validate_request",
+          "line": 155
+        },
+        {
+          "name": "run_task",
+          "line": 160
+        },
+        {
+          "name": "wind_at",
+          "line": 122
+        },
+        {
+          "name": "edge_objective_cost",
+          "line": 125
+        },
+        {
+          "name": "plan_corridor",
+          "line": 128
+        }
+      ]
+    },
+    {
+      "path": "src/ais_replay.py",
+      "bytes": 6534,
+      "sha256": "e9637474c6990535828fbf77e165e51aaf12c66ffb5f03144dbeb183a7857466",
+      "functions": [
+        {
+          "name": "replace_json",
+          "line": 16
+        },
+        {
+          "name": "build_capture",
+          "line": 26
+        },
+        {
+          "name": "publish_capture",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "path": "scripts/bootstrap_project.py",
+      "bytes": 5295,
+      "sha256": "6e492b0f67d78b16ec2475c57457737c1aa829353962496a2e57685178e05a67",
+      "functions": [
+        {
+          "name": "sha",
+          "line": 15
+        },
+        {
+          "name": "restore",
+          "line": 23
+        },
+        {
+          "name": "_restore",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "path": "scripts/verify_project.py",
+      "bytes": 21323,
+      "sha256": "f494c88e8f794e030a76f171e4625e2bac0653f35d0b74a9e8ed635ef4831a43",
+      "functions": [
+        {
+          "name": "read",
+          "line": 38
+        },
+        {
+          "name": "sha",
+          "line": 42
+        },
+        {
+          "name": "require",
+          "line": 50
+        },
+        {
+          "name": "within",
+          "line": 55
+        },
+        {
+          "name": "locate",
+          "line": 61
+        },
+        {
+          "name": "verify",
+          "line": 70
+        },
+        {
+          "name": "main",
+          "line": 343
+        },
+        {
+          "name": "check",
+          "line": 87
+        },
+        {
+          "name": "published_identity",
+          "line": 102
+        },
+        {
+          "name": "necessary_files",
+          "line": 107
+        },
+        {
+          "name": "dependencies",
+          "line": 130
+        },
+        {
+          "name": "saved_catalog",
+          "line": 144
+        },
+        {
+          "name": "demo_results",
+          "line": 170
+        },
+        {
+          "name": "raw_capture",
+          "line": 185
+        },
+        {
+          "name": "selections",
+          "line": 213
+        },
+        {
+          "name": "official_buildings",
+          "line": 232
+        },
+        {
+          "name": "official_sst",
+          "line": 254
+        },
+        {
+          "name": "independent_recomputed_result",
+          "line": 271
+        }
+      ]
+    },
+    {
+      "path": "run_ais_single_task.py",
+      "bytes": 2139,
+      "sha256": "64f597f2164fe69469832bf48d899f56c81ebf504e9623af37a86cb657cd63d2",
+      "functions": [
+        {
+          "name": "main",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "start_full_demo.py",
+      "bytes": 8919,
+      "sha256": "c9e24197d73397680a96c06fe0f9293cdf0dfeaa115615f22e03c8505b6ffe05",
+      "functions": [
+        {
+          "name": "focus",
+          "line": 24
+        },
+        {
+          "name": "check_environment",
+          "line": 65
+        },
+        {
+          "name": "main",
+          "line": 96
+        },
+        {
+          "name": "visit",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "path": "src/release_checks.py",
+      "bytes": 8872,
+      "sha256": "f5fbbb8f03986a8d2d9483622b5e1e2135d188e49e00180ff7298eaeaecc66b5",
+      "functions": [
+        {
+          "name": "sha",
+          "line": 9
+        },
+        {
+          "name": "release_identity",
+          "line": 17
+        },
+        {
+          "name": "verify_release",
+          "line": 26
+        },
+        {
+          "name": "_equal",
+          "line": 49
+        },
+        {
+          "name": "workspace_geometry",
+          "line": 68
+        },
+        {
+          "name": "verify_workspace",
+          "line": 125
+        },
+        {
+          "name": "frozen",
+          "line": 83
+        },
+        {
+          "name": "point",
+          "line": 143
+        }
+      ]
+    },
+    {
+      "path": "anylogic/NativeWorkbench.java",
+      "bytes": 30635,
+      "sha256": "0ee715d955643f7f0dbc71511cd1a277e9c451c33c9f0609d3b1bbfd515b1fd6"
+    },
+    {
+      "path": "anylogic/visual_sources/NativeWorkbench.java",
+      "bytes": 30741,
+      "sha256": "3010ff38944e7f0a65e3fac94b917bd9035bf9e4a7365ae8c4b9bc5902f3a66f"
+    },
+    {
+      "path": "anylogic/native-visual-demo.jar",
+      "bytes": 70196,
+      "sha256": "c73177125642da5ef395a03a76904b98b8f333a60cd4ca66a3022f50119e865e"
+    },
+    {
+      "path": "tests/test_catalog_lifecycle.py",
+      "bytes": 11580,
+      "sha256": "0300c714a4e57691365dc016da208c4d7195440772f92fac3d6b58f5e2ea4fef",
+      "functions": [
+        {
+          "name": "read",
+          "line": 22
+        },
+        {
+          "name": "sha",
+          "line": 23
+        },
+        {
+          "name": "setUp",
+          "line": 27
+        },
+        {
+          "name": "paths",
+          "line": 49
+        },
+        {
+          "name": "assert_synced",
+          "line": 53
+        },
+        {
+          "name": "test_repeated_publication_keeps_catalog_and_provenance_current",
+          "line": 61
+        },
+        {
+          "name": "test_noop_sync_does_not_rewrite_files",
+          "line": 70
+        },
+        {
+          "name": "test_external_valid_latest_is_reconciled_without_reverting_it",
+          "line": 75
+        },
+        {
+          "name": "test_invalid_success_source_projection_or_request_cannot_replace_default",
+          "line": 82
+        },
+        {
+          "name": "test_unknown_source_error_cannot_become_default",
+          "line": 93
+        },
+        {
+          "name": "test_source_verified_failure_without_planned_only_fields_is_displayable",
+          "line": 100
+        },
+        {
+          "name": "test_bad_display_geometry_is_not_silently_repaired",
+          "line": 110
+        },
+        {
+          "name": "test_frozen_catalog_tamper_is_not_silently_repaired",
+          "line": 117
+        },
+        {
+          "name": "test_interrupted_workspace_write_recovers_from_valid_published_result",
+          "line": 122
+        },
+        {
+          "name": "test_interrupted_provenance_write_recovers",
+          "line": 132
+        },
+        {
+          "name": "test_loading_current_repairs_old_catalog_and_returns_new_result",
+          "line": 141
+        },
+        {
+          "name": "test_busy_catalog_lock_has_a_bounded_failure",
+          "line": 147
+        },
+        {
+          "name": "test_two_publishing_processes_leave_one_consistent_snapshot",
+          "line": 154
+        },
+        {
+          "name": "test_bad_cli_request_does_not_overwrite_latest",
+          "line": 167
+        },
+        {
+          "name": "test_atomic_write_failure_leaves_no_temporary_garbage",
+          "line": 176
+        },
+        {
+          "name": "test_publication_failure_does_not_relabel_an_already_published_calculation",
+          "line": 182
+        },
+        {
+          "name": "fail",
+          "line": 124
+        },
+        {
+          "name": "fail",
+          "line": 134
+        }
+      ]
+    }
+  ]
+}
