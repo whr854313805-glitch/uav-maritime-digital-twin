@@ -88,6 +88,9 @@ def restore(root=ROOT, recover_latest=False):
 
 
 if __name__ == '__main__':
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, 'reconfigure'):
+            stream.reconfigure(encoding='utf-8', errors='backslashreplace')
     parser = argparse.ArgumentParser()
     parser.add_argument('--project', type=Path, default=ROOT)
     parser.add_argument('--recover-latest', action='store_true')

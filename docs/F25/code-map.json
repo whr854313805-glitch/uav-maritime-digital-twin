@@ -346,8 +346,8 @@
     },
     {
       "path": "scripts/bootstrap_project.py",
-      "bytes": 5188,
-      "sha256": "db9eead38aa4eaae3e8f7ea0509f4abe1eefe83b41cd40c329523a7478740b61",
+      "bytes": 5351,
+      "sha256": "e45a493bf876d559f4d3a43a13e0e82e39ac3565d0c31bcd901a8e39b8847fba",
       "functions": [
         {
           "name": "sha",
@@ -366,8 +366,8 @@
     },
     {
       "path": "scripts/verify_project.py",
-      "bytes": 21107,
-      "sha256": "c12540401425e5e19cb2ad15dd318972e60e8bf78ff3474300d773cdfc9b6918",
+      "bytes": 21410,
+      "sha256": "e7742c918c810d661f08ecd908840c42046e46f5c9a32bbadfbac3a8391d075e",
       "functions": [
         {
           "name": "read",
@@ -480,8 +480,8 @@
     },
     {
       "path": "tests/test_security_regressions.py",
-      "bytes": 19100,
-      "sha256": "7349f6509eefd8d70fc5d708a34761c527b2c2c3c6609f9ad360e7be7f50c382",
+      "bytes": 20108,
+      "sha256": "c629fe1410c4201e2e3c81eec744525ec337e31b8a0bd763a979e3a0603ef2d3",
       "functions": [
         {
           "name": "read",
@@ -568,76 +568,80 @@
           "line": 119
         },
         {
-          "name": "test_process_query_is_bounded",
+          "name": "test_success_report_survives_english_console_and_unicode_path",
           "line": 128
         },
         {
+          "name": "test_process_query_is_bounded",
+          "line": 140
+        },
+        {
           "name": "test_wrong_pid_not_taken_over",
-          "line": 132
+          "line": 144
         },
         {
           "name": "test_running_release_mismatch_not_reused",
-          "line": 137
-        },
-        {
-          "name": "test_wrong_project_session_not_accepted",
-          "line": 145
-        },
-        {
-          "name": "test_pid_reuse_cycle_is_not_followed",
           "line": 149
         },
         {
-          "name": "test_client_early_exit_is_reaped",
-          "line": 155
+          "name": "test_wrong_project_session_not_accepted",
+          "line": 157
         },
         {
-          "name": "test_cleanup_preserves_edited_model_and_active_workspace",
+          "name": "test_pid_reuse_cycle_is_not_followed",
           "line": 161
         },
         {
-          "name": "test_cleanup_finished_cache_keeps_diagnostic_log",
+          "name": "test_client_early_exit_is_reaped",
+          "line": 167
+        },
+        {
+          "name": "test_cleanup_preserves_edited_model_and_active_workspace",
           "line": 173
         },
         {
+          "name": "test_cleanup_finished_cache_keeps_diagnostic_log",
+          "line": 185
+        },
+        {
           "name": "test_bad_settings_path_type",
-          "line": 182
+          "line": 194
         },
         {
           "name": "startup_context",
-          "line": 187
+          "line": 199
         },
         {
           "name": "test_spawn_failure_records_failed_state",
-          "line": 203
+          "line": 215
         },
         {
           "name": "test_pending_startup_does_not_spawn_duplicate",
-          "line": 211
+          "line": 223
         },
         {
           "name": "alive",
-          "line": 224
+          "line": 236
         },
         {
           "name": "run_tree",
-          "line": 233
+          "line": 245
         },
         {
           "name": "test_forcibly_closed_owner_reaps_job_tree",
-          "line": 254
+          "line": 266
         },
         {
           "name": "test_job_timeout_reaps_descendants_only",
-          "line": 269
+          "line": 281
         },
         {
           "name": "test_normal_parent_exit_reaps_orphan",
-          "line": 270
+          "line": 282
         },
         {
           "name": "test_killed_supervisor_reaps_descendants",
-          "line": 271
+          "line": 283
         }
       ]
     },

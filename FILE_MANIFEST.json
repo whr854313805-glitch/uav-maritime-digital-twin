@@ -143,8 +143,8 @@
     },
     {
       "path": "docs/F25/code-map.json",
-      "bytes": 14982,
-      "sha256": "9c64066a4d8ed9d57dfe0de4fbb2f04a6c04f0adabfce02fe5b7ff04ea78c4ef"
+      "bytes": 15108,
+      "sha256": "2b70d7cf82bac9bafcee52e61fd9d2b9e67db5b24fb66750ad7ffbf3ace2d845"
     },
     {
       "path": "docs/F25/lifecycle.json",
@@ -203,8 +203,8 @@
     },
     {
       "path": "docs/F25/修复与验收.md",
-      "bytes": 8982,
-      "sha256": "86fb764f29dc0b43368500032d53e8644ee043a9e155fa6ed8248081d859d466"
+      "bytes": 9377,
+      "sha256": "8ba62c8678f5fa7a715811a178eee300df3ba7d27f8b46678943928667d7e5a0"
     },
     {
       "path": "docs/F25/失败后恢复.png",
@@ -473,8 +473,8 @@
     },
     {
       "path": "scripts/bootstrap_project.py",
-      "bytes": 5188,
-      "sha256": "db9eead38aa4eaae3e8f7ea0509f4abe1eefe83b41cd40c329523a7478740b61"
+      "bytes": 5351,
+      "sha256": "e45a493bf876d559f4d3a43a13e0e82e39ac3565d0c31bcd901a8e39b8847fba"
     },
     {
       "path": "scripts/release/build_python_runtime.py",
@@ -498,8 +498,8 @@
     },
     {
       "path": "scripts/verify_project.py",
-      "bytes": 21107,
-      "sha256": "c12540401425e5e19cb2ad15dd318972e60e8bf78ff3474300d773cdfc9b6918"
+      "bytes": 21410,
+      "sha256": "e7742c918c810d661f08ecd908840c42046e46f5c9a32bbadfbac3a8391d075e"
     },
     {
       "path": "select_research_points.py",
@@ -608,8 +608,8 @@
     },
     {
       "path": "tests/test_security_regressions.py",
-      "bytes": 19100,
-      "sha256": "7349f6509eefd8d70fc5d708a34761c527b2c2c3c6609f9ad360e7be7f50c382"
+      "bytes": 20108,
+      "sha256": "c629fe1410c4201e2e3c81eec744525ec337e31b8a0bd763a979e3a0603ef2d3"
     },
     {
       "path": "verify_ais_encounters.py",
@@ -637,6 +637,6 @@
       "sha256": "a72c38bbe27f5b66177619e9763e9856ed1e535263c7c152a76bdf330b5bb698"
     }
   ],
-  "bytes": 158907935,
+  "bytes": 158909930,
   "note": "Reviewed release identity, not a publisher signature. Runtime data/results remain byte-identical. Manifest excludes itself."
 }

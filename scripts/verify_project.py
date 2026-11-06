@@ -343,6 +343,11 @@ def verify(project, recompute):
 
 
 def main():
+    # A successful check must not become a failure when an English Windows
+    # redirected console cannot encode the Unicode project path.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, 'reconfigure'):
+            stream.reconfigure(encoding='utf-8', errors='backslashreplace')
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--project', type=Path, help='Project root; otherwise locate relative to this script.')
     parser.add_argument('--recompute', action='append', nargs='+', choices=['M2', 'encounter_M1_opposing'],

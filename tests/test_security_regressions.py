@@ -125,6 +125,18 @@ class LatestRecovery(unittest.TestCase):
 
 
 class ProcessBoundaries(unittest.TestCase):
+    def test_success_report_survives_english_console_and_unicode_path(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)/'中文验收';root.mkdir()
+            code=('import importlib.util,sys;sys.stdout.reconfigure(encoding="cp1252",errors="strict");'
+                's=importlib.util.spec_from_file_location("verify_cli",'+repr(str(ROOT/'scripts/verify_project.py'))+');'
+                'm=importlib.util.module_from_spec(s);s.loader.exec_module(m);'
+                'm.verify=lambda project,recompute:{"passed":True};'
+                'sys.argv=["verify_project.py","--project",'+repr(str(root))+'];raise SystemExit(m.main())')
+            result=subprocess.run([sys.executable,'-B','-c',code],capture_output=True,timeout=10)
+            self.assertEqual(result.returncode,0,result.stderr.decode('utf-8',errors='replace'))
+            self.assertIn('中文验收',result.stdout.decode('utf-8'))
+            self.assertTrue(read(root/'.local/verification.json')['passed'])
     def test_process_query_is_bounded(self):
         import project_processes as proc
         with patch.object(proc.subprocess,'run',side_effect=subprocess.TimeoutExpired('powershell',8)):
