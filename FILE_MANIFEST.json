@@ -1,5 +1,5 @@
 {
-  "version": "F28-catalog-lifecycle-20261106",
+  "version": "F26-result-semantics-frozen-display-20261106",
   "files": [
     {
       "path": ".gitattributes",
@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 30973,
-      "sha256": "84f57f5788fb6237d40554828d9c930e77ac6035efb4ae30b1e3f1c349383e94"
+      "bytes": 31694,
+      "sha256": "a2bc06997ea2f3d7e79a7395b730636f60b95dfcc89ac001efe553ea61c7b5da"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -38,8 +38,8 @@
     },
     {
       "path": "anylogic/AIS_Visual_Demo.alp",
-      "bytes": 11552,
-      "sha256": "c9a587f4fc25ca7b0225eb97ae8c17518dce7c73b67bec290bfd1eda7ab57b2e"
+      "bytes": 11554,
+      "sha256": "462a599191f563e531a65ac40a685eb478d24e06f1f10ff9a1a76d2644ae7c1b"
     },
     {
       "path": "anylogic/LoopbackAgent.java",
@@ -48,8 +48,8 @@
     },
     {
       "path": "anylogic/NativeDemoView.java",
-      "bytes": 37982,
-      "sha256": "ef041eb8f9efbbd81b32747c7c884ff380920b4f379db8cfe59ab6e8ce5af074"
+      "bytes": 38874,
+      "sha256": "4b170bf5844b98851b655b47c643544cd7e8199bd802a216edd85d630fbab046"
     },
     {
       "path": "anylogic/NativeScenery.java",
@@ -58,8 +58,8 @@
     },
     {
       "path": "anylogic/NativeWorkbench.java",
-      "bytes": 30635,
-      "sha256": "0ee715d955643f7f0dbc71511cd1a277e9c451c33c9f0609d3b1bbfd515b1fd6"
+      "bytes": 30745,
+      "sha256": "59a6936ab1224963052ae6509e5a58ad7c08f62274bd5b11fc68d19635205c27"
     },
     {
       "path": "anylogic/OwnedJobs.java",
@@ -78,8 +78,8 @@
     },
     {
       "path": "anylogic/ctrl_wheel.js",
-      "bytes": 6089,
-      "sha256": "ab2ad6a0ee95ccccb18790953258caea0cb97b0f8a8a6bcb7972c47b294e215f"
+      "bytes": 6103,
+      "sha256": "968439685022b5d383eb7b200e20df7de0eae532136be44f785bafed43d7306c"
     },
     {
       "path": "anylogic/harbour_background.png",
@@ -93,8 +93,8 @@
     },
     {
       "path": "anylogic/native-visual-demo.jar",
-      "bytes": 70196,
-      "sha256": "c73177125642da5ef395a03a76904b98b8f333a60cd4ca66a3022f50119e865e"
+      "bytes": 70573,
+      "sha256": "b4ca74bf2484b7e5a5fb573625f265e2373940f27b9da435c37212cd90a0e6bf"
     },
     {
       "path": "anylogic/visual_demo/scenery.json",
@@ -108,8 +108,8 @@
     },
     {
       "path": "anylogic/visual_sources/NativeWorkbench.java",
-      "bytes": 30741,
-      "sha256": "3010ff38944e7f0a65e3fac94b917bd9035bf9e4a7365ae8c4b9bc5902f3a66f"
+      "bytes": 30851,
+      "sha256": "b646eabc1a68335498436267026bd42b5d1a1f74140e8e0403c91e4421792c7a"
     },
     {
       "path": "anylogic/workbench/provenance.json",
@@ -313,13 +313,18 @@
     },
     {
       "path": "docs/delivery/测试说明.md",
-      "bytes": 5289,
-      "sha256": "b7f2f3ba148730d8c4c1730392e7a08fa8e6831cef02b460276b26ccb6048e7a"
+      "bytes": 6327,
+      "sha256": "8b20e85669412ea79361f289ae632f37a0dace85aa82715b74a9a77b6adf5c08"
     },
     {
       "path": "docs/delivery/演示顺序.md",
-      "bytes": 3369,
-      "sha256": "4c92d581756558c358239aea97de38ae88ac71099870cb22176190640fd24301"
+      "bytes": 3924,
+      "sha256": "e79304239129accab9f1165a4d41ca0d0de1492218eed900e8c48f6201d6cffa"
+    },
+    {
+      "path": "docs/delivery/论文写作指导指南.md",
+      "bytes": 27110,
+      "sha256": "3485d0c2be6a0150b90f2326d2933ac0c864815354648e7755d50168fd2f0702"
     },
     {
       "path": "docs/delivery/设计说明.md",
@@ -485,6 +490,101 @@
       "path": "requirements-runtime.lock.txt",
       "bytes": 308,
       "sha256": "b1033116211f37e96e9bfc4a179739b86f019c0d12ef9799733b498b9814534a"
+    },
+    {
+      "path": "research/ais-2026-11/48小时航线验证图解.png",
+      "bytes": 232707,
+      "sha256": "c4879a2ccc87798d3664354f5225e61b8635746c20cdfe8521aaac4cd8bb1edb"
+    },
+    {
+      "path": "research/ais-2026-11/76次航线验证结果.xlsx",
+      "bytes": 24911,
+      "sha256": "a7918a93d8e2f809bd68088d1679fe52a801eaa4fbe30afb0b96157fb6040771"
+    },
+    {
+      "path": "research/ais-2026-11/M4-rejected-result.json",
+      "bytes": 274398,
+      "sha256": "9c29ead805702c2316e167f564b2844d06bf3ac998104e778594601a5fdd6eff"
+    },
+    {
+      "path": "research/ais-2026-11/README.md",
+      "bytes": 5009,
+      "sha256": "9c8a8e8429f39f98f232c9ac4da727d8d112ae1b882900495dc418cadc462c75"
+    },
+    {
+      "path": "research/ais-2026-11/ais-captures.zip",
+      "bytes": 2813806,
+      "sha256": "eaec6a9be785d0aecd92d4978e4490419b0330fdab0e24758c6cca448aabb6c1"
+    },
+    {
+      "path": "research/ais-2026-11/archive-manifest.json",
+      "bytes": 115212,
+      "sha256": "0c2e2ba6ceade42f8149a854397c51a219586b0f43dc2f05f34bd0d7de5b79fa"
+    },
+    {
+      "path": "research/ais-2026-11/journal.json",
+      "bytes": 126612,
+      "sha256": "e352411a9c5b16454acd8aee0b8cb495512d94ec1d9d62b6fcbe83bbf2b00f20"
+    },
+    {
+      "path": "research/ais-2026-11/method-sources.zip",
+      "bytes": 23899,
+      "sha256": "7e44325fbf8da7c28deae396c846cf1b4293185a3367e97293d1393c11a6b156"
+    },
+    {
+      "path": "research/ais-2026-11/run-records.zip",
+      "bytes": 23146759,
+      "sha256": "d52a3628c1e0fa71984987cca014a7cdc6483f907d6fc1b211d71469cd95c7a6"
+    },
+    {
+      "path": "research/ais-2026-11/study-inputs.json",
+      "bytes": 7529,
+      "sha256": "1fb5cbf8f2c27458982c14cbe5d8332d334636961dbe659b22f91ecf6687ae7c"
+    },
+    {
+      "path": "research/ais-2026-11/verify.py",
+      "bytes": 5096,
+      "sha256": "81b9c12b59ac58e26a511f06eb94fb388df2a8934adf728a0845c3a84817156d"
+    },
+    {
+      "path": "research/ais-2026-11/展示页英文改版前.png",
+      "bytes": 315064,
+      "sha256": "4f755582368ce9c1d7d07c61ba608853475fdb9367089d87dd91737fe521ddf5"
+    },
+    {
+      "path": "research/ais-2026-11/延长AIS观测状态.json",
+      "bytes": 524,
+      "sha256": "34de3b765b9c2629171041f919b988f2b20a0f9d1beb297c54723017a56995a1"
+    },
+    {
+      "path": "research/ais-2026-11/延长AIS观测验证结果.json",
+      "bytes": 221624,
+      "sha256": "0306ce40ba420c51da6274799fea6b25b42d4e606ba3c5e99f95a891945ae011"
+    },
+    {
+      "path": "research/ais-2026-11/维港四条巡航线路示意图.png",
+      "bytes": 322707,
+      "sha256": "b07fe0361e852f28262f043faf04bb35449bc229d908aa672f37de7bbd3252cf"
+    },
+    {
+      "path": "research/ais-2026-11/英文展示页.png",
+      "bytes": 560484,
+      "sha256": "c6bbb4864cb90077d76dda864936de8656977b8cd69901bd58d6f915fb98c808"
+    },
+    {
+      "path": "research/ais-2026-11/额外AIS样本初步验证.json",
+      "bytes": 5918,
+      "sha256": "60a90daa6fbb24dd728a9375f29a9808591ac6ec81d6d6da2813b5681440a3e1"
+    },
+    {
+      "path": "research/ais-2026-11/首窗完整性复核.json",
+      "bytes": 4583,
+      "sha256": "7bfe24bea3855526a0ea67bbbc44b62118ca853040fe884ad06c4278fcf27674"
+    },
+    {
+      "path": "research/ais-2026-11/验证说明.md",
+      "bytes": 3996,
+      "sha256": "fe0753886c9c6d3aec6f7a458270aef2718b141b3abcf78689cda54dec7b7b00"
     },
     {
       "path": "run_ais_single_task.py",
@@ -718,8 +818,8 @@
     },
     {
       "path": "start_full_demo.py",
-      "bytes": 8919,
-      "sha256": "c9e24197d73397680a96c06fe0f9293cdf0dfeaa115615f22e03c8505b6ffe05"
+      "bytes": 8930,
+      "sha256": "ec1edd1fae9a26f5996dfa22c55c35c5dd3cdbf5ddafa10f29345b83fdec632d"
     },
     {
       "path": "tests/test_catalog_lifecycle.py",
@@ -762,6 +862,6 @@
       "sha256": "a72c38bbe27f5b66177619e9763e9856ed1e535263c7c152a76bdf330b5bb698"
     }
   ],
-  "bytes": 159527882,
+  "bytes": 187769660,
   "note": "Reviewed release identity, not a publisher signature. Runtime data/results remain byte-identical. Manifest excludes itself."
 }

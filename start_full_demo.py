@@ -149,7 +149,7 @@ def main():
         set_phase(launch,'starting')
         try:
             with (workspace/'editor.log').open('ab') as output:
-                child=subprocess.Popen([str(Path(checked['anylogic_home'])/'AnyLogic.exe'),'-data',str(workspace),
+                child=subprocess.Popen([str(Path(checked['anylogic_home'])/'AnyLogic.exe'),'-nl','en','-data',str(workspace),
                                         '-nosplash','-r',str(model),'Simulation'],cwd=str(P),env=environment,stdout=output,stderr=subprocess.STDOUT)
             launch['editor_identity']=process_identity(child.pid)
             set_phase(launch,'starting')

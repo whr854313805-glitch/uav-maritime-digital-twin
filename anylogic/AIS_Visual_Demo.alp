@@ -270,7 +270,7 @@
         <PresentationProperties>
           <EnableZoomAndPanning>true</EnableZoomAndPanning>
           <ExecutionMode>realTimeScaled</ExecutionMode>
-          <Title>维港无人机 · 二维计算 / 三维演示</Title>
+          <Title>Victoria Harbour UAV | 2D Planning and 3D Replay</Title>
           <EnableDeveloperPanel>true</EnableDeveloperPanel>
           <ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
           <RealTimeScale>1.0</RealTimeScale>

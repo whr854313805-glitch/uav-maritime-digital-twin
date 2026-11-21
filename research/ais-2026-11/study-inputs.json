@@ -1,0 +1,167 @@
+{
+  "config.yaml": {
+    "source": "project",
+    "bytes": 4256,
+    "sha256": "1a61570296343e819097edb92f3b33ee0d28237f4708ae97608df5c0f843d167"
+  },
+  "config/parameter-sources.json": {
+    "source": "project",
+    "bytes": 13217,
+    "sha256": "4686ef11387b7f444b4a527a776d7f32cee8f16a977ffb7101f15766267df72b"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/buildings.json": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 109666821,
+    "sha256": "4cbca41e26d1fd00c11c80274f744ed27fbda29b89e519594619d151bcded97a"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_00000.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1842566,
+    "sha256": "cafa2eab831dff1344e0b946675378d25aac65d71f86c8c322e3236bffb6b98f"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_01500.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1834248,
+    "sha256": "dc32cf8aa282a6867b97d99a1611bb2b5262aeee4a5824e8b81ab641411627c7"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_03000.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1644556,
+    "sha256": "66c5e5148ed6a5da35d44c7a159543d615aa81ac1df3a61a9ec06d0b9ea82862"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_04500.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1954345,
+    "sha256": "4a50b64ac8a9982f113175a7d48adab8d88cfe9396633b5ec14c984277daa692"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_06000.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1634086,
+    "sha256": "2318d5ca20afc973d691b28060159e1ff5baed9b4a22a240e16f81397c3f1287"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_07500.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1641251,
+    "sha256": "1c213ed41d08f63930b7f09dbdbb8d39a6672fe894e40a1a1d3425e0a385467f"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_09000.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1633950,
+    "sha256": "5e3b2bcb25ded9117b55501d3a91bacc8b1ffdf8e97661766be16e2be8f6e3b3"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_10500.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1694151,
+    "sha256": "804fac7f230511bf4f3397263dcd0384a94ccece949b4d06a1a7c5211d43431c"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_12000.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1806556,
+    "sha256": "a0c2f30d9b957b0ec65e3285294376d54e52242ac066417c3a40fe8c304072ca"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_13500.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1672498,
+    "sha256": "9e2d2305ae10edf86d81de1cbc4d5cf07169f6f621635cf5657e03e008dc526e"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_15000.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1667856,
+    "sha256": "77e2b701b9d973a7b696e0573e98cb49f0a634cec2bc9b9871585d5d3f1cd26d"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_16500.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1730410,
+    "sha256": "5dcb3de0ca6da3efada5fc6bb6e06631de1d4e8ba6e6f275c28537f8cd2231a6"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_18000.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1773070,
+    "sha256": "beef9553faeea1e15b50d2242d7181b1fbfed78ff11c6ebc962868b2d2c611bc"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_19500.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1667309,
+    "sha256": "87a13ba3f8dabe0eaeb1ffc99aa2cee5f3f289949f60c6b581893966482e3a80"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_21000.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1993531,
+    "sha256": "b7dc93fdae6afe28983de6885a6f856128d0cb0a5f0ecab815ba031ea887ad4d"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_22500.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 2497156,
+    "sha256": "34d8143965673461de0477690bb04c4304f7db7329a47c68836eb7284b09da75"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_24000.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 2465326,
+    "sha256": "a014ab53ea63df18cf31c63d21f423b622f53f89e24e2be4dcc7689069dc7074"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_25500.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1975827,
+    "sha256": "c3ffc3f4d2439939de13a5596c68d3e14ddd615487ad952d24c7ede3cfc0ef0c"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_27000.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 2557464,
+    "sha256": "4dd516de19dac52ae2be5099602bf62f38a427e8368b0bd9dcd3aef7c89fb47e"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_28500.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 2924822,
+    "sha256": "8121a877de0f2c6dc6be2f06ec2b6c63f88e2db9aee2d789384ff8299f08cbad"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_30000.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 2114486,
+    "sha256": "2835f8bce524ba2cec128a3643573a6357ca545aee118c363a4a9c9d47fe2c75"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_31500.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1924124,
+    "sha256": "45389d952161b39731febe5173a8a3378fd4693d04ff7bc15526acf56eaa61ee"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_33000.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1643956,
+    "sha256": "8c5b16530693be29e12b929b6069bd1fe61dc7f90f79f66b047b54ef6eec6fd2"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_34500.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 1259563,
+    "sha256": "c2017bf22ade0ec04dd51a950e0d6a1d14550d8ece3a3341f18701185880a3ca"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/raw/buildings_missing.geojson": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 37818,
+    "sha256": "441aaa3f86de78e7e6ddbe68bc69201db350c65e8f616a115f9fcf8be53e4e12"
+  },
+  "data/official/snapshots/28991d3a0c66d1fa/source_manifest.json": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 31903,
+    "sha256": "f474a8df8f26c5d776f6c14949703aa057f01c5332a7aa0a5b772175aab4ee94"
+  },
+  "output/research_points/study/M1/selection.json": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 9237,
+    "sha256": "1e778e5c5410ca25915003dbdd1cf446a327ddeb4fecd4de43214ff75887f3ab"
+  },
+  "output/research_points/study/M2/selection.json": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 8614,
+    "sha256": "0992b045a9525909ab09b586652630bd86a059f57ead79fb21ca2a7756222485"
+  },
+  "output/research_points/study/M3/selection.json": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 10604,
+    "sha256": "a122c204b34772147cc721f4efbeb9972aaaf9199bee711be8be767a88ab8075"
+  },
+  "output/research_points/study/M4/selection.json": {
+    "source": "runtime/data/current-data.zip",
+    "bytes": 9284,
+    "sha256": "f5b08515d3fe63afa3aa54d00cda8a512f36e8d6cf498f96d4f6e83d3ce215ed"
+  }
+}

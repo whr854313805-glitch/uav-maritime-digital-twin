@@ -76,9 +76,9 @@
       }
       const rect = visibleCanvas.getBoundingClientRect();
       badge.style.display = '';
-      badge.style.left = Math.max(rect.left + 5, rect.right - 172) + 'px';
+      badge.style.left = Math.max(rect.left + 5, rect.right - 190) + 'px';
       badge.style.top = rect.top + 8 + 'px';
-      const label = `中键平移 · ${state.factor.toFixed(2)}×`;
+      const label = `Middle-drag to pan · ${state.factor.toFixed(2)}×`;
       if (badge.textContent !== label) badge.textContent = label;
     } else if (badge) badge.style.display = 'none';
     requestAnimationFrame(apply);
@@ -97,7 +97,7 @@
     }
     const button = event.target instanceof Element && event.target.closest('g.control[type="ControlButton"]');
     const label = button?.textContent?.trim() || '';
-    if (label === '重置相机' || label === '维港全景' || label === '全景 / 跟随特写' || /^M[1-4] /.test(label) || ['正常直飞','同向绕行案例','相向避让','起点拒绝案例','建筑避障','孤立观测点'].includes(label)) {
+    if (label === 'Reset Camera' || label === 'Harbour View' || label === 'Overview / Follow' || /^M[1-4] /.test(label) || ['Direct Flight','Same-Direction Detour','Opposing Traffic','Start Blocked','Building Avoidance','Single Observation'].includes(label)) {
       const view = active()?.windowCamera;
       if (view?.controls) { applying = true; translate(view, -1); applying = false; }
       state.pan = [0, 0, 0]; state.factor = 1;

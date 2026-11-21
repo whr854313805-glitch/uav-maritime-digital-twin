@@ -1,0 +1,155 @@
+{
+  "baseline_git_commit": "3dfca00b27fe780e40dde19a0f19574cb2542dde",
+  "baseline_release_sha256": "c6b0f3b12aa1994dcfd098d346f1656a4488a6d8666ff2487a4969ee2b9c6ff9",
+  "windows": [
+    {
+      "slot": "historical_15min",
+      "status": "candidate",
+      "fixed_departure_hkt": "2026-11-03T19:45:00+08:00",
+      "capture_id": "52960bb59b8542af8c1ea8f804fddc23",
+      "valid_positions": 257,
+      "vessels": 95,
+      "observation_span_s": 885.7559740543365,
+      "longest_single_valid_segment_s": 260.07049107551575
+    }
+  ],
+  "attempts": [
+    {
+      "route": "M1",
+      "departure_hkt": "2026-11-03T19:45:00+08:00",
+      "run_id": "030913294ed749679f7b4d9d9538487f",
+      "capture_id": "52960bb59b8542af8c1ea8f804fddc23",
+      "raw_sha256": "163869e9d7a329dafa8b3f7ccb161968d80f88171b6851e850725483ee8cb19c",
+      "status": "planned",
+      "failure_reason": null,
+      "evaluation": "planned_with_observed_ship_check",
+      "solver_method": "validated_exact_straight_motion_no_search",
+      "solver_seed": null,
+      "solver_budget_s": null,
+      "compute_elapsed_s": 5.546999999999571,
+      "available_record_span_s": 608.2693040370941,
+      "overlap_vessels": 8,
+      "vessels_supported_throughout": 4,
+      "seconds_without_any_supported_ship": 0,
+      "independent_recheck_passed": true,
+      "minimum_observed_ship_distance_m": 163.6179006383516,
+      "direct_reference_ship_distance_m": 163.6179006383516,
+      "direct_reference_distance_m": 429.7410246269351,
+      "minimum_building_envelope_clearance_m": 213.43055005873123,
+      "distance_m": 429.7410246269351,
+      "flight_s": 28.649401641795674,
+      "maximum_speed_error_mps": 0.0,
+      "slot": "historical_15min"
+    },
+    {
+      "route": "M2",
+      "departure_hkt": "2026-11-03T19:45:00+08:00",
+      "run_id": "957b60d168af47c796a3630e33529561",
+      "capture_id": "52960bb59b8542af8c1ea8f804fddc23",
+      "raw_sha256": "163869e9d7a329dafa8b3f7ccb161968d80f88171b6851e850725483ee8cb19c",
+      "status": "planned",
+      "failure_reason": null,
+      "evaluation": "planned_with_observed_ship_check",
+      "solver_method": "validated_exact_straight_motion_no_search",
+      "solver_seed": null,
+      "solver_budget_s": null,
+      "compute_elapsed_s": 5.32799999999952,
+      "available_record_span_s": 608.2693040370941,
+      "overlap_vessels": 12,
+      "vessels_supported_throughout": 3,
+      "seconds_without_any_supported_ship": 0,
+      "independent_recheck_passed": true,
+      "minimum_observed_ship_distance_m": 610.6685843191791,
+      "direct_reference_ship_distance_m": 610.6685843191791,
+      "direct_reference_distance_m": 702.7209921209407,
+      "minimum_building_envelope_clearance_m": 228.20434811969568,
+      "distance_m": 702.7209921209407,
+      "flight_s": 46.848066141396046,
+      "maximum_speed_error_mps": 1.7763568394002505e-15,
+      "slot": "historical_15min"
+    },
+    {
+      "route": "M3",
+      "departure_hkt": "2026-11-03T19:45:00+08:00",
+      "run_id": "90a44e789f82439fa14329cfe8fb8344",
+      "capture_id": "52960bb59b8542af8c1ea8f804fddc23",
+      "raw_sha256": "163869e9d7a329dafa8b3f7ccb161968d80f88171b6851e850725483ee8cb19c",
+      "status": "planned",
+      "failure_reason": null,
+      "evaluation": "planned_with_observed_ship_check",
+      "solver_method": "validated_exact_straight_motion_no_search",
+      "solver_seed": null,
+      "solver_budget_s": null,
+      "compute_elapsed_s": 5.280999999999949,
+      "available_record_span_s": 608.2693040370941,
+      "overlap_vessels": 10,
+      "vessels_supported_throughout": 3,
+      "seconds_without_any_supported_ship": 0,
+      "independent_recheck_passed": true,
+      "minimum_observed_ship_distance_m": 1040.3837099334885,
+      "direct_reference_ship_distance_m": 1040.3837099334885,
+      "direct_reference_distance_m": 561.3992805374342,
+      "minimum_building_envelope_clearance_m": 258.12995458251754,
+      "distance_m": 561.3992805374342,
+      "flight_s": 37.42661870249561,
+      "maximum_speed_error_mps": 0.0,
+      "slot": "historical_15min"
+    },
+    {
+      "route": "M4",
+      "departure_hkt": "2026-11-03T19:45:00+08:00",
+      "run_id": "e568b3f59d8b45c28e1118d9defae451",
+      "capture_id": "52960bb59b8542af8c1ea8f804fddc23",
+      "raw_sha256": "163869e9d7a329dafa8b3f7ccb161968d80f88171b6851e850725483ee8cb19c",
+      "status": "rejected_planning",
+      "failure_reason": "ompl_no_exact_solution_within_budget",
+      "evaluation": "rejected_planning",
+      "solver_method": "official_SST_plus_explicit_terminal_leg",
+      "solver_seed": 42,
+      "solver_budget_s": 10.0,
+      "compute_elapsed_s": 14.811999999999898,
+      "available_record_span_s": 608.2693040370941,
+      "overlap_vessels": null,
+      "vessels_supported_throughout": null,
+      "seconds_without_any_supported_ship": null,
+      "slot": "historical_15min"
+    }
+  ],
+  "complete": true,
+  "scope": "Recorded vessel subset and original 2D parameters only. Timestamps were fixed before inspecting planning outcomes.",
+  "outcomes": {
+    "planned_with_observed_ship_check": 3,
+    "rejected_planning": 1
+  },
+  "by_route": {
+    "M1": {
+      "planned_with_observed_ship_check": 1
+    },
+    "M2": {
+      "planned_with_observed_ship_check": 1
+    },
+    "M3": {
+      "planned_with_observed_ship_check": 1
+    },
+    "M4": {
+      "rejected_planning": 1
+    }
+  },
+  "window_outcomes": {
+    "candidate": 1
+  },
+  "planned_route_window_pairs": 4,
+  "unevaluated_route_window_pairs": 0,
+  "by_day_and_period_hkt": {
+    "2026-11-03 18:00–23:59": {
+      "is_weekend": false,
+      "windows": {
+        "candidate": 1
+      },
+      "outcomes": {
+        "planned_with_observed_ship_check": 3,
+        "rejected_planning": 1
+      }
+    }
+  }
+}

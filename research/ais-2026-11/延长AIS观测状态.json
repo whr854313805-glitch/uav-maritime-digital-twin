@@ -1,0 +1,13 @@
+{
+  "state": "evaluation_finished",
+  "updated_hkt": "2026-11-20T22:23:07.661957+08:00",
+  "scheduled_start_hkt": "2026-11-18T17:12:00+08:00",
+  "scheduled_end_hkt": "2026-11-20T17:12:00+08:00",
+  "planned_hours": 48,
+  "completed_candidate_windows": 19,
+  "completed_other_windows": 29,
+  "candidate_windows_valid_position_messages": 14887,
+  "active_window": null,
+  "process_id": 41228,
+  "scope": "Collection status only. Candidate windows are audited separately for usable coverage and planning outcomes."
+}

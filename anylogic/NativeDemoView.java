@@ -32,47 +32,47 @@ public final class NativeDemoView {
  public static void attach(Agent a,String root,String py)throws Exception{try{NativeDemoView view=new NativeDemoView(new NativeWorkbench(a,root,py));view.startViewControls();}catch(Throwable e){try(java.io.PrintWriter w=new java.io.PrintWriter(Paths.get(root,"anylogic/visual_demo/startup_error.txt").toFile(),"UTF-8")){e.printStackTrace(w);}throw new RuntimeException(e);}}
  NativeDemoView(NativeWorkbench host)throws Exception{
   h=host;support=h.json(h.root.resolve("anylogic/visual_demo/support.json"));study=h.json(h.root.resolve("output/research_points/study/study.json"));
-  if(!NativeWorkbench.str(support,"raw_sha256").equals(NativeWorkbench.str(h.workspace.getAsJsonObject("source"),"raw_sha256")))throw new IllegalStateException("3D显示与AIS来源不一致");
+  if(!NativeWorkbench.str(support,"raw_sha256").equals(NativeWorkbench.str(h.workspace.getAsJsonObject("source"),"raw_sha256")))throw new IllegalStateException("The 3D scene and AIS record have different sources.");
   // Keep the original presentation out of the 3D scene; no original source is edited.
   scene=new ShapeGroup(h.owner,D3,true,0,0,0,0);h.p.add(scene);
   map2=new ShapeGroup(h.owner,ShapeDrawMode.SHAPE_DRAW_2D,true,0,0,0,0);h.p.add(map2);
   screen=new ShapeGroup(h.owner,ShapeDrawMode.SHAPE_DRAW_2D,true,0,0,0,0);h.p.add(screen);
   overlay=new ShapeGroup(h.owner,ShapeDrawMode.SHAPE_DRAW_2D,true,0,0,0,0);h.p.add(overlay);
   box(screen,0,0,1680,235,Color.WHITE);box(screen,1050,0,630,1060,Color.WHITE);box(screen,0,900,1680,160,Color.WHITE);
-  title=text(screen,30,18,"维港无人机 · 历史AIS避让演示",heading,NAVY);
-  text(screen,30,58,"官方OMPL SST规划；直线合格时直接飞；蓝线为固定AIS船舶轨迹。",body,NAVY);
-  button(screen,30,104,130,"演示播放/暂停",()->{if(!h.busy&&h.packet!=null&&h.packet.has("trajectory")&&!h.packet.get("trajectory").isJsonNull()){h.playing=!h.playing;}});
-  button(screen,175,104,120,"回到出发",()->{h.now=t0;h.playing=false;h.draw();sync();});
-  button(screen,310,104,160,"跳到最近船距",()->{if(Double.isFinite(closest)){h.now=closest;h.playing=false;h.draw();sync();}});
-  button(screen,485,104,100,"二维视图",()->set3D(false));button(screen,600,104,100,"三维视图",()->set3D(true));
-  button(screen,715,104,125,"重置相机",()->{boolean changed=harborView;harborView=false;if(changed)updateBuildings(true);camera();});
-  speedLabel=text(screen,855,82,"播放速度：1倍",body,NAVY);
+  title=text(screen,30,18,"Victoria Harbour UAV | Historical AIS Replay",heading,NAVY);
+  text(screen,30,58,"The UAV flies direct when clearance allows. OMPL SST plans a detour when needed.",body,NAVY);
+  button(screen,30,104,130,"Play / Pause",()->{if(!h.busy&&h.packet!=null&&h.packet.has("trajectory")&&!h.packet.get("trajectory").isJsonNull()){h.playing=!h.playing;}});
+  button(screen,175,104,120,"Go to Start",()->{h.now=t0;h.playing=false;h.draw();sync();});
+  button(screen,310,104,160,"Closest Vessel",()->{if(Double.isFinite(closest)){h.now=closest;h.playing=false;h.draw();sync();}});
+  button(screen,485,104,100,"2D View",()->set3D(false));button(screen,600,104,100,"3D View",()->set3D(true));
+  button(screen,715,104,125,"Reset Camera",()->{boolean changed=harborView;harborView=false;if(changed)updateBuildings(true);camera();});
+  speedLabel=text(screen,855,82,"Speed: 1×",body,NAVY);
   speedSlider=new ShapeSlider(h.owner,true,855,108,155,28,NAVY,false,1,10,ShapeControl.TYPE_INT){@Override public void action(){if(!setting){setValue(value,false);h.speed=Math.max(1,Math.min(10,Math.round(value)));h.draw();sync();}}};speedSlider.setStep(1,false);screen.add(speedSlider);
-  button(screen,30,154,155,"正常直飞",()->load("M2","固定任务"));
-  button(screen,195,154,155,"同向绕行案例",()->load("encounter_M1_same_direction","遇船案例"));
-  button(screen,360,154,155,"相向避让",()->load("encounter_M1_opposing","遇船案例"));
-  button(screen,525,154,155,"起点拒绝案例",()->load("encounter_M1_start_conflict","遇船案例"));
-  button(screen,690,154,155,"建筑避障",()->load("M4","固定任务"));
-  button(screen,855,154,155,"孤立观测点",()->load("encounter_M1_singleton","遇船案例"));
-  clock=text(screen,30,205,"正在读取历史记录…",body,NAVY);
-  button(screen,30,185,235,"M1 尖沙咀—中环",()->load("M1","固定任务"));
-  button(screen,280,185,235,"M2 北角—红磡",()->load("M2","固定任务"));
-  button(screen,530,185,235,"M3 西湾河—三家村",()->load("M3","固定任务"));
-  button(screen,780,185,235,"M4 尖沙咀/尖东—鲤鱼门",()->load("M4","固定任务"));
-  clock.setPos(30,218);text(screen,730,218,"中键平移 · Ctrl＋滚轮缩放",body,NAVY);
-  text(screen,1080,28,"当前线路与任务",heading,NAVY);
-  text(screen,1080,79,"紫色：无人机与已规划路线\n灰色：起终点之间的直线对照\n蓝色船：实测位置；橙色船：加工插值\n绿点：起点；红点：终点",body,NAVY);
+  button(screen,30,154,134,"Direct Flight",()->load("M2","固定任务"));
+  button(screen,175,154,175,"Same-Direction Detour",()->load("encounter_M1_same_direction","遇船案例"));
+  button(screen,360,154,155,"Opposing Traffic",()->load("encounter_M1_opposing","遇船案例"));
+  button(screen,525,154,155,"Start Blocked",()->load("encounter_M1_start_conflict","遇船案例"));
+  button(screen,690,154,155,"Building Avoidance",()->load("M4","固定任务"));
+  button(screen,855,154,155,"Single Observation",()->load("encounter_M1_singleton","遇船案例"));
+  clock=text(screen,30,205,"Loading AIS records…",body,NAVY);
+  button(screen,30,185,218,"M1 Tsim Sha Tsui → Central",()->load("M1","固定任务"));
+  button(screen,258,185,228,"M2 North Point → Hung Hom",()->load("M2","固定任务"));
+  button(screen,496,185,245,"M3 Sai Wan Ho → Sam Ka Tsuen",()->load("M3","固定任务"));
+  button(screen,751,185,270,"M4 East Tsim Sha Tsui → Lei Yue Mun",()->load("M4","固定任务"));
+  clock.setPos(30,218);text(screen,685,218,"Middle-drag to pan · Ctrl + wheel to zoom",body,NAVY);
+  text(screen,1080,28,"Route and mission",heading,NAVY);
+  text(screen,1080,79,"Purple: UAV and planned route\nGrey: direct route between cruise endpoints\nVessels: blue at AIS reports, orange between reports\nGreen: cruise start   Red: cruise end",body,NAVY);
   stats=text(screen,1080,245,"",body,NAVY);story=text(screen,1080,440,"",body,NAVY);
-  legend=text(screen,1080,755,"浅灰细线：路线投影；紫点：当前落点\n蓝色细线：参考船固定AIS片段，不随无人机改道\n红点：假如直飞的对照，非另一架飞机\n青线/90米圈：水平距离，非空间斜距\n金线：原建筑包络距离，仍按二维检查\n楼高来自官方快照；未知高度40米为示意\n岸线为官方概化背景；不参与路径计算\n历史回放非预测；90米是模型中心距",body,NAVY);
+  legend=text(screen,1080,755,"Light grey: route projected onto the water\nPurple dot: UAV projected onto the water\nBlue line: recorded track of the reference vessel\nRed dot: UAV position on the direct-route comparison\nCyan line and 90 m ring: horizontal centre distance\nGold line: horizontal clearance to a building envelope\nBuilding heights: official data or a 40 m placeholder\nGeneralised shoreline: display only",body,NAVY);
   detail=text(screen,1080,680,"",body,NAVY);
-  button(screen,30,873,160,"全景 / 跟随特写",()->{harborView=false;follow=!follow;camera();updateBuildings(true);refreshPending=true;});
-  button(screen,205,873,160,"直飞对照 开/关",()->{compare=!compare;sync();});
-  button(screen,380,873,160,"跳到最近建筑",()->{JsonObject checks=support.getAsJsonObject("building_checks");if(checks.has(h.runId)){h.now=NativeWorkbench.num(checks.getAsJsonObject(h.runId),"closest_capture_s");h.playing=false;h.draw();sync();}});
-  button(screen,555,873,160,"跳到直飞冲突",()->{JsonObject checks=support.getAsJsonObject("ship_comparison_checks");if(checks.has(h.runId)){JsonObject c=checks.getAsJsonObject(h.runId);if(!c.get("direct_closest_capture_s").isJsonNull()){h.now=NativeWorkbench.num(c,"direct_closest_capture_s");h.playing=false;h.draw();sync();}}});button(screen,730,873,130,"维港全景",()->{harborView=true;follow=false;camera();updateBuildings(true);refreshPending=true;});text(screen,870,882,"拖动旋转",body,NAVY);
-  text(screen,30,962,"任务时间轴（只覆盖本次飞行）：可拖动，也可跳到最近船距。",body,NAVY);
-  text(screen,30,1005,"历史回放，不是未来船位预测。所有船距、路径和验收均按二维水平坐标计算。",body,NAVY);
+  button(screen,30,873,160,"Overview / Follow",()->{harborView=false;follow=!follow;camera();updateBuildings(true);refreshPending=true;});
+  button(screen,205,873,160,"Compare Direct Flight",()->{compare=!compare;sync();});
+  button(screen,380,873,160,"Closest Building",()->{JsonObject checks=support.getAsJsonObject("building_checks");if(checks.has(h.runId)){h.now=NativeWorkbench.num(checks.getAsJsonObject(h.runId),"closest_capture_s");h.playing=false;h.draw();sync();}});
+  button(screen,555,873,160,"Direct Flight Conflict",()->{JsonObject checks=support.getAsJsonObject("ship_comparison_checks");if(checks.has(h.runId)){JsonObject c=checks.getAsJsonObject(h.runId);if(!c.get("direct_closest_capture_s").isJsonNull()){h.now=NativeWorkbench.num(c,"direct_closest_capture_s");h.playing=false;h.draw();sync();}}});button(screen,730,873,130,"Harbour View",()->{harborView=true;follow=false;camera();updateBuildings(true);refreshPending=true;});text(screen,870,882,"Drag to rotate",body,NAVY);
+  text(screen,30,962,"Drag the timeline to review this flight. Closest Vessel jumps to the minimum separation.",body,NAVY);
+  text(screen,30,1005,"Replay uses historical AIS. Route planning and clearance checks use horizontal distances.",body,NAVY);
   timeline=new ShapeSlider(h.owner,true,30,915,990,30,NAVY,false,0,1,ShapeControl.TYPE_DOUBLE){@Override public void action(){if(!setting){setValue(value,false);h.now=value;h.playing=false;h.draw();sync();}}};screen.add(timeline);
-  button(overlay,1450,980,180,"演示 / 工作台",()->setDemo(!demo));
+  button(overlay,1450,980,180,"Demo / Workbench",()->setDemo(!demo));
   // A real native WebGL 3D window, not a projected 2D image.
   java.lang.reflect.Field windowField=h.owner.getClass().getDeclaredField("demoWindow3D"),cameraField=h.owner.getClass().getDeclaredField("demoCamera3D");
   windowField.setAccessible(true);cameraField.setAccessible(true);
@@ -97,13 +97,13 @@ public final class NativeDemoView {
   end3=new ShapeOval(D3,true,0,0,.5,0,new Color(213,68,83),new Color(213,68,83),8,8,2,1,LineStyle.LINE_STYLE_SOLID);scene.add(end3);
   start2=new ShapeOval(true,0,0,0,new Color(18,149,108),new Color(18,149,108),6,6,1,LineStyle.LINE_STYLE_SOLID);map2.add(start2);
   end2=new ShapeOval(true,0,0,0,new Color(213,68,83),new Color(213,68,83),6,6,1,LineStyle.LINE_STYLE_SOLID);map2.add(end2);
-  startLabel=text(map2,0,0,"起点",body,NAVY);endLabel=text(map2,0,0,"终点",body,NAVY);
+  startLabel=text(map2,0,0,"Cruise start",body,NAVY);endLabel=text(map2,0,0,"Cruise end",body,NAVY);
   for(JsonElement e:h.vessels)ships.add(new Ship(e.getAsJsonObject()));
   h.speed=1;h.playing=false;applyVisibility();pulse();
  }
  void startViewControls(){try{Path py=Paths.get(h.python),pyw=py.resolveSibling("pythonw.exe");new ProcessBuilder((Files.exists(pyw)?pyw:py).toString(),h.root.resolve("start_full_demo.py").toString(),"--controls-only",Long.toString(ProcessHandle.current().pid())).redirectErrorStream(true).redirectOutput(h.root.resolve("anylogic/visual_demo/controls_setup.log").toFile()).start();}catch(Exception e){error="View controls startup: "+e;}}
- String currentRouteId(){for(JsonElement e:study.getAsJsonArray("tasks")){String id=NativeWorkbench.str(e.getAsJsonObject(),"id");if(h.key.equals(id)||h.key.contains("_"+id+"_")||h.key.endsWith("_"+id))return id;}if(result!=null&&result.has("request")){JsonObject q=result.getAsJsonObject("request");for(JsonElement e:study.getAsJsonArray("tasks")){JsonObject task=e.getAsJsonObject();JsonArray gates=task.getAsJsonArray("gates");if(q.get("start").equals(gates.get(0).getAsJsonObject().get("point"))&&q.get("end").equals(gates.get(1).getAsJsonObject().get("point")))return NativeWorkbench.str(task,"id");}}return "未匹配固定线路";}
- String routeDescription(){String id=currentRouteId();switch(id){case "M1":return "M1 尖沙咀—中环";case "M2":return "M2 北角—红磡";case "M3":return "M3 西湾河—三家村";case "M4":return "M4 尖沙咀/尖东—鲤鱼门";default:return id;}}
+ String currentRouteId(){for(JsonElement e:study.getAsJsonArray("tasks")){String id=NativeWorkbench.str(e.getAsJsonObject(),"id");if(h.key.equals(id)||h.key.contains("_"+id+"_")||h.key.endsWith("_"+id))return id;}if(result!=null&&result.has("request")){JsonObject q=result.getAsJsonObject("request");for(JsonElement e:study.getAsJsonArray("tasks")){JsonObject task=e.getAsJsonObject();JsonArray gates=task.getAsJsonArray("gates");if(q.get("start").equals(gates.get(0).getAsJsonObject().get("point"))&&q.get("end").equals(gates.get(1).getAsJsonObject().get("point")))return NativeWorkbench.str(task,"id");}}return "Custom route";}
+ String routeDescription(){String id=currentRouteId();switch(id){case "M1":return "M1 Tsim Sha Tsui → Central";case "M2":return "M2 North Point → Hung Hom";case "M3":return "M3 Sai Wan Ho → Sam Ka Tsuen";case "M4":return "M4 East Tsim Sha Tsui → Lei Yue Mun";default:return id;}}
  ShapeGroup[] hostGroups(){return new ShapeGroup[]{h.background,h.observations,h.interpolations,h.sites,h.routes,h.moving,h.aircraft,h.ui};}
  void box(ShapeGroup g,double x,double y,double w,double height,Color c){g.add(new ShapeRectangle(true,x,y,0,c,c,w,height,0,LineStyle.LINE_STYLE_SOLID));}
  ShapeText text(ShapeGroup g,double x,double y,String s,Font f,Color c){ShapeText t=new ShapeText(true,x,y,0,c,s,f,TextAlignment.ALIGNMENT_LEFT);g.add(t);return t;}
@@ -130,14 +130,46 @@ public final class NativeDemoView {
  void arrow(ShapePolyLine shape,double[] p,double[] v,double length,double z,boolean is3){double n=Math.hypot(v[0],v[1]);if(n==0){shape.setVisible(false);return;}double x=v[0]/n,y=v[1]/n;double[][] offsets={{0,0},{x*length,y*length},{x*(length-9)-y*5,y*(length-9)+x*5},{x*length,y*length},{x*(length-9)+y*5,y*(length-9)-x*5}};JsonArray points=new JsonArray();for(double[] o:offsets){JsonArray q=new JsonArray();q.add(p[0]+o[0]);q.add(p[1]+o[1]);points.add(q);}points(shape,points,z,is3);}
  void load(String key,String category){if(h.busy)return;harborView=false;threeD=true;follow=key.equals("M4");h.speed=key.equals("M4")?10:1;focusWhenReady=true;h.category=category;h.categoryBox.setValue(category,false);h.taskBox.setItems(h.labels(),false);h.key=key;h.taskBox.setValue(NativeWorkbench.str(h.item(),"label"),false);h.updateDeparture();h.queue(false);}
  double focusTime(){JsonObject cases=support.getAsJsonObject("case_checks");if(cases.has(h.runId)){JsonObject c=cases.getAsJsonObject(h.runId);if(c.has("observation_time_s"))return c.get("observation_time_s").getAsDouble();}return t0;}
+ String caseLabel(){
+  switch(h.key){
+   case "M1": case "M2": case "M3": case "M4": return "Fixed task";
+   case "current": return "Current saved result";
+   case "encounter_M1_start_conflict": return "Blocked departure";
+   case "encounter_M1_opposing": return "Opposing traffic";
+   case "encounter_M1_same_direction": return "Same-direction traffic";
+   case "encounter_M1_singleton": return "Single AIS observation";
+  }
+  if(h.key.startsWith("detour_"))return "Direct-route conflict study";
+  if(h.key.startsWith("grid_"))return "Grid comparison ("+h.key.substring(5)+" m)";
+  return "Workbench task";
+ }
+ String outcomeText(){
+  if(h.busy||h.packet==null)return "Loading the selected result…";
+  if(h.phase.equals("not_tested"))return "No qualifying case was available for this task.";
+  String reason=NativeWorkbench.str(h.packet,"reason");
+  switch(reason){
+   case "start_ship_buffer": return "Departure blocked\nAn observed vessel was within 90 m of the start.";
+   case "ompl_no_exact_solution_within_budget": case "search_budget_exhausted":
+    return "Search budget reached\nThe planner did not find a valid route in time.";
+   case "no_qualified_600s_observed_window": case "no_recording_window_covering_minimum_task_time":
+    return "Insufficient AIS coverage for this flight.";
+   case "no_temporal_grid_path": return "The grid search did not find a route.";
+   default: return "No flight to replay.\n"+(reason.matches("[a-zA-Z0-9_]+")?reason.replace('_',' '):"See the result details in the workbench.");
+  }
+ }
  String explanation(String direct){
-  if(harborView)return "维港两岸 · 官方快照背景\n\nIFC 2 / IFC 1 / ICC / 中银大厦\n会展中心 / 尖沙咀钟楼\n\n楼高：官方顶高减基底高度。\n未知楼高40米为示意。\n岸线：地政总署概化快照。\n配色与屋顶装饰为表现样式。\n\n点‘重置相机’回到任务。";
-  JsonObject registry=support.getAsJsonObject("demo_results");String kind=registry.has(h.runId)?NativeWorkbench.str(registry.getAsJsonObject(h.runId),"kind"):"other";
-  if(kind.equals("straight"))return "正常直飞：没有必要绕路\n\n原M2路线只有起点和终点。\n沿直线通过已观测船舶检查；\n船距不冲突，就不增加绕行。\n\n点“回到出发”再播放。\n这不代表缺测船舶也已排除风险。";
-  if(kind.equals("building"))return "建筑避障：直线受静态障碍限制\n\n灰线直飞；紫线是本次M4规划结果。\n金线量到最近的建筑包络边界。\n使用完整35335条建筑包络计算。\n\n默认10倍，拖动速度条选1—10倍。\n点‘跳到最近建筑’看最近处。\n切换‘全景 / 跟随特写’观察。\n楼高仅示意，不靠升高越过建筑。";
-  if(kind.equals("singleton"))return "孤立观测：只检查真实存在的一刻\n\n切换时定位船477995429的观测时刻。\n蓝色为实测；前后未知，不补运动。\n可播放观察该孤立点消失；\n再点“孤立观测点”回到这一刻。\n\n与相向案例是同一次出发，\n不能算第二个独立遇船场景。";
-  if(kind.equals("other"))return "当前工作台计算结果\n\n此运行未绑定固定演示分类。\n直线对照最小船距："+direct+"\n\n只显示本次真实计算结果，\n不套用其他案例的解释。";
-  return (kind.equals("opposing")?"相向避让：参考船477995430\n原直线夹角约159°，并非严格正面对撞":"同向避让：直线飞行会离船太近")+"\n\n直飞全程最近："+direct+"；要求≥90米。\n紫线：官方SST＋实际飞行末段的结果。\n\n点‘跳到直飞冲突’看红点冲突；\n点‘跳到最近船距’检查绕行余量。\n\n船距按地面中心位置计算。\n这是历史回放，不是未来预测。";
+  if(harborView)return "Victoria Harbour landmarks\n\nIFC 1, IFC 2, ICC and Bank of China Tower\nHK Convention and Exhibition Centre and Clock Tower\n\nBuilding height uses roof and base elevations.\nUnknown heights are drawn at 40 m.\nThe shoreline comes from the Lands Department.\nSelect Reset Camera to return to the route.";
+  JsonObject registry=support.getAsJsonObject("demo_results");
+  String kind=registry.has(h.runId)?NativeWorkbench.str(registry.getAsJsonObject(h.runId),"kind"):"other";
+  switch(kind){
+   case "straight":return "Direct flight\n\nM2 connects its cruise endpoints with a straight line.\nThe route clears the vessels in the AIS record.\n\nSelect Go to Start, then Play / Pause to replay.";
+   case "building":return "Building avoidance\n\nA building restricts the direct route (grey).\nThe M4 plan (purple) clears its 2D envelope.\nThe check covers 35,335 building envelopes.\n\nSelect Closest Building to inspect the gold line.\nPlayback starts at 10× and adjusts from 1× to 10×.";
+   case "singleton":return "Single AIS observation\n\nVessel 477995429 appears at its report time.\nIts position before and after that instant is unknown.\nSelect Single Observation to return to the report.\n\nThis replay shares the Opposing Traffic departure.";
+   case "other":return "Workbench result\n\nMinimum vessel separation on the direct route:\n"+direct;
+   default:
+    String encounter=kind.equals("opposing")?"Opposing traffic | vessel 477995430\nThe reference tracks meet at about 159°.":"Same-direction traffic\nThe direct route passes too close to a vessel.";
+    return encounter+"\n\nDirect-route minimum: "+direct+"   |   Required: ≥90 m\nPurple: SST route with its final flight segment.\n\nSelect Direct Flight Conflict to inspect the direct route.\nSelect Closest Vessel to inspect the planned route.";
+  }
  }
  void setDemo(boolean on){demo=on;h.playing=false;h.speed=on?1:10;if(!on){h.speedBox.setValue("10倍",false);h.staticLayers();}applyVisibility();sync();}
  void set3D(boolean on){threeD=on;applyVisibility();sync();refreshPending=true;}
@@ -159,7 +191,7 @@ public final class NativeDemoView {
   setting=true;timeline.setRange(t0,Math.max(t0+.1,t1),false);setting=false;applyVisibility();refreshPending=true;
  }
  void sync(){try{
-  h.speed=Math.max(1,Math.min(10,Math.round(h.speed)));setting=true;speedSlider.setValue(h.speed,false);setting=false;label(speedLabel,"播放速度："+(int)h.speed+"倍");
+  h.speed=Math.max(1,Math.min(10,Math.round(h.speed)));setting=true;speedSlider.setValue(h.speed,false);setting=false;label(speedLabel,"Speed: "+(int)h.speed+"×");
   String identity=h.key+"/"+h.runId+"/"+h.phase;if(!identity.equals(lastIdentity)){lastIdentity=identity;changed();}
   if(!demo)return;applyVisibility();double now=h.now;double[] u=h.uavAt();boolean planned=h.packet!=null&&h.packet.has("trajectory")&&!h.packet.get("trajectory").isJsonNull();
   route3.setVisible(planned&&threeD);route2.setVisible(planned&&!threeD);straight3.setVisible(planned&&threeD);straight2.setVisible(planned&&!threeD);
@@ -175,16 +207,16 @@ public final class NativeDemoView {
   buildingClearance(u);boolean bd=boundary!=null&&(h.key.equals("M4")||follow);buildingLink3.setVisible(bd&&threeD);buildingLink2.setVisible(bd&&!threeD);buildingBox3.setVisible(bd&&threeD);buildingBox2.setVisible(bd&&!threeD);if(bd){pair(buildingLink3,u,boundary,1,true);pair(buildingLink2,u,boundary,0,false);JsonArray r=support.getAsJsonArray("planning_envelopes").get(nearestBuilding).getAsJsonArray();double x=r.get(0).getAsDouble(),y=r.get(1).getAsDouble(),w=r.get(2).getAsDouble(),hh=r.get(3).getAsDouble();JsonArray polygon=new JsonArray();for(double[] q:new double[][]{{x-w,y-hh},{x+w,y-hh},{x+w,y+hh},{x-w,y+hh},{x-w,y-hh}}){JsonArray p=new JsonArray();p.add(q[0]);p.add(q[1]);polygon.add(p);}points(buildingBox3,polygon,.5,true);points(buildingBox2,polygon,0,false);}
   shipDirection3.setVisible(false);shipDirection2.setVisible(false);referenceTrack3.setVisible(false);referenceTrack2.setVisible(false);String reference=h.key.equals("encounter_M1_opposing")?"477995430":h.key.equals("encounter_M1_same_direction")?"477995453":"";for(Ship ship:ships)if(reference.equals(NativeWorkbench.str(ship.vessel,"mmsi"))){double[] q=h.shipAt(ship.vessel,now),v=shipDirection(ship.vessel,now);if(q!=null&&v!=null&&h.inside(q)){shipDirection3.setVisible(threeD);shipDirection2.setVisible(!threeD);arrow(shipDirection3,q,v,45,2,true);arrow(shipDirection2,q,v,45,0,false);Color color=q[2]==1?h.blue:h.orange;shipDirection3.setLineColor(color);shipDirection2.setLineColor(color);for(JsonElement se:ship.vessel.getAsJsonArray("segments")){JsonArray seg=se.getAsJsonArray();for(int i=0;i+1<seg.size();i++){JsonObject a=seg.get(i).getAsJsonObject(),b=seg.get(i+1).getAsJsonObject();if(NativeWorkbench.num(a,"t")<=now&&now<=NativeWorkbench.num(b,"t")){pair(referenceTrack3,NativeWorkbench.xy(a.getAsJsonArray("xy")),NativeWorkbench.xy(b.getAsJsonArray("xy")),1,true);pair(referenceTrack2,NativeWorkbench.xy(a.getAsJsonArray("xy")),NativeWorkbench.xy(b.getAsJsonArray("xy")),0,false);referenceTrack3.setVisible(threeD);referenceTrack2.setVisible(!threeD);}}}}}
   boolean endpoints=h.packet!=null;start3.setVisible(endpoints&&threeD);end3.setVisible(endpoints&&threeD);start2.setVisible(endpoints&&!threeD);end2.setVisible(endpoints&&!threeD);startLabel.setVisible(endpoints&&!threeD);endLabel.setVisible(endpoints&&!threeD);if(endpoints){double[] a=NativeWorkbench.xy(h.packet.getAsJsonArray("start_xy")),b=NativeWorkbench.xy(h.packet.getAsJsonArray("end_xy"));start3.setPos(a[0]-cx,cy-a[1]);end3.setPos(b[0]-cx,cy-b[1]);start2.setPos(h.sx(a[0]),h.sy(a[1]));end2.setPos(h.sx(b[0]),h.sy(b[1]));startLabel.setPos(h.sx(a[0])+10,h.sy(a[1])+10);endLabel.setPos(h.sx(b[0])+10,h.sy(b[1])+10);}
-  String hk=Instant.ofEpochMilli((long)((h.origin+now)*1000)).atZone(ZoneId.of("Asia/Hong_Kong")).format(DateTimeFormatter.ofPattern("HH:mm:ss.SSS"));label(clock,"香港时间 "+hk+String.format(Locale.ROOT,"   |   任务 %.1f / %.1f 秒   |   %s",Math.max(0,now-t0),Math.max(0,t1-t0),(threeD?"三维展示":"二维展示")+" / "+(int)h.speed+"倍"));
-  if(h.phase.equals("error"))label(clock,"任务失败，已恢复操作；可重新读取或规划。");else if(h.busy||h.packet==null)label(clock,"正在读取任务结果，请稍候…");else if(!planned)label(clock,"香港时间 "+hk+"   |   未出发：没有可回放路线");
-  String min="不可计算",direct="未另行验算";if(result!=null&&result.has("ship_check")&&!result.get("ship_check").isJsonNull()){JsonObject sc=result.getAsJsonObject("ship_check");if(sc.has("minimum_distance_m")&&!sc.get("minimum_distance_m").isJsonNull())min=String.format(Locale.ROOT,"%.3f 米",NativeWorkbench.num(sc,"minimum_distance_m"));}
-  JsonObject registry=support.getAsJsonObject("case_checks");if(registry.has(h.runId)){JsonObject c=registry.getAsJsonObject(h.runId).getAsJsonObject("direct_check");if(!c.get("minimum_distance_m").isJsonNull())direct=String.format(Locale.ROOT,"%.3f 米",NativeWorkbench.num(c,"minimum_distance_m"));}
-  label(stats,routeDescription()+"\n海上巡航段（不含码头起降）\n"+(h.packet==null?(h.phase.equals("error")?"本次任务失败":"正在读取…"):NativeWorkbench.str(h.packet,"label"))+"\n\n此刻水平中心船距："+(Double.isFinite(distance)?String.format(Locale.ROOT,"%.2f 米",distance):"不可计算")+"\n全程最小中心船距："+min+"\n最近船号："+(nearest.isEmpty()?"此刻无可计算船位":nearest));
-  JsonObject bc=support.getAsJsonObject("building_checks");String bmin=bc.has(h.runId)?String.format(Locale.ROOT,"%.2f 米",NativeWorkbench.num(bc.getAsJsonObject(h.runId),"minimum_rectangle_clearance_m")):"未另行验算";
-  label(detail,"建筑包络距离："+(Double.isFinite(buildingDistance)?String.format(Locale.ROOT,"%.2f 米",buildingDistance):"不可计算")+" / 要求≥30米\n全程最小建筑距离："+bmin+"\n"+(compare?(Double.isFinite(directDistance)?String.format(Locale.ROOT,"假如直飞，此刻船距 %.2f米%s",directDistance,directDistance<90?"（冲突）":""):"直飞对照已到达／此刻无有效船位"):"直飞对照已关闭"));
-  label(story,h.phase.equals("error")?"本次作业失败，未显示旧路线。\n\n"+h.status.getText()+"\n\n可重新读取结果或重试规划。":h.busy?"正在读取结果，旧路线和无人机已清除。":planned?explanation(direct):"此任务没有可回放的无人机路线。\n\n"+h.phase+"\n"+(h.packet==null?"":h.reason(NativeWorkbench.str(h.packet,"reason")))+"\n\n拒绝出发也是正确结果。\n不通过换时间或降低标准刷成功。");
+  String hk=Instant.ofEpochMilli((long)((h.origin+now)*1000)).atZone(ZoneId.of("Asia/Hong_Kong")).format(DateTimeFormatter.ofPattern("HH:mm:ss.SSS"));label(clock,"Hong Kong time "+hk+String.format(Locale.ROOT,"   |   Flight %.1f / %.1f s   |   %s",Math.max(0,now-t0),Math.max(0,t1-t0),(threeD?"3D":"2D")+" / "+(int)h.speed+"×"));
+  if(h.phase.equals("error"))label(clock,"Task failed. Reload the result or retry in the workbench.");else if(h.busy||h.packet==null)label(clock,"Loading the task result…");else if(!planned)label(clock,"Hong Kong time "+hk+"   |   No flight to replay");
+  String min="Unavailable",direct="Not checked separately";if(result!=null&&result.has("ship_check")&&!result.get("ship_check").isJsonNull()){JsonObject sc=result.getAsJsonObject("ship_check");if(sc.has("minimum_distance_m")&&!sc.get("minimum_distance_m").isJsonNull())min=String.format(Locale.ROOT,"%.3f m",NativeWorkbench.num(sc,"minimum_distance_m"));}
+  JsonObject registry=support.getAsJsonObject("case_checks");if(registry.has(h.runId)){JsonObject c=registry.getAsJsonObject(h.runId).getAsJsonObject("direct_check");if(!c.get("minimum_distance_m").isJsonNull())direct=String.format(Locale.ROOT,"%.3f m",NativeWorkbench.num(c,"minimum_distance_m"));}
+  label(stats,routeDescription()+"\nCruise starts and ends offshore. Piers locate the route.\n"+(h.packet==null?(h.phase.equals("error")?"Task failed":"Loading…"):caseLabel())+"\n\nNearest vessel now: "+(Double.isFinite(distance)?String.format(Locale.ROOT,"%.2f m",distance):"Unavailable")+"\nMinimum vessel separation on route: "+min+"\nNearest vessel MMSI: "+(nearest.isEmpty()?"Unavailable":nearest));
+  JsonObject bc=support.getAsJsonObject("building_checks");String bmin=bc.has(h.runId)?String.format(Locale.ROOT,"%.2f m",NativeWorkbench.num(bc.getAsJsonObject(h.runId),"minimum_rectangle_clearance_m")):"Not checked separately";
+  label(detail,"Building clearance now: "+(Double.isFinite(buildingDistance)?String.format(Locale.ROOT,"%.2f m",buildingDistance):"Unavailable")+"   |   Required: ≥30 m\nMinimum building clearance on route: "+bmin+"\n"+(compare?(Double.isFinite(directDistance)?String.format(Locale.ROOT,"Direct route: vessel separation now %.2f m%s",directDistance,directDistance<90?" (below 90 m)":""):"Direct route complete or vessel position unavailable"):"Direct-route comparison off"));
+  label(story,h.phase.equals("error")?"Task failed\n\n"+(h.packet==null?h.status.getText():outcomeText()):h.busy?"Loading the selected result…":planned?explanation(direct):outcomeText());
   setting=true;timeline.setValue(Math.max(t0,Math.min(t1,now)),false);setting=false;String geometry=h.key+"/"+h.phase+"/"+now+"/"+threeD+"/"+cx+"/"+cy+"/"+compare+"/"+h.playing;if(!geometry.equals(lastGeometry)){lastGeometry=geometry;resetTree(drone3);resetTree(route3);resetTree(straight3);resetTree(shadow);resetTree(rangeLink3);resetTree(uavDirection3);resetTree(shipDirection3);for(Shape s:new Shape[]{groundRoute,verticalLink,buildingLink3,buildingBox3,ghost3,levelRing,referenceTrack3})resetTree(s);for(Ship ship:ships){resetTree(ship.mesh);resetTree(ship.ring3);}}
- }catch(Exception ex){error=ex.toString();label(story,"展示错误："+error);}}
+ }catch(Exception ex){error=ex.toString();label(story,"Display error: "+error);}}
  void label(ShapeText text,String value){if(!Objects.equals(text.getText(),value)){text.setText(value);text.resetSVGComponent();}}
  void resetTree(Shape shape){if(shape instanceof ShapeGroup)for(Object o:((ShapeGroup)shape).getShapes())if(o instanceof Shape)resetTree((Shape)o);shape.resetSVGComponent();}
  void writeState(){try{JsonObject s=new JsonObject();s.addProperty("follow_camera",follow);s.addProperty("harbor_view",harborView);s.addProperty("official_height_buildings",scenery.knownHeights);s.addProperty("compare",compare);s.addProperty("nearest_building_index",nearestBuilding);if(Double.isFinite(buildingDistance))s.addProperty("building_distance_m",buildingDistance);if(Double.isFinite(directDistance))s.addProperty("direct_distance_m",directDistance);if(boundary!=null){JsonArray b=new JsonArray();b.add(boundary[0]);b.add(boundary[1]);s.add("building_boundary_xy",b);}s.addProperty("demo",demo);s.addProperty("three_d",threeD);s.addProperty("key",h.key);s.addProperty("route_id",currentRouteId());s.addProperty("phase",h.phase);s.addProperty("busy",h.busy);s.addProperty("run_id",h.runId);s.addProperty("time",h.now);s.addProperty("playing",h.playing);s.addProperty("speed",h.speed);s.addProperty("closest_capture_s",Double.isFinite(closest)?closest:-1);s.addProperty("buildings",buildingCount);s.addProperty("error",error);double[] u=h.uavAt();s.addProperty("uav_visible",u!=null);s.addProperty("native_drone_visible",drone3.isVisible());s.addProperty("native_drone_x",drone3.getX());s.addProperty("native_drone_y",drone3.getY());s.addProperty("native_drone_z",drone3.getZ());s.addProperty("native_drone_svg_id",drone3.getSVGId());s.addProperty("native_route_visible",route3.isVisible());if(droneDirection()!=null){JsonArray dv=new JsonArray();for(double value:droneDirection())dv.add(value);s.add("uav_direction_xy",dv);}s.addProperty("uav_arrow_id",uavDirection3.getSVGId());if(u!=null){JsonArray q=new JsonArray();q.add(u[0]);q.add(u[1]);s.add("uav_xy",q);s.addProperty("display_z",35);}JsonArray shipData=new JsonArray();JsonArray directions=new JsonArray();for(Ship ship:ships){double[] q=h.shipAt(ship.vessel,h.now);if(q==null)continue;JsonObject v=new JsonObject();v.addProperty("mmsi",NativeWorkbench.str(ship.vessel,"mmsi"));JsonArray xy=new JsonArray();xy.add(q[0]);xy.add(q[1]);v.add("xy",xy);v.addProperty("measured",q[2]==1);JsonObject render=new JsonObject();render.addProperty("mmsi",NativeWorkbench.str(ship.vessel,"mmsi"));double[] heading=shipDirection(ship.vessel,h.now);render.addProperty("direction_known",heading!=null);render.addProperty("mesh_id",ship.mesh.getSVGId());render.addProperty("icon_id",ship.icon.getSVGId());render.addProperty("angle_rad",ship.mesh.getRotation());if(heading!=null){JsonArray hv=new JsonArray();for(double value:heading)hv.add(value);render.add("direction_xy",hv);}directions.add(render);shipData.add(v);}s.add("ships",shipData);s.add("render_directions",directions);Path dir=h.root.resolve("anylogic/visual_demo");Path tmp=dir.resolve("state.tmp");Files.writeString(tmp,s.toString(),StandardCharsets.UTF_8);Files.move(tmp,dir.resolve("state.json"),StandardCopyOption.REPLACE_EXISTING);}catch(Exception ignored){}}

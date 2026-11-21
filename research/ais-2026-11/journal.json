@@ -1,0 +1,2920 @@
+{
+  "start_hkt": "2026-11-18T17:12:00+08:00",
+  "end_hkt": "2026-11-20T17:12:00+08:00",
+  "planned_hours": 48,
+  "slots": {
+    "1": {
+      "slot": 1,
+      "start_hkt": "2026-11-18T17:12:00+08:00",
+      "end_hkt": "2026-11-18T18:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-18T17:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "9c57ab225d204f8e8592c5fe61517769",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 468,
+          "start_utc": "2026-11-18T09:12:00.077748+00:00",
+          "end_utc": "2026-11-18T10:00:46.382145+00:00",
+          "raw_sha256": "9d5153b6bb452394c08546251089afc9b31795eb27f7ec9878bc16e4dc8b2611",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "50b56355b1734e5cbf8751309eba6ee3",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T10:00:57.831072+00:00",
+          "end_utc": "2026-11-18T10:01:07.836370+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "ce85b856c105459fa2ab95f2edd05622",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T10:01:28.220649+00:00",
+          "end_utc": "2026-11-18T10:01:38.226097+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "b93b8829345341dbb890be761ae9cac1",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T10:02:20.674687+00:00",
+          "end_utc": "2026-11-18T10:02:30.680251+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "ef19b013f3ae45c8b99dceed8cdb0b05",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 83,
+          "start_utc": "2026-11-18T10:03:50.969657+00:00",
+          "end_utc": "2026-11-18T10:12:00.997177+00:00",
+          "raw_sha256": "a9d75cf1899e4685558c968f387d6401bab32486b1c3463491010eb2f128a5e2",
+          "error": null
+        }
+      ],
+      "attempt_number": 5,
+      "capture_id": "ef19b013f3ae45c8b99dceed8cdb0b05",
+      "valid_positions": 82,
+      "vessels": 54,
+      "observation_start_unix": 1794996230.607156,
+      "observation_end_unix": 1794996711.484973,
+      "status": "unusable_data"
+    },
+    "2": {
+      "slot": 2,
+      "start_hkt": "2026-11-18T18:12:00+08:00",
+      "end_hkt": "2026-11-18T19:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-18T18:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "eb4b81e45ea041c98b88906e2831609e",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T10:12:31.241510+00:00",
+          "end_utc": "2026-11-18T10:12:41.259338+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "d5cbaf19031f448b9ceb725b46d8873a",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 540,
+          "start_utc": "2026-11-18T10:13:03.711635+00:00",
+          "end_utc": "2026-11-18T11:12:07.441746+00:00",
+          "raw_sha256": "f608f9a5d4d7e85e6c5ea76f17dc95f1f6813510d60f4e4f0989991946d22eb0",
+          "error": null
+        }
+      ],
+      "attempt_number": 3,
+      "capture_id": "d5cbaf19031f448b9ceb725b46d8873a",
+      "capture_status": "captured",
+      "valid_positions": 537,
+      "vessels": 92,
+      "observation_start_unix": 1794996794.878959,
+      "observation_end_unix": 1795000314.205752,
+      "status": "candidate"
+    },
+    "3": {
+      "slot": 3,
+      "start_hkt": "2026-11-18T19:12:00+08:00",
+      "end_hkt": "2026-11-18T20:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-18T19:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "d459a42e09c04f069c897b764dc4a0ac",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T11:12:07.455680+00:00",
+          "end_utc": "2026-11-18T11:12:17.450469+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "453acbb0c20f4a3ab6776992f1dc27c2",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T11:12:29.886373+00:00",
+          "end_utc": "2026-11-18T11:12:39.890302+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "fa67c925a44140f6a657eaf8a6bded01",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 438,
+          "start_utc": "2026-11-18T11:13:01.164776+00:00",
+          "end_utc": "2026-11-18T12:00:51.147914+00:00",
+          "raw_sha256": "b5cb3c0fb7ab986181cf86ea83b69e2541bb86273927e55ed112db53da42fee9",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "983207be43c0468f8f69b51dfd89fff0",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T12:01:32.292604+00:00",
+          "end_utc": "2026-11-18T12:01:42.312736+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "2c8e61740a1b4609873dd10ef91eae79",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T12:03:05.272665+00:00",
+          "end_utc": "2026-11-18T12:03:15.286282+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "09695f5a2a5747e7bee4183138a591a0",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 82,
+          "start_utc": "2026-11-18T12:05:15.475750+00:00",
+          "end_utc": "2026-11-18T12:12:06.167163+00:00",
+          "raw_sha256": "e9c6c296ee5e8ff268a7ea380cc9f65cd82d9b2806d6f95f8d1e28f7fecfad31",
+          "error": null
+        }
+      ],
+      "attempt_number": 6,
+      "capture_id": "09695f5a2a5747e7bee4183138a591a0",
+      "capture_status": "captured",
+      "valid_positions": 81,
+      "vessels": 51,
+      "observation_start_unix": 1795003515.150959,
+      "observation_end_unix": 1795003901.879068,
+      "status": "unusable_data"
+    },
+    "4": {
+      "slot": 4,
+      "start_hkt": "2026-11-18T20:12:00+08:00",
+      "end_hkt": "2026-11-18T21:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-18T20:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "50d2576b0dea47eea5f22322893910df",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 775,
+          "start_utc": "2026-11-18T12:12:06.175597+00:00",
+          "end_utc": "2026-11-18T13:12:05.942027+00:00",
+          "raw_sha256": "ae6d5109a13b81980b72bfaf1a6cd8efb0de8b3dab1495437de7fc1e75aa5707",
+          "error": null
+        }
+      ],
+      "attempt_number": 1,
+      "capture_id": "50d2576b0dea47eea5f22322893910df",
+      "capture_status": "captured",
+      "valid_positions": 772,
+      "vessels": 117,
+      "observation_start_unix": 1795003940.301421,
+      "observation_end_unix": 1795007514.744312,
+      "status": "candidate"
+    },
+    "5": {
+      "slot": 5,
+      "start_hkt": "2026-11-18T21:12:00+08:00",
+      "end_hkt": "2026-11-18T22:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-18T21:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "ce0de549a4ca4175973b48cef5638140",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T13:12:05.960045+00:00",
+          "end_utc": "2026-11-18T13:12:15.975249+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "df7175e5d5334fa5b3c768969122c015",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T13:12:26.746044+00:00",
+          "end_utc": "2026-11-18T13:12:36.767981+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "aca3b0bfea8e4522af3234cfcaf81eb0",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T13:12:59.377450+00:00",
+          "end_utc": "2026-11-18T13:13:09.391402+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "9e9f7b397e9c47c39d4d2b3f4e672be4",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 564,
+          "start_utc": "2026-11-18T13:13:49.949753+00:00",
+          "end_utc": "2026-11-18T14:00:51.442135+00:00",
+          "raw_sha256": "22fa2c407e54e526b5e5f5e098dd5d0284d142efebe3ccc7c51bcdf5e0e0dd5b",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "795bc314fc044c16bd6dcf09a171f899",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T14:02:12.528868+00:00",
+          "end_utc": "2026-11-18T14:02:22.547756+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "518c8c37330549feab6089fce38ff1bd",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T14:04:24.521940+00:00",
+          "end_utc": "2026-11-18T14:04:34.538077+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "e773dfc9d2314631a5174806a89e4123",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 67,
+          "start_utc": "2026-11-18T14:06:35.938481+00:00",
+          "end_utc": "2026-11-18T14:12:02.015480+00:00",
+          "raw_sha256": "d6d49a90e1a146517a50dd45622383e7aba6e09bbe00561bbf84f89d61608522",
+          "error": null
+        }
+      ],
+      "attempt_number": 7,
+      "capture_id": "e773dfc9d2314631a5174806a89e4123",
+      "capture_status": "captured",
+      "valid_positions": 65,
+      "vessels": 47,
+      "observation_start_unix": 1795010798.31898,
+      "observation_end_unix": 1795011110.931264,
+      "status": "unusable_data"
+    },
+    "6": {
+      "slot": 6,
+      "start_hkt": "2026-11-18T22:12:00+08:00",
+      "end_hkt": "2026-11-18T23:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-18T22:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "d422496f5e9d49ee803d7e699b009a25",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 765,
+          "start_utc": "2026-11-18T14:12:02.023186+00:00",
+          "end_utc": "2026-11-18T15:12:08.614784+00:00",
+          "raw_sha256": "330e31841c3e62f3f664c69ba4fd95e96a525d5afde061582d1823a06ea3f0e0",
+          "error": null
+        }
+      ],
+      "attempt_number": 1,
+      "capture_id": "d422496f5e9d49ee803d7e699b009a25",
+      "capture_status": "captured",
+      "valid_positions": 761,
+      "vessels": 108,
+      "observation_start_unix": 1795011126.801597,
+      "observation_end_unix": 1795014715.550177,
+      "status": "candidate"
+    },
+    "7": {
+      "slot": 7,
+      "start_hkt": "2026-11-18T23:12:00+08:00",
+      "end_hkt": "2026-11-19T00:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-18T23:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "fd67366f96b94e5ab09f56fc73c8291e",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T15:12:08.634478+00:00",
+          "end_utc": "2026-11-18T15:12:18.645236+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "bc61661346ec4aecac01e637dcddcbe6",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 606,
+          "start_utc": "2026-11-18T15:12:30.110548+00:00",
+          "end_utc": "2026-11-18T16:00:39.994018+00:00",
+          "raw_sha256": "8b1dc207c932302b7f3f6655dee9ecf165c79db2049d7deb8c6ea0c1b485ae10",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "17d38dac5b224bbfa0752664e9642d67",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T16:01:02.788399+00:00",
+          "end_utc": "2026-11-18T16:01:12.815323+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "ba8dfd90825b4169a1efc2cdd26b1415",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T16:01:55.081072+00:00",
+          "end_utc": "2026-11-18T16:02:00.093011+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "57cd218066684935a595d9995a9a7b30",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T16:03:22.098144+00:00",
+          "end_utc": "2026-11-18T16:03:27.112601+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "64e011f2b56a4b39a96d24c48edb2823",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T16:05:29.212086+00:00",
+          "end_utc": "2026-11-18T16:05:34.217075+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "d175d057aeec4cb69f9e585cf5166766",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T16:07:36.838053+00:00",
+          "end_utc": "2026-11-18T16:07:46.864467+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "50a7b143567a4480b9e330b402944938",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 26,
+          "start_utc": "2026-11-18T16:09:48.259551+00:00",
+          "end_utc": "2026-11-18T16:12:06.627571+00:00",
+          "raw_sha256": "d4d3e0fa0bbf15e787587e985efd939ec8783ded155c5b01eba6fca42013db2b",
+          "error": null
+        }
+      ],
+      "attempt_number": 8,
+      "capture_id": "50a7b143567a4480b9e330b402944938",
+      "capture_status": "captured",
+      "valid_positions": 25,
+      "vessels": 22,
+      "observation_start_unix": 1795018192.776463,
+      "observation_end_unix": 1795018317.125686,
+      "status": "unusable_data"
+    },
+    "8": {
+      "slot": 8,
+      "start_hkt": "2026-11-19T00:12:00+08:00",
+      "end_hkt": "2026-11-19T01:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T00:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "2730a653205048cc9708f1fb61306dbb",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T16:12:06.635116+00:00",
+          "end_utc": "2026-11-18T16:12:16.653847+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "9c64684d559b46c893756c6ee07b07d1",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T16:12:29.570060+00:00",
+          "end_utc": "2026-11-18T16:12:39.585517+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "e543ab76eb0a4db9aa7ef596833635b3",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 726,
+          "start_utc": "2026-11-18T16:13:01.805142+00:00",
+          "end_utc": "2026-11-18T17:12:09.840448+00:00",
+          "raw_sha256": "280742e3f7e3f3e774a31867d8d00fb5323e265a7a81b4838178d17ab1302992",
+          "error": null
+        }
+      ],
+      "attempt_number": 3,
+      "capture_id": "e543ab76eb0a4db9aa7ef596833635b3",
+      "capture_status": "captured",
+      "valid_positions": 720,
+      "vessels": 98,
+      "observation_start_unix": 1795018390.603875,
+      "observation_end_unix": 1795021920.066189,
+      "status": "candidate"
+    },
+    "9": {
+      "slot": 9,
+      "start_hkt": "2026-11-19T01:12:00+08:00",
+      "end_hkt": "2026-11-19T02:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T01:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "b2a3595da5ad4c36be40423423faab70",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T17:12:09.857146+00:00",
+          "end_utc": "2026-11-18T17:12:19.866465+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "74c1943fd43445428d216024be362d60",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T17:12:31.542053+00:00",
+          "end_utc": "2026-11-18T17:12:41.556288+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "fa428a1492a949d1b88fc1a59cc9f5a0",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T17:13:03.671819+00:00",
+          "end_utc": "2026-11-18T17:13:13.676318+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "6c3916f7a4d84211acfcbe3d1b417577",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 305,
+          "start_utc": "2026-11-18T17:13:56.270019+00:00",
+          "end_utc": "2026-11-18T17:42:11.577326+00:00",
+          "raw_sha256": "8e613f2dfe3bf4663bd311d544ee1160b0ffbab5ba760b6a81ab3ba6853328d0",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "d29b1cd70d3949e8855673b17be4075f",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 186,
+          "start_utc": "2026-11-18T17:43:33.977573+00:00",
+          "end_utc": "2026-11-18T18:00:41.826597+00:00",
+          "raw_sha256": "5185e9084f26cae6eae62d0fa25066b93d1dd9735e36e36c3f947b6469e0aa2a",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "bb40ff5980a74ee5802c59af45c29eeb",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 102,
+          "start_utc": "2026-11-18T18:02:44.016702+00:00",
+          "end_utc": "2026-11-18T18:12:04.125853+00:00",
+          "raw_sha256": "680d22918f4a319262aaade5912761458ca2500e5e31971643a9cc9d84a5f256",
+          "error": null
+        }
+      ],
+      "attempt_number": 6,
+      "capture_id": "bb40ff5980a74ee5802c59af45c29eeb",
+      "capture_status": "captured",
+      "valid_positions": 101,
+      "vessels": 57,
+      "observation_start_unix": 1795024954.522843,
+      "observation_end_unix": 1795025510.773419,
+      "status": "unusable_data"
+    },
+    "10": {
+      "slot": 10,
+      "start_hkt": "2026-11-19T02:12:00+08:00",
+      "end_hkt": "2026-11-19T03:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T02:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "5c44e43874754e8b8308d0ef09d51813",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T18:12:04.135873+00:00",
+          "end_utc": "2026-11-18T18:12:14.156943+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "c8c2403ecf604997a143059a598837a7",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T18:12:26.233635+00:00",
+          "end_utc": "2026-11-18T18:12:36.239891+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "65e810f6c4e34f35b1de26c2c200d47f",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T18:12:56.484605+00:00",
+          "end_utc": "2026-11-18T18:13:06.490823+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "b22356e558c34bb1881a1b55c520f72e",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 231,
+          "start_utc": "2026-11-18T18:13:48.782433+00:00",
+          "end_utc": "2026-11-18T18:36:04.998300+00:00",
+          "raw_sha256": "bdd00d1d29e079da12f14d4cd16d6e635a646ee09092252b869b4c8d380e8f62",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "1d2ab5c034aa48499001c1f4b827c249",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T18:37:26.124246+00:00",
+          "end_utc": "2026-11-18T18:37:36.139220+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "9cd4b2166b7748c09effe2152fd15b9d",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 360,
+          "start_utc": "2026-11-18T18:39:36.322632+00:00",
+          "end_utc": "2026-11-18T19:12:08.900254+00:00",
+          "raw_sha256": "dee1748d24a8b5bc2f878877390e245f1d7e15a6a4e3bf3cd505a0eb8fd4acb2",
+          "error": null
+        }
+      ],
+      "attempt_number": 6,
+      "capture_id": "9cd4b2166b7748c09effe2152fd15b9d",
+      "capture_status": "captured",
+      "valid_positions": 357,
+      "vessels": 81,
+      "observation_start_unix": 1795027191.0004,
+      "observation_end_unix": 1795029106.583409,
+      "status": "unusable_data"
+    },
+    "11": {
+      "slot": 11,
+      "start_hkt": "2026-11-19T03:12:00+08:00",
+      "end_hkt": "2026-11-19T04:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T03:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "c27a95f5ac234e21b690c156f64a95ca",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 565,
+          "start_utc": "2026-11-18T19:12:08.916101+00:00",
+          "end_utc": "2026-11-18T20:00:53.468039+00:00",
+          "raw_sha256": "36a432d2bb65cac0c58ed2bb39093057c556316f68763575562bb58f478688d1",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "98865f1eabc041aba7f25bf9c3a2d20f",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T20:01:03.942473+00:00",
+          "end_utc": "2026-11-18T20:01:08.960631+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "1e8a02beb75b4e4b9d765ea0c1fe32f1",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T20:01:29.189401+00:00",
+          "end_utc": "2026-11-18T20:01:39.187010+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "a7fa828cc55540828dd9add4eecba412",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T20:02:21.778053+00:00",
+          "end_utc": "2026-11-18T20:02:26.795095+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "cadaed5d72344ada9914235004ebc2c8",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T20:03:49.731639+00:00",
+          "end_utc": "2026-11-18T20:03:59.741062+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "d03c85ccf2cb45c59d560795441ee906",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T20:06:02.170885+00:00",
+          "end_utc": "2026-11-18T20:06:07.192397+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "774a1551b3214c35ab978b153a89a0ee",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T20:08:09.985433+00:00",
+          "end_utc": "2026-11-18T20:08:14.994492+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "b0f4e534bb2b4b8e821e7fa3883f135c",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T20:10:17.874455+00:00",
+          "end_utc": "2026-11-18T20:10:27.886789+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        }
+      ],
+      "attempt_number": 8,
+      "status": "missed_or_interrupted"
+    },
+    "12": {
+      "slot": 12,
+      "start_hkt": "2026-11-19T04:12:00+08:00",
+      "end_hkt": "2026-11-19T05:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T04:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "f933823cfe5946309f72836e010e50c6",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 294,
+          "start_utc": "2026-11-18T20:12:00.007511+00:00",
+          "end_utc": "2026-11-18T21:12:07.099785+00:00",
+          "raw_sha256": "17dbb0eba834d5398e65b2e1d62586151bf10f0202dd91193a713f65c5f2912e",
+          "error": null
+        }
+      ],
+      "attempt_number": 1,
+      "capture_id": "f933823cfe5946309f72836e010e50c6",
+      "capture_status": "captured",
+      "valid_positions": 292,
+      "vessels": 51,
+      "observation_start_unix": 1795032739.040755,
+      "observation_end_unix": 1795036317.839907,
+      "status": "candidate"
+    },
+    "13": {
+      "slot": 13,
+      "start_hkt": "2026-11-19T05:12:00+08:00",
+      "end_hkt": "2026-11-19T06:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T05:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "6a7f9dcce15e48f8855a6357941093d3",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 227,
+          "start_utc": "2026-11-18T21:12:07.111622+00:00",
+          "end_utc": "2026-11-18T21:58:10.358452+00:00",
+          "raw_sha256": "57b956047d7aa83f9a0b4b80600a1c0bf98bd3b8db84414274ab88ef86982738",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "0dac3bed92d44d1daa303fda6e6ddc71",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T21:58:21.192652+00:00",
+          "end_utc": "2026-11-18T21:58:26.204651+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "d974d42aad7a4bfe9a03e8dcb20cd2c8",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 8,
+          "start_utc": "2026-11-18T21:58:46.422390+00:00",
+          "end_utc": "2026-11-18T22:00:54.952804+00:00",
+          "raw_sha256": "3e31056da6a6e644b39bde9026a0bdc90fd4ca1679b1be62fd10beb305e42ee8",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "61bb101dd0654e538814411b7c73e237",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T22:01:37.955752+00:00",
+          "end_utc": "2026-11-18T22:01:42.965497+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "d6218c2241d6455fa87f0650b2d9dc16",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T22:03:04.159746+00:00",
+          "end_utc": "2026-11-18T22:03:09.170215+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "7887a7c08738432da2422c27c23c58c5",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T22:05:09.438302+00:00",
+          "end_utc": "2026-11-18T22:05:19.451807+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "d97dd30ecef747b5b0e6dae9536e3d65",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 25,
+          "start_utc": "2026-11-18T22:07:19.567869+00:00",
+          "end_utc": "2026-11-18T22:12:06.390309+00:00",
+          "raw_sha256": "d8cc4c9dc2d58ef9c8f463073143d5cd5d48870f6bb75f2bfc3e013830d71b79",
+          "error": null
+        }
+      ],
+      "attempt_number": 7,
+      "capture_id": "d97dd30ecef747b5b0e6dae9536e3d65",
+      "capture_status": "captured",
+      "valid_positions": 24,
+      "vessels": 21,
+      "observation_start_unix": 1795039695.222158,
+      "observation_end_unix": 1795039911.398597,
+      "status": "unusable_data"
+    },
+    "14": {
+      "slot": 14,
+      "start_hkt": "2026-11-19T06:12:00+08:00",
+      "end_hkt": "2026-11-19T07:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T06:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "f64e773f48a342f8a7cfbe2cba33cd16",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T22:12:06.399383+00:00",
+          "end_utc": "2026-11-18T22:12:16.409053+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "4a42d3f5e57e4c2fa96152b4c5655812",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-18T22:12:27.685789+00:00",
+          "end_utc": "2026-11-18T22:12:37.693917+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "14521a4d66c54ecbb181986f5056c04d",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 322,
+          "start_utc": "2026-11-18T22:12:59.530341+00:00",
+          "end_utc": "2026-11-18T23:12:04.311458+00:00",
+          "raw_sha256": "e3611000c99ea28244d7c4610073487343c23e4caca99e623f24bce0c89a41d5",
+          "error": null
+        }
+      ],
+      "attempt_number": 3,
+      "capture_id": "14521a4d66c54ecbb181986f5056c04d",
+      "capture_status": "captured",
+      "valid_positions": 318,
+      "vessels": 76,
+      "observation_start_unix": 1795039992.646481,
+      "observation_end_unix": 1795043504.723545,
+      "status": "candidate"
+    },
+    "15": {
+      "slot": 15,
+      "start_hkt": "2026-11-19T07:12:00+08:00",
+      "end_hkt": "2026-11-19T08:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T07:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "2378210334eb47929e8d0a6286ce6c28",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 268,
+          "start_utc": "2026-11-18T23:12:04.324650+00:00",
+          "end_utc": "2026-11-19T00:00:51.884409+00:00",
+          "raw_sha256": "1bc92f61ee3d4d15ac738cc7ac5e46cabf2aa2cc355d49b3d2a4b9227f23634f",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "25d532a75fc044a393b73d3d16d85893",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T00:01:02.355917+00:00",
+          "end_utc": "2026-11-19T00:01:07.368479+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "8f9189f5e1ba4282a9080baed3a421b5",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 171,
+          "start_utc": "2026-11-19T00:01:28.454298+00:00",
+          "end_utc": "2026-11-19T00:12:08.423581+00:00",
+          "raw_sha256": "371e72d6a8518751b59cbd064dc92447d98724a233d75870134ba4640ec0b231",
+          "error": null
+        }
+      ],
+      "attempt_number": 3,
+      "capture_id": "8f9189f5e1ba4282a9080baed3a421b5",
+      "capture_status": "captured",
+      "valid_positions": 168,
+      "vessels": 84,
+      "observation_start_unix": 1795046508.104104,
+      "observation_end_unix": 1795047118.916178,
+      "status": "unusable_data"
+    },
+    "16": {
+      "slot": 16,
+      "start_hkt": "2026-11-19T08:12:00+08:00",
+      "end_hkt": "2026-11-19T09:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T08:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "f921748e36c14f80ac63f8cdec7b6639",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T00:12:08.433362+00:00",
+          "end_utc": "2026-11-19T00:12:18.434744+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "12438d1924264813a39a5b1cd291064e",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 990,
+          "start_utc": "2026-11-19T00:12:30.099758+00:00",
+          "end_utc": "2026-11-19T01:12:06.820193+00:00",
+          "raw_sha256": "e414adbc107d995eeb331f25ee020c9d2a62c37903da1cef094f4b39a62cbc25",
+          "error": null
+        }
+      ],
+      "attempt_number": 2,
+      "capture_id": "12438d1924264813a39a5b1cd291064e",
+      "capture_status": "captured",
+      "valid_positions": 988,
+      "vessels": 150,
+      "observation_start_unix": 1795047159.246065,
+      "observation_end_unix": 1795050711.751889,
+      "status": "candidate"
+    },
+    "17": {
+      "slot": 17,
+      "start_hkt": "2026-11-19T09:12:00+08:00",
+      "end_hkt": "2026-11-19T10:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T09:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "8587bffae3544733ae48e4477d5f388a",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T01:12:06.839243+00:00",
+          "end_utc": "2026-11-19T01:12:16.846700+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "d09ca8b955714c78a1e4b376d746c8fc",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T01:12:29.439976+00:00",
+          "end_utc": "2026-11-19T01:12:39.456754+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "563f02e8a0e24a5d954087f06a39daa2",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T01:13:02.137255+00:00",
+          "end_utc": "2026-11-19T01:13:12.152076+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "c2ec94e024ae43aabc4b785d26f3de92",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 761,
+          "start_utc": "2026-11-19T01:13:54.335686+00:00",
+          "end_utc": "2026-11-19T02:00:55.834955+00:00",
+          "raw_sha256": "3ad2d84614d66b91660286716ce8bcf493070d0e8f579796798fe687f0ca44c7",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "d81b6f85c8be450a9f2aa26d6e1d8fcf",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 177,
+          "start_utc": "2026-11-19T02:02:17.086190+00:00",
+          "end_utc": "2026-11-19T02:12:08.840524+00:00",
+          "raw_sha256": "db2d7c1a44aae2d14dea33175d79b14cdc34f65500ba12014692aaab9d155690",
+          "error": null
+        }
+      ],
+      "attempt_number": 5,
+      "capture_id": "d81b6f85c8be450a9f2aa26d6e1d8fcf",
+      "capture_status": "captured",
+      "valid_positions": 176,
+      "vessels": 81,
+      "observation_start_unix": 1795053748.930102,
+      "observation_end_unix": 1795054321.295311,
+      "status": "unusable_data"
+    },
+    "18": {
+      "slot": 18,
+      "start_hkt": "2026-11-19T10:12:00+08:00",
+      "end_hkt": "2026-11-19T11:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T10:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "3023b7932b1c4444b2d65c37a2bb0b58",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T02:12:08.851381+00:00",
+          "end_utc": "2026-11-19T02:12:18.858518+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "f81c61821af8437a88f1714c15ea27b1",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T02:12:29.384787+00:00",
+          "end_utc": "2026-11-19T02:12:39.387151+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "aea6fc0a5db948c69057284b3793c437",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T02:13:01.087962+00:00",
+          "end_utc": "2026-11-19T02:13:11.081756+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "b4e45e39e47546158cc72b364a82a502",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 957,
+          "start_utc": "2026-11-19T02:13:53.971145+00:00",
+          "end_utc": "2026-11-19T03:12:00.998200+00:00",
+          "raw_sha256": "ea7fbbee955c0b0b480be6d2711b5d8e0d5b1e086e54f5d348e7e5175c47d810",
+          "error": null
+        }
+      ],
+      "attempt_number": 4,
+      "capture_id": "b4e45e39e47546158cc72b364a82a502",
+      "capture_status": "captured",
+      "valid_positions": 952,
+      "vessels": 148,
+      "observation_start_unix": 1795054432.859826,
+      "observation_end_unix": 1795057915.248026,
+      "status": "candidate"
+    },
+    "19": {
+      "slot": 19,
+      "start_hkt": "2026-11-19T11:12:00+08:00",
+      "end_hkt": "2026-11-19T12:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T11:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "e601f5419460422db58ef8ccb98cb97f",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 334,
+          "start_utc": "2026-11-19T03:12:01.018084+00:00",
+          "end_utc": "2026-11-19T03:32:25.495349+00:00",
+          "raw_sha256": "fc75948692fce886a22323929668d5e7fc045e3910b367290285e644f60a5332",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "ce03c72acdcc4b05b533e8755abdbd97",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 419,
+          "start_utc": "2026-11-19T03:32:38.299818+00:00",
+          "end_utc": "2026-11-19T04:00:43.059078+00:00",
+          "raw_sha256": "70edae5447c1b27f7b0fbfc14b653e8b75505642d265c46cdd9406fe4f4d8ac6",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "5c6d8b70188045f88191bd94b0f3fc11",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T04:01:04.816774+00:00",
+          "end_utc": "2026-11-19T04:01:14.821036+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "f6dd0a335a5c4fac85e949cfcc3a8b3b",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 49,
+          "start_utc": "2026-11-19T04:01:56.948389+00:00",
+          "end_utc": "2026-11-19T04:06:21.351878+00:00",
+          "raw_sha256": "c5c7667bc8abc195d00c0a5d50ad28489ef53ddac4b60b22493c577ab0d79e6f",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "bd3243e5e4b8452892851e9150cf2793",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 52,
+          "start_utc": "2026-11-19T04:07:42.645052+00:00",
+          "end_utc": "2026-11-19T04:12:02.598392+00:00",
+          "raw_sha256": "07baf7b92aa58f532e5a18ce572df59be9e28906b7465b50c3c6c22b5b3e638b",
+          "error": null
+        }
+      ],
+      "attempt_number": 5,
+      "capture_id": "bd3243e5e4b8452892851e9150cf2793",
+      "capture_status": "captured",
+      "valid_positions": 51,
+      "vessels": 41,
+      "observation_start_unix": 1795061270.545273,
+      "observation_end_unix": 1795061505.296631,
+      "status": "unusable_data"
+    },
+    "20": {
+      "slot": 20,
+      "start_hkt": "2026-11-19T12:12:00+08:00",
+      "end_hkt": "2026-11-19T13:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T12:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "a504fb037f3e4d2da03cc5f5706069c7",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 884,
+          "start_utc": "2026-11-19T04:12:02.609048+00:00",
+          "end_utc": "2026-11-19T05:12:00.726127+00:00",
+          "raw_sha256": "83151735c340a1f8ef54120b3eab3c85365a9102ac1bc11912ed58bb980c6361",
+          "error": null
+        }
+      ],
+      "attempt_number": 1,
+      "capture_id": "a504fb037f3e4d2da03cc5f5706069c7",
+      "capture_status": "captured",
+      "valid_positions": 883,
+      "vessels": 130,
+      "observation_start_unix": 1795061528.59963,
+      "observation_end_unix": 1795065112.170266,
+      "status": "candidate"
+    },
+    "21": {
+      "slot": 21,
+      "start_hkt": "2026-11-19T13:12:00+08:00",
+      "end_hkt": "2026-11-19T14:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T13:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "6596a30093d849069e383bd17198b9cb",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 384,
+          "start_utc": "2026-11-19T05:12:00.746215+00:00",
+          "end_utc": "2026-11-19T05:39:04.746302+00:00",
+          "raw_sha256": "80eaa41f3d0a0744b3218bd642b85adcc29f573e513e30298674a3b609b48067",
+          "error": "sent 1011 (internal error) keepalive ping timeout; no close frame received"
+        },
+        {
+          "capture_id": "ac1da34604914b14a3b4e8b359f80623",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T05:39:15.124118+00:00",
+          "end_utc": "2026-11-19T05:39:25.144209+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "_ssl.c:989: The handshake operation timed out"
+        },
+        {
+          "capture_id": "386823b4c853417d92361a151033c5ab",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T05:39:46.293442+00:00",
+          "end_utc": "2026-11-19T05:39:56.307067+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "_ssl.c:989: The handshake operation timed out"
+        },
+        {
+          "capture_id": "a523eee98ec1496bb3dd73810ba73c8a",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T05:40:38.047663+00:00",
+          "end_utc": "2026-11-19T05:40:48.066941+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "_ssl.c:989: The handshake operation timed out"
+        },
+        {
+          "capture_id": "eeb2d76a726b4bc5bf20fbd0851ac73f",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T05:42:08.215519+00:00",
+          "end_utc": "2026-11-19T05:42:18.211447+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "_ssl.c:989: The handshake operation timed out"
+        },
+        {
+          "capture_id": "eb0a2eef8371480a82d57588a40b698a",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 261,
+          "start_utc": "2026-11-19T05:44:20.089805+00:00",
+          "end_utc": "2026-11-19T06:00:44.687288+00:00",
+          "raw_sha256": "4b90455757e4c15884efad5306714a64019f17d37df05dd940865ced1479f05d",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "84e1f7e133a74183b6be702890665807",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T06:02:45.204462+00:00",
+          "end_utc": "2026-11-19T06:02:50.223093+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "7055ada478e940fc997684717b74aad9",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T06:04:51.685395+00:00",
+          "end_utc": "2026-11-19T06:04:56.699849+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "d92eb6ab99cc46cdb172ac2382d467d0",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T06:06:58.320211+00:00",
+          "end_utc": "2026-11-19T06:07:03.326543+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "ac5d094819694f91a0d2ec452d9f9482",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T06:09:04.577272+00:00",
+          "end_utc": "2026-11-19T06:09:09.582791+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "54e41941fc3a45d4803090fc89ae57e6",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T06:11:09.665604+00:00",
+          "end_utc": "2026-11-19T06:11:19.666486+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        }
+      ],
+      "attempt_number": 11,
+      "status": "missed_or_interrupted"
+    },
+    "22": {
+      "slot": 22,
+      "start_hkt": "2026-11-19T14:12:00+08:00",
+      "end_hkt": "2026-11-19T15:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T14:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "c2d4f78480d2490b9bce06018b973656",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T06:12:00.009721+00:00",
+          "end_utc": "2026-11-19T06:12:05.024798+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "72e57ca233d44266ab7637c9f63c24bb",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T06:12:16.085415+00:00",
+          "end_utc": "2026-11-19T06:12:26.091048+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "bbe06abc29524476a3e3054fcc25c471",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 901,
+          "start_utc": "2026-11-19T06:12:46.385011+00:00",
+          "end_utc": "2026-11-19T07:12:06.774213+00:00",
+          "raw_sha256": "f47388ebc5ecb42352416336e9e1f30316e3aab528306ea07ab4d4218693bddf",
+          "error": null
+        }
+      ],
+      "attempt_number": 3,
+      "capture_id": "bbe06abc29524476a3e3054fcc25c471",
+      "capture_status": "captured",
+      "valid_positions": 900,
+      "vessels": 134,
+      "observation_start_unix": 1795068772.969959,
+      "observation_end_unix": 1795072321.655229,
+      "status": "candidate"
+    },
+    "23": {
+      "slot": 23,
+      "start_hkt": "2026-11-19T15:12:00+08:00",
+      "end_hkt": "2026-11-19T16:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T15:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "caeea2e64c0e48308385f10b3e7e1b5d",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T07:12:06.793555+00:00",
+          "end_utc": "2026-11-19T07:12:16.799357+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "b7d4c704f247493582eeb7551f0bb290",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 729,
+          "start_utc": "2026-11-19T07:12:28.647016+00:00",
+          "end_utc": "2026-11-19T08:00:36.262710+00:00",
+          "raw_sha256": "83ae603ec0de82135662d19ce0b7022ba01e8059a3efcd138bc1c0ee21a0a6ed",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "1451f62019434c3d9014d2c46d4a03ab",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T08:00:58.695102+00:00",
+          "end_utc": "2026-11-19T08:01:03.712268+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "325be22964214532bc23252b5f875f6e",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T08:01:44.560573+00:00",
+          "end_utc": "2026-11-19T08:01:49.565142+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "bdc6479f346a4cfabf78eac0475e7fc7",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T08:03:12.470726+00:00",
+          "end_utc": "2026-11-19T08:03:17.483260+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "6b5bb461e2924884806e8964c6832d4d",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T08:05:19.535562+00:00",
+          "end_utc": "2026-11-19T08:05:24.547630+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "40036a92d0e64f678f2b39d8b99f2981",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T08:07:24.574151+00:00",
+          "end_utc": "2026-11-19T08:07:29.587487+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "8b31918315294911af9461eedd8599fc",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 36,
+          "start_utc": "2026-11-19T08:09:29.861278+00:00",
+          "end_utc": "2026-11-19T08:12:09.382215+00:00",
+          "raw_sha256": "c963269c4b99b4fff4d36e3eee84c6674cbd824189096910ef7652bb81f5dfdb",
+          "error": null
+        }
+      ],
+      "attempt_number": 8,
+      "capture_id": "8b31918315294911af9461eedd8599fc",
+      "capture_status": "captured",
+      "valid_positions": 35,
+      "vessels": 32,
+      "observation_start_unix": 1795075780.88254,
+      "observation_end_unix": 1795075919.464201,
+      "status": "unusable_data"
+    },
+    "24": {
+      "slot": 24,
+      "start_hkt": "2026-11-19T16:12:00+08:00",
+      "end_hkt": "2026-11-19T17:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T16:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "71b58bdb2ca84781a385d302f53d87d9",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T08:12:09.391474+00:00",
+          "end_utc": "2026-11-19T08:12:19.403978+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "79e49aaed09148eba46bb94bb1eb9b01",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T08:12:32.044094+00:00",
+          "end_utc": "2026-11-19T08:12:42.067166+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "026baddbdcc04467909de9744e94bbc8",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T08:13:03.696791+00:00",
+          "end_utc": "2026-11-19T08:13:13.707322+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "7cc86253aea5430f9abc87b7b8f6a67f",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 547,
+          "start_utc": "2026-11-19T08:13:55.742290+00:00",
+          "end_utc": "2026-11-19T08:48:19.007514+00:00",
+          "raw_sha256": "91f40132f22dd74038e87d9e3ed74fc645370a5182beb16fbf48aa15efed5273",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "6b06a922f5964bcfac779c21d1051adc",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T08:49:40.479963+00:00",
+          "end_utc": "2026-11-19T08:49:50.483874+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "b251c2c357364976832394c005f4d780",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 317,
+          "start_utc": "2026-11-19T08:51:50.662102+00:00",
+          "end_utc": "2026-11-19T09:12:03.744258+00:00",
+          "raw_sha256": "17874464f0c6d95f24e02c8495f0885d76c4e4247945c887988cf48a654f11f4",
+          "error": null
+        }
+      ],
+      "attempt_number": 6,
+      "capture_id": "b251c2c357364976832394c005f4d780",
+      "capture_status": "captured",
+      "valid_positions": 313,
+      "vessels": 95,
+      "observation_start_unix": 1795078313.658578,
+      "observation_end_unix": 1795079515.303941,
+      "status": "unusable_data"
+    },
+    "25": {
+      "slot": 25,
+      "start_hkt": "2026-11-19T17:12:00+08:00",
+      "end_hkt": "2026-11-19T18:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T17:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "ce19fbd95cf84ab1892bf2477a8949c6",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T09:12:03.759954+00:00",
+          "end_utc": "2026-11-19T09:12:13.767299+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "837c34de28b046ebaf926a3ada01a17d",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T09:12:26.412840+00:00",
+          "end_utc": "2026-11-19T09:12:36.417825+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "6dc7f0ed2a41468cb2be5201a7a05d09",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 751,
+          "start_utc": "2026-11-19T09:12:59.166461+00:00",
+          "end_utc": "2026-11-19T10:00:47.688195+00:00",
+          "raw_sha256": "9753519ddddeef89318324efb6b1aa2b9b8f62c0103c1d244dc7a05d64fcc2c2",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "f0d7c129b03648b18269e5b7728b884b",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T10:01:30.672671+00:00",
+          "end_utc": "2026-11-19T10:01:40.688426+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "36eb27e78708401bb5e731570fb50ab8",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 170,
+          "start_utc": "2026-11-19T10:03:02.827530+00:00",
+          "end_utc": "2026-11-19T10:12:03.971032+00:00",
+          "raw_sha256": "09ff5250120205ab1262ea5c14a21a3949f54cee5f8c291331e753bd53bf2f88",
+          "error": null
+        }
+      ],
+      "attempt_number": 5,
+      "capture_id": "36eb27e78708401bb5e731570fb50ab8",
+      "capture_status": "captured",
+      "valid_positions": 169,
+      "vessels": 78,
+      "observation_start_unix": 1795082598.673172,
+      "observation_end_unix": 1795083118.095035,
+      "status": "unusable_data"
+    },
+    "26": {
+      "slot": 26,
+      "start_hkt": "2026-11-19T18:12:00+08:00",
+      "end_hkt": "2026-11-19T19:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T18:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "55def41eadca4f5998babbe34223c387",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T10:12:03.984382+00:00",
+          "end_utc": "2026-11-19T10:12:13.989658+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "73b0c3b4414a42309d98610272e3bd65",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 386,
+          "start_utc": "2026-11-19T10:12:26.419099+00:00",
+          "end_utc": "2026-11-19T10:36:21.931282+00:00",
+          "raw_sha256": "09be0245a1f06607c21ec97d9231cac9ced9fdf8dffeab7c5f4afcc651edc27a",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "68e6c75181b64185b88da8f0a8746917",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 643,
+          "start_utc": "2026-11-19T10:36:44.125107+00:00",
+          "end_utc": "2026-11-19T11:12:08.553300+00:00",
+          "raw_sha256": "470e111c6ef544345be8058203cec92b7b42e314cc66d17ab1025229b4d69062",
+          "error": null
+        }
+      ],
+      "attempt_number": 3,
+      "capture_id": "68e6c75181b64185b88da8f0a8746917",
+      "capture_status": "captured",
+      "valid_positions": 638,
+      "vessels": 118,
+      "observation_start_unix": 1795084611.256713,
+      "observation_end_unix": 1795086723.981809,
+      "status": "unusable_data"
+    },
+    "27": {
+      "slot": 27,
+      "start_hkt": "2026-11-19T19:12:00+08:00",
+      "end_hkt": "2026-11-19T20:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T19:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "999adec77b2c4874905732626d8a7f5e",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T11:12:08.569009+00:00",
+          "end_utc": "2026-11-19T11:12:18.577522+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "775e5d9552bc48b0bec4f4f1d3311fae",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T11:12:31.302298+00:00",
+          "end_utc": "2026-11-19T11:12:41.318789+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "4eb820a2be8146f6a02f6b7de279efaf",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 658,
+          "start_utc": "2026-11-19T11:13:01.778859+00:00",
+          "end_utc": "2026-11-19T12:00:47.638683+00:00",
+          "raw_sha256": "93ddc974a194d1a5031196ff291deb764ff2af862a2fd2b84c2bd4d2507adba7",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "e810f5eb11a74f6094e8d1664b141aac",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T12:01:29.845340+00:00",
+          "end_utc": "2026-11-19T12:01:39.864625+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "1484569e193c435cb4bc02ec15bc941e",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T12:03:01.954398+00:00",
+          "end_utc": "2026-11-19T12:03:11.959623+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "e95d84e9ed00467faa1649d593349680",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 109,
+          "start_utc": "2026-11-19T12:05:14.239515+00:00",
+          "end_utc": "2026-11-19T12:12:07.395037+00:00",
+          "raw_sha256": "02e31dabf136745d948f27373af4ac2bf87c06aa45c37c076792382d89daa734",
+          "error": null
+        }
+      ],
+      "attempt_number": 6,
+      "capture_id": "e95d84e9ed00467faa1649d593349680",
+      "capture_status": "captured",
+      "valid_positions": 107,
+      "vessels": 62,
+      "observation_start_unix": 1795089923.25718,
+      "observation_end_unix": 1795090319.166057,
+      "status": "unusable_data"
+    },
+    "28": {
+      "slot": 28,
+      "start_hkt": "2026-11-19T20:12:00+08:00",
+      "end_hkt": "2026-11-19T21:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T20:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "d4a08aaff6b2430aac94c60bd83f819e",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T12:12:07.405333+00:00",
+          "end_utc": "2026-11-19T12:12:17.419539+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "1ec68642ed304e5b81a1652eb61829cb",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T12:12:28.769215+00:00",
+          "end_utc": "2026-11-19T12:12:38.782935+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "c4d1b84307c747ba864cd5d01e62a6dc",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 808,
+          "start_utc": "2026-11-19T12:12:58.947405+00:00",
+          "end_utc": "2026-11-19T13:12:01.433224+00:00",
+          "raw_sha256": "c0e5fe5ce1d331aa138c15fbd5529c9b15b2afade21d0cd19a51e27a0b40e4e3",
+          "error": null
+        }
+      ],
+      "attempt_number": 3,
+      "capture_id": "c4d1b84307c747ba864cd5d01e62a6dc",
+      "capture_status": "captured",
+      "valid_positions": 803,
+      "vessels": 110,
+      "observation_start_unix": 1795090388.709577,
+      "observation_end_unix": 1795093908.755421,
+      "status": "candidate"
+    },
+    "29": {
+      "slot": 29,
+      "start_hkt": "2026-11-19T21:12:00+08:00",
+      "end_hkt": "2026-11-19T22:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T21:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "fdbd22c92c8542d687355c89a89cb038",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T13:12:01.457817+00:00",
+          "end_utc": "2026-11-19T13:12:11.464857+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "f22027c9335f484ab845c4d9be555dc3",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T13:12:24.020135+00:00",
+          "end_utc": "2026-11-19T13:12:34.033184+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "860e7879b4694d2b967a09f2b7a7f4a5",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 591,
+          "start_utc": "2026-11-19T13:12:56.591573+00:00",
+          "end_utc": "2026-11-19T14:00:42.877775+00:00",
+          "raw_sha256": "66174f3f8f276205e32bda0f2f111bcc9dae7869e5f395de74b8a5ee18567621",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "1664eaaa51354efea61789c930e28de9",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T14:01:25.289928+00:00",
+          "end_utc": "2026-11-19T14:01:35.287951+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "c6547030af3d4befbdd52b87837cc06c",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T14:02:57.494722+00:00",
+          "end_utc": "2026-11-19T14:03:07.490100+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "31276bfc174e4238af56140d1e510b3a",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T14:05:09.439760+00:00",
+          "end_utc": "2026-11-19T14:05:19.461046+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "da6abbfa349342d290c23de5f79876a8",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T14:07:20.330591+00:00",
+          "end_utc": "2026-11-19T14:07:30.346487+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "06ab88ea969c40f5abbffea2319dac07",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 42,
+          "start_utc": "2026-11-19T14:09:31.367391+00:00",
+          "end_utc": "2026-11-19T14:12:05.838194+00:00",
+          "raw_sha256": "8e0c3791a468a15b271e034be27ce098c65d9f870812c3b5a166f56dc51f6f84",
+          "error": null
+        }
+      ],
+      "attempt_number": 8,
+      "capture_id": "06ab88ea969c40f5abbffea2319dac07",
+      "capture_status": "captured",
+      "valid_positions": 40,
+      "vessels": 31,
+      "observation_start_unix": 1795097375.329048,
+      "observation_end_unix": 1795097519.79077,
+      "status": "unusable_data"
+    },
+    "30": {
+      "slot": 30,
+      "start_hkt": "2026-11-19T22:12:00+08:00",
+      "end_hkt": "2026-11-19T23:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T22:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "2e73da67eacf47b8b5abf1bb7b7a5626",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T14:12:05.848515+00:00",
+          "end_utc": "2026-11-19T14:12:15.862337+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "62aff70f0c2f4bb0ac3eeffe07dc4537",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T14:12:27.144253+00:00",
+          "end_utc": "2026-11-19T14:12:32.177018+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "db86346d792045bfa038a562ceda228c",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T14:12:52.394065+00:00",
+          "end_utc": "2026-11-19T14:13:02.405068+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "b9f7809a240349d1a4f0d69993ee90ca",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 777,
+          "start_utc": "2026-11-19T14:13:43.185509+00:00",
+          "end_utc": "2026-11-19T15:12:08.458338+00:00",
+          "raw_sha256": "779d5af70bd02a6b814b963e2d9771ab888eb6630ef6d6c968af4ed70721067a",
+          "error": null
+        }
+      ],
+      "attempt_number": 4,
+      "capture_id": "b9f7809a240349d1a4f0d69993ee90ca",
+      "capture_status": "captured",
+      "valid_positions": 765,
+      "vessels": 101,
+      "observation_start_unix": 1795097638.839652,
+      "observation_end_unix": 1795101116.405019,
+      "status": "candidate"
+    },
+    "31": {
+      "slot": 31,
+      "start_hkt": "2026-11-19T23:12:00+08:00",
+      "end_hkt": "2026-11-20T00:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-19T23:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "5fdfc85750a940c0b79a6281671ce2d9",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T15:12:08.486401+00:00",
+          "end_utc": "2026-11-19T15:12:18.495242+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "1223228186974a95bf8701ce4c7254e4",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T15:12:31.357334+00:00",
+          "end_utc": "2026-11-19T15:12:41.369801+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "8b0ef72d1c96413390715a498801fd4a",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T15:13:02.453077+00:00",
+          "end_utc": "2026-11-19T15:13:12.459780+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "8265f0dd0fdd427b982a31684c2a3a7a",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 595,
+          "start_utc": "2026-11-19T15:13:54.378679+00:00",
+          "end_utc": "2026-11-19T16:00:56.528943+00:00",
+          "raw_sha256": "c672f01382600cd4af7401476df18d07b4f3731f76f6e7917c49d99c1ff262db",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "212bc3c70a5e4ae9bcbdb236b36e02bd",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T16:02:18.120353+00:00",
+          "end_utc": "2026-11-19T16:02:28.125901+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "86878fd7cbe548f1a3349c697d3adeba",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T16:04:29.987434+00:00",
+          "end_utc": "2026-11-19T16:04:39.990822+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "64c4f1cb20274271881a8b5c512adee3",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T16:06:42.458927+00:00",
+          "end_utc": "2026-11-19T16:06:52.468274+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "eb6096e5ecd84495b02435e02e56ae2e",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T16:08:52.761071+00:00",
+          "end_utc": "2026-11-19T16:09:02.764560+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "b9f41f2dba8246afa07bcc3ad17781aa",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T16:11:04.809430+00:00",
+          "end_utc": "2026-11-19T16:11:14.806941+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        }
+      ],
+      "attempt_number": 9,
+      "status": "missed_or_interrupted"
+    },
+    "32": {
+      "slot": 32,
+      "start_hkt": "2026-11-20T00:12:00+08:00",
+      "end_hkt": "2026-11-20T01:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T00:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "b7205d08e8da428dbeeb0beda47f9aca",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 804,
+          "start_utc": "2026-11-19T16:12:00.011097+00:00",
+          "end_utc": "2026-11-19T17:12:07.340667+00:00",
+          "raw_sha256": "6252c2a1c46d16036208d3f1c7b016dc376ac4d943c776d6c401d86879ddbdd9",
+          "error": null
+        }
+      ],
+      "attempt_number": 1,
+      "capture_id": "b7205d08e8da428dbeeb0beda47f9aca",
+      "capture_status": "captured",
+      "valid_positions": 797,
+      "vessels": 95,
+      "observation_start_unix": 1795104725.596089,
+      "observation_end_unix": 1795108319.156426,
+      "status": "candidate"
+    },
+    "33": {
+      "slot": 33,
+      "start_hkt": "2026-11-20T01:12:00+08:00",
+      "end_hkt": "2026-11-20T02:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T01:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "1ce8900f252240af9012c22f44955ce5",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T17:12:07.361056+00:00",
+          "end_utc": "2026-11-19T17:12:17.371573+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "5be4dbbbf7334015b8760dfa69a8abc1",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T17:12:28.156438+00:00",
+          "end_utc": "2026-11-19T17:12:38.172228+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "f7f7c313712347cb890f78cf60d4e611",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 577,
+          "start_utc": "2026-11-19T17:12:58.973010+00:00",
+          "end_utc": "2026-11-19T18:00:48.610457+00:00",
+          "raw_sha256": "1c66bceda64222e8a51664af8118a1f57a3539ea11093486d856e9b661818ba2",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "b1a4d833b8fd40e0a220a83b4b3f16eb",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 120,
+          "start_utc": "2026-11-19T18:01:30.342428+00:00",
+          "end_utc": "2026-11-19T18:12:04.926986+00:00",
+          "raw_sha256": "60a4e2730870792fe0949f7ddc099a9eb176e6f6f3db859f98db4bfb684e4c56",
+          "error": null
+        }
+      ],
+      "attempt_number": 4,
+      "capture_id": "b1a4d833b8fd40e0a220a83b4b3f16eb",
+      "capture_status": "captured",
+      "valid_positions": 119,
+      "vessels": 58,
+      "observation_start_unix": 1795111295.319442,
+      "observation_end_unix": 1795111919.19388,
+      "status": "unusable_data"
+    },
+    "34": {
+      "slot": 34,
+      "start_hkt": "2026-11-20T02:12:00+08:00",
+      "end_hkt": "2026-11-20T03:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T02:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "ac02e85d81254506892726fd5e0bb983",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T18:12:04.938685+00:00",
+          "end_utc": "2026-11-19T18:12:14.957854+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "ae64d4325baf4d3fa756ee7adcc651a9",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T18:12:26.654633+00:00",
+          "end_utc": "2026-11-19T18:12:36.664166+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "bd0cda29bde943f69de7bc58453fc30f",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 736,
+          "start_utc": "2026-11-19T18:12:59.053377+00:00",
+          "end_utc": "2026-11-19T19:12:04.601750+00:00",
+          "raw_sha256": "bfafddc0d5f893d74475f98e8a1630e4e7b33c3271bef88102e4119733fdd3a4",
+          "error": null
+        }
+      ],
+      "attempt_number": 3,
+      "capture_id": "bd0cda29bde943f69de7bc58453fc30f",
+      "capture_status": "captured",
+      "valid_positions": 734,
+      "vessels": 89,
+      "observation_start_unix": 1795111988.767975,
+      "observation_end_unix": 1795115518.898735,
+      "status": "candidate"
+    },
+    "35": {
+      "slot": 35,
+      "start_hkt": "2026-11-20T03:12:00+08:00",
+      "end_hkt": "2026-11-20T04:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T03:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "2fe369b1340b4e9d900c2f6d9c88e407",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T19:12:04.619434+00:00",
+          "end_utc": "2026-11-19T19:12:14.625306+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "1231bd80ca5b4dd9a3a2c9bcf3c6d793",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T19:12:25.701823+00:00",
+          "end_utc": "2026-11-19T19:12:35.716091+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "333e346874b04e8ea0c252f1a4206474",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 644,
+          "start_utc": "2026-11-19T19:12:57.352767+00:00",
+          "end_utc": "2026-11-19T20:00:42.852536+00:00",
+          "raw_sha256": "4de7c9c6ff61e12b7972a72b3d15540644dac4215379659a02b40fab25e55bb5",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "51d6b0405a39430fa4632063362a58e1",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 129,
+          "start_utc": "2026-11-19T20:01:25.027124+00:00",
+          "end_utc": "2026-11-19T20:12:01.420239+00:00",
+          "raw_sha256": "0a948014d556fe248ea351a00d540043c3ed42450b6131fd4cb5dccdb820ea91",
+          "error": null
+        }
+      ],
+      "attempt_number": 4,
+      "capture_id": "51d6b0405a39430fa4632063362a58e1",
+      "capture_status": "captured",
+      "valid_positions": 128,
+      "vessels": 71,
+      "observation_start_unix": 1795118484.388337,
+      "observation_end_unix": 1795119113.743854,
+      "status": "unusable_data"
+    },
+    "36": {
+      "slot": 36,
+      "start_hkt": "2026-11-20T04:12:00+08:00",
+      "end_hkt": "2026-11-20T05:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T04:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "5722bd59d0a146c9b5bff19c76756f50",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T20:12:01.433038+00:00",
+          "end_utc": "2026-11-19T20:12:11.432378+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "7fea65297dc240028bda889a3626a4d9",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T20:12:23.689931+00:00",
+          "end_utc": "2026-11-19T20:12:33.688839+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "0b72d3158b434e37a1df4ba18bed81ba",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 847,
+          "start_utc": "2026-11-19T20:12:56.246787+00:00",
+          "end_utc": "2026-11-19T21:12:07.439024+00:00",
+          "raw_sha256": "5cbef2ba5e48d56fded74387bf92a203a3f2d2a2f73f3a232343632944d60ce6",
+          "error": null
+        }
+      ],
+      "attempt_number": 3,
+      "capture_id": "0b72d3158b434e37a1df4ba18bed81ba",
+      "capture_status": "captured",
+      "valid_positions": 845,
+      "vessels": 106,
+      "observation_start_unix": 1795119186.090578,
+      "observation_end_unix": 1795122720.580663,
+      "status": "candidate"
+    },
+    "37": {
+      "slot": 37,
+      "start_hkt": "2026-11-20T05:12:00+08:00",
+      "end_hkt": "2026-11-20T06:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T05:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "8fe97e573374429187fab09b67e13ad4",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T21:12:07.461990+00:00",
+          "end_utc": "2026-11-19T21:12:17.470004+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "a774127f5c7d4dea8a3aa5011978a578",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 651,
+          "start_utc": "2026-11-19T21:12:29.215816+00:00",
+          "end_utc": "2026-11-19T22:00:52.138749+00:00",
+          "raw_sha256": "51ddfdceb89a0d8593f5bc7867bbe4158e15189867bcb170e51f8acabad0c76d",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "875c72046cb24700bc1c6c0ceb7ebf99",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T22:01:13.378865+00:00",
+          "end_utc": "2026-11-19T22:01:23.388224+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "cfea8a5b0d9d4b3a9f07633914037e5e",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T22:02:03.488237+00:00",
+          "end_utc": "2026-11-19T22:02:13.506672+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "c9b8bdc313504748ba9bdf0d24da5e6e",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T22:03:34.687151+00:00",
+          "end_utc": "2026-11-19T22:03:44.704925+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "8a5d25a3d80c4c4cac90460c9f909a13",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T22:05:46.373105+00:00",
+          "end_utc": "2026-11-19T22:05:56.400128+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "864d6f9a1a6e4b4da24ed00a41995bf4",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 59,
+          "start_utc": "2026-11-19T22:07:57.281350+00:00",
+          "end_utc": "2026-11-19T22:12:03.708394+00:00",
+          "raw_sha256": "5eb9ba120c13da8718cfc1649960750def9fdce935d1af06980996ef5d006c70",
+          "error": null
+        }
+      ],
+      "attempt_number": 7,
+      "capture_id": "864d6f9a1a6e4b4da24ed00a41995bf4",
+      "capture_status": "captured",
+      "valid_positions": 58,
+      "vessels": 42,
+      "observation_start_unix": 1795126091.375961,
+      "observation_end_unix": 1795126308.376266,
+      "status": "unusable_data"
+    },
+    "38": {
+      "slot": 38,
+      "start_hkt": "2026-11-20T06:12:00+08:00",
+      "end_hkt": "2026-11-20T07:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T06:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "8ccc6df84410421bbd0e55dc9109b471",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T22:12:03.719670+00:00",
+          "end_utc": "2026-11-19T22:12:13.737464+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "747e870a02804e8da52df2864f9939c8",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T22:12:24.441144+00:00",
+          "end_utc": "2026-11-19T22:12:34.442128+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "84579d110e9e440cb3d75d8b434237dc",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 924,
+          "start_utc": "2026-11-19T22:12:56.363494+00:00",
+          "end_utc": "2026-11-19T23:12:04.311291+00:00",
+          "raw_sha256": "74dd8984d6c875121066599b73158c064c6a9230612a2a31fe7981b3958896c1",
+          "error": null
+        }
+      ],
+      "attempt_number": 3,
+      "capture_id": "84579d110e9e440cb3d75d8b434237dc",
+      "capture_status": "captured",
+      "valid_positions": 913,
+      "vessels": 132,
+      "observation_start_unix": 1795126384.594735,
+      "observation_end_unix": 1795129917.643704,
+      "status": "candidate"
+    },
+    "39": {
+      "slot": 39,
+      "start_hkt": "2026-11-20T07:12:00+08:00",
+      "end_hkt": "2026-11-20T08:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T07:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "9c625a8d482043fb801cef8c96b55540",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T23:12:04.333347+00:00",
+          "end_utc": "2026-11-19T23:12:14.333097+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "3b57bc2ab1c048398d81f3a8c5344185",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T23:12:26.652256+00:00",
+          "end_utc": "2026-11-19T23:12:36.660214+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "0039ba10f52c4c4db3c18118ddfd8933",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 743,
+          "start_utc": "2026-11-19T23:12:58.194435+00:00",
+          "end_utc": "2026-11-19T23:58:45.475064+00:00",
+          "raw_sha256": "069dae0cb585fb3698b7c26758cfe8e8c5cc6a5c9d4b42f048336c1be6ef7df9",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "6661132285df4510a2a73f1f6606bbd2",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-19T23:59:26.483797+00:00",
+          "end_utc": "2026-11-19T23:59:31.493001+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "2fc753710a56470e8c60182de8a2f70d",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T00:00:54.251946+00:00",
+          "end_utc": "2026-11-20T00:01:04.266409+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "c5710aaf642244339de8ffa0a20acdab",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T00:03:05.407610+00:00",
+          "end_utc": "2026-11-20T00:03:15.429189+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "39f744c1de4c45dfa32ead1710babaf0",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T00:05:16.101580+00:00",
+          "end_utc": "2026-11-20T00:05:26.116957+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "0130b8b6aaf3474ba8f9fefaca677e28",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 69,
+          "start_utc": "2026-11-20T00:07:27.774044+00:00",
+          "end_utc": "2026-11-20T00:12:00.889557+00:00",
+          "raw_sha256": "e930d15b41121bb1a7b41ee090efc3fff772f589400cb082db2e43d13ab00a37",
+          "error": null
+        }
+      ],
+      "attempt_number": 8,
+      "capture_id": "0130b8b6aaf3474ba8f9fefaca677e28",
+      "capture_status": "captured",
+      "valid_positions": 67,
+      "vessels": 52,
+      "observation_start_unix": 1795133246.367916,
+      "observation_end_unix": 1795133508.000372,
+      "status": "unusable_data"
+    },
+    "40": {
+      "slot": 40,
+      "start_hkt": "2026-11-20T08:12:00+08:00",
+      "end_hkt": "2026-11-20T09:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T08:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "31954624dcc04fb28b93811e0a234ffb",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 920,
+          "start_utc": "2026-11-20T00:12:00.901117+00:00",
+          "end_utc": "2026-11-20T01:09:34.888900+00:00",
+          "raw_sha256": "6cfdc098206e571e38e6b456cf1993f20753301d2af1d998a2b20a84419d29a8",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "838fc561872a4c0082d24fd9f3716b90",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 31,
+          "start_utc": "2026-11-20T01:09:45.948337+00:00",
+          "end_utc": "2026-11-20T01:12:01.056364+00:00",
+          "raw_sha256": "dd7dda3319d2585e8af68ca763caf3d846f5e96154b7923bc13559324ab66042",
+          "error": null
+        }
+      ],
+      "attempt_number": 2,
+      "capture_id": "838fc561872a4c0082d24fd9f3716b90",
+      "capture_status": "captured",
+      "valid_positions": 30,
+      "vessels": 25,
+      "observation_start_unix": 1795136991.137116,
+      "observation_end_unix": 1795137114.410483,
+      "status": "unusable_data"
+    },
+    "41": {
+      "slot": 41,
+      "start_hkt": "2026-11-20T09:12:00+08:00",
+      "end_hkt": "2026-11-20T10:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T09:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "c62cb532ef444c4ab2e5f27ccecd133d",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 829,
+          "start_utc": "2026-11-20T01:12:01.066640+00:00",
+          "end_utc": "2026-11-20T02:00:43.158889+00:00",
+          "raw_sha256": "b9362332bec22bd9d0262df8fb53e0630fb26e6cc3248f9a677a583c3787f7dd",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "372d125bf78c463189f1e29552a4782d",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T02:00:55.456320+00:00",
+          "end_utc": "2026-11-20T02:01:00.467522+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "eee1ccbc9e7044c8b356a539456b060d",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T02:01:22.030733+00:00",
+          "end_utc": "2026-11-20T02:01:27.045105+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "a8f66eb1032a4f8589b054f6bd485506",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T02:02:07.248019+00:00",
+          "end_utc": "2026-11-20T02:02:12.254165+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "8d0f373a137144f999bab926e1380152",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T02:03:33.382805+00:00",
+          "end_utc": "2026-11-20T02:03:38.388018+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "5842d1b7dbe94497afc0a4420d34b7db",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T02:05:38.572336+00:00",
+          "end_utc": "2026-11-20T02:05:43.583481+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "83ec18fe765b4ae5bb1dbdaa410fbee7",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T02:07:44.036163+00:00",
+          "end_utc": "2026-11-20T02:07:49.052239+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "ff64df8cd62c435d8f5579dac34ed880",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 55,
+          "start_utc": "2026-11-20T02:09:51.639016+00:00",
+          "end_utc": "2026-11-20T02:12:00.701625+00:00",
+          "raw_sha256": "8db60740969f16de8d429fbbbe10324cb02b3b63943a06bfaffcb75defa33dca",
+          "error": null
+        }
+      ],
+      "attempt_number": 8,
+      "capture_id": "ff64df8cd62c435d8f5579dac34ed880",
+      "capture_status": "captured",
+      "valid_positions": 54,
+      "vessels": 45,
+      "observation_start_unix": 1795140589.300013,
+      "observation_end_unix": 1795140714.541597,
+      "status": "unusable_data"
+    },
+    "42": {
+      "slot": 42,
+      "start_hkt": "2026-11-20T10:12:00+08:00",
+      "end_hkt": "2026-11-20T11:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T10:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "c14a9add493441e98c9af36554b658c8",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 802,
+          "start_utc": "2026-11-20T02:12:00.712487+00:00",
+          "end_utc": "2026-11-20T02:59:49.238024+00:00",
+          "raw_sha256": "cbe71036d54f03df2275f1927e5196abb5b7305f4afd45326c5438544d072359",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "9be388e20b934a6388f98e7576e37931",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 16,
+          "start_utc": "2026-11-20T02:59:59.444287+00:00",
+          "end_utc": "2026-11-20T03:00:53.413862+00:00",
+          "raw_sha256": "628b8aa64f560b266267143d4a7eb2bdf316f3358e9107ee61f20e0bcd0bdff4",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "117cdde55ed14a9db885d2f088efc5ed",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T03:01:15.840256+00:00",
+          "end_utc": "2026-11-20T03:01:25.847220+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "18c2451688354e829f277d54534babe4",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T03:02:07.769447+00:00",
+          "end_utc": "2026-11-20T03:02:17.777555+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "622e5ff30cb84561826bb192cf182d9d",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 157,
+          "start_utc": "2026-11-20T03:03:40.137060+00:00",
+          "end_utc": "2026-11-20T03:12:06.734672+00:00",
+          "raw_sha256": "3047b6f375044d76c42acf8a2ee70486a07dab4fac27326511fe3b512c81a350",
+          "error": null
+        }
+      ],
+      "attempt_number": 5,
+      "capture_id": "622e5ff30cb84561826bb192cf182d9d",
+      "capture_status": "captured",
+      "valid_positions": 156,
+      "vessels": 79,
+      "observation_start_unix": 1795143825.628627,
+      "observation_end_unix": 1795144312.480596,
+      "status": "unusable_data"
+    },
+    "43": {
+      "slot": 43,
+      "start_hkt": "2026-11-20T11:12:00+08:00",
+      "end_hkt": "2026-11-20T12:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T11:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "0ac3cf2745a14783ae2030c3b8383c82",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T03:12:06.747419+00:00",
+          "end_utc": "2026-11-20T03:12:16.747983+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "eb01a84b799d461e836e1c1527d0ca38",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 836,
+          "start_utc": "2026-11-20T03:12:28.890637+00:00",
+          "end_utc": "2026-11-20T04:00:36.012908+00:00",
+          "raw_sha256": "3ab2df5c728a222064d9e60a75457d4d8d89ac50eedffdb76ce100d31ddc89c2",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "df99b0a16db1410aac8324a7ef886a76",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T04:00:58.268157+00:00",
+          "end_utc": "2026-11-20T04:01:03.271490+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "c8f83d950e234756a22ee7faf13df0af",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 192,
+          "start_utc": "2026-11-20T04:01:44.832692+00:00",
+          "end_utc": "2026-11-20T04:12:07.958070+00:00",
+          "raw_sha256": "b3fe1e7b9a45aa009ac1cd843c1c2eb949b171c79a1c18233258526ffc526f8e",
+          "error": null
+        }
+      ],
+      "attempt_number": 4,
+      "capture_id": "c8f83d950e234756a22ee7faf13df0af",
+      "capture_status": "captured",
+      "valid_positions": 188,
+      "vessels": 86,
+      "observation_start_unix": 1795147309.330054,
+      "observation_end_unix": 1795147921.649506,
+      "status": "unusable_data"
+    },
+    "44": {
+      "slot": 44,
+      "start_hkt": "2026-11-20T12:12:00+08:00",
+      "end_hkt": "2026-11-20T13:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T12:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "6ce972da947f42e59873088a48dd3e1e",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 996,
+          "start_utc": "2026-11-20T04:12:07.969742+00:00",
+          "end_utc": "2026-11-20T05:12:02.498952+00:00",
+          "raw_sha256": "939db6f4198d57f3fe63760c2060689f629bbea283ad43fe419b0f211d448494",
+          "error": null
+        }
+      ],
+      "attempt_number": 1,
+      "capture_id": "6ce972da947f42e59873088a48dd3e1e",
+      "capture_status": "captured",
+      "valid_positions": 992,
+      "vessels": 145,
+      "observation_start_unix": 1795147929.341337,
+      "observation_end_unix": 1795151516.231861,
+      "status": "candidate"
+    },
+    "45": {
+      "slot": 45,
+      "start_hkt": "2026-11-20T13:12:00+08:00",
+      "end_hkt": "2026-11-20T14:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T13:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "8652b8d791f14a00b6d4d290d6391827",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 794,
+          "start_utc": "2026-11-20T05:12:02.519701+00:00",
+          "end_utc": "2026-11-20T06:00:49.197057+00:00",
+          "raw_sha256": "ac5598f37a8513fe69a1ae3beecf71c70bcace5178c787059c8c145fd405781a",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "ec8930695fbf4a16b9cca987bbdc28f5",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T06:01:00.015717+00:00",
+          "end_utc": "2026-11-20T06:01:10.029920+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "6b65f366b7c74639a2373a8b4815c49f",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 194,
+          "start_utc": "2026-11-20T06:01:30.133449+00:00",
+          "end_utc": "2026-11-20T06:12:08.326649+00:00",
+          "raw_sha256": "6e4204b12ac5c70f303d6b55b9335a94ec5baeb0c983dabdfdc208cb8947a18b",
+          "error": null
+        }
+      ],
+      "attempt_number": 3,
+      "capture_id": "6b65f366b7c74639a2373a8b4815c49f",
+      "capture_status": "captured",
+      "valid_positions": 191,
+      "vessels": 83,
+      "observation_start_unix": 1795154496.055698,
+      "observation_end_unix": 1795155120.521895,
+      "status": "unusable_data"
+    },
+    "46": {
+      "slot": 46,
+      "start_hkt": "2026-11-20T14:12:00+08:00",
+      "end_hkt": "2026-11-20T15:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T14:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "dd6e888689ba48d4a95fdeef3f55d568",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T06:12:08.339768+00:00",
+          "end_utc": "2026-11-20T06:12:18.358474+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "125ecc310e12452791ef62b44be6810a",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 928,
+          "start_utc": "2026-11-20T06:12:28.626274+00:00",
+          "end_utc": "2026-11-20T07:12:04.603632+00:00",
+          "raw_sha256": "d37bfd359b021743632cb84b427b5a5f04cdd494f9ef5e569dc7d95c6c643835",
+          "error": null
+        }
+      ],
+      "attempt_number": 2,
+      "capture_id": "125ecc310e12452791ef62b44be6810a",
+      "capture_status": "captured",
+      "valid_positions": 925,
+      "vessels": 137,
+      "observation_start_unix": 1795155144.433037,
+      "observation_end_unix": 1795158716.91327,
+      "status": "candidate"
+    },
+    "47": {
+      "slot": 47,
+      "start_hkt": "2026-11-20T15:12:00+08:00",
+      "end_hkt": "2026-11-20T16:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T15:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "8385434265494fe09aac02d19ac6a542",
+          "status": "failed",
+          "subscription_confirmed": true,
+          "received_messages": 799,
+          "start_utc": "2026-11-20T07:12:04.622829+00:00",
+          "end_utc": "2026-11-20T08:00:46.432125+00:00",
+          "raw_sha256": "eb1f777a600656da89265d18c815b2912f2c7c5250527df624675ec0036ea1a4",
+          "error": "no close frame received or sent"
+        },
+        {
+          "capture_id": "9f47088616354372af5bca2b849a5419",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T08:00:58.140530+00:00",
+          "end_utc": "2026-11-20T08:01:08.147815+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "1655b507e18b4843b1af7bcd08990522",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T08:01:30.652941+00:00",
+          "end_utc": "2026-11-20T08:01:40.657552+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "c67b58205c6b4841a1d9f9e7ac3ca82a",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T08:02:22.187144+00:00",
+          "end_utc": "2026-11-20T08:02:32.203152+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "16e736385bab454490393e6194e74edf",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T08:03:54.440367+00:00",
+          "end_utc": "2026-11-20T08:03:59.451962+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "0f2bd0f25e8b4cf4a60442ceff694d73",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T08:06:01.665149+00:00",
+          "end_utc": "2026-11-20T08:06:11.662493+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        },
+        {
+          "capture_id": "7f6289da98fc45a0b7603e5f906afcbe",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T08:08:13.915520+00:00",
+          "end_utc": "2026-11-20T08:08:18.933057+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)"
+        },
+        {
+          "capture_id": "fb7049a3bf1241e99d2be459ffd4e60b",
+          "status": "failed",
+          "subscription_confirmed": false,
+          "received_messages": 0,
+          "start_utc": "2026-11-20T08:10:19.643992+00:00",
+          "end_utc": "2026-11-20T08:10:29.650974+00:00",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": "timed out while waiting for handshake response"
+        }
+      ],
+      "attempt_number": 8,
+      "status": "missed_or_interrupted"
+    },
+    "48": {
+      "slot": 48,
+      "start_hkt": "2026-11-20T16:12:00+08:00",
+      "end_hkt": "2026-11-20T17:12:00+08:00",
+      "fixed_departure_hkt": "2026-11-20T16:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "c51fed1280f94453b4f76dc869eb8d1a",
+          "status": "captured",
+          "subscription_confirmed": true,
+          "received_messages": 994,
+          "start_utc": "2026-11-20T08:12:00.011381+00:00",
+          "end_utc": "2026-11-20T09:12:01.974627+00:00",
+          "raw_sha256": "6a02cc08b1cce4d197bac2f64633910169e16e8a9f26d7446ccc4e214ddc382c",
+          "error": null
+        }
+      ],
+      "attempt_number": 1,
+      "capture_id": "c51fed1280f94453b4f76dc869eb8d1a",
+      "capture_status": "captured",
+      "valid_positions": 990,
+      "vessels": 145,
+      "observation_start_unix": 1795162334.112864,
+      "observation_end_unix": 1795165912.133559,
+      "status": "candidate"
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "baseline_git_commit": "3dfca00b27fe780e40dde19a0f19574cb2542dde",
+  "baseline_release_sha256": "c6b0f3b12aa1994dcfd098d346f1656a4488a6d8666ff2487a4969ee2b9c6ff9",
+  "windows": [
+    {
+      "slot": 1,
+      "status": "candidate",
+      "fixed_departure_hkt": "2026-11-18T17:27:00+08:00",
+      "attempts": [
+        {
+          "capture_id": "9c57ab225d204f8e8592c5fe61517769",
+          "subscription_confirmed": true,
+          "error": "no close frame received or sent"
+        }
+      ],
+      "capture_id": "9c57ab225d204f8e8592c5fe61517769",
+      "capture_status": "failed",
+      "valid_positions": 464,
+      "vessels": 90,
+      "observation_start_unix": 1794993121.277115,
+      "observation_end_unix": 1794996008.873716,
+      "observation_span_s": 2887.596601009369,
+      "longest_single_valid_segment_s": 410.91101002693176
+    }
+  ],
+  "attempts": [
+    {
+      "route": "M1",
+      "departure_hkt": "2026-11-18T17:27:00+08:00",
+      "run_id": "6cab8cbfc9d84307b8d85ecdb8bd0304",
+      "capture_id": "9c57ab225d204f8e8592c5fe61517769",
+      "raw_sha256": "9d5153b6bb452394c08546251089afc9b31795eb27f7ec9878bc16e4dc8b2611",
+      "status": "error",
+      "failure_reason": "A fully completed capture is required for planning",
+      "evaluation": "error",
+      "solver_method": null,
+      "solver_seed": null,
+      "solver_budget_s": null,
+      "compute_elapsed_s": 0.01599999999962165,
+      "available_record_span_s": null,
+      "overlap_vessels": null,
+      "vessels_supported_throughout": null,
+      "seconds_without_any_supported_ship": null,
+      "slot": 1
+    },
+    {
+      "route": "M2",
+      "departure_hkt": "2026-11-18T17:27:00+08:00",
+      "run_id": "595c4a0f1dba48c0a7ee4b2a354c356b",
+      "capture_id": "9c57ab225d204f8e8592c5fe61517769",
+      "raw_sha256": "9d5153b6bb452394c08546251089afc9b31795eb27f7ec9878bc16e4dc8b2611",
+      "status": "error",
+      "failure_reason": "A fully completed capture is required for planning",
+      "evaluation": "error",
+      "solver_method": null,
+      "solver_seed": null,
+      "solver_budget_s": null,
+      "compute_elapsed_s": 0.0,
+      "available_record_span_s": null,
+      "overlap_vessels": null,
+      "vessels_supported_throughout": null,
+      "seconds_without_any_supported_ship": null,
+      "slot": 1
+    },
+    {
+      "route": "M3",
+      "departure_hkt": "2026-11-18T17:27:00+08:00",
+      "run_id": "6b07184a9293402991daac3879cf52cf",
+      "capture_id": "9c57ab225d204f8e8592c5fe61517769",
+      "raw_sha256": "9d5153b6bb452394c08546251089afc9b31795eb27f7ec9878bc16e4dc8b2611",
+      "status": "error",
+      "failure_reason": "A fully completed capture is required for planning",
+      "evaluation": "error",
+      "solver_method": null,
+      "solver_seed": null,
+      "solver_budget_s": null,
+      "compute_elapsed_s": 0.014999999999417923,
+      "available_record_span_s": null,
+      "overlap_vessels": null,
+      "vessels_supported_throughout": null,
+      "seconds_without_any_supported_ship": null,
+      "slot": 1
+    },
+    {
+      "route": "M4",
+      "departure_hkt": "2026-11-18T17:27:00+08:00",
+      "run_id": "fb1d1f4e92664c5a8a1a45611935e9c7",
+      "capture_id": "9c57ab225d204f8e8592c5fe61517769",
+      "raw_sha256": "9d5153b6bb452394c08546251089afc9b31795eb27f7ec9878bc16e4dc8b2611",
+      "status": "error",
+      "failure_reason": "A fully completed capture is required for planning",
+      "evaluation": "error",
+      "solver_method": null,
+      "solver_seed": null,
+      "solver_budget_s": null,
+      "compute_elapsed_s": 0.01600000000144064,
+      "available_record_span_s": null,
+      "overlap_vessels": null,
+      "vessels_supported_throughout": null,
+      "seconds_without_any_supported_ship": null,
+      "slot": 1
+    }
+  ],
+  "complete": true,
+  "scope": "Recorded vessel subset and original 2D parameters only. Timestamps were fixed before inspecting planning outcomes.",
+  "outcomes": {
+    "error": 4
+  },
+  "by_route": {
+    "M1": {
+      "error": 1
+    },
+    "M2": {
+      "error": 1
+    },
+    "M3": {
+      "error": 1
+    },
+    "M4": {
+      "error": 1
+    }
+  },
+  "window_outcomes": {
+    "candidate": 1
+  },
+  "planned_route_window_pairs": 4,
+  "unevaluated_route_window_pairs": 0,
+  "by_day_and_period_hkt": {
+    "2026-11-18 12:00–17:59": {
+      "is_weekend": false,
+      "windows": {
+        "candidate": 1
+      },
+      "outcomes": {
+        "error": 4
+      }
+    }
+  }
+}
